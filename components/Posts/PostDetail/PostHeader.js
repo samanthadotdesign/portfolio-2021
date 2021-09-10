@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import React from 'react'
 export default function PostHeader(props) {
   const { title, image } = props;
   // Image already comes in the full path

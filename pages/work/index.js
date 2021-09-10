@@ -1,6 +1,5 @@
 import AllPosts from '../../components/Posts/AllPosts';
 import { getAllPosts } from '../../lib/posts-util';
-
 // All case studies page
 export default function AllWork(props) {
   return (

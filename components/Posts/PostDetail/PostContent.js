@@ -1,19 +1,22 @@
 import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+ 
+//import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import PostHeader from './PostHeader';
 
 export default function PostContent(props) {
-  const {
+const {
     slug, image, title, content,
   } = props.post;
 
-  const imagePath = `/images/work/${slug}/${image}`;
+  const imagePath = `/images/work/${slug}/${image}`; 
 
   // Create custom renderers to optimize images with next/image instead of standard markdown
+   
+  
   const customRenderers = {
     // All markdown (not titles) translated to HTML is treated as paragraph
     // Mitigates how image is rendered as paragraph
@@ -39,16 +42,16 @@ export default function PostContent(props) {
       const { className, children } = code;
       // className is something like language-js => We need the "js" part here
       const language = className.split('-')[1];
-
+      //console.log("CHECKING SCOPE", dark)
       return (
         <SyntaxHighlighter
-          style={atomDark}
+          //style={dark}
           language={language}
           children={children}
         />
       );
     },
-  };
+  }; 
 
   return (
     <article>
@@ -56,6 +59,7 @@ export default function PostContent(props) {
         title={title}
         image={imagePath}
       />
+      
       <ReactMarkdown
         components={customRenderers}
       >

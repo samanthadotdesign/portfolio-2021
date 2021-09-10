@@ -1,3 +1,4 @@
+import React from 'react';
 import PostContent from '../../components/Posts/PostDetail/PostContent';
 import { getPostData, getPostFiles } from '../../lib/posts-util';
 
