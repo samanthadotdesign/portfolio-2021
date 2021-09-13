@@ -6,13 +6,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
+        <title>Samantha Lee — Creative Development</title>
         <meta name="description" 
         content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <title>Samantha Lee — Creative Development</title>
       </Head>
       <Component {...pageProps} />
-      
     </Layout>
   );
 }

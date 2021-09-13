@@ -11,7 +11,7 @@ export default function Nav() {
       </Link>
       <NavLinks>
         <Link href="/work">Work</Link>
-        <Link href="/contact">Contact</Link>
+        <Link href="/about">About</Link>
       </NavLinks>
     </NavHeader>
   );

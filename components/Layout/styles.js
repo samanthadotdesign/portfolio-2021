@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NavHeader = styled.div`
+export const NavHeader = styled.header`
   width: 100vw;
   background: #fff;
   display: flex;
