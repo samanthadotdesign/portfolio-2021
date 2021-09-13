@@ -3,6 +3,8 @@ import Image from 'next/image';
 
 export default function PostGrid(props) {
   const { title, image, slug } = props.post;
+  const { children } = props;
+  console.log(children);
 
   const imagePath = `/images/work/${slug}/${image}`;
   const linkPath = `/work/${slug}`;

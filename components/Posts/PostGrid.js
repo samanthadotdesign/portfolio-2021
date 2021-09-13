@@ -1,7 +1,7 @@
 import { Grid } from './styles';
 import PostItem from './PostItem';
 import React, { useState, useRef } from 'react';
-import { Stage, Layer } from 'react-konva';
+import { Stage, Layer, Circle } from 'react-konva';
 import Konva from 'konva';
 
 /**
@@ -22,16 +22,14 @@ const generateRandomPositions = (posts) => {
 export default function PostGrid(props) {
   const { posts } = props;
   const INITIAL_STATE = generateRandomPositions(posts);
-  const stageRef = useRef(null);
+  // const stageRef = useRef(null);
+  console.log(INITIAL_STATE)
 
-  console.log('####')
-  console.log(INITIAL_STATE);
-
-  const [ postsPosition, setPostsPosition ] = useState([]);
+  const [ postsPosition, setPostsPosition ] = useState(INITIAL_STATE);
 
   const handleDragStart = (e) => {
     const id = e.target.id();
-    setPostPosition(
+    setPostsPosition(
       postsPosition.map( (postPosition) => {
         return {
           ...postPosition,
@@ -42,7 +40,7 @@ export default function PostGrid(props) {
   }
 
   const handleDragEnd = (e) => {
-    setPostPosition(
+    setPostsPosition(
       postsPosition.map( (postPosition) => {
         return {
           ...postPosition,
@@ -55,14 +53,26 @@ export default function PostGrid(props) {
   return (
     <Stage 
       width={window.innerWidth} 
-      height={window.innerHeight}
-      ref={stageRef}>
+      height={window.innerHeight}>
       <Layer>
-        {postsPosition.map( (post) => (
-          <PostItem
-            key={post.slug}
-            post={post}
-            />
+        {postsPosition.map((post) => (
+          // <PostItem 
+          // key={post.slug}
+          // post={post}>
+            <Circle
+              fill="red"
+              radius={25}
+              key={post.slug}
+              x={post.x}
+              y={post.y}
+              draggable
+              rotation={post.rotation}
+              scaleX={post.isDragging ? 1.2 : 1}
+              scaleY={post.isDragging ? 1.2 : 1}
+              // onDragStart={handleDragStart}
+              // onDragEnd={handleDragEnd}
+              />
+          // </PostItem>
         ))}
       </Layer>
     </Stage>
