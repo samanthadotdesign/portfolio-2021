@@ -6,7 +6,6 @@ export default function PostGrid(props) {
 
   const imagePath = `/images/work/${slug}/${image}`;
   const linkPath = `/work/${slug}`;
-  console.log(imagePath);
 
   return (
     <li>
