@@ -58,6 +58,10 @@ export default function PostGrid(props) {
   return (
     <Draggable
       position={position}
+      // onStart -> sets drag to true (trigger drag event)
+      // onDrag -> handles drag functionality
+      // onStop -> sets drag to false (ends drag event)
+      // onClick needs to be bound to a certain part 
       onDrag={handleDrag}
       onStop={onDragStop}
       >
