@@ -15,8 +15,6 @@ const {
   const imagePath = `/images/work/${slug}/${image}`; 
 
   // Create custom renderers to optimize images with next/image instead of standard markdown
-   
-  
   const customRenderers = {
     // All markdown (not titles) translated to HTML is treated as paragraph
     // Mitigates how image is rendered as paragraph

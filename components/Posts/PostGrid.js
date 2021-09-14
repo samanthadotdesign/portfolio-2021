@@ -1,29 +1,57 @@
-// import { Grid } from './styles';
 import PostItem from './PostItem';
-import GridLayout from 'react-grid-layout';
+import { useState } from 'react';
+import { Responsive, WidthProvider } from 'react-grid-layout';
+
+const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export default function PostGrid(props) {
-  const { posts } = props;
+	const { posts } = props;
+	const [isMessy, setIsMessy] = useState(true);
 
-  const gridLayoutProps = {
-    isDraggable: false,
-    isResizable: false
-  }
+	const toggleMessy = () => {
+		setIsMessy(!isMessy);
+	};
+  
+	const onDrag = () => {
+		//console.log("CHECKING BINDED DRAG EVENT", event)
+	};
 
-  const onDrag = (event) => {
-    console.log("CHECKING BINDED DRAG EVENT", event)
-  }
+	// Generate a dynamic layout  
+	return (
+		<>
+			<button onClick={toggleMessy}>
+				{isMessy ? 'BACK TO NEAT MODE' : 'BACK TO MESSY MODE'}
+			</button>
+    
+			{isMessy && 
+      <div
+      	className="layout" 
+      	onDrag={onDrag}>
+      	{posts.map((post) => (
+      		<PostItem
+      			key={post.slug}
+      			post={post}
+      			isMessy={isMessy}
+      		/>
+      	))}
+      </div>
+			}
 
-  // Generate a dynamic layout  
-  return (
-    <GridLayout
-      className="layout"  {...gridLayoutProps} onDrag={onDrag}>
-      {posts.map((post) => (
-        <PostItem
-          key={post.slug}
-          post={post}
-        />
-      ))}
-    </GridLayout>
-  );
+			{!isMessy && 
+    <ResponsiveReactGridLayout
+    	// WidthProvider option
+    	measureBeforeMount={false}
+    >
+    	{posts.map((post, index) => (
+    		<PostItem
+    			key={post.slug}
+    			post={post}
+    			isMessy={isMessy}
+    			data-grid={{x:index, y:index, w: 1, h: 1}}
+    		/>
+    	))}
+    </ResponsiveReactGridLayout>
+			}
+		</>
+	);
 }

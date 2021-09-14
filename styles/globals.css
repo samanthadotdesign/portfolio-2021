@@ -18,3 +18,7 @@ a {
 .userSelectNone {
   user-select: none;
 }
+
+.bordertest {
+  border: 2px solid black;
+}
