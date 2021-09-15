@@ -1,5 +1,6 @@
+
+import React, { useState }  from 'react';
 import PostItem from './PostItem';
-import { useState } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
@@ -46,17 +47,18 @@ export default function PostGrid(props) {
     <ResponsiveReactGridLayout
     	// WidthProvider option
     	measureBeforeMount={false}
-    	isBounded={true}
-    	preventCollision={true}    	
-    	breakpoints={{ lg: 1200 }}
-    	cols={{ lg: 12 }}
+    	//isBounded={true}
+    	preventCollision={true}
     >
     	{posts.map((post, index) => (
-    		<div key={index}>
+    		<div 
+    			key={index} 
+    			className="bordertest"
+    			data-grid={{x:post.x, y:post.y, w: post.w, h: post.h}}
+    		>
     		<PostItem
     			post={post}
     			isMessy={isMessy}
-    			data-grid={{x:index, y:index, w: post.w, h: post.h}}
     		/>
     		</div>
     	))}
@@ -65,3 +67,5 @@ export default function PostGrid(props) {
 		</>
 	);
 }
+
+

@@ -6,9 +6,9 @@ import React from 'react';
 
 function PostItemContainer(props){
 	const { goToLink, imagePath, title } = props;
-
+	//onClick={goToLink}
 	return (
-		<div onClick={goToLink}>
+		<div >
 			<div>
 				<Image
 					src={imagePath}
@@ -36,16 +36,12 @@ export default function PostItem(props) {
 	const rndRef = useRef(null);
 
 	// window height and width are rendered in the frontend
+	// Messy layout
 	useEffect(() => {
-		console.log(isMessy);
-		// If isMessy, we take the random positions
 		if (isMessy) {
 			setPosition(
 				{x: Math.random() * window.innerWidth, 
 					y: Math.random() * window.innerHeight});
-		}
-		else {
-		  setPosition({x: props['data-grid'].x, y: props['data-grid'].y});
 		}
 	}, []);
 
@@ -77,16 +73,17 @@ export default function PostItem(props) {
 	};
 
 	return (
-		<>
+		<div>
+
 			{isMessy && 
       <Rnd
       	ref={rndRef}
-
+			
       	position={position}
       	onDragStart={handleDragStart}
       	onDragStop={handleDragStop}
       	className="bordertest"
-
+			
       	size={size}
       	onResizeStop={handleResizeStop}
       >
@@ -103,6 +100,6 @@ export default function PostItem(props) {
         	imagePath={imagePath}
         	title={title}/>
 			}
-		</>
+		</div>
 	);
 }

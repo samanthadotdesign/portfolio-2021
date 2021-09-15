@@ -2,8 +2,10 @@
 title: "Designer Starter Pack"
 image: "collaboration.png"
 isFeatured: true
-w: 3
-h: 2
+w: 1
+h: 1
+x: 1
+y: 1
 ---
 
 # Designer Starter Pack
