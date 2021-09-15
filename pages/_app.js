@@ -1,5 +1,4 @@
-import {GlobalProvider} from '../store';
-
+import { GlobalProvider } from '../store';
 import Head from 'next/head';
 import '../styles/globals.css';
 import '/node_modules/react-grid-layout/css/styles.css';
