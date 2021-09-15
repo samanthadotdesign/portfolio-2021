@@ -1,5 +1,5 @@
 import React, { useContext }  from 'react';
-import { GlobalContext, ACTIONS } from '../../store'
+import { GlobalContext } from '../../store'
 import PostItem from './PostItem';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 
@@ -7,26 +7,12 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export default function PostGrid(props) {
 	const { posts } = props;
-	const { layoutStoreState, layoutDispatch } = useContext(GlobalContext) 
+	const { layoutStoreState } = useContext(GlobalContext) 
 	const { isMessy } = layoutStoreState;
-
-	const toggleMessy = () => {
-		// If layout is messy, the user wants to change it to neat
-		if (isMessy) {
-			layoutDispatch({type: ACTIONS.NEAT_MODE})
-		}
-		else {
-			layoutDispatch({type: ACTIONS.MESSY_MODE})
-		}
-	};
   
 	// Generate a dynamic layout  
 	return (
-		<>
-			<button onClick={toggleMessy}>
-				{isMessy ? 'BACK TO NEAT MODE' : 'BACK TO MESSY MODE'}
-			</button>
-    
+		<>    
 			{isMessy && 
       <div className="layout">
       	{posts.map((post) => (

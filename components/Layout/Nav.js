@@ -14,7 +14,7 @@ export default function Nav() {
 				<NavLinks>
 					<Link href="/work">Work</Link>
 					<Link href="/about">About</Link>
-					<Mode isMessy={true}>Mode</Mode>
+					<Mode/>
 				</NavLinks>
 			</NavHeader>
 		</>

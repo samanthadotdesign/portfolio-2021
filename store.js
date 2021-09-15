@@ -26,8 +26,6 @@ const layoutReducer = (state, action) => {
 		return state;
 	}
 };
- 
-
 
 // Final Provider
 export const GlobalProvider = ({ children }) => {
