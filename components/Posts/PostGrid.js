@@ -1,5 +1,5 @@
-
-import React, { useState }  from 'react';
+import React, { useContext }  from 'react';
+import { GlobalContext, ACTIONS } from '../../store'
 import PostItem from './PostItem';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 
@@ -7,21 +7,19 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export default function PostGrid(props) {
 	const { posts } = props;
-	const [isMessy, setIsMessy] = useState(true);
+	const { layoutStoreState, layoutDispatch } = useContext(GlobalContext) 
+	const { isMessy } = layoutStoreState;
 
 	const toggleMessy = () => {
-		setIsMessy(!isMessy);
+		// If layout is messy, the user wants to change it to neat
+		if (isMessy) {
+			layoutDispatch({type: ACTIONS.NEAT_MODE})
+		}
+		else {
+			layoutDispatch({type: ACTIONS.MESSY_MODE})
+		}
 	};
-
-	/* const layout = [
-		{ x: 0, y: 0, w: posts[0].w, h: posts[0].y, i: 0 },
-		{ x: 0, y: 1, w: 3, h: 3, i: 1 }
-	]; */
   
-	const onDrag = () => {
-		//console.log("CHECKING BINDED DRAG EVENT", event)
-	};
-
 	// Generate a dynamic layout  
 	return (
 		<>
@@ -30,9 +28,7 @@ export default function PostGrid(props) {
 			</button>
     
 			{isMessy && 
-      <div
-      	className="layout" 
-      	onDrag={onDrag}>
+      <div className="layout">
       	{posts.map((post) => (
       		<PostItem
       			key={post.slug}
