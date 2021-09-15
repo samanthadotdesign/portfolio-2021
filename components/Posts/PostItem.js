@@ -6,9 +6,8 @@ import React from 'react';
 
 function PostItemContainer(props){
 	const { goToLink, imagePath, title } = props;
-	//onClick={goToLink}
 	return (
-		<div >
+		<div	onClick={goToLink}>
 			<div>
 				<Image
 					src={imagePath}

@@ -22,3 +22,11 @@ a {
 .bordertest {
   border: 2px solid black;
 }
+
+.dark-mode > * {
+  color: #fff !important;
+}
+
+.light-mode > * {
+  color: black;
+}
