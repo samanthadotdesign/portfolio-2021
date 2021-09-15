@@ -2,6 +2,8 @@
 title: "Designer Starter Pack 2ND VERSION"
 image: "collaboration.png"
 isFeatured: true
+w: 5
+h: 3
 ---
 
 # Designer Starter Pack

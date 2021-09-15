@@ -11,6 +11,11 @@ export default function PostGrid(props) {
 	const toggleMessy = () => {
 		setIsMessy(!isMessy);
 	};
+
+	/* const layout = [
+		{ x: 0, y: 0, w: posts[0].w, h: posts[0].y, i: 0 },
+		{ x: 0, y: 1, w: 3, h: 3, i: 1 }
+	]; */
   
 	const onDrag = () => {
 		//console.log("CHECKING BINDED DRAG EVENT", event)
@@ -41,14 +46,19 @@ export default function PostGrid(props) {
     <ResponsiveReactGridLayout
     	// WidthProvider option
     	measureBeforeMount={false}
+    	isBounded={true}
+    	preventCollision={true}    	
+    	breakpoints={{ lg: 1200 }}
+    	cols={{ lg: 12 }}
     >
     	{posts.map((post, index) => (
+    		<div key={index}>
     		<PostItem
-    			key={post.slug}
     			post={post}
     			isMessy={isMessy}
-    			data-grid={{x:index, y:index, w: 1, h: 1}}
+    			data-grid={{x:index, y:index, w: post.w, h: post.h}}
     		/>
+    		</div>
     	))}
     </ResponsiveReactGridLayout>
 			}
