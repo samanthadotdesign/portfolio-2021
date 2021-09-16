@@ -1,5 +1,5 @@
 ---
-title: "Designer Starter Pack 2ND VERSION"
+title: "Make It Pop"
 image: "collaboration.png"
 isFeatured: true
 w: 4

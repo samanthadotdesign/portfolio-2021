@@ -34,7 +34,7 @@ const layoutReducer = (state, action) => {
 };
 
 /******************************
-************ LAYOUT ***********
+************ THEME ************
 *******************************/
 
 const initialColorState = {
