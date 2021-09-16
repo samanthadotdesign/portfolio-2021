@@ -4,6 +4,7 @@ export const NavHeader = styled.header`
   width: 100vw;
   background: #fff;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 0;
@@ -24,7 +25,7 @@ export const FooterDiv = styled.footer`
   justify-content: center;
   align-items: center;
   margin: 0;
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 0;
 `;
