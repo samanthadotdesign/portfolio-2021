@@ -7,6 +7,8 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export default function PostGrid(props) {
 	const { posts } = props;
+	console.log('******* POST GRID PROPS *******');
+	console.log(posts);
 	const { layoutStoreState } = useContext(GlobalContext); 
 	const { isMessy } = layoutStoreState;
   
