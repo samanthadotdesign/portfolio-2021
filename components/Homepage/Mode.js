@@ -18,7 +18,7 @@ export default function Mode() {
 
 	return (
 		<LayoutModeToggle onClick={toggleMessy}>
-			{isMessy ? 'Back to Chaos' : 'Back to Neat'}
+			{isMessy ? 'Back to Neat' : 'Back to Chaos'}
 		</LayoutModeToggle>
 	);
 }
