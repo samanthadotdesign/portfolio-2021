@@ -19,15 +19,15 @@ function PostItemContainer(props){
 			</div>
 			<div>
 				<h3>{title}</h3>
-				<p>Interaction Design</p>
 			</div>
 		</div>
 	);
 }
 
 export default function PostItem(props) {
-	const { isMessy } = props;
-	const { title, image, slug } = props.post;
+	const { isMessy, post } = props;
+	const {slug, frontMatter } = post;
+	const { title, image } = post.frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
 	const [size, setSize] = useState({width: 400, height: 200});
 	const [isDragging, setIsDragging] = useState(false);
