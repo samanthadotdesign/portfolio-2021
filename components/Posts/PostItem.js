@@ -26,13 +26,15 @@ function PostItemContainer(props){
 
 export default function PostItem(props) {
 	const { isMessy, post } = props;
-	const {slug, frontMatter } = post;
-	const { title, image } = post.frontMatter;
+	const {slug, frontMatter, mdxSource } = post;
+	const { title, image } = frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
 	const [size, setSize] = useState({width: 400, height: 200});
 	const [isDragging, setIsDragging] = useState(false);
 
 	const rndRef = useRef(null);
+
+	console.log('CHECKING POST CONTENTS', mdxSource, frontMatter);
 
 	// window height and width are rendered in the frontend
 	// Messy layout

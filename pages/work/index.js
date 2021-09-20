@@ -11,8 +11,6 @@ export default function AllWork(props) {
 
 export const getStaticProps = async () => {
 	const allPosts = await getAllPosts();
-	console.log('******** ALL POSTS INSIDE INDEX.JS*****');
-	console.log(allPosts);
 	return {
 		props: {
 			posts: allPosts,

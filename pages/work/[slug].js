@@ -3,13 +3,20 @@ import { getPostData, getPostFiles } from '../../lib/posts-util';
 import { MDXRemote } from 'next-mdx-remote';
 import Sample from '../../components/sample';
 import About from '../../components/Homepage/About';
-
+import TableOfContents from '../../components/Posts/TableOfContents';
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
-const availableComponentsForMarkdown = {Sample, About };
+const availableComponentsForMarkdown = {
+	Sample,
+	About,
+	TableOfContents
+};
 
 // Search friendly URL
 export default function Slug(props) {
-	const serializedContent = props.post;
+	const {post} = props;
+	const serializedContent = post;
+
+	console.log('CHECKING PROPS OF SINGLE POST', props);
 
 	return (
 		< MDXRemote {
@@ -27,6 +34,8 @@ export const getStaticProps = async(context) => {
 	const { slug } = params;
 
 	const postData = await getPostData(slug);
+
+	console.log('CHECKING OBTAINED STATIC PROPS', postData);
 	return {
 		props: {
 			post: postData.mdxSource,

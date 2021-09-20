@@ -63,3 +63,10 @@ a {
 .remark-highlight pre[class*="language-"].line-numbers {
   padding-left: 2.8em;
 }
+
+.table-of-contents {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
