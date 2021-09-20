@@ -1,4 +1,4 @@
-import { getFeaturedPosts } from '../lib/posts-util';
+import { getFeaturedPosts } from '../lib/getPostData';
 import Homepage from '../layouts/homepage';
 import Footer from '../components/Layout/Footer';
 

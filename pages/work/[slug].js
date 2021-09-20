@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { getPostData, getPostFiles } from '../../lib/posts-util';
+// import Image from 'next/image';
+import { getPostData, getPostFiles } from '../../lib/getPostData';
 import { MDXRemote } from 'next-mdx-remote';
 import Sample from '../../components/sample';
 import TableOfContents from '../../components/PostDetail/TableOfContents';
@@ -8,15 +9,20 @@ import getAllHeadings from '../../lib/getAllHeadings';
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	Sample,
-	TableOfContents
+	TableOfContents,
+	// img: (props) => {
+	// 	return (<Image {...props} 
+	// 		layout='responsive'
+	// 		loading='lazy' />);
+	// },
 };
 
 // Search friendly URL
 export default function Slug(props) {
-	const [activeId, setActiveId] = useState('');
-	const [headings, setHeadings] = useState([]);
+	const [ activeId, setActiveId ] = useState('');
+	const [ headings, setHeadings ] = useState([]);
 	
-	const {post, frontMatter} = props;
+	const { post, frontMatter } = props;
 	const serializedContent = post;
 	const { toc } = frontMatter;
 	
@@ -54,7 +60,7 @@ export default function Slug(props) {
 		
 	}, [activeId]);
 
-
+	// Generates the final markdown article 
 	return (
 		<>
 			{toc && 
@@ -93,17 +99,8 @@ export const getStaticProps = async(context) => {
 };
 
 export const getStaticPaths = () => {
-	
 	const postFileNames = getPostFiles();
-	//console.log('**********POST FILE NAMES ********** ');
-
-	//console.table(postFileNames);
-
-
 	const slugs = postFileNames.map((fileName) => fileName.replace(/\.mdx$/, ''));
-	//console.log('**********SLUGS ********** ');
-	//console.table(slugs);
-
 	return {
 		paths: slugs.map((slug) => ({ params: { slug } })),
 		fallback: false,

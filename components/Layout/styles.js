@@ -20,7 +20,6 @@ export const NavHeader = styled.header`
   padding: 0 20px;
 `;
 
-
 export const FooterDiv = styled.footer`
   display: flex;
   width: 100vw;
