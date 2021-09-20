@@ -30,3 +30,51 @@ a {
 .light-mode > * {
   color: black;
 }
+
+/* container of the code block */
+.remark-highlight {
+  border: 1px solid #dddddd;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+.remark-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+/* highlight for each spotlight line */
+.remark-highlight-code-line {
+  background-color: #feb;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
+
+/* Gutter for line numbers when the line-numbers plugin is active */
+.remark-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+}
+
+.table-of-contents {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.fixed {
+  position: fixed;
+  top: 30;
+  right: 30;
+  z-index: 3;
+}
