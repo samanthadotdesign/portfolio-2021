@@ -2,14 +2,12 @@ import React, {useEffect, useState} from 'react';
 import { getPostData, getPostFiles } from '../../lib/posts-util';
 import { MDXRemote } from 'next-mdx-remote';
 import Sample from '../../components/sample';
-import About from '../../components/Homepage/About';
-import TableOfContents from '../../components/Posts/TableOfContents';
+import TableOfContents from '../../components/PostDetail/TableOfContents';
 import getAllHeadings from '../../lib/getAllHeadings';
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	Sample,
-	About,
 	TableOfContents
 };
 

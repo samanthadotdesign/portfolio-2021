@@ -1,6 +1,5 @@
 import getAllHeadings from '../../lib/getAllHeadings';
 
-
 export default function TableOfContents(props) {
 	const {headings, activeId}=props; 
 
