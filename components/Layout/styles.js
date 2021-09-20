@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const NavLinks = styled.nav`
+  display: flex;
+  flex-direction: row;
+  width: 120px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+`;
+
 export const NavHeader = styled.header`
   width: 100vw;
   background: #fff;
@@ -11,13 +20,6 @@ export const NavHeader = styled.header`
   padding: 0 20px;
 `;
 
-export const NavLinks = styled.nav`
-  display: flex;
-  width: 120px;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
-`;
 
 export const FooterDiv = styled.footer`
   display: flex;

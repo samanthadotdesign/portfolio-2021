@@ -1,10 +1,13 @@
 import PostGrid from '../../components/Posts/PostGrid';
+import Mode from '../../components/Posts/Mode';
 import { getAllPosts } from '../../lib/posts-util';
+
 // All case studies page
 export default function AllWork(props) {
 	return (
 		<>
 			<h1>Work</h1>
+			<Mode />
 			<PostGrid posts={props.posts} />
 		</>
 	);

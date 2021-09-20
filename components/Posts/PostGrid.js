@@ -6,10 +6,7 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export default function PostGrid(props) {
-	const { posts } = props;
-	
-
-
+	const { posts } = props; 
 	const { layoutStoreState } = useContext(GlobalContext); 
 	const { isMessy } = layoutStoreState;
 	// Generate a dynamic layout  
