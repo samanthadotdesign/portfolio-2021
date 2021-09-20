@@ -1,20 +1,22 @@
 import getAllHeadings from '../../lib/getAllHeadings';
-import { useEffect, useState} from 'react';  
 
-export default function TableOfContents() {
-	const [ headings, setHeadings] = useState([]);
-	useEffect(() => {
-		setHeadings(getAllHeadings());
-	}, []); 
+
+export default function TableOfContents(props) {
+	const {headings, activeId}=props; 
 
 	return (
 		<div className="table-of-contents">
 			<h1>Table of Contents</h1>
 			<ol>
 				{headings.map((item) => {
-					console.log('**** ITEMS *** ', item);
-					return (<li key={item.url}>
-						<a href={item.url}>{item.title}</a>
+					
+					return (<li key={item.id}>
+						< a href = {
+							`#${item.id}`
+							
+						}  > {
+								item.title
+							} < /a>
 					</li>);
 				})}
 			</ol>

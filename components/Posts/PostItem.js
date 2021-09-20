@@ -34,7 +34,6 @@ export default function PostItem(props) {
 
 	const rndRef = useRef(null);
 
-	console.log('CHECKING POST CONTENTS', mdxSource, frontMatter);
 
 	// window height and width are rendered in the frontend
 	// Messy layout

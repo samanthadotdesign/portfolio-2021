@@ -6,8 +6,7 @@ export default function About() {
 		section >
 		<
 			div >
-			<
-				h1 > Sample < /h1> <
+			 <
 				Image src = "/images/site/xp.jpeg"
 				alt = "test image"
 				// Layout prop can be used to scale responsively

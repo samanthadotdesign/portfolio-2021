@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { getPostData, getPostFiles } from '../../lib/posts-util';
 import { MDXRemote } from 'next-mdx-remote';
 import Sample from '../../components/sample';
 import About from '../../components/Homepage/About';
 import TableOfContents from '../../components/Posts/TableOfContents';
+import getAllHeadings from '../../lib/getAllHeadings';
+
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	Sample,
@@ -13,19 +15,65 @@ const availableComponentsForMarkdown = {
 
 // Search friendly URL
 export default function Slug(props) {
-	const {post} = props;
+	const [activeId, setActiveId] = useState('');
+	const [headings, setHeadings] = useState([]);
+	
+	const {post, frontMatter} = props;
 	const serializedContent = post;
+	const { toc } = frontMatter;
+	
 
-	console.log('CHECKING PROPS OF SINGLE POST', props);
+	useEffect(() => {
+		setHeadings(getAllHeadings());
+		
+		// Intersection Observer checks what intersects with the browser
+		// entries is all the elements that fit in the intersection 
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setActiveId(entry.target.id);
+					}
+				});
+			}, {
+				// After it has intersected more than 20% of the screen, show the change
+				rootMargin: '0% 0% -80% 0%'
+			}
+		);
+
+		// Observer event is only listening for the headings
+		headings.forEach((heading) => {
+			const itemToObserve = document.getElementById(heading.id);
+			observer.observe(itemToObserve);
+		});
+
+		return () => {
+			// Stop listening when the page is not available
+			headings.forEach((heading) => {
+				observer.unobserve(document.getElementById(heading.id));
+			});
+		};
+		
+	}, [activeId]);
+
 
 	return (
-		< MDXRemote {
-			...serializedContent
-		}
-		components = {
-			availableComponentsForMarkdown
-		}
-		/>
+		<>
+			{toc && 
+				<TableOfContents headings={headings} activeId={activeId}/>
+			}	
+			<h1 className="fixed">{activeId}</h1>
+			<article id="article-body">
+
+				< MDXRemote {
+					...serializedContent
+				}
+				components = {
+					availableComponentsForMarkdown
+				}
+				/>
+			</article>
+		</>
 	);
 }
 
@@ -35,7 +83,6 @@ export const getStaticProps = async(context) => {
 
 	const postData = await getPostData(slug);
 
-	console.log('CHECKING OBTAINED STATIC PROPS', postData);
 	return {
 		props: {
 			post: postData.mdxSource,
@@ -48,7 +95,6 @@ export const getStaticProps = async(context) => {
 };
 
 export const getStaticPaths = () => {
-	//console.log('CHECKING GETTING STATIC PATHS');
 	
 	const postFileNames = getPostFiles();
 	//console.log('**********POST FILE NAMES ********** ');
