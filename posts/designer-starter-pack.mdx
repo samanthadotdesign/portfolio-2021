@@ -1,0 +1,86 @@
+---
+title: "Designer Starter Pack"
+image: "nextjs.png"
+isFeatured: true
+toc: true
+w: 4
+h: 3
+x: 0
+y: 0
+---
+
+## What is Designer Starter Pack?
+
+Designer Starter Pack is an interactive Figma skill map to keep track of resources and progress, that reflect industry expectations for beginner and intermediate learners. I curated a list of useful skills for working with Figma, with recommended resources. It's currently limited at this definitive list of skills.
+
+## How does it work?
+
+- The skills are ordered according to the amount of prior experience required, from Basics to Advanced.
+- Hover over each skill to see the recommended resources list. Feel free to add your own resources! There are so many good ones – from tutorials that introduce the tool broadly to detailed guides that apply to a niche problem.
+- To keep track of skills that you know, you can mark them as completed.
+- Once you complete a category of skills, you collect a sticker :rainbow:
+
+## How did I choose the skills?
+
+As a product designer at a lean product startup, I have been bringing my non-designer colleagues closer to the product development process via Figma. Simply teaching people how to navigate a page or prototype and add their comments benefits the entire team. Through my experiences developing and conducting Figma workshops for Friends of Figma Singapore, Tech For She, Padang.Co, and at Funding Societies, I've become more aware of how different beginners learn.
+
+## How I built Designer Starter Pack?
+
+- `v1.0.0` Built using Node.js, Express.js and EJS after I learned about server-side web applications. Full set of CRUD routes, PostgresQL database queries were executed with raw SQL. Username and password login, session authentication.
+  [Github link](https://github.com/samanthadotdesign/designerstarterpack)
+- `v1.1.0` I reorganized my app to follow the Model-View-Controller framework and using Sequelize ORM.
+- `v2.0` I rebuilt the project from scratch as a lightweight React app with custom Webpack configurations due to the frontend limitations of EJS. I also integrated p5.js into the project. I also used **styled-components**.
+  [Github link](https://github.com/samanthadotdesign/dsp)
+
+## Important Lessons
+
+1. If I ever needed to use EJS again
+
+In v1.0.0 I used EJS. It looked okay but it was quite a hacky way to do things. It drove me crazy that every time I marked a skill as Complete Skill or Uncomplete Skill, EJS rerenders my whole page and the only way I could make it stay in place was using id for the section.
+
+```js
+<main class="dashboard">
+    <% sections.forEach( (section) => { %>
+    <!-- Logic for when we put "full-width-category" class or not -->
+    <section
+      id="<%= section.id %>"
+      class="skills-section"
+      data-background="<%= section.data_bg %>"
+      data-color="<%= section.data_color %>"
+    >
+      <h1><%= section.section_name %></h1>
+      <ul class="gallery-list">
+        <% categories.filter(category => category.section_id ===
+        section.id).forEach ( (category) => { %> <% skills.filter(skill =>
+        skill.category_id === category.id).forEach ( (skill) => { %>
+
+        <li>
+          <div class="resources">
+            <div class="resource-content">
+              <h2><%= skill.skill_name %></h2>
+              <ul>
+                <% resources.filter( resource => resource.skill_id === skill.id
+                ).forEach( (resource) => { %>
+                <li>
+                  <a href="<%= resource.resource_link %>" target="_blank"
+                    ><%= resource.resource_name %>
+                  </a>
+                </li>
+                ...
+```
+
+2. My first full CRUD app using MVC framework
+
+Nothing too interesting here except I realized I could send back responses as modified objects (different from raw data from database) to make it easier for myself.
+
+Since the data and database not the same, I tried to make the code readable by keeping track of transform through comments.
+
+3. Comparisons using SQL vs Sequelize mixins
+
+Since I had many complex many-to-many SQL relationships, I learned how to harness the power of Sequelize ORM.
+
+4. Experimented with libraries
+
+5. Learned how to customize Webpack settings
+
+It was kind of painful to customize the Webpack settings because it kept throwing me errors but I'm glad I finally got around to it in case I would need it in the future. Most importantly I learned what breadcrumbs to use when trying to troubleshoot the Webpack errors.

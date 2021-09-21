@@ -1,20 +1,19 @@
 import React, {useEffect, useState} from 'react';
-// import Image from 'next/image';
 import { getPostData, getPostFiles } from '../../lib/getPostData';
 import { MDXRemote } from 'next-mdx-remote';
 import Sample from '../../components/sample';
 import TableOfContents from '../../components/PostDetail/TableOfContents';
+import MarkdownImage from '../../components/PostDetail/MarkdownImage';
+import LoopingVideo from '../../components/PostDetail/LoopingVideo';
+
 import getAllHeadings from '../../lib/getAllHeadings';
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	Sample,
 	TableOfContents,
-	// img: (props) => {
-	// 	return (<Image {...props} 
-	// 		layout='responsive'
-	// 		loading='lazy' />);
-	// },
+	MarkdownImage,
+	LoopingVideo
 };
 
 // Search friendly URL

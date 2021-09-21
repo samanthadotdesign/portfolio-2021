@@ -3,21 +3,40 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
 import React from 'react';
+import LoopingVideo from '../PostDetail/LoopingVideo';
 
 const PostItemContainer = (props) => {
-	const { goToLink, imagePath, title } = props;
+	const { goToLink, mediaPath, title } = props;
 	console.log('**** IMAGE PATH ****');
-	console.log(imagePath);
+	console.log(mediaPath);
 	return (
 		<div	onClick={goToLink}>
 			<div>
-				<Image
-					src={imagePath}
-					alt={title}
-					width={200}
-					height={100}
-					className="userSelectNone"
-				/>
+				{mediaPath.split('.')[1] == 'mp4' ?
+					<LoopingVideo src={mediaPath} 
+						title = {
+							title
+						}
+						className = "w-100 userSelectNone" />
+					:
+					< Image
+						src = {
+							mediaPath
+						}
+						alt = {
+							title
+						}
+						width = {
+							200
+						}
+						height = {
+							100
+						}
+						className = "userSelectNone" /
+					>
+
+				}
+				
 			</div>
 			<div>
 				<h3>{title}</h3>
@@ -29,7 +48,7 @@ const PostItemContainer = (props) => {
 export default function PostItem(props) {
 	const { isMessy, post } = props;
 	const { slug, frontMatter, mdxSource } = post;
-	const { title, image } = frontMatter;
+	const { title, media } = frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
 	const [size, setSize] = useState({width: 400, height: 200});
 	const [isDragging, setIsDragging] = useState(false);
@@ -45,7 +64,7 @@ export default function PostItem(props) {
 		}
 	}, []);
 
-	const imagePath = `/images/work/${slug}/${image}`;
+	const mediaPath = `/images/work/${slug}/${media}`;
 	const linkPath = `/work/${slug}`;
 
 	const handleDragStart = ()=>{
@@ -82,14 +101,14 @@ export default function PostItem(props) {
       	position={position}
       	onDragStart={handleDragStart}
       	onDragStop={handleDragStop}
-      	className="bordertest"
+      	className="bordertest h-min-fit-content"
 			
       	size={size}
       	onResizeStop={handleResizeStop}
       >
       	<PostItemContainer 
       		goToLink={goToLink}
-      		imagePath={imagePath}
+      		mediaPath={mediaPath}
       		title={title}/>
       </Rnd>
 			}
@@ -97,7 +116,7 @@ export default function PostItem(props) {
 			{!isMessy &&     
         <PostItemContainer 
         	goToLink={goToLink}
-        	imagePath={imagePath}
+        	mediaPath={mediaPath}
         	title={title}/>
 			}
 		</div>

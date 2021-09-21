@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const NavLinks = styled.nav`
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
   width: 120px;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +22,7 @@ export const NavHeader = styled.header`
 
 export const FooterDiv = styled.footer`
   display: flex;
+  flex-direction: row;
   width: 100vw;
   justify-content: center;
   align-items: center;

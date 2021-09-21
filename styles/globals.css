@@ -78,3 +78,7 @@ a {
   right: 30;
   z-index: 3;
 }
+
+.h-min-fit-content {
+  min-height: fit-content;
+}
