@@ -17,7 +17,56 @@ function MyApp({ Component, pageProps }) {
 					<meta name="description" 
 						content="width=device-width, initial-scale=1" />
 					<link rel="icon" href="/favicon.ico" />
-					<link rel="stylesheet" href="https://use.typekit.net/ada2lcu.css"></link>
+					<link rel="stylesheet" href="https://use.typekit.net/ada2lcu.css" />
+					<link
+						rel="preload"
+						href="/fonts/EditorialNew-Regular.woff2"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/EditorialNew-Regular.woff"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/EditorialNew-Bold.woff2"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/EditorialNew-Bold.woff"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/NeueMontreal-Regular.woff2"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/NeueMontreal-Regular.woff"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/NeueMontreal-Bold.woff2"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/NeueMontreal-Bold.woff"
+						as="font"
+						crossOrigin=""
+					/>
+
 				</Head>
 				<Component {...pageProps} />
 			</Layout>
