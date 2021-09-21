@@ -1,18 +1,21 @@
 import Link from 'next/link';
-import { NavHeader, NavLinks } from './styles';
+import { NavHeader, NavLinks, NameLogo, NavLink } from './styles';
+import React from 'react';
 
 export default function Nav() {
 	return (
 		<>
 			<NavHeader>
 				<Link href="/">
-					<a>
-						<h3>Samantha Lee</h3>
-					</a>
+					<NameLogo>SAMANTHA LEE</NameLogo>
 				</Link>
 				<NavLinks>
-					<Link href="/work">Work</Link>
-					<Link href="/about">About</Link>
+					<Link href="/work">
+						<NavLink>WORK</NavLink>
+					</Link>
+					<Link href="/about">
+						<NavLink>ABOUT</NavLink>
+					</Link>
 				</NavLinks>
 			</NavHeader>
 		</>

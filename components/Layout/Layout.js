@@ -1,10 +1,12 @@
 import Nav from './Nav';
+import { HomepageDiv } from './styles';
+import React from 'react';
 
 export default function Layout(props) {
 	return (
 		<>
 			<Nav />
-			<main>{props.children}</main>
+			<HomepageDiv>{props.children}</HomepageDiv>
 		</>
 	);
 }

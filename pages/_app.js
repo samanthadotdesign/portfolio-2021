@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<GlobalProvider>
-			<Layout className={isDark ? 'dark-mode' : 'light-mode'}>
+			<Layout>
 				<Head>
 					<title>Samantha Lee — Creative Development</title>
 					<meta name="description" 
