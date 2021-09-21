@@ -28,7 +28,6 @@ export const NavLinks = styled.nav`
 
 export const NavHeader = styled.header`
   width: 100vw;
-  background: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

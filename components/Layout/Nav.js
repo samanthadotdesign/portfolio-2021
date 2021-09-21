@@ -1,9 +1,10 @@
+import React from 'react';
 import Link from 'next/link';
 import { NavHeader, NavLinks, NameLogo, NavLink } from './styles';
-import React from 'react';
 
 export default function Nav() {
 	return (
+		// <div className="container-fluid">
 		<>
 			<NavHeader>
 				<Link href="/">

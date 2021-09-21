@@ -1,14 +1,12 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
-import React from 'react';
 import LoopingVideo from '../PostDetail/LoopingVideo';
 
 const PostItemContainer = (props) => {
 	const { goToLink, mediaPath, title } = props;
-	console.log('**** IMAGE PATH ****');
-	console.log(mediaPath);
 	return (
 		<div	onClick={goToLink}>
 			<div>
