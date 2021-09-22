@@ -1,24 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
-import { NavHeader, NavLinks, NameLogo, NavLink } from './styles';
+import { NavLinks, NameLogo, NavLink } from './styles';
 
 export default function Nav() {
 	return (
 		// <div className="container-fluid">
 		<>
-			<NavHeader>
+			<div className="nav-header w-100 d-flex justify-content-between m-0">
 				<Link href="/">
 					<NameLogo>SAMANTHA LEE</NameLogo>
 				</Link>
-				<NavLinks>
-					<Link href="/work">
+				<div className='d-flex m-0'>
+					<Link href="/">
 						<NavLink>WORK</NavLink>
 					</Link>
 					<Link href="/about">
 						<NavLink>ABOUT</NavLink>
 					</Link>
-				</NavLinks>
-			</NavHeader>
+				</div>
+			</div>
 		</>
 	);
 }

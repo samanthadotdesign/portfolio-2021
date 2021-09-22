@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import { getPostData, getPostFiles } from '../../lib/getPostData';
 import { MDXRemote } from 'next-mdx-remote';
-import Sample from '../../components/sample';
 import TableOfContents from '../../components/PostDetail/TableOfContents';
 import MarkdownImage from '../../components/PostDetail/MarkdownImage';
 import LoopingVideo from '../../components/PostDetail/LoopingVideo';
-
+import FullWidthContainer from '../../components/Layout/FullWidthContainer';
+// import TwoColumn from '../../components/Layout/TwoColumn';
 import getAllHeadings from '../../lib/getAllHeadings';
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
-	Sample,
 	TableOfContents,
 	MarkdownImage,
-	LoopingVideo
+	LoopingVideo,
+	FullWidthContainer,
 };
 
 // Search friendly URL

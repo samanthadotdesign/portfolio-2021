@@ -26,18 +26,8 @@ export const NavLinks = styled.nav`
   height: fit-content;
 `;
 
-export const NavHeader = styled.header`
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
-  padding: 40px 60px;
-`;
-
 export const HomepageDiv = styled.div`
-  overflow: none;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
 `;

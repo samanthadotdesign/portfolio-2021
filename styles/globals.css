@@ -79,14 +79,6 @@ a {
   border: 2px solid black;
 }
 
-.dark-mode > * {
-  color: #fff !important;
-}
-
-.light-mode > * {
-  color: black;
-}
-
 /* container of the code block */
 .remark-highlight {
   border: 1px solid #dddddd;
@@ -137,4 +129,20 @@ a {
 
 .h-min-fit-content {
   min-height: fit-content;
+}
+
+/* NAVIGATION */
+
+.nav-header {
+  padding: 40px 60px;
+}
+
+.nav-link {
+  margin-left: 12px;
+}
+
+/* PROJECT THUMBNAIL CONTAINER */
+
+.project-thumbnail-container > * {
+  max-height: 100%;
 }

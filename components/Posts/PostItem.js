@@ -6,36 +6,35 @@ import { Rnd } from 'react-rnd';
 import LoopingVideo from '../PostDetail/LoopingVideo';
 
 const PostItemContainer = (props) => {
-	const { goToLink, mediaPath, title } = props;
+	const { goToLink, mediaPath, title, ratioW, ratioH } = props;
 	return (
-		<div	onClick={goToLink}>
-			<div>
-				{mediaPath.split('.')[1] == 'mp4' ?
-					<LoopingVideo src={mediaPath} 
-						title = {
-							title
-						}
-						className = "w-100 userSelectNone" />
-					:
-					< Image
-						src = {
-							mediaPath
-						}
-						alt = {
-							title
-						}
-						width = {
-							200
-						}
-						height = {
-							100
-						}
-						className = "userSelectNone" /
-					>
-
-				}
+		<div className = "mw-100 mh-100 project-thumbnail-container"
+			onClick = {
+				goToLink
+			} >
+			{mediaPath.split('.')[1] == 'mp4' ?
+				<LoopingVideo src={mediaPath} 
+					title = {
+						title
+					}
+					className = "mw-100 mh-100 userSelectNone" />
+				:
+				<Image
+					src = {
+						mediaPath
+					}
+					alt = {
+						title
+					}
+					width = {
+						ratioW
+					}
+					height = {
+						ratioH
+					}
+					className = "mw-100 mh-100 userSelectNone" />
+			}
 				
-			</div>
 			<div>
 				<h3>{title}</h3>
 			</div>
@@ -46,7 +45,7 @@ const PostItemContainer = (props) => {
 export default function PostItem(props) {
 	const { isMessy, post } = props;
 	const { slug, frontMatter, mdxSource } = post;
-	const { title, media } = frontMatter;
+	const { title, media, ratioW, ratioH } = frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
 	const [size, setSize] = useState({width: 400, height: 200});
 	const [isDragging, setIsDragging] = useState(false);
@@ -90,33 +89,38 @@ export default function PostItem(props) {
 	};
 
 	return (
-		<div>
-
+		<>
 			{isMessy && 
-      <Rnd
-      	ref={rndRef}
-			
-      	position={position}
-      	onDragStart={handleDragStart}
-      	onDragStop={handleDragStop}
-      	className="bordertest h-min-fit-content"
-			
-      	size={size}
-      	onResizeStop={handleResizeStop}
-      >
-      	<PostItemContainer 
-      		goToLink={goToLink}
-      		mediaPath={mediaPath}
-      		title={title}/>
-      </Rnd>
+				<Rnd
+					ref={rndRef}
+				
+					position={position}
+					onDragStart={handleDragStart}
+					onDragStop={handleDragStop}
+					className="bordertest"
+				
+					size={size}
+					onResizeStop={handleResizeStop}
+				>
+					<PostItemContainer 
+						goToLink={goToLink}
+						mediaPath={mediaPath}
+						title={title}
+						ratioW={ratioW}
+						ratioH={ratioH}
+					/>
+				</Rnd>
 			}
       
 			{!isMessy &&     
         <PostItemContainer 
         	goToLink={goToLink}
         	mediaPath={mediaPath}
-        	title={title}/>
+        	title={title}
+        	ratioW={ratioW}
+        	ratioH={ratioH}
+        />
 			}
-		</div>
+		</>
 	);
 }
