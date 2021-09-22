@@ -1,0 +1,161 @@
+---
+title: "Designer Starter Pack"
+media: "ejs_desktop_scroll.mp4"
+ratioW: 2880
+ratioH: 1528
+isFeatured: true
+toc: true
+w: 4
+h: 3
+x: 0
+y: 0
+---
+
+<button className="visit-website" href="https://designerstarterpack.lol">
+  Go to site
+</button>
+
+<div className="container w-100 d-flex flex-column margin-top-36">
+  <div className="row">
+    <div className="col-md-6 col-sm-12">
+      <h1>Designer Starter Pack</h1>
+      <p>
+        Designer Starter Pack is an interactive Figma skill map to keep track of
+        resources and progress, that reflect industry expectations for beginner
+        and intermediate learners. I curated a list of useful skills for working
+        with Figma, with recommended resources. It's currently limited at this
+        definitive list of skills.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div className="container mw-100 margin-top-36">
+  <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+</div>
+
+<div className="container w-100 d-flex flex-column margin-top-36">
+  <div className="row">
+    <div className="col-md-6 col-sm-12">
+      <h2>How does it work?</h2>
+      <ul>
+        <li>
+          <p>
+            The skills are ordered according to the amount of prior experience
+            required, from Basics to Advanced.
+          </p>
+        </li>
+        <li>
+          <p>
+            Hover over each skill to see the recommended resources list. Feel
+            free to add your own resources! There are so many good ones – from
+            tutorials that introduce the tool broadly to detailed guides that
+            apply to a niche problem.
+          </p>
+        </li>
+        <li>
+          <p>
+            To keep track of skills that you know, you can mark them as
+            completed.
+          </p>
+        </li>
+        <li>
+          <p>Once you complete a category of skills, you collect a sticker.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div className="container w-100 d-flex flex-column margin-top-36">
+  <div className="row">
+    <div className="col-md-6 col-sm-12">
+      <h2>How did I choose the skills?</h2>
+      <p>
+        As a product designer at a lean product startup, I have been bringing my
+        non-designer colleagues closer to the product development process via
+        Figma. Simply teaching people how to navigate a page or prototype and
+        add their comments benefits the entire team. Through my experiences
+        developing and conducting Figma workshops for Friends of Figma
+        Singapore, Tech For She, Padang.Co, and at Funding Societies, I've
+        become more aware of how different beginners learn.
+      </p>
+    </div>
+  </div>
+</div>
+
+## How I built this?
+
+- `v1.0.0` Built using Node.js, Express.js and EJS after I learned about server-side web applications. Full set of CRUD routes, PostgresQL database queries were executed with raw SQL. Username and password login, session authentication.
+  [Github link](https://github.com/samanthadotdesign/designerstarterpack)
+- `v1.1.0` I reorganized my app to follow the Model-View-Controller framework and using Sequelize ORM.
+- `v2.0` I rebuilt the project from scratch as a lightweight React app with custom Webpack configurations due to the frontend limitations of EJS. I also integrated p5.js into the project. I also used **styled-components**.
+  [Github link](https://github.com/samanthadotdesign/dsp)
+
+## What did I learn?
+
+1. If I ever needed to use EJS again
+
+In v1.0.0 I used EJS. It looked okay but it was quite a hacky way to do things. It drove me crazy that every time I marked a skill as Complete Skill or Uncomplete Skill, EJS rerenders my whole page and the only way I could make it stay in place was using id for the section.
+
+```js
+<main class="dashboard">
+    <% sections.forEach( (section) => { %>
+    <!-- Logic for when we put "full-width-category" class or not -->
+    <section
+      id="<%= section.id %>"
+      class="skills-section"
+      data-background="<%= section.data_bg %>"
+      data-color="<%= section.data_color %>"
+    >
+      <h1><%= section.section_name %></h1>
+      <ul class="gallery-list">
+        <% categories.filter(category => category.section_id ===
+        section.id).forEach ( (category) => { %> <% skills.filter(skill =>
+        skill.category_id === category.id).forEach ( (skill) => { %>
+
+        <li>
+          <div class="resources">
+            <div class="resource-content">
+              <h2><%= skill.skill_name %></h2>
+              <ul>
+                <% resources.filter( resource => resource.skill_id === skill.id
+                ).forEach( (resource) => { %>
+                <li>
+                  <a href="<%= resource.resource_link %>" target="_blank"
+                    ><%= resource.resource_name %>
+                  </a>
+                </li>
+                ...
+```
+
+2. My first full CRUD app using MVC framework
+
+Nothing too interesting here except I realized I could send back responses as modified objects (different from raw data from database) to make it easier for myself.
+
+Since the data and database not the same, I tried to make the code readable by keeping track of transform through comments.
+
+3. Comparisons using SQL vs Sequelize mixins
+
+<MarkdownImage
+  src="/images/work/designer-starter-pack/erd.png"
+  width="100px"
+  height="100px"
+  layout="fill"
+/>
+Since I had many complex many-to-many SQL relationships, I learned how to harness
+the power of Sequelize ORM.
+
+4. Experimented with libraries
+
+5. Learned how to customize Webpack settings
+
+It was kind of painful to customize the Webpack settings because it kept throwing me errors but I'm glad I finally got around to it in case I would need it in the future. Most importantly I learned what breadcrumbs to use when trying to troubleshoot the Webpack errors.
+
+## What else would I do?
+
+- **Resources modals to be more mobile-friendly.** Although it is sized for mobile, there is a lot of room for improvement to manage users expectations while interacting with the resource modals.
+- **Editing resources**. Ability to remove resources. Currently users can only add resources.
+- **Adding favicons and emojis**. As the list of resources grows, iconography serves as helpful visual anchors and are also delightful.
+- **Keeping Figma content up to date**
+- **React is a living framework**. This project is not using the best of React like Context, React-router, etc.

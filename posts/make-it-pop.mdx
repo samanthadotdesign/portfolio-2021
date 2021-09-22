@@ -1,0 +1,45 @@
+---
+title: "Make It Pop"
+media: "desktop_av.mp4"
+ratioW: 1614
+ratioH: 956
+isFeatured: true
+toc: true
+w: 4
+h: 3
+x: 0
+y: 0
+---
+
+## What is Make It Pop?
+
+Make It Pop is a beats machine with an audio visualizer by Zaffere and me.
+
+## How does it work?
+
+1. The user clicks into the controls, they can create the drum beats, and also add text, change the colors and tempo.
+2. The user can record the playing audio visualizer.
+3. They currently can share it via a link.
+4. It's also mobile responsive.
+
+## How Make It Pop was built?
+
+1. After experimenting using [ToneJS](https://tonejs.github.io/docs/14.7.77/MembraneSynth.html) to create the different sounds, we preferred using prerecorded sounds for the more realistic effect. We injected the p5 sound library via CDN to ensure a faster delivery for the preloaded sounds.
+2. Creating a React global store and tweaking P5 canvases allowed us to use **React and P5 together.** We wanted to use React components that passed data into the P5 to keep the app as modular as possible for mobile responsiveness and maintainability.
+3. We used [Web API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API) to capture the moving audio visualizer.
+4. We intentionally didn't include authentication so the user can immediately interact with the audio visualizer, rather than forcing them to sign up before they could access any of the features.
+
+## What did I learn?
+
+1. Implementing React + p5 together
+2. Organizing components that optimized for final UI
+3. Global store was very useful especially for making implementing the beats effortless
+
+## What else would we do?
+
+- Step visualization – moving line across beats
+- Layers shape controls
+- Color controls – using RGBA instead of HEX so we can blend the colors together
+- Firestore cloud storage
+- Record as gif
+- Upload directly as Tik Tok / IG story

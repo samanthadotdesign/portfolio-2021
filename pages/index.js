@@ -1,15 +1,10 @@
-import { getFeaturedPosts } from '../lib/posts-util';
-import Featured from '../components/Homepage/Featured';
-import Footer from '../components/Layout/Footer';
+import React from 'react';
+import { getFeaturedPosts } from '../lib/getPostData';
+import Homepage from '../layouts/homepage';
 
 export default function Home(props) {
 	return (
-		<div>
-			<main>
-				<Featured posts={props.posts} />
-			</main>
-			<Footer />
-		</div>
+		<Homepage posts={props.posts} />
 	);
 }
 

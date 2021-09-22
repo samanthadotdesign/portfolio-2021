@@ -1,9 +1,9 @@
-import About from '../components/Homepage/About';
+import About from '../layouts/about';
 
 export default function Bio() {
-  return (
-    <>
-      <About></About>
-    </>
-  );
+	return (
+		<>
+			<About></About>
+		</>
+	);
 }

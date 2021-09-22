@@ -1,39 +1,57 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
-import React from 'react';
+import LoopingVideo from '../PostDetail/LoopingVideo';
 
-function PostItemContainer(props){
-	const { goToLink, imagePath, title } = props;
+const PostItemContainer = (props) => {
+	const { goToLink, mediaPath, title, ratioW, ratioH } = props;
 	return (
-		<div	onClick={goToLink}>
-			<div>
+		<div className = "mw-100 mh-100"
+			onClick = {
+				goToLink
+			} >
+			{mediaPath.split('.')[1] == 'mp4' ?
+				<LoopingVideo src={mediaPath} 
+					title = {
+						title
+					}
+					className = "mw-100 mh-100 userSelectNone" />
+				:
 				<Image
-					src={imagePath}
-					alt={title}
-					width={200}
-					height={100}
-					className="userSelectNone"
-				/>
-			</div>
+					src = {
+						mediaPath
+					}
+					alt = {
+						title
+					}
+					width = {
+						ratioW
+					}
+					height = {
+						ratioH
+					}
+					layout="responsive"
+					objectFit = "contain"
+					className = "mw-100 mh-100 userSelectNone" />
+			}
+				
 			<div>
 				<h3>{title}</h3>
 			</div>
 		</div>
 	);
-}
+};
 
 export default function PostItem(props) {
 	const { isMessy, post } = props;
-	const {slug, frontMatter, mdxSource } = post;
-	const { title, image } = frontMatter;
+	const { slug, frontMatter, mdxSource } = post;
+	const { title, media, ratioW, ratioH } = frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
 	const [size, setSize] = useState({width: 400, height: 200});
 	const [isDragging, setIsDragging] = useState(false);
-
 	const rndRef = useRef(null);
-
 
 	// window height and width are rendered in the frontend
 	// Messy layout
@@ -45,7 +63,7 @@ export default function PostItem(props) {
 		}
 	}, []);
 
-	const imagePath = `/images/work/${slug}/${image}`;
+	const mediaPath = `/images/work/${slug}/${media}`;
 	const linkPath = `/work/${slug}`;
 
 	const handleDragStart = ()=>{
@@ -73,33 +91,39 @@ export default function PostItem(props) {
 	};
 
 	return (
-		<div>
-
+		<>
 			{isMessy && 
-      <Rnd
-      	ref={rndRef}
-			
-      	position={position}
-      	onDragStart={handleDragStart}
-      	onDragStop={handleDragStop}
-      	className="bordertest"
-			
-      	size={size}
-      	onResizeStop={handleResizeStop}
-      >
-      	<PostItemContainer 
-      		goToLink={goToLink}
-      		imagePath={imagePath}
-      		title={title}/>
-      </Rnd>
+				<Rnd
+					ref={rndRef}
+				
+					position={position}
+					onDragStart={handleDragStart}
+					onDragStop={handleDragStop}
+					className="bordertest"
+					// maxWidth="30%"
+					// maxHeight="100px"
+					size={size}
+					onResizeStop={handleResizeStop}
+				>
+					<PostItemContainer 
+						goToLink={goToLink}
+						mediaPath={mediaPath}
+						title={title}
+						ratioW={ratioW}
+						ratioH={ratioH}
+					/>
+				</Rnd>
 			}
       
 			{!isMessy &&     
         <PostItemContainer 
         	goToLink={goToLink}
-        	imagePath={imagePath}
-        	title={title}/>
+        	mediaPath={mediaPath}
+        	title={title}
+        	ratioW={ratioW}
+        	ratioH={ratioH}
+        />
 			}
-		</div>
+		</>
 	);
 }

@@ -1,22 +1,22 @@
+import React from 'react';
 import Link from 'next/link';
-import Mode from '../Homepage/Mode';
-import { NavHeader, NavLinks } from './styles';
 
 export default function Nav() {
 	return (
 		<>
-			<NavHeader>
+			<div className="nav-header w-100 d-flex justify-content-between m-0 fixed-top">
 				<Link href="/">
-					<a>
-						<h3>Samantha Lee</h3>
-					</a>
+					<a className="nav-logo">SAMANTHA LEE</a>
 				</Link>
-				<NavLinks>
-					<Link href="/work">Work</Link>
-					<Link href="/about">About</Link>
-					<Mode/>
-				</NavLinks>
-			</NavHeader>
+				<div className='d-flex m-0'>
+					<Link href="/">
+						<a className="nav-link">WORK</a>
+					</Link>
+					<Link href="/about">
+						<a className="nav-link">ABOUT</a>
+					</Link>
+				</div>
+			</div>
 		</>
 	);
 }

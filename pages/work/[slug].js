@@ -1,27 +1,31 @@
 import React, {useEffect, useState} from 'react';
-import { getPostData, getPostFiles } from '../../lib/posts-util';
+import { getPostData, getPostFiles } from '../../lib/getPostData';
 import { MDXRemote } from 'next-mdx-remote';
-import Sample from '../../components/sample';
-import About from '../../components/Homepage/About';
-import TableOfContents from '../../components/Posts/TableOfContents';
+import TableOfContents from '../../components/PostDetail/TableOfContents';
+import MarkdownImage from '../../components/PostDetail/MarkdownImage';
+import LoopingVideo from '../../components/PostDetail/LoopingVideo';
+import PostLayout from '../../components/PostDetail/PostLayout';
 import getAllHeadings from '../../lib/getAllHeadings';
+
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
-	Sample,
-	About,
-	TableOfContents
+	TableOfContents,
+	LoopingVideo,
+	MarkdownImage,
+	PostLayout
 };
 
 // Search friendly URL
 export default function Slug(props) {
-	const [activeId, setActiveId] = useState('');
-	const [headings, setHeadings] = useState([]);
+	const [ activeId, setActiveId ] = useState('');
+	const [ headings, setHeadings ] = useState([]);
 	
-	const {post, frontMatter} = props;
+	const { post, frontMatter } = props;
 	const serializedContent = post;
 	const { toc } = frontMatter;
-	
+
+	// detect windowWidth and conditionally render TOC (no T)
 
 	useEffect(() => {
 		setHeadings(getAllHeadings());
@@ -56,15 +60,14 @@ export default function Slug(props) {
 		
 	}, [activeId]);
 
-
+	// Generates the final markdown article 
 	return (
 		<>
 			{toc && 
 				<TableOfContents headings={headings} activeId={activeId}/>
 			}	
 			<h1 className="fixed">{activeId}</h1>
-			<article id="article-body">
-
+			<article id="article-body" className="article-body">
 				< MDXRemote {
 					...serializedContent
 				}
@@ -95,17 +98,8 @@ export const getStaticProps = async(context) => {
 };
 
 export const getStaticPaths = () => {
-	
 	const postFileNames = getPostFiles();
-	//console.log('**********POST FILE NAMES ********** ');
-
-	//console.table(postFileNames);
-
-
 	const slugs = postFileNames.map((fileName) => fileName.replace(/\.mdx$/, ''));
-	//console.log('**********SLUGS ********** ');
-	//console.table(slugs);
-
 	return {
 		paths: slugs.map((slug) => ({ params: { slug } })),
 		fallback: false,

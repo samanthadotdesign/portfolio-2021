@@ -1,18 +1,87 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@font-face {
+  font-family: "Editorial New";
+  src: url("/fonts/EditorialNew-Regular.woff") format("woff"),
+    url("/fonts/EditorialNew-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+  font-family: "Editorial New";
+  src: url("/fonts/EditorialNew-Bold.woff") format("woff"),
+    url("/fonts/EditorialNew-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/NeueMontreal-Regular.woff") format("woff"),
+    url("/fonts/NeueMontreal-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/NeueMontreal-Bold.woff") format("woff"),
+    url("/fonts/NeueMontreal-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Editorial New";
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 64px !important;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 48px !important;
+  }
+}
+
+h2 {
+  font-size: 48px !important;
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 36px !important;
+  }
+}
+
+h3 {
+  font-family: "Neue Montreal";
+  font-weight: 700;
+}
+
+p,
+.article-body p {
+  font-family: "Neue Montreal" !important;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+  font-family: "Neue Montreal";
+  font-weight: 400;
 }
 
 .userSelectNone {
@@ -21,14 +90,6 @@ a {
 
 .bordertest {
   border: 2px solid black;
-}
-
-.dark-mode > * {
-  color: #fff !important;
-}
-
-.light-mode > * {
-  color: black;
 }
 
 /* container of the code block */
@@ -64,17 +125,160 @@ a {
   padding-left: 2.8em;
 }
 
-.table-of-contents {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
 .fixed {
   position: fixed;
   top: 30;
   right: 30;
   z-index: 3;
+}
+
+.h-min-fit-content {
+  min-height: fit-content;
+}
+
+/* NAVIGATION */
+
+.fixed-top {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+}
+
+.nav-header,
+.footer-div {
+  padding: 40px 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-header,
+  .footer-div {
+    padding: 16px 24px;
+  }
+}
+
+.nav-link {
+  color: #000 !important;
+  margin-left: 16px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 !important;
+}
+
+.nav-logo {
+  font-size: 18px;
+  cursor: pointer;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-logo:hover,
+.nav-link:hover {
+  color: #000;
+}
+
+/* HOMEPAGE */
+.layout-toggle-btn {
+  border: none;
+  outline: none;
+  color: #000;
+  font-family: "Neue Montreal";
+  font-weight: 400;
+  font-size: 14px;
+  background-color: transparent;
+  margin-top: 16px;
+}
+
+.margin-top-100 {
+  margin-top: 100px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .margin-top-100 {
+    margin-top: 60px;
+  }
+}
+
+.toggle-div {
+  position: fixed;
+  top: 4px;
+  right: 60px;
+  z-index: 3;
+}
+
+/* ABOUT COMPONENT */
+.about-div {
+  margin-top: 120px;
+  padding: 60px;
+}
+
+/* FOOTER DIV */
+.footer-div {
+  position: fixed;
+  bottom: 0;
+}
+
+/* SPACING */
+.margin-top-16 {
+  margin-top: 16px !important;
+}
+
+.margin-top-36 {
+  margin-top: 36px !important;
+}
+
+.article-body {
+  margin-top: 60px;
+  padding: 60px;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .article-body {
+    margin-top: 60px;
+    padding: 24px !important;
+  }
+}
+
+/* TABLE OF CONTENTS */
+.toc-bullets {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 4px;
+  list-style-type: none;
+  text-align: right;
+  color: #000 !important;
+}
+
+.table-of-contents {
+  position: fixed;
+  right: 60px;
+  top: 120px;
+  /* transform: translateY(-50%); */
+  z-index: 2;
+}
+
+.toc-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.override-toc {
+  z-index: 3 !important;
+}
+
+/* POST THAT IS IN MARKDOWN */
+.visit-website {
+  outline: none;
+  border: 1px solid #000;
+  font-family: "Neue Montreal";
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  background-color: #fff;
+}
+
+.rounded-edges {
+  border-radius: 12px;
 }
