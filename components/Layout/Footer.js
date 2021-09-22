@@ -1,5 +1,3 @@
-import { FooterDiv } from './styles';
-
 export default function Footer() {
 	return (
 		<div className="d-flex w-100 justify-content-end footer-div">

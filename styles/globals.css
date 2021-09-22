@@ -167,13 +167,19 @@ a {
   margin-top: 16px;
 }
 
-.margin-top-80 {
+.margin-top-100 {
   margin-top: 100px !important;
-  padding: 0 60px;
 
   @media screen and (max-width: 768px) {
     margin-top: 60px;
   }
+}
+
+.toggle-div {
+  position: fixed;
+  top: 4px;
+  right: 60px;
+  z-index: 3;
 }
 
 /* ABOUT COMPONENT */
@@ -206,6 +212,7 @@ a {
   margin-bottom: 4px;
   list-style-type: none;
   text-align: right;
+  color: #000 !important;
 }
 
 .table-of-contents {
@@ -217,6 +224,12 @@ a {
 }
 
 .toc-title {
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
+  color: #000;
+}
+
+.override-toc {
+  z-index: 3 !important;
+  background-color: #fff !important;
 }
