@@ -4,14 +4,16 @@ import { MDXRemote } from 'next-mdx-remote';
 import TableOfContents from '../../components/PostDetail/TableOfContents';
 import MarkdownImage from '../../components/PostDetail/MarkdownImage';
 import LoopingVideo from '../../components/PostDetail/LoopingVideo';
-// import TwoColumn from '../../components/Layout/TwoColumn';
+import PostLayout from '../../components/PostDetail/PostLayout';
 import getAllHeadings from '../../lib/getAllHeadings';
+
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	TableOfContents,
 	LoopingVideo,
-	MarkdownImage
+	MarkdownImage,
+	PostLayout
 };
 
 // Search friendly URL
@@ -22,7 +24,8 @@ export default function Slug(props) {
 	const { post, frontMatter } = props;
 	const serializedContent = post;
 	const { toc } = frontMatter;
-	
+
+	// detect windowWidth and conditionally render TOC (no T)
 
 	useEffect(() => {
 		setHeadings(getAllHeadings());
