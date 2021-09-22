@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import { getPostData, getPostFiles } from '../../lib/getPostData';
 import { MDXRemote } from 'next-mdx-remote';
 import TableOfContents from '../../components/PostDetail/TableOfContents';
-import MarkdownDiv from '../../components/Layout/MarkdownDiv';
 import MarkdownImage from '../../components/PostDetail/MarkdownImage';
 import LoopingVideo from '../../components/PostDetail/LoopingVideo';
 // import TwoColumn from '../../components/Layout/TwoColumn';
@@ -11,9 +10,8 @@ import getAllHeadings from '../../lib/getAllHeadings';
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	TableOfContents,
-	MarkdownImage,
-	MarkdownDiv,
 	LoopingVideo,
+	MarkdownImage
 };
 
 // Search friendly URL
