@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Nav() {
 	return (
 		<>
-			<div className="nav-header w-100 d-flex justify-content-between m-0">
+			<div className="nav-header w-100 d-flex justify-content-between m-0 fixed-top">
 				<Link href="/">
 					<a className="nav-logo">SAMANTHA LEE</a>
 				</Link>

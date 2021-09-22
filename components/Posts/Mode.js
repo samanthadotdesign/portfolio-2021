@@ -1,4 +1,3 @@
-import { LayoutModeToggle } from './styles';
 import React, { useContext }  from 'react';
 import { GlobalContext, ACTIONS } from '../../store';
 
@@ -17,8 +16,8 @@ export default function Mode() {
 	};
 
 	return (
-		<LayoutModeToggle onClick={toggleMessy}>
-			{isMessy ? 'Back to Neat' : 'Back to Chaos'}
-		</LayoutModeToggle>
+		<button className="layout-toggle-btn" onClick={toggleMessy}>
+			{isMessy ? 'BACK TO GRID' : 'LAUNCH CHAOS'}
+		</button>
 	);
 }
