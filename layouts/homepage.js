@@ -1,16 +1,12 @@
 import React from 'react';
 import PostGrid from '../components/Posts/PostGrid';
 import Mode from '../components/Posts/Mode';
-import Footer from '../components/Layout/Footer';
 
 export default function Homepage(props) {
 	return (
-		<div className="w-100 about-div">
+		<div className="w-100 margin-top-80 d-flex justify-content-end">
 			<div className="row">
-				<div className="col-sm-8 col-sm-4">
-					<h1>
-						Samantha is a multidisciplinary designer based in Singapore.
-					</h1>
+				<div className="col">
 					<Mode />
 				</div>
 			</div>

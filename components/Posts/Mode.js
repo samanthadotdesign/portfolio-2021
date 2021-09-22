@@ -17,7 +17,7 @@ export default function Mode() {
 
 	return (
 		<button className="layout-toggle-btn" onClick={toggleMessy}>
-			{isMessy ? 'BACK TO GRID' : 'LAUNCH CHAOS'}
+			{isMessy ? 'SNAP TO GRID' : 'LAUNCH CHAOS'}
 		</button>
 	);
 }

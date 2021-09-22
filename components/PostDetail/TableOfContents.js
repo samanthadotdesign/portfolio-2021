@@ -4,21 +4,19 @@ export default function TableOfContents(props) {
 	const {headings, activeId}=props; 
 
 	return (
-		<div className="table-of-contents">
-			<h1>Table of Contents</h1>
-			<ol>
+		<div className="table-of-contents d-inline-flex flex-column align-items-end">
+			<p className="toc-title">Table of Contents</p>
+			<ul>
 				{headings.map((item) => {
-					
-					return (<li key={item.id}>
+					return (<li className='toc-bullets' key={item.id}>
 						< a href = {
 							`#${item.id}`
-							
 						}  > {
 								item.title
 							} < /a>
 					</li>);
 				})}
-			</ol>
+			</ul>
 		</div>
 	);
 }

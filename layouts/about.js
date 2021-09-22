@@ -3,18 +3,21 @@ import Image from 'next/image';
 
 export default function About() {
 	return (
-		<section>
-			<div>
-				<h1>About</h1>
-				<Image
-					src="/images/site/xp.jpeg"
-					alt="test image"
-					// Layout prop can be used to scale responsively
-					width={600}
-					height={375}
-					layout="responsive"
-				/>
+		<div className="w-100 about-div">
+			<div className="row">
+				<div className="col-sm-8 col-sm-4">
+					<h1>
+						I'm a multidisciplinary designer based in Singapore. Lately I've been designing with code to ship beautiful things.  
+					</h1>
+				</div>
 			</div>
-		</section>
+			<div className="row margin-top-16">
+				<div className="col-sm-6 col-sm-4 ">
+					<h3>
+						I'm currently a Lead Product Designer at Funding Societies, where I work on experiences to bring equitable access to business financing. 
+					</h3>
+				</div>
+			</div>
+		</div>
 	);
 }
