@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import { getPostData, getPostFiles } from '../../lib/getPostData';
 import { MDXRemote } from 'next-mdx-remote';
 import TableOfContents from '../../components/PostDetail/TableOfContents';
+import MarkdownDiv from '../../components/Layout/MarkdownDiv';
 import MarkdownImage from '../../components/PostDetail/MarkdownImage';
 import LoopingVideo from '../../components/PostDetail/LoopingVideo';
-import FullWidthContainer from '../../components/Layout/FullWidthContainer';
 // import TwoColumn from '../../components/Layout/TwoColumn';
 import getAllHeadings from '../../lib/getAllHeadings';
 
@@ -12,8 +12,8 @@ import getAllHeadings from '../../lib/getAllHeadings';
 const availableComponentsForMarkdown = {
 	TableOfContents,
 	MarkdownImage,
+	MarkdownDiv,
 	LoopingVideo,
-	FullWidthContainer,
 };
 
 // Search friendly URL
@@ -74,6 +74,7 @@ export default function Slug(props) {
 				components = {
 					availableComponentsForMarkdown
 				}
+				// allowDangerousHtml
 				/>
 			</article>
 		</>

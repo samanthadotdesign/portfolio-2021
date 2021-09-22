@@ -8,7 +8,7 @@ import LoopingVideo from '../PostDetail/LoopingVideo';
 const PostItemContainer = (props) => {
 	const { goToLink, mediaPath, title, ratioW, ratioH } = props;
 	return (
-		<div className = "mw-100 mh-100 project-thumbnail-container"
+		<div className = "mw-100 mh-100"
 			onClick = {
 				goToLink
 			} >
@@ -32,6 +32,8 @@ const PostItemContainer = (props) => {
 					height = {
 						ratioH
 					}
+					layout="responsive"
+					objectFit = "contain"
 					className = "mw-100 mh-100 userSelectNone" />
 			}
 				
@@ -98,7 +100,8 @@ export default function PostItem(props) {
 					onDragStart={handleDragStart}
 					onDragStop={handleDragStop}
 					className="bordertest"
-				
+					// maxWidth="30%"
+					// maxHeight="100px"
 					size={size}
 					onResizeStop={handleResizeStop}
 				>

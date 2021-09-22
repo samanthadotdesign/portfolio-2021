@@ -142,7 +142,3 @@ a {
 }
 
 /* PROJECT THUMBNAIL CONTAINER */
-
-.project-thumbnail-container > * {
-  max-height: 100%;
-}
