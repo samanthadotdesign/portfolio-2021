@@ -7,7 +7,35 @@ export const ACTIONS = {
 	MESSY_MODE: 'Messy homepage mode',
 	NEAT_MODE: 'Neat homepage mode',
 	DARK_MODE: 'Dark theme',
-	LIGHT_MODE: 'Light theme'
+	LIGHT_MODE: 'Light theme',
+	SET_NAV_HEIGHT: 'Set navigation header height',
+	SET_WINDOW_SIZE: 'Set current browser window size'
+};
+
+/******************************
+************ BROWSER **********
+*******************************/
+
+const initialWindowState = {
+	nav: {
+		height: 0,
+	},
+	window: {
+		width: 0,
+		height:0,
+	}
+};
+
+const windowReducer = (state,action) => {
+	switch(action.type) {
+	case ACTIONS.SET_NAV_HEIGHT:
+		state.nav.height = action.payload;
+		return { ... state};
+	case ACTIONS.SET_WINDOW_SIZE:
+		state.window.width = action.payload.width;
+		state.window.height = action.payload.height;
+		return { ... state};
+	}
 };
 
 /******************************
@@ -54,18 +82,20 @@ const colorReducer = (state,action) => {
 	}
 };
 
-
 // Final Provider
 export const GlobalProvider = ({ children }) => {
 	const [layoutStoreState, layoutDispatch] = useReducer(layoutReducer, initialLayoutState);
 	const [colorStoreState, colorDispatch] = useReducer(colorReducer, initialColorState);
+	const [windowStoreState, windowDispatch ] = useReducer(windowReducer, initialWindowState);
 
 	return (
 		<Provider value={
 			{ layoutStoreState,
 				layoutDispatch,
 				colorStoreState,
-				colorDispatch }
+				colorDispatch,
+				windowStoreState,
+				windowDispatch }
 		}
 		>
 			{children}

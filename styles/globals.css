@@ -156,6 +156,18 @@ a {
   }
 }
 
+.homepage-div {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .homepage-div {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 .nav-link {
   color: #000 !important;
   margin-left: 16px;
@@ -199,11 +211,12 @@ a {
   }
 }
 
-.toggle-div {
-  position: fixed;
-  top: 4px;
-  right: 60px;
-  z-index: 3;
+.drag-cursor {
+  margin: 0;
+  position: relative;
+  width: 50vw;
+  cursor: url("../public/images/site/drag-cursor-1.svg"), auto !important;
+  /* cursor:  25 25 pointer !important; */
 }
 
 /* ABOUT COMPONENT */

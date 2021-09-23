@@ -1,21 +1,28 @@
 import React from 'react';
 import PostGrid from '../components/Posts/PostGrid';
 import Mode from '../components/Posts/Mode';
+import { useContext } from 'react';
+import { GlobalContext } from '../store';
 
 export default function Homepage(props) {
+	const { windowStoreState } = useContext(GlobalContext);
+	const { nav } = windowStoreState;
+
 	return (
-		<>
-			<div className="w-100 d-flex justify-content-end margin-top-100 toggle-div">
+		<div className="homepage-div" style={{paddingTop:`${nav.height}px`}}>
+			<div className="container-fluid">
 				<div className="row">
 					<Mode/>
 				</div>
 			</div>
 
-			<div className="w-100 margin-top-100">
+			<div className="container-fluid">
 				<div className="row">
-					<PostGrid posts={props.posts} />
+					<div className="px-0">
+						<PostGrid posts={props.posts} />
+					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

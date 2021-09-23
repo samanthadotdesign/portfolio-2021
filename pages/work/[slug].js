@@ -63,11 +63,10 @@ export default function Slug(props) {
 	// Generates the final markdown article 
 	return (
 		<>
-			{toc && 
-				<TableOfContents headings={headings} activeId={activeId}/>
-			}	
-			<h1 className="fixed">{activeId}</h1>
 			<article id="article-body" className="article-body">
+				{toc && 
+				<TableOfContents headings={headings} activeId={activeId}/>
+				}	
 				< MDXRemote {
 					...serializedContent
 				}

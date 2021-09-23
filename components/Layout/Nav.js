@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext, useRef } from 'react';
+import { GlobalContext, ACTIONS } from '../../store';
 import Link from 'next/link';
+import useResizeObserver from 'use-resize-observer';
 
 export default function Nav() {
+	const navRef = useRef(null);
+	const { windowDispatch } = useContext(GlobalContext);
+	useResizeObserver({
+		ref: navRef,
+		onResize: ( { height } ) => {
+			windowDispatch( { type: ACTIONS.SET_NAV_HEIGHT, payload: height});
+		}
+	});
+
 	return (
-		<>
-			<div className="nav-header w-100 d-flex justify-content-between m-0 fixed-top">
+		<div ref={navRef} className="w-100 m-0 fixed-top">
+			<div className="nav-header d-flex justify-content-between " >
 				<Link href="/">
 					<a className="nav-logo">SAMANTHA LEE</a>
 				</Link>
@@ -17,6 +28,6 @@ export default function Nav() {
 					</Link>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

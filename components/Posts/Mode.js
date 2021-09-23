@@ -16,8 +16,10 @@ export default function Mode() {
 	};
 
 	return (
-		<button className="layout-toggle-btn" onClick={toggleMessy}>
-			{isMessy ? 'SNAP TO GRID' : 'LAUNCH CHAOS'}
-		</button>
+		<div className="d-flex justify-content-end px-0">
+			<button className="layout-toggle-btn px-0" onClick={toggleMessy}>
+				{isMessy ? 'SNAP TO GRID' : 'LAUNCH CHAOS'}
+			</button>
+		</div>
 	);
 }
