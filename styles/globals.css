@@ -231,6 +231,20 @@ a {
   margin-top: 60px !important;
 }
 
+.padding-right-24 {
+  padding-right: 24px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .padding-right-24 {
+    padding-right: 0px !important;
+  }
+}
+
+.padding-bottom-24 {
+  padding-bottom: 24px !important;
+}
+
 @media screen and (max-width: 768px) {
   .margin-top-100 {
     margin-top: 40px;

@@ -7,6 +7,7 @@ import MarkdownImage from '../../components/PostDetail/MarkdownImage';
 import LoopingVideo from '../../components/PostDetail/LoopingVideo';
 import PostLayout from '../../components/PostDetail/PostLayout';
 import FullWidthContainer from '../../components/PostDetail/FullWidthContainer';
+import AccordionContainer from '../../components/PostDetail/AccordionContainer';
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
@@ -15,6 +16,7 @@ const availableComponentsForMarkdown = {
 	MarkdownImage,
 	PostLayout,
 	FullWidthContainer,
+	AccordionContainer,
 };
 
 // Search friendly URL
