@@ -6,6 +6,7 @@ import useResizeObserver from 'use-resize-observer';
 export default function Nav() {
 	const navRef = useRef(null);
 	const { windowDispatch } = useContext(GlobalContext);
+	// Getting the height of the nav
 	useResizeObserver({
 		ref: navRef,
 		onResize: ( { height } ) => {

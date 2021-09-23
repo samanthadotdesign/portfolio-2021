@@ -29,6 +29,9 @@ export default function About() {
 						<Link href="https://www.linkedin.com/in/samanthadotdesign/">
 							<a className="btn-link">LINKEDIN</a>
 						</Link>
+						<Link href="https://www.github.com/samanthadotdesign/">
+							<a className="btn-link">GITHUB</a>
+						</Link>
 					</div>
 				</div>
 			</div>

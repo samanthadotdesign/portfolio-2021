@@ -17,7 +17,7 @@ export default function AccordionContainer(props) {
 			<AccordionItem>
 				<AccordionItemHeading>
 					<AccordionItemButton>
-						{title}					
+						{title}
 					</AccordionItemButton>
 				</AccordionItemHeading>
 				<AccordionItemPanel>
