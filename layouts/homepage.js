@@ -5,15 +5,17 @@ import Mode from '../components/Posts/Mode';
 export default function Homepage(props) {
 	return (
 		<>
-			<div className="w-100 d-flex justify-content-end margin-top-100 toggle-div">
+			<div className="container-fluid margin-top-100 toggle-div">
 				<div className="row">
 					<Mode/>
 				</div>
 			</div>
 
-			<div className="w-100 margin-top-100">
+			<div className="container-fluid margin-top-100 ">
 				<div className="row">
-					<PostGrid posts={props.posts} />
+					<div className="px-0">
+						<PostGrid posts={props.posts} />
+					</div>
 				</div>
 			</div>
 		</>

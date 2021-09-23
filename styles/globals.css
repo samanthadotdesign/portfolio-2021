@@ -199,6 +199,14 @@ a {
   }
 }
 
+.drag-cursor {
+  margin: 0;
+  position: relative;
+  width: 50vw;
+  cursor: url("../public/images/site/drag-cursor-1.svg"), auto !important;
+  /* cursor:  25 25 pointer !important; */
+}
+
 .toggle-div {
   position: fixed;
   top: 4px;

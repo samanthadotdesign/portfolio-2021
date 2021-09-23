@@ -99,7 +99,7 @@ export default function PostItem(props) {
 					position={position}
 					onDragStart={handleDragStart}
 					onDragStop={handleDragStop}
-					className="bordertest"
+					className="bordertest drag-cursor"
 					// maxWidth="30%"
 					// maxHeight="100px"
 					size={size}
