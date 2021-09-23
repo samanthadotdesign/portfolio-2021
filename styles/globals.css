@@ -66,15 +66,29 @@ h2 {
   }
 }
 
-h3 {
+h3,
+h4,
+.lesson-header {
   font-family: "Neue Montreal";
   font-weight: 700;
 }
 
 p,
-.article-body p {
+.article-body p,
+.article-body li,
+li {
   font-family: "Neue Montreal" !important;
   font-weight: 400;
+  font-size: 16px;
+}
+
+.lesson-header {
+  font-size: 24px !important;
+  margin: 30px 0 16px 0;
+}
+
+li {
+  margin-bottom: 6px;
 }
 
 a {
@@ -146,7 +160,7 @@ a {
 
 .nav-header,
 .footer-div {
-  padding: 40px 60px;
+  padding: 40px 60px 16px 60px;
 }
 
 @media screen and (max-width: 768px) {
