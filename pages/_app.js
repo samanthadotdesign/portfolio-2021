@@ -5,7 +5,6 @@ import '/node_modules/react-grid-layout/css/styles.css';
 import '/node_modules/react-resizable/css/styles.css';
 import '../styles/variables.scss';
 import Nav from '../components/Layout/Nav';
-import Footer from '../components/Layout/Footer';
 
 function MyApp({ Component, pageProps }) {
 	const isDark = false;
@@ -70,7 +69,6 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Nav/>
 			<Component {...pageProps} />
-			<Footer/>
 		</GlobalProvider>
 	);
 }

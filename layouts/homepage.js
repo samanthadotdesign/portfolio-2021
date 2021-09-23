@@ -1,7 +1,6 @@
-import React from 'react';
 import PostGrid from '../components/Posts/PostGrid';
 import Mode from '../components/Posts/Mode';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../store';
 
 export default function Homepage(props) {
