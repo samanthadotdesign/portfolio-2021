@@ -1,5 +1,4 @@
 import React, { createContext, useReducer } from 'react';
-
 export const GlobalContext = createContext(null);
 const { Provider } = GlobalContext;
 
@@ -44,7 +43,7 @@ const windowReducer = (state,action) => {
 
 // Set to messy layout by default
 const initialLayoutState = { 
-	isMessy: true,
+	isMessy: false,
 };
 
 // Homepage layout
@@ -66,7 +65,7 @@ const layoutReducer = (state, action) => {
 *******************************/
 
 const initialColorState = {
-	isDarkMode: true,
+	isDarkMode: false,
 };
 
 const colorReducer = (state,action) => {

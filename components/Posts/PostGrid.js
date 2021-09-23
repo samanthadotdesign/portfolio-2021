@@ -39,7 +39,7 @@ export default function PostGrid(props) {
 						return (
 							<div 
 								key={index} 
-								className="bordertest drag-cursor"
+								className="drag-cursor"
 								data-grid={
 									{x, y, 
 										w, h, 

@@ -1,19 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import { getPostData, getPostFiles } from '../../lib/getPostData';
 import { MDXRemote } from 'next-mdx-remote';
+import getAllHeadings from '../../lib/getAllHeadings';
 import TableOfContents from '../../components/PostDetail/TableOfContents';
 import MarkdownImage from '../../components/PostDetail/MarkdownImage';
 import LoopingVideo from '../../components/PostDetail/LoopingVideo';
 import PostLayout from '../../components/PostDetail/PostLayout';
-import getAllHeadings from '../../lib/getAllHeadings';
-
+import FullWidthContainer from '../../components/PostDetail/FullWidthContainer';
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	TableOfContents,
 	LoopingVideo,
 	MarkdownImage,
-	PostLayout
+	PostLayout,
+	FullWidthContainer,
 };
 
 // Search friendly URL
@@ -26,7 +27,6 @@ export default function Slug(props) {
 	const { toc } = frontMatter;
 
 	// detect windowWidth and conditionally render TOC (no T)
-
 	useEffect(() => {
 		setHeadings(getAllHeadings());
 		
