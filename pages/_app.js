@@ -3,7 +3,9 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import '/node_modules/react-grid-layout/css/styles.css';
 import '/node_modules/react-resizable/css/styles.css';
-import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+import '../styles/variables.scss';
+//import '../node_modules/bootstrap/scss/bootstrap.scss';
 import Nav from '../components/Layout/Nav';
 import Footer from '../components/Layout/Footer';
 
