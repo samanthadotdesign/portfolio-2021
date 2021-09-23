@@ -70,7 +70,6 @@ export default function PostItem(props) {
 	// window height and width are rendered in the frontend
 	// Messy layout
 	useEffect(() => {
-
 		setSize({width: currentWidth, height: currentHeight});
 		if (isMessy) {
 			setPosition(
