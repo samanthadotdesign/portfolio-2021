@@ -270,7 +270,7 @@ a {
 /* TABLE OF CONTENTS */
 .toc-bullets {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 12px !important;
   margin-bottom: 4px;
   list-style-type: none;
   text-align: right;
@@ -286,7 +286,7 @@ a {
 }
 
 .toc-title {
-  font-size: 12px;
+  font-size: 12px !important;
   text-transform: uppercase;
   color: #000;
 }
