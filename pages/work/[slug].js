@@ -7,21 +7,25 @@ import MarkdownImage from '../../components/PostDetail/MarkdownImage';
 import LoopingVideo from '../../components/PostDetail/LoopingVideo';
 import PostLayout from '../../components/PostDetail/PostLayout';
 import FullWidthContainer from '../../components/PostDetail/FullWidthContainer';
+import AccordionContainer from '../../components/PostDetail/AccordionContainer';
+import LoopingVideoMobile from '../../components/PostDetail/LoopingVideoMobile';
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
 	TableOfContents,
 	LoopingVideo,
+	LoopingVideoMobile,
 	MarkdownImage,
 	PostLayout,
 	FullWidthContainer,
+	AccordionContainer,
 };
 
 // Search friendly URL
 export default function Slug(props) {
 	const [ activeId, setActiveId ] = useState('');
 	const [ headings, setHeadings ] = useState([]);
-	
+
 	const { post, frontMatter } = props;
 	const serializedContent = post;
 	const { toc } = frontMatter;

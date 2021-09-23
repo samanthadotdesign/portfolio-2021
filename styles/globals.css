@@ -98,7 +98,6 @@ li {
 }
 
 a {
-  color: inherit;
   text-decoration: none !important;
   font-family: "Neue Montreal";
   font-weight: 400;
@@ -231,11 +230,36 @@ a {
   margin-top: 60px !important;
 }
 
+.margin-bottom-36 {
+  margin-bottom: 36px !important;
+}
+
+.padding-right-24 {
+  padding-right: 24px !important;
+}
+
+.padding-left-24 {
+  padding-left: 24px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .padding-right-24,
+  .padding-left-24 {
+    padding-right: 0px !important;
+  }
+}
+
+.padding-bottom-24 {
+  padding-bottom: 24px !important;
+}
+
 @media screen and (max-width: 768px) {
   .margin-top-100 {
     margin-top: 40px;
   }
 }
+
+/* ARTICLE BODY  */
 
 .article-body {
   margin-top: 60px;
@@ -250,6 +274,11 @@ a {
   }
 }
 
+.article-body a {
+  color: #000;
+  font-weight: 700;
+}
+
 /* TABLE OF CONTENTS */
 .toc-bullets {
   text-transform: uppercase;
@@ -257,7 +286,15 @@ a {
   margin-bottom: 4px;
   list-style-type: none;
   text-align: right;
-  color: #000 !important;
+}
+
+.toc-bullets a {
+  color: #757575 !important;
+  font-weight: 400 !important;
+}
+
+.highlighted-toc {
+  color: #0d6efd;
 }
 
 .table-of-contents {
@@ -280,15 +317,33 @@ a {
 
 /* POSTS WRITTEN IN MARKDOWN */
 .visit-website {
-  outline: none;
   border: 1px solid #000;
   font-family: "Neue Montreal";
   font-size: 14px;
   text-transform: uppercase;
   padding: 4px 12px;
   background-color: #fff;
+  font-weight: 400 !important;
+  transition: background-color 0.5s ease;
+}
+
+.visit-website:hover {
+  background-color: #f0f0f0;
+  color: #000 !important;
 }
 
 .rounded-edges {
   border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+figcaption {
+  font-family: "Neue Montreal";
+  font-weight: 400;
+  font-size: 12px;
+  color: #757575;
+}
+
+.max-height-50 {
+  height: 50vw;
 }
