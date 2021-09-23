@@ -7,7 +7,7 @@ export default function About() {
 	const { nav } = windowStoreState;
 
 	return (
-		<div className="homepage-div" style={{paddingTop:`${nav.height}px`}}>
+		<div className="homepage-div margin-bottom-36" style={{paddingTop:`${nav.height}px`}}>
 			<div className="container-fluid margin-top-60">
 				<div className="row">
 					<div className="col-md-8 px-0">
