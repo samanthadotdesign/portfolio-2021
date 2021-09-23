@@ -21,37 +21,27 @@ const PostItemContainer = (props) => {
 	}, []);
 
 	return (
-		<div ref={postItemRef} className = "bordertest">
+		<div ref={postItemRef} className="bordertest mw-100 mh-100">
 			<div className="drag-cursor py-0">
 				{mediaPath.split('.')[1] == 'mp4' ?
 					<LoopingVideo 
 						src={mediaPath}
 						// autoPlay={isHover}
-						title = {
-							title
-						}
+						title = {title}
 						className = "mw-100 mh-100 userSelectNone" />
 					:
 					<Image
-						src = {
-							mediaPath
-						}
-						alt = {
-							title
-						}
-						width = {
-							ratioW
-						}
-						height = {
-							ratioH
-						}
+						src = {mediaPath}
+						alt = {title}
+						width = {ratioW}
+						height = {ratioH}
 						layout="responsive"
 						objectFit = "contain"
 						className = "mw-100 mh-100 userSelectNone" />
 				}
 			</div>
 			<div 
-				className="title-marquee-div enter-cursor"
+				className="title-marquee-div enter-cursor mw-100 mh-100"
 				onClick={goToLink} >
 				<Marquee 
 					play={isHover}

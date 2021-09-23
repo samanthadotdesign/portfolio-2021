@@ -1,3 +1,4 @@
+/* TYPOGRAPHY */
 @font-face {
   font-family: "Editorial New";
   src: url("/fonts/EditorialNew-Regular.woff") format("woff"),
@@ -103,60 +104,7 @@ a {
   font-weight: 400;
 }
 
-.userSelectNone {
-  user-select: none;
-}
-
-.bordertest {
-  border: 2px solid black;
-}
-
-/* container of the code block */
-.remark-highlight {
-  border: 1px solid #dddddd;
-  border-radius: 0.3em;
-  margin: 0.5em 0;
-  overflow: auto;
-}
-
-.remark-highlight pre[class*="language-"] {
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  overflow: initial;
-  float: left; /* 1 */
-  min-width: 100%; /* 2 */
-}
-
-/* highlight for each spotlight line */
-.remark-highlight-code-line {
-  background-color: #feb;
-  display: block;
-  margin-right: -1em;
-  margin-left: -1em;
-  padding-right: 1em;
-  padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
-}
-
-/* Gutter for line numbers when the line-numbers plugin is active */
-.remark-highlight pre[class*="language-"].line-numbers {
-  padding-left: 2.8em;
-}
-
-.fixed {
-  position: fixed;
-  top: 30;
-  right: 30;
-  z-index: 3;
-}
-
-.h-min-fit-content {
-  min-height: fit-content;
-}
-
 /* NAVIGATION */
-
 .fixed-top {
   position: absolute;
   top: 0;
@@ -172,18 +120,6 @@ a {
   .nav-header,
   .footer-div {
     padding: 16px 24px;
-  }
-}
-
-.homepage-div {
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
-@media screen and (max-width: 768px) {
-  .homepage-div {
-    padding-left: 24px;
-    padding-right: 24px;
   }
 }
 
@@ -208,7 +144,28 @@ a {
   color: #000;
 }
 
+/* MAIN LAYOUT */
+.homepage-div {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .homepage-div {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 /* HOMEPAGE */
+.userSelectNone {
+  user-select: none;
+}
+
+.bordertest {
+  border: 2px solid #000;
+}
+
 .layout-toggle-btn {
   border: none;
   outline: none;
@@ -321,7 +278,7 @@ a {
   z-index: 3 !important;
 }
 
-/* POST THAT IS IN MARKDOWN */
+/* POSTS WRITTEN IN MARKDOWN */
 .visit-website {
   outline: none;
   border: 1px solid #000;
