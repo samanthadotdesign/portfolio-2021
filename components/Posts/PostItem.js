@@ -4,41 +4,61 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
 import LoopingVideo from '../PostDetail/LoopingVideo';
+import Marquee from 'react-fast-marquee';
+import useResizeObserver from 'use-resize-observer';
 
 const PostItemContainer = (props) => {
-	const { goToLink, mediaPath, title, ratioW, ratioH } = props;
+	const { goToLink, mediaPath, title, ratioW, ratioH, isHover, postItemRef } = props;
+	const [ marqueeText, setMarqueeText ] = useState();
+
+	useEffect(() => {
+		let marqueeString = '';
+		for (let i = 0; i < 5; i += 1 ) {
+			marqueeString += title;
+			marqueeString += '·    ·    ·    ·    ·   ·    ·    ·    ·    ·';
+		}
+		setMarqueeText(marqueeString);
+	}, []);
+
 	return (
-		<div className = "mw-100 mh-100"
-			onClick = {
-				goToLink
-			} >
-			{mediaPath.split('.')[1] == 'mp4' ?
-				<LoopingVideo src={mediaPath} 
-					title = {
-						title
-					}
-					className = "mw-100 mh-100 userSelectNone" />
-				:
-				<Image
-					src = {
-						mediaPath
-					}
-					alt = {
-						title
-					}
-					width = {
-						ratioW
-					}
-					height = {
-						ratioH
-					}
-					layout="responsive"
-					objectFit = "contain"
-					className = "mw-100 mh-100 userSelectNone" />
-			}
-				
-			<div>
-				<h3>{title}</h3>
+		<div ref={postItemRef} className = "bordertest">
+			<div className="drag-cursor py-0">
+				{mediaPath.split('.')[1] == 'mp4' ?
+					<LoopingVideo 
+						src={mediaPath}
+						// autoPlay={isHover}
+						title = {
+							title
+						}
+						className = "mw-100 mh-100 userSelectNone" />
+					:
+					<Image
+						src = {
+							mediaPath
+						}
+						alt = {
+							title
+						}
+						width = {
+							ratioW
+						}
+						height = {
+							ratioH
+						}
+						layout="responsive"
+						objectFit = "contain"
+						className = "mw-100 mh-100 userSelectNone" />
+				}
+			</div>
+			<div 
+				className="title-marquee-div enter-cursor"
+				onClick={goToLink} >
+				<Marquee 
+					play={isHover}
+					speed={100}
+					gradient={false}>
+					<h4 className="marquee-title uppercase">{marqueeText}</h4>
+				</Marquee>
 			</div>
 		</div>
 	);
@@ -47,15 +67,21 @@ const PostItemContainer = (props) => {
 export default function PostItem(props) {
 	const { isMessy, post } = props;
 	const { slug, frontMatter, mdxSource } = post;
+	const [ isHover, setIsHover ] = useState(false);
 	const { title, media, ratioW, ratioH } = frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
-	const [size, setSize] = useState({width: 400, height: 200});
+	const [size, setSize] = useState();
 	const [isDragging, setIsDragging] = useState(false);
 	const rndRef = useRef(null);
+	const postItemRef = useRef(null);
+	
+	const { currentWidth, currentHeight } = useResizeObserver({ ref: postItemRef });
 
 	// window height and width are rendered in the frontend
 	// Messy layout
 	useEffect(() => {
+
+		setSize({width: currentWidth, height: currentHeight});
 		if (isMessy) {
 			setPosition(
 				{x: Math.random() * window.innerWidth, 
@@ -81,6 +107,14 @@ export default function PostItem(props) {
 			height: ref.style.height,
 		});
 	};
+
+	const handleMouseEnter = () => {
+		setIsHover(true);
+	};
+
+	const handleMouseLeave = () => {
+		setIsHover(false);
+	};
   
 	const router = useRouter();
 
@@ -95,11 +129,11 @@ export default function PostItem(props) {
 			{isMessy && 
 				<Rnd
 					ref={rndRef}
-				
 					position={position}
 					onDragStart={handleDragStart}
 					onDragStop={handleDragStop}
-					className="bordertest drag-cursor"
+					onMouseEnter={handleMouseEnter}
+					onMouseLeave={handleMouseLeave}
 					// maxWidth="30%"
 					// maxHeight="100px"
 					size={size}
@@ -111,17 +145,21 @@ export default function PostItem(props) {
 						title={title}
 						ratioW={ratioW}
 						ratioH={ratioH}
+						isHover={isHover}
+						postItemRef={postItemRef}
 					/>
 				</Rnd>
 			}
       
 			{!isMessy &&     
-        <PostItemContainer 
+        <PostItemContainer
         	goToLink={goToLink}
         	mediaPath={mediaPath}
         	title={title}
         	ratioW={ratioW}
         	ratioH={ratioH}
+        	isHover={isHover}
+        	postItemRef={postItemRef}
         />
 			}
 		</>

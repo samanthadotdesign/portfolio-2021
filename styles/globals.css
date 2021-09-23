@@ -76,10 +76,15 @@ h4,
 p,
 .article-body p,
 .article-body li,
-li {
+li,
+.marquee-title {
   font-family: "Neue Montreal" !important;
   font-weight: 400;
   font-size: 16px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .lesson-header {
@@ -229,8 +234,29 @@ a {
   margin: 0;
   position: relative;
   width: 50vw;
-  cursor: url("../public/images/site/drag-cursor-1.svg"), auto !important;
-  /* cursor:  25 25 pointer !important; */
+  cursor: url("../public/images/site/drag-cursor-1.svg"), auto;
+}
+
+.enter-cursor {
+  margin: 0;
+  position: relative;
+  width: 50vw;
+  /* cursor: pointer; */
+  cursor: url("../public/images/site/enter.svg"), auto;
+}
+
+.title-marquee-div {
+  background-color: #fff;
+  padding: 24px 0;
+  margin: -6px 0 0 0;
+}
+
+.title-marquee-div:hover {
+  color: red;
+}
+
+.object-fit-fill {
+  object-fit: fill;
 }
 
 /* ABOUT COMPONENT */
