@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { GlobalContext } from '../../store';
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
 import LoopingVideo from '../PostDetail/LoopingVideo';
 import Marquee from 'react-fast-marquee';
-import useResizeObserver from 'use-resize-observer';
 
+// Resize media inside PostItemContainer
 const PostItemContainer = (props) => {
 	const { goToLink, mediaPath, title, ratioW, ratioH, isHover, postItemRef } = props;
 	const [ marqueeText, setMarqueeText ] = useState();
@@ -54,29 +54,61 @@ const PostItemContainer = (props) => {
 	);
 };
 
+// Applies the Rnd wrapper parent conditionally
 export default function PostItem(props) {
 	const { isMessy, post } = props;
 	const { slug, frontMatter, mdxSource } = post;
 	const [ isHover, setIsHover ] = useState(false);
-	const { title, media, ratioW, ratioH } = frontMatter;
+	const { title, media, w, h, ratioW, ratioH } = frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
 	const [size, setSize] = useState();
 	const [isDragging, setIsDragging] = useState(false);
 	const rndRef = useRef(null);
 	const postItemRef = useRef(null);
+	const { windowStoreState } = useContext(GlobalContext);
+	const { window } = windowStoreState;
+
+	//const [ isHover, setIsHover ] = useState(false);
+	// Column for the size of the browser 
+	function translateColsToPercentage(windowWidth, noColumns) {
+		
+		const breakpoints = {
+			1200: 12,
+			996: 10,
+			768: 8,
+			480: 6,
+			360: 4
+		};
+
+		/* 
+			100% -> breakpoints[currentBreakpoint]
+			X    -> noColumns
+		*/
+		
+		const currentBreakpoint = Object.keys(breakpoints).reduce((accumulator, current)=>{
+			const result = windowWidth <= current ? current : accumulator;
+			return result;
+		}, 0);
+
+		return (noColumns *100)/breakpoints[currentBreakpoint];
+	}
+
 	
-	const { currentWidth, currentHeight } = useResizeObserver({ ref: postItemRef });
+	// const { currentWidth, currentHeight } = useResizeObserver({ ref: postItemRef });
 
 	// window height and width are rendered in the frontend
 	// Messy layout
 	useEffect(() => {
-		setSize({width: currentWidth, height: currentHeight});
+		// When the program first loads, it will be in the neat layout which takes values from mdx (noColumns)
+		setSize({width: w, height: h});
+		// When it's in the messy layout, it will be in percentage
 		if (isMessy) {
+			setSize({width: translateColsToPercentage(window.width, w), height: translateColsToPercentage(window.height, h)});
 			setPosition(
 				{x: Math.random() * window.innerWidth, 
 					y: Math.random() * window.innerHeight});
 		}
-	}, []);
+	}, [isMessy]);
 
 	const mediaPath = `/images/work/${slug}/${media}`;
 	const linkPath = `/work/${slug}`;
