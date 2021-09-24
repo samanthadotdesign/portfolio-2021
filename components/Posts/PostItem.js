@@ -10,7 +10,8 @@ import Marquee from 'react-fast-marquee';
 const PostItemContainer = (props) => {
 	const { goToLink, mediaPath, title, ratioW, ratioH, isHover, postItemRef } = props;
 	const [ marqueeText, setMarqueeText ] = useState();
-
+	console.log(isHover);
+	console.log('******');
 	useEffect(() => {
 		let marqueeString = '';
 		for (let i = 0; i < 5; i += 1 ) {
@@ -26,7 +27,7 @@ const PostItemContainer = (props) => {
 				{mediaPath.split('.')[1] == 'mp4' ?
 					<LoopingVideo 
 						src={mediaPath}
-						// autoPlay={isHover}
+						autoPlay={isHover}
 						title = {title}
 						className = "object-fit-cover w-100 h-100 userSelectNone" />
 					:
@@ -180,6 +181,8 @@ export default function PostItem(props) {
         	ratioH={ratioH}
         	isHover={isHover}
         	postItemRef={postItemRef}
+        	onMouseEnter={handleMouseEnter}
+        	onMouseLeave={handleMouseLeave}
         />
 			}
 		</>
