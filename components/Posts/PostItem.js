@@ -66,34 +66,28 @@ export default function PostItem(props) {
 	const rndRef = useRef(null);
 	const postItemRef = useRef(null);
 	const { windowStoreState } = useContext(GlobalContext);
-	const { window } = windowStoreState;
+	const { window, breakpoints, cols } = windowStoreState;
+	// breakpointsArray = [1200,996,...]
+	const breakpointsArr = Object.values(breakpoints); 
+	// colsArr = [12,10,8...]
+	const colsArr = Object.values(cols);
 
 	//const [ isHover, setIsHover ] = useState(false);
 	// Column for the size of the browser 
 	function translateColsToPercentage(windowWidth, noColumns) {
-		
-		const breakpoints = {
-			1200: 12,
-			996: 10,
-			768: 8,
-			480: 6,
-			360: 4
-		};
-
 		/* 
 			100% -> breakpoints[currentBreakpoint]
 			X    -> noColumns
 		*/
-		
-		const currentBreakpoint = Object.keys(breakpoints).reduce((accumulator, current)=>{
+		const currentBreakpoint = breakpointsArr.reduce((accumulator, current)=>{
 			const result = windowWidth <= current ? current : accumulator;
 			return result;
 		}, 0);
 
-		return (noColumns *100)/breakpoints[currentBreakpoint];
+		const colIndex = breakpointsArr.indexOf(currentBreakpoint);
+		return (noColumns *100)/colsArr[colIndex];
 	}
 
-	
 	// const { currentWidth, currentHeight } = useResizeObserver({ ref: postItemRef });
 
 	// window height and width are rendered in the frontend
@@ -103,17 +97,23 @@ export default function PostItem(props) {
 		setSize({width: w, height: h});
 		// When it's in the messy layout, it will be in percentage
 		if (isMessy) {
-			setSize({width: translateColsToPercentage(window.width, w), height: translateColsToPercentage(window.height, h)});
+			const widthPercentage = translateColsToPercentage(window.width, w);
+			const heightPercentage = translateColsToPercentage(window.height, h);
+			
+			//console.log('CHECKING PERCENTAGES', window, widthPercentage, heightPercentage);
+
+			setSize({width: `${widthPercentage}%`, height: `${heightPercentage}%`});
 			setPosition(
-				{x: Math.random() * window.innerWidth, 
-					y: Math.random() * window.innerHeight});
+				{x: Math.random() * window.width, 
+					y: Math.random() * window.height});
 		}
-	}, [isMessy]);
+	}, []);
 
 	const mediaPath = `/images/work/${slug}/${media}`;
 	const linkPath = `/work/${slug}`;
 
 	const handleDragStart = ()=>{
+		//console.log('CHECKING HANDLE DRAG STARRT', position, size);
 		setIsDragging(true);
 	};
   
