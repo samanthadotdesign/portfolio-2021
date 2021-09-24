@@ -32,6 +32,9 @@ export default function About() {
 						<Link href="https://www.github.com/samanthadotdesign/">
 							<a className="btn-link">GITHUB</a>
 						</Link>
+						<Link href="mailto:hi@samantha.design">
+							<a className="btn-link">EMAIL</a>
+						</Link>
 					</div>
 				</div>
 			</div>

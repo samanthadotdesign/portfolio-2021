@@ -22,6 +22,20 @@ const initialWindowState = {
 	window: {
 		width: 0,
 		height:0,
+	},
+	breakpoints: {
+		lg: 1200,
+		md: 996,
+		sm: 768,
+		xs: 480,
+		xxs: 360,
+	},
+	cols: {
+		lg: 12,
+		md: 10,
+		sm: 8,
+		xs: 6,
+		xxs: 4,
 	}
 };
 

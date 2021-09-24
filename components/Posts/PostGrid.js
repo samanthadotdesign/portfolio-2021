@@ -7,8 +7,9 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 export default function PostGrid(props) {
 	const { posts } = props; 
-	const { layoutStoreState } = useContext(GlobalContext); 
+	const { layoutStoreState, windowStoreState } = useContext(GlobalContext); 
 	const { isMessy } = layoutStoreState;
+	const { breakpoints, cols } = windowStoreState;
 	// Generate a dynamic layout  
 	return (
 		<>    
@@ -31,8 +32,8 @@ export default function PostGrid(props) {
 					//isBounded={true}
 					preventCollision={true}
 					compactType='horizontal'
-					breakpoints={{lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0}}
-					cols={{lg: 12, md: 10, sm: 6, xs: 4, xxs: 2}}>
+					breakpoints={breakpoints}
+					cols={cols}>
 					{posts.map((post, index) => {
 						const { x, y, w, h } = post.frontMatter;
 						
