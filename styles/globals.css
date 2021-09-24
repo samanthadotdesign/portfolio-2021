@@ -171,6 +171,10 @@ a {
   border: 2px solid #000;
 }
 
+.bg-white {
+  background-color: #fff;
+}
+
 .layout-toggle-btn {
   border: none;
   outline: none;
@@ -185,22 +189,18 @@ a {
 .drag-cursor {
   margin: 0;
   position: relative;
-  width: 50vw;
   cursor: url("../public/images/site/drag-cursor-1.svg"), auto;
 }
 
 .enter-cursor {
   margin: 0;
   position: relative;
-  width: 50vw;
   /* cursor: pointer; */
   cursor: url("../public/images/site/enter.svg"), auto;
 }
 
 .title-marquee-div {
-  background-color: #fff;
-  padding: 24px 0;
-  margin: -6px 0 0 0;
+  height: 75px;
 }
 
 .title-marquee-div:hover {

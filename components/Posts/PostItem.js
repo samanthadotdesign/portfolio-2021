@@ -21,7 +21,7 @@ const PostItemContainer = (props) => {
 	}, []);
 
 	return (
-		<div ref={postItemRef} className="bordertest mw-100 mh-100">
+		<div ref={postItemRef} className="bordertest mw-100 mh-100 bg-white">
 			<div className="drag-cursor py-0">
 				{mediaPath.split('.')[1] == 'mp4' ?
 					<LoopingVideo 
@@ -41,7 +41,7 @@ const PostItemContainer = (props) => {
 				}
 			</div>
 			<div 
-				className="title-marquee-div enter-cursor mw-100 mh-100"
+				className="title-marquee-div enter-cursor d-flex align-items-center"
 				onClick={goToLink} >
 				<Marquee 
 					play={isHover}
@@ -113,7 +113,6 @@ export default function PostItem(props) {
 	const linkPath = `/work/${slug}`;
 
 	const handleDragStart = ()=>{
-		//console.log('CHECKING HANDLE DRAG STARRT', position, size);
 		setIsDragging(true);
 	};
   
