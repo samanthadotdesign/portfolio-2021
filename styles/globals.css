@@ -347,3 +347,7 @@ figcaption {
 .max-height-50 {
   height: 50vw;
 }
+
+.object-fit-cover {
+  object-fit: cover;
+}
