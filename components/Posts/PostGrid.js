@@ -14,15 +14,15 @@ export default function PostGrid(props) {
 	return (
 		<>    
 			{isMessy && 
-      < div className = "layout" > 
-      	{posts.map((post) => (
-      		<PostItem
-      			key={post.slug}
-      			post={post}
-      			isMessy={isMessy}
-      		/>
-      	))}
-      </div>
+      	<div className = "layout" > 
+      		{posts.map((post) => (
+      			<PostItem
+      				key={post.slug}
+      				post={post}
+      				isMessy={isMessy}
+      			/>
+      		))}
+      	</div>
 			}
 
 			{!isMessy && 
