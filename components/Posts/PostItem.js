@@ -13,43 +13,43 @@ const PostItemContainer = (props) => {
 
 	useEffect(() => {
 		let marqueeString = '';
-		for (let i = 0; i < 5; i += 1 ) {
+		for (let i = 0; i < 20; i += 1 ) {
 			marqueeString += title;
-			marqueeString += '·    ·    ·    ·    ·   ·    ·    ·    ·    ·';
+			marqueeString += '                ';
 		}
 		setMarqueeText(marqueeString);
 	}, []);
 
 	return (
-		<div ref={postItemRef} className="bordertest w-100 h-100 bg-white d-flex flex-column">
-			<div className="drag-cursor py-0 h-100">
+		<div className="h-100 d-flex flex-column">
+			<div ref={postItemRef} className="drag-cursor d-flex h-100 position-relative"> 
+					
 				{mediaPath.split('.')[1] == 'mp4' ?
 					<LoopingVideo 
 						src={mediaPath}
 						// autoPlay={isHover}
 						title = {title}
-						className = "object-fit-cover w-100 h-100 userSelectNone" />
+						className = "position-absolute object-fit-cover w-100 h-100 userSelectNone" />
 					:
 					<Image
 						src = {mediaPath}
 						alt = {title}
-						width = {ratioW}
-						height = {ratioH}
-						layout="responsive"
+						layout="fill"
 						objectFit = "cover"
-						className = "w-100 h-100 userSelectNone" />
+						className="userSelectNone" />
 				}
+
 			</div>
 			<div 
-				className="title-marquee-div enter-cursor d-flex align-items-center"
+				className="title-marquee-div bg-white border-top border-2 border-dark enter-cursor d-flex align-items-center"
 				onClick={goToLink} >
 				<Marquee 
 					play={isHover}
 					speed={100}
 					gradient={false}>
-					<h4 className="marquee-title uppercase">{marqueeText}</h4>
+					<h4 className="marquee-title uppercase mb-0">{marqueeText}</h4>
 				</Marquee>
-			</div>
+			</div> 
 		</div>
 	);
 };
@@ -61,51 +61,53 @@ export default function PostItem(props) {
 	const [ isHover, setIsHover ] = useState(false);
 	const { title, media, w, h, ratioW, ratioH } = frontMatter;
 	const [position, setPosition] = useState( {x: 0, y: 0} );
-	const [size, setSize] = useState();
+	const [size, setSize] = useState({width:0, height:0});
 	const [isDragging, setIsDragging] = useState(false);
 	const rndRef = useRef(null);
 	const postItemRef = useRef(null);
 	const { windowStoreState } = useContext(GlobalContext);
 	const { window, breakpoints, cols } = windowStoreState;
-	// breakpointsArray = [1200,996,...]
-	const breakpointsArr = Object.values(breakpoints); 
-	// colsArr = [12,10,8...]
-	const colsArr = Object.values(cols);
+	// breakpointsArray = [360,480,768,...]
+	const breakpointsArr = Object.values(breakpoints).reverse(); 
+	// colsArr = [2,4,...]
+	const colsArr = Object.values(cols).reverse();
 
 	//const [ isHover, setIsHover ] = useState(false);
-	// Column for the size of the browser 
-	function translateColsToPercentage(windowWidth, noColumns) {
+	// Column for the size of the browser to pixels 
+	function translateColsToPixels(windowPixels, noColumns) {
 		/* 
 			100% -> breakpoints[currentBreakpoint]
 			X    -> noColumns
 		*/
 		const currentBreakpoint = breakpointsArr.reduce((accumulator, current)=>{
-			const result = windowWidth <= current ? current : accumulator;
+			//console.log('INSIDE REDUCER', windowPixels, current);
+			const result = windowPixels >= current ? current : accumulator;
 			return result;
-		}, 0);
-
+		}, 360);
 		const colIndex = breakpointsArr.indexOf(currentBreakpoint);
-		return (noColumns *100)/colsArr[colIndex];
-	}
+		const percentageNo =(noColumns * 100) / colsArr[colIndex];
+		const noPixels = windowPixels * (percentageNo / 100);
 
-	// const { currentWidth, currentHeight } = useResizeObserver({ ref: postItemRef });
+		return Math.round(noPixels);
+	}
 
 	// window height and width are rendered in the frontend
 	// Messy layout
 	useEffect(() => {
-		// When the program first loads, it will be in the neat layout which takes values from mdx (noColumns)
-		setSize({width: w, height: h});
+		console.log('CHECKING USE EFFECT TRIGGER');
+
 		// When it's in the messy layout, it will be in percentage
 		if (isMessy) {
-			const widthPercentage = translateColsToPercentage(window.width, w);
-			const heightPercentage = translateColsToPercentage(window.height, h);
-			
-			//console.log('CHECKING PERCENTAGES', window, widthPercentage, heightPercentage);
+			const widthPixels = translateColsToPixels(window.width, w);
+			const heightPixels = translateColsToPixels(window.height, h);
 
-			setSize({width: `${widthPercentage}%`, height: `${heightPercentage}%`});
+			setSize({width: `${widthPixels}px`, height: `${heightPixels}px`});
 			setPosition(
-				{x: Math.random() * window.width, 
-					y: Math.random() * window.height});
+				{x: (Math.random() * window.width) - widthPixels , 
+					y: (Math.random() * window.height) - heightPixels} )
+		} else {			
+		// When the program first loads, it will be in the neat layout which takes values from mdx (noColumns)
+			setSize({width: w, height: h});
 		}
 	}, []);
 
@@ -121,11 +123,12 @@ export default function PostItem(props) {
 		setIsDragging(false);
 	};
 
-	const handleResizeStop = (event, direction, ref, delta, position) => {
+	const handleResize = (event, direction, ref, delta, position) => {
 		setSize({
-			width: ref.style.width,
-			height: ref.style.height,
+			width: ref.offsetWidth,
+			height: ref.offsetHeight
 		});
+		setPosition(position);
 	};
 
 	const handleMouseEnter = () => {
@@ -146,7 +149,7 @@ export default function PostItem(props) {
 
 	return (
 		<>
-			{isMessy && 
+			{isMessy && (
 				<Rnd
 					ref={rndRef}
 					position={position}
@@ -154,10 +157,11 @@ export default function PostItem(props) {
 					onDragStop={handleDragStop}
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
-					// maxWidth="30%"
-					// maxHeight="100px"
-					size={size}
-					onResizeStop={handleResizeStop}
+					minWidth="100px"
+					minHeight="200px"
+					size={{width:size.width, height:size.height}}
+					onResizeStop={handleResize}
+					className="border border-2 border-dark d-flex flex-column"
 				>
 					<PostItemContainer 
 						goToLink={goToLink}
@@ -169,10 +173,10 @@ export default function PostItem(props) {
 						postItemRef={postItemRef}
 					/>
 				</Rnd>
-			}
+			)}
       
-			{!isMessy &&     
-        <PostItemContainer
+			{!isMessy && (
+				<PostItemContainer
         	goToLink={goToLink}
         	mediaPath={mediaPath}
         	title={title}
@@ -182,8 +186,8 @@ export default function PostItem(props) {
         	postItemRef={postItemRef}
         	onMouseEnter={handleMouseEnter}
         	onMouseLeave={handleMouseLeave}
-        />
-			}
+				/>
+			)}
 		</>
 	);
 }
