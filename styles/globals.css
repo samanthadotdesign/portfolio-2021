@@ -165,14 +165,8 @@ a {
 /* HOMEPAGE */
 .userSelectNone {
   user-select: none;
-}
-
-.bordertest {
-  border: 2px solid #000;
-}
-
-.bg-white {
-  background-color: #fff;
+  /* Doesn't allow interaction between div and pointer */
+  pointer-events: none;
 }
 
 .layout-toggle-btn {
@@ -200,7 +194,7 @@ a {
 }
 
 .title-marquee-div {
-  height: 75px;
+  min-height: 75px;
 }
 
 .title-marquee-div:hover {

@@ -13,7 +13,7 @@ export default function PostGrid(props) {
 	// Generate a dynamic layout  
 	return (
 		<>    
-			{isMessy && 
+			{isMessy && (
       	<div className = "layout" > 
       		{posts.map((post) => (
       			<PostItem
@@ -23,9 +23,9 @@ export default function PostGrid(props) {
       			/>
       		))}
       	</div>
-			}
+			)}
 
-			{!isMessy && 
+			{!isMessy && (
 				<ResponsiveReactGridLayout
 					// WidthProvider option
 					measureBeforeMount={false}
@@ -40,7 +40,7 @@ export default function PostGrid(props) {
 						return (
 							<div 
 								key={index} 
-								className="drag-cursor"
+								className="drag-cursor border border-2 border-dark"
 								data-grid={
 									{x, y, 
 										w, h, 
@@ -55,7 +55,7 @@ export default function PostGrid(props) {
 						);
 					})}
 				</ResponsiveReactGridLayout>
-			}
+			)}
 		</>
 	);
 }
