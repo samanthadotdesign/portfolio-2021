@@ -11,6 +11,7 @@ const PostItemContainer = (props) => {
 	const { goToLink, mediaPath, title, ratioW, ratioH, isHover, postItemRef } = props;
 	const [ marqueeText, setMarqueeText ] = useState();
 
+	// display block !important on span h4 + margin right 
 	useEffect(() => {
 		let marqueeString = '';
 		for (let i = 0; i < 20; i += 1 ) {
@@ -56,7 +57,7 @@ const PostItemContainer = (props) => {
 
 // Applies the Rnd wrapper parent conditionally
 export default function PostItem(props) {
-	const { isMessy, post } = props;
+	const { isMessy, post, onDrag, zIndex } = props;
 	const { slug, frontMatter, mdxSource } = post;
 	const [ isHover, setIsHover ] = useState(false);
 	const { title, media, w, h, ratioW, ratioH } = frontMatter;
@@ -153,7 +154,9 @@ export default function PostItem(props) {
 				<Rnd
 					ref={rndRef}
 					position={position}
-					onDragStart={handleDragStart}
+					onDragStart={()=>{
+						onDrag()
+						handleDragStart()}}
 					onDragStop={handleDragStop}
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
@@ -162,6 +165,7 @@ export default function PostItem(props) {
 					size={{width:size.width, height:size.height}}
 					onResizeStop={handleResize}
 					className="border border-2 border-dark d-flex flex-column"
+					style={{zIndex}}
 				>
 					<PostItemContainer 
 						goToLink={goToLink}
