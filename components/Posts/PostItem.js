@@ -16,7 +16,7 @@ const PostItemContainer = (props) => {
 		let marqueeString = '';
 		for (let i = 0; i < 20; i += 1 ) {
 			marqueeString += title;
-			marqueeString += '                ';
+			marqueeString += '';
 		}
 		setMarqueeText(marqueeString);
 	}, []);
@@ -42,13 +42,13 @@ const PostItemContainer = (props) => {
 
 			</div>
 			<div 
-				className="title-marquee-div bg-white border-top border-2 border-dark enter-cursor d-flex align-items-center"
+				className="title-marquee-div bg-white border-top border-2 border-dark enter-cursor d-flex align-items-center px-4"
 				onClick={goToLink} >
 				<Marquee 
 					play={isHover}
 					speed={100}
 					gradient={false}>
-					<h4 className="marquee-title uppercase mb-0">{marqueeText}</h4>
+					<h4 className="marquee-title uppercase mb-0">{title}</h4>
 				</Marquee>
 			</div> 
 		</div>
@@ -81,7 +81,6 @@ export default function PostItem(props) {
 			X    -> noColumns
 		*/
 		const currentBreakpoint = breakpointsArr.reduce((accumulator, current)=>{
-			//console.log('INSIDE REDUCER', windowPixels, current);
 			const result = windowPixels >= current ? current : accumulator;
 			return result;
 		}, 360);
@@ -95,8 +94,6 @@ export default function PostItem(props) {
 	// window height and width are rendered in the frontend
 	// Messy layout
 	useEffect(() => {
-		console.log('CHECKING USE EFFECT TRIGGER');
-
 		// When it's in the messy layout, it will be in percentage
 		if (isMessy) {
 			const widthPixels = translateColsToPixels(window.width, w);
