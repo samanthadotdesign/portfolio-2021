@@ -21,7 +21,7 @@ export default function Nav() {
 			height: window.innerHeight
 		}});
 	}, []);
-
+ƒ
 	return (
 		<div ref={navRef} className="w-100 m-0 fixed-top">
 			<div className="nav-header d-flex justify-content-between " >
