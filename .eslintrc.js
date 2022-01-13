@@ -20,18 +20,12 @@ module.exports = {
 		'react'
 	],
 	'rules': {
-		'indent': [
-			'error',
-			'tab'
-		],
+		'indent': off,
 		'linebreak-style': [
 			'error',
 			'unix'
 		],
-		'quotes': [
-			'error',
-			'single'
-		],
+		'quotes': off,
 		'semi': [
 			'error',
 			'always'
