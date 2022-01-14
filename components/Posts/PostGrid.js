@@ -59,7 +59,8 @@ export default function PostGrid(props) {
 									{x, y, 
 										w, h, 
 										minW: w, minH: h, 
-										maxW:8, maxH:4}}
+										maxW:8, maxH:4
+									}}
 							>
 								<PostItem
 									post={post}

@@ -48,7 +48,7 @@ const PostItemContainer = (props) => {
 					play={isHover}
 					speed={100}
 					gradient={false}>
-					<h4 className="marquee-title uppercase mb-0">{marqueeText}</h4>
+					<h4 className="p-3 marquee-title uppercase mb-0">{title}</h4>
 				</Marquee>
 			</div> 
 		</div>
