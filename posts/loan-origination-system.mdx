@@ -5,7 +5,7 @@ ratioW: 375
 ratioH: 812
 isFeatured: true
 toc: true
-w: 3
+w: 4
 h: 2
 x: 0
 y: 0
@@ -68,21 +68,26 @@ y: 0
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
     <p className="lesson-header">
-      Behind our biggest loan origination system revamp
+      Behind our biggest revamp
     </p>
 
-1. Underwriting is was all-or-nothing system. All roles in the sales and credit organization needed to have all the information, in order for any single part to be useful.
+1. This was an all-or-nothing endeavour. All roles in the sales and credit organization needed to have all the information, in order for any single part to be useful.
 
 2. Each loan has different risk assessment practices, which meant sales and credit roles with varying visibility for compliance. The plan was to build step-by-step, tackling one loan product at a time.
 
-3. Our platform relied on many third-party integrations for functionalities that we could not develop ourselves, such as workflow management tool, pulling credit bureau data and parsing bank statements. There were constraints to the user flows related to the results from calling the API and its responses.
+3. Our platform relied on many third-party integrations for functionalities that we could not develop ourselves, such as workflow management and pulling credit bureau data. There were constraints to the user flows related to calling these APIs.
 
-4. The basic need to store and process customer data into a central system was difficult in itself. There wasn’t a single source of truth for all loan-related matters – an Excel credit memo saved locally on an analyst’s laptop, the loan status recorded on a smaller internal tool, processing communicated over Slack and email, team leads tracked turn- manually on shared Google Sheets ...
+4. The basic need to store and process customer data into a central system was difficult in itself. There wasn’t a single source of truth for all loan-related matters.
 
 </div>
 <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>Version Nº1 — Built in EJS</figcaption>
+      <MarkdownImage 
+        src="/images/work/loan-origination-system/challenges.png" 
+        width="2000px"
+        height="1000px"
+        layout="fill"
+      />
+      <figcaption>An Excel credit memo saved locally on an analyst’s computer, filled using customers' PDFs, and communicated to the team via Trello.</figcaption>
     </div>
 </div>
 </div>
@@ -117,17 +122,21 @@ This accomplishes a few things:
         missing nuances. 
       </p>
       <p>
-        One of the challenges that emerged from this decision was users were used to seeing all the information at any given time. Everything was available to view at the same time albeit with different windows open: Slack, Excel, Google Sheets, Trello.
+        One of the challenges that emerged from this decision was users were
+        used to seeing all the information at any given time. Everything was
+        available to view at the same time albeit with different windows open:
+        Slack, Excel, Google Sheets, Trello.
       </p>
       <p>
-        We want our users to feel completing each defined task was seamless, that they weren’t sacrificing any of the information they were once used to.
+        We want our users to feel completing each defined task was seamless,
+        that they weren’t sacrificing any of the information they were once used
+        to.
       </p>
     </div>
     <div className="col-md-8">
       <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
       <figcaption>Version Nº1 — Built in EJS</figcaption>
     </div>
-
   </div>
 </div>
 
@@ -157,6 +166,25 @@ This accomplishes a few things:
       <figcaption>
         There are five different pieces of information just within this module
         and touches three loan processes
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-6 md: padding-right-24 sm: padding-bottom-24 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-before.mp4" />
+      <figcaption>
+        Before: Three crucial relationships for each task (filter, view,
+        create/reassign) were disjointed.
+      </figcaption>
+    </div>
+    <div className="col-md-6 md: padding-left-24 sm: px-0 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
+      <figcaption>
+        After: Users are able filter or sort with column headers and reassign
+        single or bulk rows.
       </figcaption>
     </div>
   </div>
