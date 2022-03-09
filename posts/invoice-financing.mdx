@@ -253,6 +253,130 @@ Having a strong editorial sensibility, and knowing when to split complex concept
 
 ## Design + Engineering
 
+Whatever gets designed for the web app needs to be transformed into code. Even though I’m a big advocate for Figma, our content will not appear there. It’s a very good approximation of what the web app should look like, but it will be displayed as part of a website in a web browser. Multiple web browsers actually.
+
+I do my best to work with developers to implement designs that mimic real life as much as possible.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+  <p className="lesson-header">Designing around worst-case scenarios</p>
+    <div className="col-md-6 pe-md-3">
+      <p>
+        One of our users’ bottlenecks was when there was unreliable connectivity, it results in a poor experience in the browser and any content took a long time to load the data. I worked with our Engineers to keep the web app lightweight to help to increase the mobile performance of our website. The most interesting I learned were the tradeoffs of different ways to render user-specific data.
+      </p>
+      <p>
+        
+      </p>
+    </div>
+    <div className="col-md-6 ps-md-3">
+      <p>
+        Server-side rendering pre-populates a page with custom content. However,
+        it would make too frequent server requests and the pages will have
+        higher TTFB (time to first byte) latency and a slower
+        time-to-interactive. Our users will see the content sooner, but if they
+        click on something, nothing will happen. Although the initial load takes
+        more time, there is a lot of dynamic data and clinet-side rendering gets
+        users 90% of the way there.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p>
+        Pre-rendering with proxy is a tradeoff between client-side and
+        server-side rendering. Every pre-rendered page displays a skeleton
+        template while the data waits to be rehydrated with AJAX/XHR requests.
+        Once the page is fetched, internal routing is done dynamically to take
+        advantage of a client-side rendered website.
+      </p>
+      <p>
+        The catch is, because this isn’t SSR, we don’t have user-specific data
+        to show at this point—it’s just a static (and somewhat generic) file
+        sent directly on the first request, as-is. Here is where we were able to
+        integrate skeleton to show the user their data is coming, to increase
+        perception of fast load time.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption>
+        The two-keyline layout also made it easy to support resizable text
+        sizes.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Designing responsively</p>
+      <p>
+        Each browser and OS system has a different way of rendering. I design
+        and make decisions on my MacBook and iPhone Retina displays.
+      </p>
+      <p>
+        The easiest way for me to see what it looks like on other devices during
+        design process before UAT is to create responsive Figma components.
+        Although it’s not the same as viewing it on Windows, it helps me
+        visualize quickly across different widths.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption>
+        The two-keyline layout also made it easy to support resizable text
+        sizes.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Styles and components</p>
+      <p>
+        Because style names can be viewed in the code panel, which is accessible
+        inside of any file for both Editors and Viewers, in many cases, it
+        becomes possible to implement variables instead of those non-scalable,
+        hand-coded values.
+      </p>
+      <p>
+        The engineer can "go to master component” to see how the component is
+        built, description, usage instructions, variants, and states that exist.
+      </p>
+      <p>
+        Along with components, taking the time to assign relevant names to
+        color, type, and effect styles, such token or variable names, makes it
+        easy for the engineers to better match what's in Figma with what's in
+        code. A drop shadow named $modal-shadow or color named $alert-warning
+        makes it clear which style to use where.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption>
+        Our engineers have access to in-progress design files, which is a great
+        way to communicate how reusable styles and components in designs are
+        being used.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+<p className="lesson-header">Checking in early and often</p>
+
+Last but not least, I’m grateful for our user-centric engineers that ask clarifying questions throughout files and flag any potential issues early instead of at the time of implementation. The entire process of going from concept to implementation is more seamless.
+
 </PostLayout>
 
 <PostLayout>
@@ -268,8 +392,78 @@ Having a strong editorial sensibility, and knowing when to split complex concept
 
 </FullWidthContainer>
 
-<PostLayout>
-
-There are a few key things to note about our dashboard.
-
-</PostLayout>
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-6 pe-md-3">
+      <p>
+        There are two types (or levels) of metrics. L1 metrics are related to
+        the effectiveness of our Silk Road product fulfilling users’ jobs as it
+        is used primarily for drawdown or disbursement request and checking
+        repayments and any information related to the utilization.
+      </p>
+      <ul>
+        <li>
+          <b>Loans Processed</b>
+          <br />
+          <p>
+            Completion rate is very high. 94-95% success for disbursement
+            requests.
+          </p>
+        </li>
+        <li>
+          <b>Loan Count</b>
+          <br />
+          <p></p>
+        </li>
+        <li>
+          <b>WAU/MAU</b>
+          <br />
+          <p>Proportional to user base and volume of loans processed</p>
+        </li>
+        <li>
+          <b>Active users</b>
+          <br />
+          <p>Churn rate is high.</p>
+        </li>
+      </ul>
+    </div>
+    <div className="col-md-6 ps-md-3">
+      <p>
+        L2 metrics are contributing factors that correlate with usability,
+        experience and design that help users while using Silk Road. There is
+        room to explore in improving L2 metrics, which might contribute to the
+        improvement of L1 metrics.
+      </p>
+      <ul>
+        <li>
+          <b>NPS</b>
+          <br />
+          <p>
+            Completion rate is very high. 94-95% success for disbursement
+            requests.
+          </p>
+        </li>
+        <li>
+          <b>Number of clicks</b>
+          <br />
+          <p></p>
+        </li>
+        <li>
+          <b>Platform experience</b>
+          <br />
+          <p>Proportional to user base and volume of loans processed</p>
+        </li>
+        <li>
+          <b>Design and user experience</b>
+          <br />
+          <p>Churn rate is high.</p>
+        </li>
+        <li>
+          <b>Number of calls to helpdesk</b>
+          <br />
+          <p>Churn rate is high.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -24,7 +24,7 @@ y: 0
 </FullWidthContainer>
 <div className="row d-flex justify-content-between">
 
-<div className="col-md-4">
+<div className="col-md-4 pe-md-4">
   <p className="lesson-header">Funding Societies</p>
   <p>
     Underwriting loans is the foundation of our business at Funding Societies.
@@ -33,7 +33,7 @@ y: 0
   </p>
 </div>
 
-<div className="col-md-4">
+<div className="col-md-4 px-md-4">
   <p className="lesson-header">Command Center</p>
   <p>
     Command Center allows all roles across the loan process to take mounds of
@@ -45,7 +45,7 @@ y: 0
   </p>
 </div>
 
-<div className="col-md-4">
+<div className="col-md-4 ps-md-4">
   <p className="lesson-header">Design Lead, 2019–2021</p>
   <p>
     I had the unique opportunity to use in-progress and final prototypes to
@@ -117,9 +117,9 @@ This accomplishes a few things:
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Contextual Inquiry</p>
       <p>
-        I conducted contextual inquiry interviews to deeply understand the
-        current origination and underwriting process, especially to capture
-        missing nuances. 
+        My colleague and I conducted contextual inquiry interviews with 20
+        users across all positions to deeply understand the current origination
+        and underwriting process, especially to capture missing nuances. 
       </p>
       <p>
         One of the challenges that emerged from this decision was users were
@@ -134,8 +134,11 @@ This accomplishes a few things:
       </p>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>Version Nº1 — Built in EJS</figcaption>
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>
+        I developed this framework to document the raw interviews, describing
+        job stories at a high-level, then in detail with screenshots and quotes.
+      </figcaption>
     </div>
   </div>
 </div>
@@ -173,14 +176,14 @@ This accomplishes a few things:
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-6 md: padding-right-24 sm: padding-bottom-24 ">
+    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
       <LoopingVideo src="/images/work/loan-origination-system/tasklist-before.mp4" />
       <figcaption>
         Before: Three crucial relationships for each task (filter, view,
         create/reassign) were disjointed.
       </figcaption>
     </div>
-    <div className="col-md-6 md: padding-left-24 sm: px-0 ">
+    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
       <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
       <figcaption>
         After: Users are able filter or sort with column headers and reassign
@@ -222,31 +225,51 @@ This accomplishes a few things:
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Task Real Estate</p>
-      <p>
-        Because screen real estate is at a premium in advanced software, it was
-        important that we defend our choice to add more whitespace to the UI.
-      </p>
-      <p>
-        It’s a lot of work to keep something simple and we weren’t chasing
-        simplicity in the abstract. At the feature level, we have to constantly
-        negotiate to make sure that we don't end up with this awkward clutter of
-        all things, but are instead fairly opinionated in translating how the
-        business is making the loan process more modular.
-      </p>
-      <p>
-        Competitive analysis like this contextualized our decisions and reminded
-        everyone that just because a UI change feels drastic internally, when
-        compared to the broader software landscape it might be completely within
-        the norm.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-1.mp4" />
       <figcaption>
-        We aim to give the users as much data and control as they need to be
-        confident of their decisions.
+        Configuration exploration for aligning content with two keylines. The
+        hypothesis was we could use two-column sections to avoid vertical scroll
+        and improve legibility.{" "}
+      </figcaption>
+    </div>
+    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
+      <figcaption>
+        After: Users are able filter or sort with column headers and reassign
+        single or bulk rows.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+<p className="lesson-header">Task Real Estate</p>
+
+Because screen real estate is at a premium in advanced software, it was important that we defend our choice to add more whitespace to the UI.
+
+It’s a lot of work to keep something simple and we weren’t chasing simplicity in the abstract. At the feature level, we have to constantly negotiate to make sure that we don't end up with this awkward clutter of all things, but are instead fairly opinionated in translating how the business is making the loan process more modular.
+
+Competitive analysis helped to contextualize our decisions and reminded everyone that just because a UI change feels drastic internally, when compared to the broader software landscape it might be completely within the norm.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-5 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/loanview-before.mp4" />
+      <figcaption>
+        Before: There simply was not enough space for the tasks users were
+        expected to do when it was stacked inside the loan view.
+      </figcaption>
+    </div>
+    <div className="col-md-7 pt-md-0 ps-md-4 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
+      <figcaption>
+        After: In the modular approach, users were able to do everything
+        directly on the loan itself, such as documenting their comments, which
+        were previously Slack threads.
       </figcaption>
     </div>
   </div>
