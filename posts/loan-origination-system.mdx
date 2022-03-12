@@ -287,19 +287,29 @@ This began my close collaboration with developers, where I would experiment to s
 
 </PostLayout>
 
+<PostLayout>
+
+<p className="lesson-header">Advanced Search</p>
+
+Our database of borrowers and their loans is our source of truth. As teams process repeat customers, the searchbar is included in multiple parts of the Command Center.
+
+</PostLayout>
+
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Advanced Search</p>
-      <p>
-        Our database of borrowers and their loans is our source of truth. As
-        teams process repeat customers, the searchbar is included in multiple
-        parts of the Command Center.
-      </p>
+    <div className="col-md-5 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/autocomplete-search.mp4" />
+      <figcaption>
+        One of my suggestions was to use autocomplete, predictive search to
+        provide instant results.
+      </figcaption>
     </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>Advanced Search</figcaption>
+    <div className="col-md-7 pt-md-0 ps-md-4 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/search-modal.mp4" />
+      <figcaption>
+        With the constraints of fetching from the database, I designed the
+        search interaction to take place inside a modal instead.
+      </figcaption>
     </div>
   </div>
 </div>
@@ -455,11 +465,13 @@ We included typography and colour proportions foundations from marketing and con
       </p>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>
-        Subtle changes in type size, weight, and colour allowed us to clearly
-        delineate between actionable and non-actionable text.
-      </figcaption>
+      <MarkdownImage
+        className="rounded-edges"
+        src="/images/work/loan-origination-system/styleguide.png"
+        width="3360px"
+        height="2024px"
+        layout="fill"
+      />
     </div>
   </div>
 </div>
