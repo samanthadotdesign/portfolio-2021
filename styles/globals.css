@@ -257,11 +257,11 @@ a {
 
 .article-body {
   margin-top: 60px;
-  padding: 60px;
+  padding: 0 60px 60px;
   overflow-x: hidden;
 }
 
-.article-body > * {
+.article-body > *:not(:nth-child(2)) {
   margin-top: 100px;
   margin-bottom: 100px;
 }
@@ -354,4 +354,13 @@ figcaption {
 
 .object-fit-cover {
   object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding-top: 83px;
+  margin-top: -83px;
 }

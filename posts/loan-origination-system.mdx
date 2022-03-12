@@ -17,11 +17,13 @@ y: 0
 
 </PostLayout>
 
-<FullWidthContainer>
+<div className="mw-100 override-toc d-flex justify-content-center align-items-center">
+  <div className="col-md-8">
+    <LoopingVideo src="/images/work/loan-origination-system/task.mp4" />
+    <figcaption>We embedded the comment tasks inside a table view.</figcaption>
+  </div>
+</div>
 
-<LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-
-</FullWidthContainer>
 <div className="row d-flex justify-content-between">
 
 <div className="col-md-4 pe-md-4">
@@ -92,12 +94,6 @@ y: 0
 </div>
 </div>
 
-<FullWidthContainer>
-
-<LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-
-</FullWidthContainer>
-
 <PostLayout>
 
 ## Module Configuration
@@ -165,10 +161,10 @@ This accomplishes a few things:
       </p>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
       <figcaption>
-        There are five different pieces of information just within this module
-        and touches three loan processes
+        Configuration exploration: Stacking the information the users wanted to
+        to see in one task led to confusion.
       </figcaption>
     </div>
   </div>
@@ -201,9 +197,7 @@ This accomplishes a few things:
         all kinds of work on the Command Center. We wanted to maintain
         consistent behaviour and covered the dozens of edge cases. The final
         arrangement establishes a logical, consistent eye-flow for users and
-        groups tsk elements by their relationships to each other. It was
-        important that the task was given a clear sense of “place” for users
-        inside of the massive sea of mixed content.
+        groups tsk elements by their relationships to each other.
       </p>
       <p>
         I also worked on systems to expand on previously built work to allow for
@@ -213,7 +207,7 @@ This accomplishes a few things:
       </p>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-3.mp4" />
       <figcaption>
         The result gets users into the information they need to fill faster and
         creates a tighter correlation between the task input and the information
@@ -228,16 +222,17 @@ This accomplishes a few things:
     <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
       <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-1.mp4" />
       <figcaption>
-        Configuration exploration for aligning content with two keylines. The
+        Configuration exploration: Align content with two keylines. The
         hypothesis was we could use two-column sections to avoid vertical scroll
-        and improve legibility.{" "}
+        and improve legibility.
       </figcaption>
     </div>
     <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-2.mp4" />
       <figcaption>
-        After: Users are able filter or sort with column headers and reassign
-        single or bulk rows.
+        Configuration exploration: Separate all the view-only content in a
+        separate page. It gives the task a clear sense of “place” for users
+        inside of the massive sea of mixed content.
       </figcaption>
     </div>
   </div>
@@ -254,6 +249,13 @@ It’s a lot of work to keep something simple and we weren’t chasing simplicit
 Competitive analysis helped to contextualize our decisions and reminded everyone that just because a UI change feels drastic internally, when compared to the broader software landscape it might be completely within the norm.
 
 </PostLayout>
+
+<div className="mw-100 override-toc d-flex justify-content-center align-items-center">
+  <div className="col-md-8">
+    <LoopingVideo src="/images/work/loan-origination-system/task.mp4" />
+    <figcaption>We embedded the comment tasks inside a table view.</figcaption>
+  </div>
+</div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
@@ -302,35 +304,43 @@ This began my close collaboration with developers, where I would experiment to s
   </div>
 </div>
 
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Multicheckbox Dropdown</p>
-      <p>
-        Our database of borrowers and their loans is our source of truth. As
-        teams process repeat customers, the searchbar is included in multiple
-        parts of the Command Center.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>Advanced search</figcaption>
-    </div>
+<PostLayout>
+  <p className="lesson-header">Multiselect Dropdown</p>
+  <p>
+    In this instance where users have to select multiple borrowers who are
+    associated with one file, I experimented with angular multiselect dropdown
+    libraries. Both{" "}
+    <a href="https://github.com/CuppaLabs/angular2-multiselect-dropdown">
+      angular2-multiselect-dropdown
+    </a>
+    has rich features to handle grouping, filter, and lazy load remote data.
+  </p>
+</PostLayout>
+
+<div className="container-fluid">
+  <div>
+    <figcaption>Drag to see the code for the prototype.</figcaption>
+    <iframe
+      className="mw-100 rounded-edges"
+      height="600"
+      width="1000"
+      src="https://codesandbox.io/embed/angular-angular2-multiselect-dropdown-v985yq?autoresize=1&fontsize=12&hidenavigation=1&theme=light"
+      className="overflow-hidden"
+      title="@angular/angular2-multiselect-dropdown"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
+    <div className="col-md-5 padding-right-24">
       <p className="lesson-header">Hover over table headers and rows</p>
       <p>
         There are some parts which are built from scratch on top of the current
-        library. For table headers and rows, users can take actions on them.
-      </p>
-      <p>
-        In this example, our front-end engineer, Shubhro Bhownik created custom
-        header component for the hover-arrow effect. The library that we are
-        using cannot be used because it has server-side sorting.
+        library. In this example, our front-end engineer, Shubhro Bhownik
+        created custom header component for the hover-arrow effect. The library
+        that we are using cannot be used because it has server-side sorting.
       </p>
       <p>
         The custom header makes backend calls, based on whether the user has
@@ -339,9 +349,8 @@ This began my close collaboration with developers, where I would experiment to s
         stays on the header.
       </p>
     </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>Clicking on column headers to sort</figcaption>
+    <div className="col-md-7 ps-md-3 ps-sm-0 d-flex justify-content-center align-items-center">
+      <LoopingVideo src="/images/work/loan-origination-system/table-columns.mp4" />
     </div>
   </div>
 </div>
