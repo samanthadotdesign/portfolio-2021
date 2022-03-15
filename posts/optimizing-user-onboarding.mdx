@@ -17,28 +17,249 @@ y: 0
 
 </PostLayout>
 
-<div className="col-md-4 padding-right-24">
-  <AccordionContainer title={"Why did I include this?"}>
-    <ul>
-      <li>
-        Our web application for loans is the first customer touchpoint for loan
-        application.
-      </li>
-      <li>
-        By reducing the errors in the form application, it would help the sales
-        processing be more efficient.
-      </li>
-      <li>We conducted usability testing for desktop and mobile.</li>
-      <li>
-        We discussed adding this form field component to our Pantry Design
-        System.
-      </li>
-    </ul>
-  </AccordionContainer>
+<div className="row d-flex">
+
+<div className="col-md-2 pe-md-4">
+  <p className="lesson-header">My Role</p>
+  <p>
+    UX and UI design
+    <br />
+    Usability Testing
+  </p>
 </div>
 
-<FullWidthContainer>
+<div className="col-md-2 pe-md-4">
+  <p className="lesson-header">Team</p>
+  <p>
+    1 Product Manager
+    <br />1 Frontend Developer
+  </p>
+</div>
 
-<LoopingVideo src="/images/work/make-it-pop/desktop_av.mp4" />
+<div className="col-md-2 pe-md-4">
+  <p className="lesson-header">Timeline</p>
+  <p>Jan – Feb 2022</p>
+</div>
 
-</FullWidthContainer>
+</div>
+
+<div className="row d-flex justify-content-between">
+
+<h2>Project Overview</h2>
+
+<div className="col-md-4 pe-md-4">
+  <p className="lesson-header">The Product</p>
+  <p>
+    Funding Societies provides financing for small and medium-sized enterprises.
+    Customers can apply directly online on our website. They value speed. To
+    improve the time it takes for loans to get approved, we automate basic
+    checks during onboarding and screening through this Instant Approval
+    feature.
+  </p>
+</div>
+
+<div className="col-md-4 px-md-4">
+  <p className="lesson-header">The Problem</p>
+  <p>
+    30–40% of web application submissions contain errors in critical
+    identification fields. This delays processing time for customers and even
+    results in rejections. To fully leverage our
+    <a href="https://samantha.design/work/loan-origination-system">
+      automated underwriting tool
+    </a>, we need to ensure that users’ data is clean and standardised. We want to
+    make an “instant” promise to customers, but we are playing catch up with customers'
+    expectations.
+  </p>
+</div>
+
+<div className="col-md-4 ps-md-4">
+  <p className="lesson-header">The Solution</p>
+  <p>
+    We use a third-party identity document verification tool,
+    <a href="https://onfido.com/">Onfido</a> to quickly verify a user’s identity
+    with just their ID and face. Our hypothesis is one of the reasons why users submit
+    incorrect information is that after they upload their ID, their ID information
+    is parsed into the application form fields. Users assume that the parsing is
+    accurate and don’t correct it if there are typos.
+  </p>
+</div>
+
+</div>
+
+<div className="container-fluid margin-top-36">
+  <h2>Understand & Analyze</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Customer Pain Points</p>
+      <ol>
+        <li>
+          After users upload their ID and it appears on the web application that
+          some fields are auto-populated, users don’t expect that they will have
+          to edit them.
+        </li>
+        <li>
+          The users finds it difficult to notice misspellings inside the form
+          fields since the application process is very long and the user gets
+          fatigued.
+        </li>
+      </ol>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Previous onboarding flow</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <p className="lesson-header">Solutions solving a similar problem</p>
+    <div className="col-md-5 pe-md-5 pb-5">
+      <p>
+        <b>Wise</b>
+        <br />
+        Tooltip emphasises the consequences for inaccurate information. However,
+        since this tooltip is there all the time, which might annoy users. Our
+        customers run their own businesses and are professionals so they might
+        feel like they are being talked "down" to.
+      </p>
+      <br />
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Wise</figcaption>
+    </div>
+    <div className="col-md-5 ps-md-5">
+      <p>
+        <b>A11Y Style Guide</b>
+        <br />
+        When tooltip only appears after a short time has passed, it gives enough
+        time to the user to realize where the tooltip is coming from. This
+        solution is best suited when users don’t know how to fill the form
+        field. In our case, users definitely know what ID information is.
+      </p>
+      <br />
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>A11Y</figcaption>
+    </div>
+  </div>
+  <div className="row d-flex">
+    <div className="col-md-5 pe-md-5 pb-5">
+      <p>
+        <b>Wise</b>
+        <br />
+        Tooltip emphasises the consequences for inaccurate information. However,
+        since this tooltip is there all the time, which might annoy users. Our
+        customers run their own businesses and are professionals so they might
+        feel like they are being talked "down" to.
+      </p>
+      <br />
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Wise</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <h2>Design</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Before</p>
+      <p>
+        Currently, we have a blue banner at the top of the "Applicant Details"
+        section that says "Please ensure full and accurate information. Any
+        inaccuracies may affect your application". But, we still have roughly
+        30% cases contain typo.
+      </p>
+      <p className="lesson-header">Concept</p>
+      <p>
+        We identified 4 critical details: Full name, ID number, Company name,
+        Company registration number.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Previous onboarding flow</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Inline Reminder</p>
+      <p>
+        We do this for details where critical details that aren’t pre-populated
+        by the system.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Previous onboarding flow</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Inline Confirmation</p>
+      <p>
+        We do this for details where the critical details are pre-populated.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Previous onboarding flow</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <h2>Testing</h2>
+  <div className="row d-flex">
+    <div className="col-md-5 pe-md-5 pb-5">
+      <p className="lesson-header">Testing</p>
+      <p>I conducted usability testing with our product manager.</p>
+      <br />
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Wise</figcaption>
+    </div>
+    <div className="col-md-7 ps-md-5">
+      <p className="lesson-header">Results</p>
+      <p>
+        90% participants completed the task with ease. <br />
+        Some people suggests that it didn't look like a button.
+      </p>
+      <br />
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>A11Y</figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+## Iteration
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Final Design</p>
+      <p>
+        We do this for details where critical details that aren’t pre-populated
+        by the system.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>Previous onboarding flow</figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+## Key Learnings
+
+</PostLayout>

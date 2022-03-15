@@ -368,11 +368,15 @@ One of the challenges was creating a performant web experience that users were f
 
 </PostLayout>
 
-<FullWidthContainer>
-
-<LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-
-</FullWidthContainer>
+<div className="mw-100 override-toc d-flex justify-content-center align-items-center">
+  <div className="col-md-8">
+    <LoopingVideo src="/images/work/loan-origination-system/table-form.mp4" />
+    <figcaption>
+      For some tasks where there used to be manual data entry for financial
+      statements, we parse the values into the tables if possible.
+    </figcaption>
+  </div>
+</div>
 
 <PostLayout>
 
@@ -396,12 +400,6 @@ We included typography and colour proportions foundations from marketing and con
         typeface, and often in a single weight.
       </p>
       <p>
-        This consistency was detrimental for many situations, where the
-        functionality of a string needs to be immediately obvious and users can
-        expect to interact with it. Feedback like color or underlining wasn't
-        always an option.
-      </p>
-      <p>
         The first change was to use Inter, which was highly legible and more
         versatile in application. This simple change made a dramatic impact in
         the presentation of information to be more refined. We used different
@@ -418,11 +416,13 @@ We included typography and colour proportions foundations from marketing and con
       </p>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>
-        Subtle changes in type size, weight, and colour allowed us to clearly
-        delineate between actionable and non-actionable text.
-      </figcaption>
+      <MarkdownImage
+        className="rounded-edges"
+        src="/images/work/loan-origination-system/type.png"
+        width="1667px"
+        height="955px"
+        layout="fill"
+      />
     </div>
   </div>
 </div>
@@ -432,20 +432,12 @@ We included typography and colour proportions foundations from marketing and con
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Style Guide</p>
       <p>
-        Material Design is immediately identifiable and strongly associated with
-        Google. While we could have incorporated logos, color palettes, and
-        other differentiating factors to support the brand identity, the
-        platform will almost always be associated with Google under its strong
-        Material Design guidelines.
-      </p>
-      <p>
-        To overcome the limitations of branding while using Material Design, I
-        worked with our front-end developers to craft a style guide for Command
-        Center. It contains the library of common components used in the product
-        and expands out to design principles for the design team to follow, as
-        well as UX guidance on usage and implementation for every piece used in
-        the product, from form elements to typography and entire screen
-        configurations.
+        I worked with our front-end developers to craft a style guide for
+        Command Center. The Pantry Design System contains the library of common
+        components used in the product and expands out to design principles for
+        the design team to follow, as well as UX guidance on usage and
+        implementation for every piece used in the product, from form elements
+        to typography and entire screen configurations.
       </p>
       <p>
         The style guide was vital for both our developers and our designers,
