@@ -99,14 +99,14 @@ y: 0
           to edit them.
         </li>
         <li>
-          The users finds it difficult to notice misspellings inside the form
+          The users found it difficult to notice misspellings inside the form
           fields since the application process is very long and the user gets
           fatigued.
         </li>
       </ol>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <LoopingVideo src="/images/work/optimizing-onboarding/before.mp4" />
       <figcaption>Previous onboarding flow</figcaption>
     </div>
   </div>
@@ -165,70 +165,300 @@ y: 0
         Currently, we have a blue banner at the top of the "Applicant Details"
         section that says "Please ensure full and accurate information. Any
         inaccuracies may affect your application". But, we still have roughly
-        30% cases contain typo.
+        30–40% applications contain typos.
       </p>
+      <p>
+        For the four critical details: <br />
+        <em>Company name</em> and <em>Company registration number</em> are not pre-populated
+        by the system. <em>Full name</em> and <em>ID number</em> are pre-populated
+        by the system and their values show by default.
+      </p>
+    </div>
+    <div className="col-md-3 pe-md-5 pb-5">
+      <MarkdownImage
+        src="/images/work/optimizing-onboarding/before-mobile.png"
+        width="375px"
+        height="812px"
+        layout="fill"
+      />
+    </div>
+    <div className="col-md-3 ps-md-5">
+      <LoopingVideo src="/images/work/optimizing-onboarding/before-mobile.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Concept</p>
       <p>
-        We identified 4 critical details: Full name, ID number, Company name,
-        Company registration number.
+        <b>Inline reminder</b>
+        <br />
+        For critical details that weren't pre-populated by the system, I
+        suggested an inline tooltip to draw more attention to them.
       </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
-      <figcaption>Previous onboarding flow</figcaption>
-    </div>
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Inline Reminder</p>
       <p>
-        We do this for details where critical details that aren’t pre-populated
-        by the system.
+        <b>Inline confirmation</b>
+        <br />
+        For critical details pre-populated by the system, I suggested a tooltip
+        where users had to confirm to dismiss. The two fields where tooltips
+        appeared were one after another, which I wanted to ensure it wasn't
+        annoying for users.
+        <br />I was concerned about the potential friction early on. The goal was
+        to make this inline confirmation so light, quick, and easy, that the users
+        don't feel like it's an additional hassle.
+        <br />Even if the details are parsed correctly, users shouldn't feel
+        like it was a big effort and hopefully conveyed a sense of
+        trustworthiness.
       </p>
     </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
-      <figcaption>Previous onboarding flow</figcaption>
+    <div className="col-md-6">
+      <MarkdownImage
+        src="/images/work/optimizing-onboarding/experiment.png"
+        width="1440px"
+        height="800px"
+        layout="fill"
+      />
+      <figcaption>Experiment: Since the user uploaded their ID, should we show it to them?</figcaption>
     </div>
-  </div>
-</div>
 
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Inline Confirmation</p>
-      <p>
-        We do this for details where the critical details are pre-populated.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
-      <figcaption>Previous onboarding flow</figcaption>
-    </div>
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
   <h2>Testing</h2>
-  <div className="row d-flex">
+  <div className="row d-flex flex-row">
     <div className="col-md-5 pe-md-5 pb-5">
       <p className="lesson-header">Testing</p>
-      <p>I conducted usability testing with our product manager.</p>
+      <p>
+        <b>Proactively mitigate experimenter bias</b>
+        <ol>
+          <li>
+            Participants were randomly assigned to either only desktop or only
+            mobile.
+          </li>
+          <li>
+            I prepared a script to avoid leading questions and took turns with
+            my colleague to be interviewer and notetaker.
+          </li>
+          <li>
+            We recorded both the device activity and facial expressions. The
+            notetaker would pay attention to facial expressions and duration of
+            time to respond on the device
+          </li>
+        </ol>
+      </p>
       <br />
       <LoopingVideo src="/images/work/optimizing-onboarding/usability.mp4" />
     </div>
-    <div className="col-md-7 ps-md-5">
-      <p className="lesson-header">Results</p>
+    <div className="col-md-6 ps-md-3 d-flex flex-column">
+      <div className="col w-75">
+        <p className="lesson-header">Results</p>
+        <p>
+          <b>Identifying biases</b>
+          <ol>
+            <li>
+              Our participants were not familiar with Figma prototypes so I
+              chose to limit the functionality. For example, instead of users
+              typing their own name in, the form field would be filled with a
+              value.
+            </li>
+            <li>
+              The interviewer briefed the participants to imagine a preset
+              scenario during loan application, which already drew attention to
+              the field. For example, "Let's say there is a misspelling in your
+              name".
+            </li>
+            <li>
+              We recruited ten colleagues for this quick usability test. They
+              would likely be more digitally literate than our customers.
+            </li>
+          </ol>
+        </p>
+      </div>
+      <div className="col">
+        <LoopingVideo src="/images/work/optimizing-onboarding/results.mp4" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex align-items-center">
+    <div className="col-md-3 padding-right-24">
+      <p className="lesson-header">Inline Reminder</p>
       <p>
-        90% participants completed the task with ease. <br />
-        Some people suggests that it didn't look like a button.
+        <b>Desktop</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 5/5 filled in the company name and registration number without
+            hesitation.
+          </li>
+          <li>👎 1/5 did not notice the tooltip at all.</li>
+          <li>
+            👎 "Wouldn't the company know exactly how their own company is
+            spelled? Maybe for registration number, there are different types."
+          </li>
+        </ul>
       </p>
-      <br />
-      <LoopingVideo src="/images/work/optimizing-onboarding/results.mp4" />
-      <figcaption>A11Y</figcaption>
+      <p>
+        <b>Mobile</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 4/5 noticed the tooltip and spent time to check the company name
+            and registration number were correct.
+          </li>
+          <li>👎 1/5 did not notice the tooltip.</li>
+          <li>
+            👎 "It is obvious what was expected to do in the first place, even
+            without the tooltip."
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-6 pe-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-4.mp4" />
+    </div>
+    <div className="col-md-2 ps-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-inlinereminder.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid">
+  <div className="row d-flex align-items-center">
+    <div className="col-md-3 padding-right-24">
+      <p className="lesson-header">Inline Confirmation</p>
+      <p>
+        <b>Interaction</b>
+        <br />
+        One tooltip was active by default. Only one tooltip was shown at any
+        given time.
+      </p>
+      <p>
+        <b>Desktop</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 4/5 carefully read the tooltips. Then, they did not hesitate and
+            easily dismissed both.
+          </li>
+        </ul>
+      </p>
+      <p>
+        <b>Mobile</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 3/5 carefully read the tooltips. Then, they did not hesitate and
+            easily dismissed both.
+          </li>
+          <li>
+            ⏳ 2/5 took longer to dismiss the tooltips but eventually completed
+            the task.
+          </li>
+          <li>
+            👎 1/5 did not notice the YES at first. Since the inline reminder
+            (tooltip above) was shown first where no action was needed, the
+            participant did not expect the second tooltip to require user
+            action.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-6 pe-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-1.mp4" />
+    </div>
+    <div className="col-md-2 ps-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-inlineconfirmation-1.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid">
+  <div className="row d-flex align-items-center">
+    <div className="col-md-3 padding-right-24">
+      <p>
+        <b>Interaction</b>
+        <br />
+        After tooltip was dismissed, the field could be edited by clicking the
+        Edit icon. On edit mode, the user has to confirm the tooltip again.
+      </p>
+      <p>
+        <b>Desktop</b>
+        <ul>
+          <li>
+            ✅ 4/5 understood that after the confirmation, the fields were
+            "locked". They easily clicked on the edit button.
+          </li>
+          <li>
+            ✅ 3/5 weren't surprised there was another tooltip confirmation when
+            the field was editable, to verify the new changes.
+          </li>
+        </ul>
+      </p>
+      <p>
+        <b>Mobile</b>
+        <ul>
+          <li>✅ 5/5 didn't hesitate to click on the icon to edit.</li>
+          <li>
+            ✅ 4/5 weren't surprised there was another tooltip confirmation when
+            the field was editable, to verify the new changes.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-6 pe-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-2.mp4" />
+    </div>
+    <div className="col-md-2 ps-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-inlineconfirmation-2.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid">
+  <div className="row d-flex align-items-center">
+    <div className="col-md-3 padding-right-24">
+      <p>
+        <b>Interaction</b>
+        <br />
+        If the user forgot to dismiss the tooltip, on "Continue", the page
+        jumped back to the tooltip with a microinteraction.
+      </p>
+      <p>
+        <b>Desktop</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 5/5 understood that they would not be able to continue to the
+            next page without dismissing the tooltip.
+          </li>
+          <li>
+            ✅ 5/5 liked that it jumped back to where they were supposed to
+            click and they looked pleasantly surprised.
+          </li>
+        </ul>
+      </p>
+      <p>
+        <b>Mobile</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 5/5 understood that they would not be able to continue to the
+            next page without dismissing the tooltip.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-6 pe-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-3.mp4" />
+    </div>
+    <div className="col-md-2 ps-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-inlineconfirmation-3.mp4" />
     </div>
   </div>
 </div>
@@ -237,20 +467,75 @@ y: 0
 
 ## Iteration
 
+Almost all the tasks were completed successfully during usability tests but there was room for improvement to make the inline confirmation button look more obvious.
+
+However, our final decision was to **remove the this confirmation altogether** because the team did not want to impose two additional clicks to the users early on in the application process.
+
+I designed and tested another concept where users **confirmed all four critical fields** at the end of the application.
+
 </PostLayout>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Final Design</p>
+    <div className="col-md-3 padding-right-24">
+      <p className="lesson-header">Confirmation Modal</p>
       <p>
-        We do this for details where critical details that aren’t pre-populated
-        by the system.
+        <b>Interaction</b>
+        <br />
+        At the final step of the application, when users clicked "Continue", a
+        confirmation modal with the details appeared. If users needed to edit,
+        they would click on the Edit button to show the editable fields.
+      </p>
+      <p>
+        <b>Desktop</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 5/5 completed the task and said it was clear what they were
+            expected to do.
+          </li>
+          <li>
+            ✅ 4/5 said it was user-friendly to have this section to check
+            details before submitting application.
+          </li>
+          <li>
+            👎 1/5 did not expect the modal at all. Based on previous
+            experience, they expected to redo the whole application again.
+          </li>
+        </ul>
       </p>
     </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
-      <figcaption>Previous onboarding flow</figcaption>
+    <div className="col-md-6 pe-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-5.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-3 padding-right-24">
+      <p>
+        <b>Mobile</b>
+        <br />
+        <ul>
+          <li>
+            ✅ 5/5 completed the task and said it was clear what they were
+            expected to do.
+          </li>
+          <li>
+            ✅ 4/5 said it was user-friendly to have this section to check
+            details before submitting application.
+          </li>
+          <li>
+            👎 1/5 did not expect the modal because they assumed the application
+            would not have any more remaining steps. The same participant also
+            mentioned it was convenient to make changes before submission.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-3 pe-md-5">
+      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-iteration.mp4" />
     </div>
   </div>
 </div>
@@ -258,5 +543,14 @@ y: 0
 <PostLayout>
 
 ## Key Learnings
+
+**Go with the less imposing version first.**
+The team decided to implement the version of inline reminders only and the confirmation modal at the end of the application to reduce the number of clicks the users needed to do.
+
+**How can we size the pain point more accurately?**
+The team didn't want to impose additional clicks for the inline confirmation for the 60–70% of users who were already doing it correctly. Although only 30–40% applications had typos, a much higher number of users could be affected because there were users who noticed the incorrect spelling and successfully submitted correct fields.
+
+**We must weigh testing biases proportionally.**
+The users would see inline reminders first in the application flow (users fill in company details first, then only upload their ID). Therefore, users would be primed that the tooltips won't be clickable. We tested successfully with ten local colleagues but they were likely more familiar with digital experiences. Inline confirmation is a more unusual interaction pattern and therefore risky, for our audience.
 
 </PostLayout>
