@@ -78,7 +78,9 @@ p,
 .article-body p,
 .article-body li,
 li,
-.marquee-title {
+.marquee-title,
+.block-quote,
+.accordion-text {
   font-family: "Neue Montreal" !important;
   font-weight: 400;
   font-size: 16px;
@@ -365,4 +367,12 @@ h4,
 h5 {
   padding-top: 83px;
   margin-top: -83px;
+}
+
+/* BLOCKQUOTE */
+
+.block-quote {
+  background: #fafafa;
+  border-left: 5px solid #faff00;
+  padding: 1em 10px;
 }

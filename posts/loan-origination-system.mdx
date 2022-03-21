@@ -235,7 +235,7 @@ This accomplishes a few things:
 
 Because screen real estate is at a premium in software, it was important that we defend our choice to add more whitespace to the UI.
 
-It takes effort to keep something simple and we were not chasing simplicity in the abstract. At the feature level, we had to constantly negotiate to avoid ending up with awkward clutter of all things, but are instead fairly opinionated in translating how the business is making the loan process more modular.
+It takes effort to keep something simple and we were not chasing simplicity in the abstract. At the feature level, we had to constantly negotiate to avoid crowding the screen with unnecessary features, and focus on translating how the business intended to make the loan process more modular.
 
 Competitive analysis helped to contextualize our decisions and reminded everyone that just because a UI change feels drastic internally, when compared to the broader software landscape it might be completely within the norm.
 
@@ -272,9 +272,9 @@ Competitive analysis helped to contextualize our decisions and reminded everyone
 
 ## Customizing Angular Libraries
 
-I learned to accept that edge cases for some interactions should be handled by the best libraries. The fact is, I’m the only designer on the team with a very lean team of developers. I can spend a lot of time designing pagination, but it’s much more robust for the developers to use an existing library. Their time is best suited not working on such small elements.
+I learned to accept that edge cases for some interactions should follow tried and tested practices from established libraries. As the only designer on the team with a very lean team of developers, I wanted to remove potential bottlenecks in development. It was much more robust for the developers to use an existing library rather than spend time working on small elements.
 
-This began my close collaboration with developers, where I would experiment to see how we can modify the styles to fit our design system, instead of designing and then handing it off the engineers. Below are a few interaction design patterns where we included my suggestions from researching and styling Angular libraries.
+I collaborated closely with developers to and I experimented to see how we can modify out-of-the-box styles to fit our design system, instead of designing and then handing it off the engineers. Below are a few interaction design patterns where we included my suggestions from researching and styling Angular libraries.
 
 </PostLayout>
 
@@ -282,7 +282,7 @@ This began my close collaboration with developers, where I would experiment to s
 
 <p className="lesson-header">Advanced Search</p>
 
-Our database of borrowers and their loans is our source of truth. As teams process repeat customers, the searchbar is included in multiple parts of the Command Center.
+Our database of borrowers and their loans is our single source of truth. We used a searchbar in multiple parts of the Command Center to allow for the processing of repeat customers easily.
 
 </PostLayout>
 
@@ -310,7 +310,7 @@ Our database of borrowers and their loans is our source of truth. As teams proce
   <p>
     In this instance where users have to select multiple borrowers who are
     associated with one file, I experimented with angular multiselect dropdown
-    libraries. Both{" "}
+    libraries. For example,{" "}
     <a href="https://github.com/CuppaLabs/angular2-multiselect-dropdown">
       angular2-multiselect-dropdown
     </a>{" "}
@@ -320,7 +320,9 @@ Our database of borrowers and their loans is our source of truth. As teams proce
 
 <div className="container-fluid">
   <div>
-    <figcaption>Drag to see the code for the prototype.</figcaption>
+    <figcaption className="pb-3">
+      Drag to see the code for the prototype.
+    </figcaption>
     <iframe
       className="mw-100 rounded-edges"
       height="600"
@@ -341,13 +343,13 @@ Our database of borrowers and their loans is our source of truth. As teams proce
         There are some parts which are built from scratch on top of the current
         library. In this example, our front-end engineer, Shubhro Bhownik
         created custom header component for the hover-arrow effect. The library
-        that we are using cannot be used because it has server-side sorting.
+        that we are using would not work because it has server-side sorting.
       </p>
       <p>
-        The custom header makes backend calls, based on whether the user has
-        clicked up or down arrows, it sends DESC/ASC parameter to the backend.
-        And when you click the arrow, it becomes highlighted as active so it
-        stays on the header.
+        The custom header makes backend calls. Based on whether the user has
+        clicked up or down arrows, it sends the DESC/ASC parameter to the
+        backend. When users click the arrow, it becomes highlighted as active so
+        it stays on the header.
       </p>
     </div>
     <div className="col-md-7 ps-md-3 ps-sm-0 d-flex justify-content-center align-items-center">
@@ -358,11 +360,11 @@ Our database of borrowers and their loans is our source of truth. As teams proce
 
 <PostLayout>
 
-## The table as a big form
+## Using tables as forms
 
-I designed many tables for viewing and selecting data but I’ll talk about these where users fill data. I was basically recreating Excel (what users are used to) for our Command Center.
+I designed many tables for viewing and selecting data but I will focus where users fill data. Our users were most familiar with Excel and I had to include similar features to create an intuitive experience for our Command Center.
 
-One of the challenges was creating a performant web experience that users were familiar with such as Google Sheets or Microsoft Excel. We had to deprioritize features like enabling calculations inside cells to focus on precise, automated parsing of PDF statements directly into the cells, which would save users more time.
+One of the challenges was creating a web experience that had the level of performance that users were familiar with in Google Sheets or Microsoft Excel. We had to deprioritize features like enabling calculations inside cells to focus on precise, automated parsing of PDF statements directly into the cells, which would save users more time.
 
 </PostLayout>
 
@@ -380,9 +382,9 @@ One of the challenges was creating a performant web experience that users were f
 
 ## UI Facelift
 
-As Funding Societies was moving into presenting itself as a financing company with a robust internal tool, I felt it was the right time to unify the product’s visual language with that of marketing and consumer product surfaces.
+As Funding Societies was becoming as a financing company with robust internal tools, I felt it was the right time to unify the product’s visual language with that of marketing and consumer product surfaces. Having a cohesive brand image even for internal tools was important in presenting the company to external stakeholders like potential customers and investors.
 
-We included typography and colour proportions foundations from marketing and consumer products. It was a simple swap but it helped to unify our surfaces across the entire company. This was an internal tool that our Engineering team has built from scratch and it deserved to look like it was.
+We included typography and colour proportions foundations from marketing and consumer products. It was a simple swap but it helped to unify our surfaces across the entire company. This was an internal tool that our Engineering team built from scratch and it deserved to <em>look</em> like the best in class product that it was.
 
 </PostLayout>
 
@@ -400,17 +402,16 @@ We included typography and colour proportions foundations from marketing and con
       <p>
         The first change was to use Inter, which was highly legible and more
         versatile in application. This simple change made a dramatic impact in
-        the presentation of information to be more refined. We used different
-        type sizes and grayscale to add a clear layer of informational hierarchy
-        within our UI that both simplified design decisions and served as a
-        clear signal to users as to the utility of the text strings in the
-        product.
+        refining the presentation of information. We used different type sizes
+        and grayscale to add a clear layer of informational hierarchy within our
+        UI that both simplified design decisions and served as a clear signal to
+        users as to the utility of different text strings in the product.
       </p>
       <p>
-        Because processing loans is a type-driven platform, changing any
-        typeface is a herculean effort, and I worked hand-in-hand with our
-        front-end developers, Stuart Hammar and Shubhro Bownik to ensure the
-        change-over was smooth.
+        Because processing loans is a primarily text-based decision making,
+        changing any typeface is a herculean effort. I worked hand-in-hand with
+        our front-end developers, Stuart Hammar and Shubhro Bownik to ensure the
+        change-over for type and spacing was smooth.
       </p>
     </div>
     <div className="col-md-8">
@@ -434,12 +435,12 @@ We included typography and colour proportions foundations from marketing and con
         Command Center. The Pantry Design System contains the library of common
         components used in the product and expands out to design principles for
         the design team to follow, as well as UX guidance on usage and
-        implementation for every piece used in the product, from form elements
-        to typography and entire screen configurations.
+        implementation for every piece used in the product. This ranged form
+        form elements to entire screen configurations.
       </p>
       <p>
         The style guide was vital for both our developers and our designers,
-        giving us a shared kit of parts to work from and ensures consistency
+        giving us a shared kit of parts to work from and ensuring consistency
         within our designs. This reduced complexity in product development and
         set a consistent pattern of expected behaviors for users. This framework
         was eventually adopted by additional suites in the customer-facing
@@ -463,14 +464,25 @@ We included typography and colour proportions foundations from marketing and con
 
 ## Impact in Digits
 
-The result of investing two years of work into our loan origination system rehaul is best described by our group CEO, Kelvin Teo: we "have proven our AI-led credit capabilities in an unprecedented financial crisis".
+We invested two years of work into our loan origination system rehaul, resulting in a significant improvement in our ability to automate and integrate AI into our credit underwriting. Our group CEO, Kelvin Teo, stated that we "have proven our AI-led credit capabilities in an unprecedented financial crisis".
 
-In Q4 2021, Funding Societies annualised loan origination that exceeded US$1
-billion. The overall platform default rate remained under 2% through the
-pandemic.
+In Q4 2021, Funding Societies annualised <b>loan origination exceeded US$1
+billion</b>. The overall platform <b>default rate remained under 2% through the
+pandemic</b>.
 
-We were able to improve the turnaround time for credit teams for accepting or declining loan cases by 30%. By capturing the end-to-end loan processing in one single system, 100% of TAT is recorded on the Command Center.
+We were able to improve the <b>turnaround time for credit teams for accepting or declining loan cases by 30%</b>. By capturing the end-to-end loan processing in one single system, 100% of TAT is recorded accurately on the Command Center.
 
-“Funding Societies is establishing a bridge for these companies to access more sustainable and cheaper financing by building unique data sets on their performance and using AI-led technology to assess their creditworthiness more effectively than traditional models.”<br/>– Greg Moon, managing partner at SoftBank Investment Advisers.
+<BlockQuote>
+  “Funding Societies is establishing a bridge for these companies to access more
+  sustainable and cheaper financing by building unique data sets on their
+  performance and using AI-led technology to assess their creditworthiness more
+  effectively than traditional models.”
+  <br />
+  <br />
+  <em className="text-muted">
+    — Greg Moon, managing partner at SoftBank Investment Advisers, investor at
+    Funding Societies
+  </em>
+</BlockQuote>
 
 </PostLayout>
