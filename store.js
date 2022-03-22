@@ -58,6 +58,7 @@ const windowReducer = (state, action) => {
 // Set to messy layout by default
 const initialLayoutState = {
   isMessy: true,
+  cursorText: "",
 };
 
 // Homepage layout
@@ -69,6 +70,8 @@ const layoutReducer = (state, action) => {
     case ACTIONS.NEAT_MODE:
       state.isMessy = false;
       return { ...state };
+    case ACTIONS.SET_CURSOR_TEXT:
+      return { ...state, cursorText: action.payload };
     default:
       return state;
   }

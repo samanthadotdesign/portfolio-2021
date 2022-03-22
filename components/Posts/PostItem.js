@@ -1,15 +1,24 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import { GlobalContext } from "../../store";
+import { GlobalContext, ACTIONS } from "../../store";
 import Image from "next/image";
 import { Rnd } from "react-rnd";
 import LoopingVideo from "../PostDetail/LoopingVideo";
-import Marquee from "react-fast-marquee";
 
 // Resize media inside PostItemContainer
 const PostItemContainer = (props) => {
-  const { goToLink, mediaPath, title, ratioW, ratioH, isHover, postItemRef } =
-    props;
+  const {
+    goToLink,
+    mediaPath,
+    title,
+    ratioW,
+    ratioH,
+    mask,
+    isHover,
+    postItemRef,
+    className,
+    style,
+  } = props;
   const [marqueeText, setMarqueeText] = useState();
 
   // display block !important on span h4 + margin right
@@ -22,12 +31,23 @@ const PostItemContainer = (props) => {
     setMarqueeText(marqueeString);
   }, []);
 
+  /* 
+  
+  let drag = false;
+
+document.addEventListener('mousedown', () => drag = false);
+document.addEventListener('mousemove', () => drag = true);
+document.addEventListener('mouseup', () => console.log(drag ? 'drag' : 'click'));
+
+*/
+
   return (
-    <div className="h-100 d-flex flex-column">
-      <div
-        ref={postItemRef}
-        className="drag-cursor d-flex h-100 position-relative"
-      >
+    <div
+      onClick={goToLink}
+      style={style}
+      className={`h-100 d-flex flex-column ${className}`}
+    >
+      <div ref={postItemRef} className="d-flex h-100 position-relative">
         {mediaPath.split(".")[1] == "mp4" ? (
           <LoopingVideo
             src={mediaPath}
@@ -45,14 +65,11 @@ const PostItemContainer = (props) => {
           />
         )}
       </div>
-      <div
-        className="title-marquee-div bg-white border-top border-2 border-dark enter-cursor d-flex align-items-center"
-        onClick={goToLink}
-      >
+      {/* <div className="title-marquee-div bg-white border-top border-2 border-dark enter-cursor d-flex align-items-center">
         <Marquee play={isHover} speed={100} gradient={false}>
           <h4 className="p-3 marquee-title uppercase mb-0">{title}</h4>
         </Marquee>
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -62,13 +79,13 @@ export default function PostItem(props) {
   const { isMessy, post, onDrag, zIndex } = props;
   const { slug, frontMatter, mdxSource } = post;
   const [isHover, setIsHover] = useState(false);
-  const { title, media, w, h, ratioW, ratioH } = frontMatter;
+  const { title, media, w, h, ratioW, ratioH, mask } = frontMatter;
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const rndRef = useRef(null);
   const postItemRef = useRef(null);
-  const { windowStoreState } = useContext(GlobalContext);
+  const { windowStoreState, layoutDispatch } = useContext(GlobalContext);
   const { window, breakpoints, cols } = windowStoreState;
   // breakpointsArray = [360,480,768,...]
   const breakpointsArr = Object.values(breakpoints).reverse();
@@ -101,7 +118,6 @@ export default function PostItem(props) {
   // Returns coordinates for the shape that sits within the canvas
   function getRandomPositionWithinConstrains(size, axis) {
     const margins = axis == "x" ? (window.width > 768 ? 120 : 48) : 122;
-
     const windowSize = (axis == "x" ? window.width : window.height) - margins;
 
     const random = getInt(0, 80);
@@ -118,8 +134,6 @@ export default function PostItem(props) {
   // window height and width are rendered in the frontend
   // Messy layout
   useEffect(() => {
-    console.log("CHECKING USE EFFECT TRIGGER");
-
     // When it's in the messy layout, it will be in percentage
     if (isMessy) {
       const widthPixels = translateColsToPixels(window.width, w);
@@ -127,9 +141,6 @@ export default function PostItem(props) {
 
       setSize({ width: `${widthPixels}px`, height: `${heightPixels}px` });
       setPosition({
-        //x: Math.random() * window.width - widthPixels,
-        //y: Math.random() * window.height - heightPixels,
-
         x: getRandomPositionWithinConstrains(widthPixels, "x"),
         y: getRandomPositionWithinConstrains(heightPixels, "y"),
       });
@@ -148,7 +159,10 @@ export default function PostItem(props) {
 
   const handleDragStop = (event, data) => {
     setPosition({ x: data.x, y: data.y });
-    setIsDragging(false);
+
+    setTimeout(() => {
+      setIsDragging(false);
+    }, 100);
   };
 
   const handleResize = (event, direction, ref, delta, position) => {
@@ -161,10 +175,12 @@ export default function PostItem(props) {
 
   const handleMouseEnter = () => {
     setIsHover(true);
+    layoutDispatch({ type: ACTIONS.SET_CURSOR_TEXT, payload: title });
   };
 
   const handleMouseLeave = () => {
     setIsHover(false);
+    layoutDispatch({ type: ACTIONS.SET_CURSOR_TEXT, payload: "" });
   };
 
   const router = useRouter();
@@ -181,7 +197,7 @@ export default function PostItem(props) {
         <Rnd
           ref={rndRef}
           position={position}
-          onDragStart={() => {
+          onDrag={() => {
             onDrag();
             handleDragStart();
           }}
@@ -192,8 +208,12 @@ export default function PostItem(props) {
           minHeight="200px"
           size={{ width: size.width, height: size.height }}
           onResizeStop={handleResize}
-          className="border border-2 border-dark d-flex flex-column"
-          style={{ zIndex }}
+          className="d-flex flex-column masked"
+          style={{
+            zIndex,
+            maskImage: `url("/images/site/${mask}")`,
+            webkitMaskImage: `url("/images/site/${mask}")`,
+          }}
         >
           <PostItemContainer
             goToLink={goToLink}
@@ -209,6 +229,12 @@ export default function PostItem(props) {
 
       {!isMessy && (
         <PostItemContainer
+          style={{
+            zIndex,
+            maskImage: `url("/images/site/${mask}")`,
+            webkitMaskImage: `url("/images/site/${mask}")`,
+          }}
+          className="masked"
           goToLink={goToLink}
           mediaPath={mediaPath}
           title={title}

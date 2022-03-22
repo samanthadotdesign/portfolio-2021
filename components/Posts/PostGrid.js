@@ -33,7 +33,6 @@ export default function PostGrid(props) {
               post={post}
               isMessy={isMessy}
               onDrag={() => {
-                console.log("*** POINTER DOWN ***", index);
                 handleDrag(index);
               }}
             />
@@ -57,7 +56,7 @@ export default function PostGrid(props) {
             return (
               <div
                 key={index}
-                className="drag-cursor border border-2 border-dark"
+                className="drag-cursor"
                 data-grid={{ x, y, w, h, minW: w, minH: h, maxW: 8, maxH: 4 }}
               >
                 <PostItem post={post} isMessy={isMessy} />
