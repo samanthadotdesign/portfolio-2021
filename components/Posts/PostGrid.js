@@ -25,7 +25,7 @@ export default function PostGrid(props) {
   return (
     <>
       {isMessy && (
-        <div className="layout">
+        <div className="layout position-relative">
           {posts.map((post, index) => (
             <PostItem
               zIndex={zIndexState[index] ? 1 : 0}

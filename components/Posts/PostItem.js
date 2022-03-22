@@ -94,6 +94,27 @@ export default function PostItem(props) {
     return Math.round(noPixels);
   }
 
+  function getInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // Returns coordinates for the shape that sits within the canvas
+  function getRandomPositionWithinConstrains(size, axis) {
+    const margins = axis == "x" ? (window.width > 768 ? 120 : 48) : 122;
+
+    const windowSize = (axis == "x" ? window.width : window.height) - margins;
+
+    const random = getInt(0, 80);
+
+    const coordinate = (random / 100) * windowSize;
+
+    const conditional = coordinate + size > windowSize;
+
+    const final = !conditional ? coordinate : windowSize - size;
+
+    return final;
+  }
+
   // window height and width are rendered in the frontend
   // Messy layout
   useEffect(() => {
@@ -106,8 +127,11 @@ export default function PostItem(props) {
 
       setSize({ width: `${widthPixels}px`, height: `${heightPixels}px` });
       setPosition({
-        x: Math.random() * window.width - widthPixels,
-        y: Math.random() * window.height - heightPixels,
+        //x: Math.random() * window.width - widthPixels,
+        //y: Math.random() * window.height - heightPixels,
+
+        x: getRandomPositionWithinConstrains(widthPixels, "x"),
+        y: getRandomPositionWithinConstrains(heightPixels, "y"),
       });
     } else {
       // When the program first loads, it will be in the neat layout which takes values from mdx (noColumns)

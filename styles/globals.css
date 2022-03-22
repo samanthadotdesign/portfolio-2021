@@ -131,10 +131,10 @@ a {
   font-size: 14px;
   cursor: pointer;
   padding: 0 !important;
+  font-family: "Neue Montreal";
 }
 
-.btn-link:hover,
-.layout-toggle-btn:hover {
+.btn-link:hover {
   background-color: #faff00;
 }
 
@@ -169,17 +169,6 @@ a {
   user-select: none;
   /* Doesn't allow interaction between div and pointer */
   pointer-events: none;
-}
-
-.layout-toggle-btn {
-  border: none;
-  outline: none;
-  color: #000;
-  font-family: "Neue Montreal";
-  font-weight: 400;
-  font-size: 14px;
-  background-color: transparent;
-  margin-top: 16px;
 }
 
 .drag-cursor {
