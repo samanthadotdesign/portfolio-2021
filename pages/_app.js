@@ -71,7 +71,6 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Nav />
       <Component {...pageProps} />
-      <Footer />
     </GlobalProvider>
   );
 }
