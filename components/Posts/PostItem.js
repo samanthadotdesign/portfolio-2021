@@ -31,16 +31,6 @@ const PostItemContainer = (props) => {
     setMarqueeText(marqueeString);
   }, []);
 
-  /* 
-  
-  let drag = false;
-
-document.addEventListener('mousedown', () => drag = false);
-document.addEventListener('mousemove', () => drag = true);
-document.addEventListener('mouseup', () => console.log(drag ? 'drag' : 'click'));
-
-*/
-
   return (
     <div
       onClick={goToLink}
@@ -212,7 +202,7 @@ export default function PostItem(props) {
           style={{
             zIndex,
             maskImage: `url("/images/site/${mask}")`,
-            webkitMaskImage: `url("/images/site/${mask}")`,
+            WebkitMaskImage: `url("/images/site/${mask}")`,
           }}
         >
           <PostItemContainer
@@ -226,13 +216,12 @@ export default function PostItem(props) {
           />
         </Rnd>
       )}
-
       {!isMessy && (
         <PostItemContainer
           style={{
             zIndex,
             maskImage: `url("/images/site/${mask}")`,
-            webkitMaskImage: `url("/images/site/${mask}")`,
+            WebkitMaskImage: `url("/images/site/${mask}")`,
           }}
           className="masked"
           goToLink={goToLink}
