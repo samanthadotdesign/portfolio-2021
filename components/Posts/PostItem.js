@@ -18,19 +18,7 @@ const PostItemContainer = (props) => {
     postItemRef,
     className,
     style,
-    color,
   } = props;
-  const [marqueeText, setMarqueeText] = useState();
-
-  // display block !important on span h4 + margin right
-  useEffect(() => {
-    let marqueeString = "";
-    for (let i = 0; i < 20; i += 1) {
-      marqueeString += title;
-      marqueeString += "                ";
-    }
-    setMarqueeText(marqueeString);
-  }, []);
 
   return (
     <div
@@ -49,7 +37,6 @@ const PostItemContainer = (props) => {
         ) : (
           <Image
             src={mediaPath}
-            alt={title}
             layout="fill"
             objectFit="cover"
             className="userSelectNone"
@@ -65,7 +52,7 @@ export default function PostItem(props) {
   const { isMessy, post, onDrag, zIndex } = props;
   const { slug, frontMatter, mdxSource } = post;
   const [isHover, setIsHover] = useState(false);
-  const { title, media, w, h, ratioW, ratioH, mask } = frontMatter;
+  const { title, media, w, h, ratioW, ratioH, mask, color } = frontMatter;
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [isDragging, setIsDragging] = useState(false);
@@ -105,15 +92,10 @@ export default function PostItem(props) {
   function getRandomPositionWithinConstrains(size, axis) {
     const margins = axis == "x" ? (window.width > 768 ? 120 : 48) : 122;
     const windowSize = (axis == "x" ? window.width : window.height) - margins;
-
     const random = getInt(0, 80);
-
     const coordinate = (random / 100) * windowSize;
-
     const conditional = coordinate + size > windowSize;
-
     const final = !conditional ? coordinate : windowSize - size;
-
     return final;
   }
 
@@ -197,6 +179,7 @@ export default function PostItem(props) {
           className="d-flex flex-column masked"
           style={{
             zIndex,
+            backgroundColor: `${color}`,
             maskImage: `url("/images/site/${mask}")`,
             WebkitMaskImage: `url("/images/site/${mask}")`,
           }}
@@ -216,6 +199,7 @@ export default function PostItem(props) {
         <PostItemContainer
           style={{
             zIndex,
+            backgroundColor: `${color}`,
             maskImage: `url("/images/site/${mask}")`,
             WebkitMaskImage: `url("/images/site/${mask}")`,
           }}

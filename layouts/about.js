@@ -29,7 +29,7 @@ export default function About() {
             </h3>
           </div>
           <div className="col-md-6 px-0 d-flex flex-column align-items-end">
-            <Link href="https://pumped-ferret-02a.notion.site/Samantha-Lee-Design-Development-45c56da843bf454db36fe0ed94b83e29">
+            <Link href="https://drive.google.com/file/d/1wpKCwZ5M2epIOsqhRKC3Q18DPUHto2SJ/view?usp=sharing">
               <a className="btn-link">RESUMÉ</a>
             </Link>
             <Link href="https://www.linkedin.com/in/samanthadotdesign/">

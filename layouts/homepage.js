@@ -1,6 +1,5 @@
 import PostGrid from "../components/Posts/PostGrid";
 import React, { useContext, useState, useEffect } from "react";
-import gsap from "gsap";
 import { GlobalContext } from "../store";
 
 export default function Homepage(props) {

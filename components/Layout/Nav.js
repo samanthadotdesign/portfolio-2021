@@ -30,7 +30,7 @@ export default function Nav() {
 
   return (
     <div ref={navRef} className="w-100 m-0 fixed-top">
-      <div className="nav-header d-flex justify-content-between ">
+      <div className="nav-header d-flex justify-content-between">
         <Link href="/">
           <a className="nav-logo">SAMANTHA LEE</a>
         </Link>
