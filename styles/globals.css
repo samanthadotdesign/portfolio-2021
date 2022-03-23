@@ -115,7 +115,7 @@ a {
 
 .nav-header,
 .footer-div {
-  padding: 40px 60px 16px 60px;
+  padding: 16px;
 }
 
 @media screen and (max-width: 768px) {
@@ -128,8 +128,8 @@ a {
 .nav-link,
 .btn-link {
   color: #000 !important;
-  margin-left: 16px;
-  font-size: 14px;
+  margin-left: 20px;
+  font-size: 12px;
   cursor: pointer;
   padding: 0 !important;
   font-family: "Neue Montreal";
@@ -140,7 +140,7 @@ a {
 }
 
 .nav-logo {
-  font-size: 18px;
+  font-size: 12px;
   cursor: pointer;
   color: #000;
   margin: 0;
@@ -201,6 +201,12 @@ a {
 .footer-div {
   position: fixed;
   bottom: 0;
+}
+
+.footer-div p {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
 }
 
 /* SPACING */
@@ -277,7 +283,7 @@ a {
 
 /* TABLE OF CONTENTS */
 .toc-bullets {
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-size: 12px !important;
   margin-bottom: 4px;
   list-style-type: none;
@@ -295,7 +301,7 @@ a {
 
 .table-of-contents {
   position: fixed;
-  right: 60px;
+  right: 16px;
   top: 0px;
   /* transform: translateY(-50%); */
   z-index: 2;
@@ -303,8 +309,8 @@ a {
 
 .toc-title {
   font-size: 12px !important;
-  text-transform: uppercase;
-  color: #000;
+  text-transform: lowercase;
+  color: #ccc;
 }
 
 .override-toc {
@@ -382,7 +388,11 @@ h5 {
   pointer-events: none;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
+  font-weight: 500;
   font-size: 12px;
+  background-color: #000;
+  color: #fff;
+
   will-change: transform;
   -webkit-transform: translate3d(-50%, -50%, 0);
   -moz-transform: translate3d(-50%, -50%, 0);
@@ -406,17 +416,20 @@ h5 {
 .homepage {
   overflow: hidden;
 
-  will-change: transform;
+  -webkit-animation: movingGradient 15s ease infinite;
+  -moz-animation: movingGradient 15s ease infinite;
+  animation: movingGradient 15s ease infinite;
+
+  /* will-change: transform;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
-  transform: translateZ(0);
+  transform: translateZ(0); */
 
   height: 100vh;
   width: 100vw;
-
-  background: linear-gradient(95deg, #ffadf8, #ff9b9b, #97b0ff);
+  background: linear-gradient(95deg, #e676ff, #ffe865, #0004fc);
   background-size: 600% 600%;
 }
 

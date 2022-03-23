@@ -18,6 +18,7 @@ const PostItemContainer = (props) => {
     postItemRef,
     className,
     style,
+    color,
   } = props;
   const [marqueeText, setMarqueeText] = useState();
 
@@ -55,11 +56,6 @@ const PostItemContainer = (props) => {
           />
         )}
       </div>
-      {/* <div className="title-marquee-div bg-white border-top border-2 border-dark enter-cursor d-flex align-items-center">
-        <Marquee play={isHover} speed={100} gradient={false}>
-          <h4 className="p-3 marquee-title uppercase mb-0">{title}</h4>
-        </Marquee>
-      </div> */}
     </div>
   );
 };
