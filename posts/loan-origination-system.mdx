@@ -35,11 +35,9 @@ y: 0
   <p>
     Command Center allows all roles across the loan process to take large
     quantities of data and transform them into an easily-digestible form to make
-    reliable decisions. When I joined in August 2019, the web service was in its
-    infancy, as it was in the process of being overhauled with more powerful
-    features. My role was to oversee the design development of the entire
-    platform suite, and to rebrand the product to distance it from its
-    Excel-based roots.
+    reliable decisions. When I joined in August 2019, the underwriting platform
+    was in its infancy, as it was in the process of being overhauled with more
+    powerful features.
   </p>
 </div>
 
@@ -50,16 +48,33 @@ y: 0
     final product based on my prototypes.
   </p>
   <p>
-    As the sole designer for the Command Center, I was responsible for
-    information architecture, UX, and visual design for all parts of the
-    product. I was proud of my output and the significant impact it had on
-    collaboration among different functions at the company. Building tools that
-    help people do their jobs is one of the most satisfying types of work I’ve
-    had the pleasure to take on.
+    As the sole designer for the Command Center, I oversaw the design
+    development of the entire platform suite, including information
+    architecture, UX, and visual design.
   </p>
 </div>
 
 </div>
+
+<PostLayout>
+
+## Business Goals
+
+<p className="lesson-header">
+  Enabling credit decisions for scale, correctness, and resilience
+</p>
+
+1. Automate manual decision-making with rule engine and data models
+2. Early warning system related to exposure or default risk
+3. Ensure that our underwritng system cannot be gamified easily
+4. Configurable and reusable workflows across loan products
+5. Enable safe self-serve experimentation with new loan products
+
+<a href="http://localhost:3000/work/loan-origination-system#impact-in-digits">
+  See the impact
+</a>
+
+</PostLayout>
 
 <div className="container-fluid margin-top-36">
 <h2>Challenges</h2>
@@ -69,13 +84,13 @@ y: 0
       Behind our biggest revamp
     </p>
 
-1. This was an all-or-nothing endeavour. Necessary loan information needed to be available to all roles across the sales and credit organisations in order to underwrite loans.
+1. This was an **all-or-nothing** endeavour. Necessary loan information needed to be available to all roles across the sales and credit organisations in order to underwrite loans.
 
-2. Each loan has different risk assessment practices, which meant we needed to build loan files with different levels of visibility across sales and credit roles to fit with compliance requirements. The plan was to build step-by-step, tackling one loan product at a time.
+2. Each loan has different risk assessment practices, which meant we needed to build loan files with **different levels of visibility** across sales and credit roles to fit with compliance requirements. The plan was to build step-by-step, tackling one loan product at a time.
 
-3. Our platform relied on many third-party integrations for functionalities that we did not develop ourselves, such as workflow management and pulling credit bureau data. There were constraints to the user flows related to calling these APIs.
+3. Our platform relied on many **third-party integrations** for functionalities that we did not develop ourselves, such as workflow management and pulling credit bureau data. There were constraints to the user flows related to calling these APIs.
 
-4. The need to store and process customer data into a central system was difficult in itself. Previously, there wasn’t a single source of truth for all loan-related matters.
+4. The need to store and process customer data into a **central system** was difficult in itself. Previously, there wasn’t a single source of truth for all loan-related matters.
 
 </div>
 <div className="col-md-8">
@@ -94,13 +109,13 @@ y: 0
 
 ## Module Configuration
 
-Our goal for the Command Center was to keep the user very focused and ensure they have the right information at their fingertips in order to complete the task. We decided to separate the loan underwriting processing into smaller, well-defined tasks.
+Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
 
 This accomplishes a few things:
 
-- allowed the organization to track TAT for each task, which will help the business identify bottlenecks and optimize the operations
-- the modular nature of the tasks allows the business to make repeatable tasks for other types of loans
-- allowed the business to systematically analyse historical data based on specific tasks and work towards building a self-improving smart loan origination system
+- allowed the organization to track TAT for each task, which will help the business **identify bottlenecks** and optimize the operations
+- the modular nature of the tasks allows the business to make **repeatable tasks** for other types of loans, especially making it faster for the business to create new loan offerings
+- allowed the business to systematically **analyse historical data** based on specific tasks and work towards building a self-improving smart loan origination system
 
 </PostLayout>
 
@@ -111,15 +126,15 @@ This accomplishes a few things:
       <p>
         My colleague and I conducted contextual inquiry interviews with 20
         users across different roles to deeply understand the current
-        origination and underwriting process. It was especially important to
-        capture nuances of the process that was not evident in the written
-        output. 
+        origination and underwriting process. It was especially important to{" "}
+        <b>capture nuances of the process</b> that was not evident in the
+        written output. 
       </p>
       <p>
         One of the challenges that emerged was that users wanted to see all
-        information available at any given time. The existing process had
-        everything available to view at the same time across different windows
-        of Slack, Excel, Google Sheets, and Trello.
+        information available at any given time. The existing process had{" "}
+        <b>everything available to view</b> at the same time across different
+        windows of Slack, Excel, Google Sheets, and Trello.
       </p>
       <p>
         We wanted our users to feel completing each defined task was seamless,
@@ -142,15 +157,17 @@ This accomplishes a few things:
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Configuration Exploration</p>
       <p>
-        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information in exchange for clearer hierarchy and eliminated the full-view multi-module presentation.
+        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
       </p>
       <p>
         In the first iteration, the module was a complex blend of hierarchical structures that
         mimicked Google Sheets. However, in practice the complexity led to
-        confusion about which information belonged to which person. Having users scroll to
-        different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
-        having disconnected pieces that may not be useful all the
-        time.
+        confusion about which information belonged to which person. 
+      </p>
+  
+      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
+        having {" "}<b>disconnected pieces that may not be useful all the
+        time</b>.
       </p>
     </div>
     <div className="col-md-8">
@@ -237,18 +254,11 @@ This accomplishes a few things:
 
 Because screen real estate is at a premium in software, it was important that we defend our choice to add more whitespace to the UI.
 
-It takes effort to keep something simple and we were not chasing simplicity in the abstract. At the feature level, we had to constantly negotiate to avoid crowding the screen with unnecessary features, and focus on translating how the business intended to make the loan process more modular.
+It takes effort to keep something simple and we were not chasing simplicity in the abstract. At the feature level, we had to <b>constantly negotiate to avoid crowding the screen</b> with unnecessary features, and focus on translating how the business intended to make the loan process more modular.
 
 Competitive analysis helped to contextualize our decisions and reminded everyone that just because a UI change feels drastic internally, when compared to the broader software landscape it might be completely within the norm.
 
 </PostLayout>
-
-<div className="mw-100 override-toc d-flex justify-content-center align-items-center">
-  <div className="col-md-8">
-    <LoopingVideo src="/images/work/loan-origination-system/task.mp4" />
-    <figcaption>We embedded the comment tasks inside a table view.</figcaption>
-  </div>
-</div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
@@ -260,7 +270,7 @@ Competitive analysis helped to contextualize our decisions and reminded everyone
       </figcaption>
     </div>
     <div className="col-md-7 pt-md-0 ps-md-4 pt-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
+      <LoopingVideo src="/images/work/loan-origination-system/task.mp4" />
       <figcaption>
         After: In the modular approach, users were able to do everything
         directly on the loan itself, such as documenting their comments, which
@@ -274,9 +284,9 @@ Competitive analysis helped to contextualize our decisions and reminded everyone
 
 ## Customizing Angular Libraries
 
-I learned to accept that edge cases for some interactions should follow tried and tested practices from established libraries. As the only designer on the team with a very lean team of developers, I wanted to remove potential bottlenecks in development. It was much more robust for the developers to use an existing library rather than spend time working on small elements.
+I learned to accept that edge cases for some interactions should follow tried and **tested practices from established libraries**. As the only designer on the team with a very lean team of developers, I wanted to remove potential bottlenecks in development. It was much more robust for the developers to use an existing library rather than spend time working on small elements.
 
-I collaborated closely with developers to and I experimented to see how we can modify out-of-the-box styles to fit our design system, instead of designing and then handing it off the engineers. Below are a few interaction design patterns where we included my suggestions from researching and styling Angular libraries.
+I collaborated closely with developers to and **I experimented to see how we can modify out-of-the-box solutions** to fit our design system, instead of designing and then handing it off the engineers. Below are a few interaction design patterns where we included my suggestions from researching and styling Angular libraries.
 
 </PostLayout>
 
@@ -366,7 +376,7 @@ Our database of borrowers and their loans is our single source of truth. We used
 
 I designed many tables for viewing and selecting data but I will focus where users fill data. Our users were most familiar with Excel and I had to include similar features to create an intuitive experience for our Command Center.
 
-One of the challenges was creating a web experience that had the level of performance that users were familiar with in Google Sheets or Microsoft Excel. We had to deprioritize features like enabling calculations inside cells to focus on precise, automated parsing of PDF statements directly into the cells, which would save users more time.
+One of the challenges was **creating a web experience that had the level of performance that users were familiar with** in Google Sheets or Microsoft Excel. We had to deprioritize features like enabling calculations inside cells to focus on precise, automated parsing of PDF statements directly into the cells, which would save users more time.
 
 </PostLayout>
 
@@ -384,7 +394,7 @@ One of the challenges was creating a web experience that had the level of perfor
 
 ## UI Facelift
 
-As Funding Societies was becoming as a financing company with robust internal tools, I felt it was the right time to unify the product’s visual language with that of marketing and consumer product surfaces. Having a cohesive brand image even for internal tools was important in presenting the company to external stakeholders like potential customers and investors.
+As Funding Societies was becoming as a financing company with robust internal tools, I felt it was the right time to **unify the product’s visual language** with that of marketing and consumer product surfaces. Having a cohesive brand image even for internal tools was important in presenting the company to external stakeholders like potential customers and investors.
 
 We included typography and colour proportions foundations from marketing and consumer products. It was a simple swap but it helped to unify our surfaces across the entire company. This was an internal tool that our Engineering team built from scratch and it deserved to <em>look</em> like the best in class product that it was.
 
@@ -397,17 +407,18 @@ We included typography and colour proportions foundations from marketing and con
         Type choices for clear information hierarchy
       </p>
       <p>
-        Command Center was a wash of the default Material Design Roboto:
-        navigation, labels, tables, buttons, searchbar are all set in the same
-        typeface, and often in a single weight.
+        Command Center was a wash of the default Arial: navigation, labels,
+        tables, buttons, searchbar are all set in the same typeface, and often
+        in a single weight.
       </p>
       <p>
         The first change was to use Inter, which was highly legible and more
         versatile in application. This simple change made a dramatic impact in
         refining the presentation of information. We used different type sizes
-        and grayscale to add a clear layer of informational hierarchy within our
-        UI that both simplified design decisions and served as a clear signal to
-        users as to the utility of different text strings in the product.
+        and grayscale to{" "}
+        <b>add a clear layer of informational hierarchy within our UI</b> that
+        both simplified design decisions and served as a clear signal to users
+        as to the utility of different text strings in the product.
       </p>
       <p>
         Because processing loans is a primarily text-based decision making,
@@ -433,21 +444,26 @@ We included typography and colour proportions foundations from marketing and con
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Style Guide</p>
       <p>
-        I worked with our front-end developers to craft a style guide for
-        Command Center. The Pantry Design System contains the library of common
-        components used in the product and expands out to design principles for
-        the design team to follow, as well as UX guidance on usage and
-        implementation for every piece used in the product. This ranged form
-        form elements to entire screen configurations.
+        I worked with Stuart and Shubhro to build a style guide for Command
+        Center that could be easily adopted by other developers.
+      </p>
+      <p>
+        The Pantry Design System contains the library of common components used
+        in the product and expands out to design principles for the design team
+        to follow, as well as UX guidance on usage and implementation for every
+        piece used in the product. This ranged form form elements to entire
+        screen configurations.
       </p>
       <p>
         The style guide was vital for both our developers and our designers,
         giving us a shared kit of parts to work from and ensuring consistency
-        within our designs. This reduced complexity in product development and
-        set a consistent pattern of expected behaviors for users. This framework
-        was eventually adopted by additional suites in the customer-facing
-        enterprise solution line and used across multiple teams at the company
-        today.
+        within our designs. This{" "}
+        <b>
+          reduced complexity in product development and set a consistent pattern
+          of expected behaviors for users
+        </b>
+        . This framework was eventually adopted by additional suites in the customer-facing
+        enterprise solution line and used across multiple teams at the company today.
       </p>
     </div>
     <div className="col-md-8">
