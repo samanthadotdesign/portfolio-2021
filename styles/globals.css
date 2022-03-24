@@ -467,6 +467,21 @@ h5 {
   }
 }
 
+/* ABOUT */
+
+.about {
+  overflow: hidden;
+
+  -webkit-animation: movingGradient 8s ease infinite;
+  -moz-animation: movingGradient 8s ease infinite;
+  animation: movingGradient 8s ease infinite;
+
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(95deg, #e5a99f, #edfed3, #fff);
+  background-size: 600% 600%;
+}
+
 /* LIST TYPE */
 
 li.success {
