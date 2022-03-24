@@ -466,3 +466,17 @@ h5 {
     background-position: 24% 0%;
   }
 }
+
+/* LIST TYPE */
+
+li.success {
+  list-style-image: url("/images/site/check-circle-fill.svg");
+}
+
+li.fail {
+  list-style-image: url("/images/site/x-circle-fill.svg");
+}
+
+li.warning {
+  list-style-image: url("/images/site/exclamation-circle-fill.svg");
+}

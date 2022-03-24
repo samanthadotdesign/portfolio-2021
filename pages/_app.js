@@ -19,6 +19,10 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1"
         />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+        ></link>
         <link rel="stylesheet" href="https://use.typekit.net/ada2lcu.css" />
         <link
           rel="preload"
