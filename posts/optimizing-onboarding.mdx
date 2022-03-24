@@ -97,13 +97,13 @@ y: 0
       <ol>
         <li>
           After users upload their ID and it appears on the web application that
-          some fields are auto-populated, users don’t expect that they will have
-          to edit them.
+          some fields are auto-populated,{" "}
+          <b>users don’t expect that they will have to edit them.</b>
         </li>
         <li>
           The users found it difficult to notice misspellings inside the form
-          fields since the application process is very long and the user gets
-          fatigued.
+          fields since the <b>application process is very long</b> and the user
+          gets fatigued.
         </li>
       </ol>
     </div>
@@ -159,10 +159,10 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
-  <h2>Design</h2>
+  <h2>Before</h2>
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Before</p>
+      <p className="lesson-header">No emphasis on critical fields</p>
       <p>
         Currently, we have a blue banner at the top of the "Applicant Details"
         section that says "Please ensure full and accurate information. Any
@@ -191,6 +191,7 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
+<h2>Design</h2>
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Concept</p>
@@ -204,15 +205,21 @@ y: 0
         <b>Inline confirmation</b>
         <br />
         For critical details pre-populated by the system, I suggested a tooltip
-        where users had to confirm their details to dismiss. However, the two fields with tooltips
-        appeared on consecutive questions and I wanted to ensure it wasn't
-        annoying for users.
-        <br />I was concerned about the potential friction early on. The goal was
-        to make this inline confirmation so light, quick, and easy, that the users
-        don't feel like it's an additional hassle.
-        <br />Even if the details are parsed correctly, users shouldn't feel
-        like it was a big effort to confirm and hopefully conveyed a sense of
-        trustworthiness.
+        where users had to confirm their details to dismiss. 
+        <br />
+        <ul>
+          <li>However, the two fields with tooltips
+          appeared on consecutive questions and I wanted to ensure it wasn't
+          annoying for users.
+          </li>
+          <li>I was concerned about the potential friction early on. The goal was
+          to make this inline confirmation so light, quick, and easy, that the users
+          don't feel like it's an additional hassle.</li>
+          <li>Even if the details are parsed correctly, users shouldn't feel
+          like it was a big effort to confirm and hopefully conveyed a sense of
+          trustworthiness.
+          </li>
+        </ul>
       </p>
     </div>
     <div className="col-md-6">
@@ -555,5 +562,15 @@ The team didn't want to impose additional clicks for the inline confirmation for
 
 **We must weigh testing biases proportionally.**
 The users would see inline reminders first in the application flow (users fill in company details first, then only upload their ID). Therefore, users would be primed that the tooltips won't be clickable. We tested successfully with ten local colleagues but they were likely more familiar with digital experiences. Inline confirmation is a more unusual interaction pattern and therefore risky, for our audience.
+
+</PostLayout>
+
+<PostLayout>
+
+## Impact in Digits
+
+_(To be continued)_
+
+The key metric that the design affects is the error rate of identification details in applications. Reducing the error rate will have subsequent effects on turnaround time for the sales team and on returning decisions on loan applications. I’ll continue to add more here as we measure the results.
 
 </PostLayout>
