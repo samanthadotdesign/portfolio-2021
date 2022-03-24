@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../store";
 import Link from "next/link";
 
@@ -6,9 +6,36 @@ export default function About() {
   const { windowStoreState } = useContext(GlobalContext);
   const { nav } = windowStoreState;
 
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMovement = (event) => {
+      setCursorPosition({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener("pointermove", handleMovement);
+    return () => {
+      window.removeEventListener("pointermove", handleMovement);
+    };
+  }, []);
+
   return (
     <div className="about">
       <div className="noise">
+        <div
+          className="cursor position-fixed rounded-circle d-flex justify-content-center align-items-center text-center"
+          style={{
+            width: "10px",
+            height: "10px",
+            padding: "0",
+            transition:
+              "width 150ms cubic-bezier(0.22, 1, 0.36, 1), height 150ms cubic-bezier(0.22, 1, 0.36, 1), top 200ms cubic-bezier(0.22, 1, 0.36, 1), left 200ms  cubic-bezier(0.22, 1, 0.36, 1)",
+            zIndex: 999,
+            top: cursorPosition.y,
+            left: cursorPosition.x,
+          }}
+        ></div>
+
         <div
           className="container-fluid"
           style={{ paddingTop: `${nav.height}px` }}
@@ -44,6 +71,25 @@ export default function About() {
             </div>
           </div>
         </div>
+
+        <div
+          className="position-fixed"
+          style={{
+            pointerEvents: "none",
+            minWidth: "100vw",
+            minHeight: "100vh",
+            transform: "translate(-50%, -50%)",
+            transition:
+              "top 200ms cubic-bezier(0.22, 1, 0.36, 1), left 200ms  cubic-bezier(0.22, 1, 0.36, 1) ",
+            background:
+              "radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(162,179,133,0.1) 30%, rgba(162,179,133,0) 55%)",
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            top: cursorPosition.y,
+            left: cursorPosition.x,
+          }}
+        ></div>
       </div>
     </div>
   );
