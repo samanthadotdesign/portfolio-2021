@@ -1,9 +1,11 @@
 ---
 title: "Invoice Financing"
 media: "mobile.png"
+color: "#0059FF"
+mask: "shape5.svg"
 ratioW: 375
 ratioH: 812
-isFeatured: false
+isFeatured: true
 toc: true
 w: 3
 h: 2
@@ -13,30 +15,22 @@ y: 0
 
 <PostLayout>
 
-## Invoice Financing
+# Invoice Financing
 
 </PostLayout>
 
 <div className="row d-flex">
 
-<div className="col-md-3 pe-md-5">
-  <p className="lesson-header">Silk Road</p>
+<div className="col-md-2 pe-md-4">
+  <p className="lesson-header">My Role</p>
   <p>
-    At Funding Societies, our customers use our invoice financing platform, Silk
-    Road to get financing against the invoices to their customers (receivables)
-    or invoices from their creditors (payables).
+    Interaction design
+    <br />
+    Visual design
   </p>
 </div>
 
-<div className="col-md-3 pe-md-5">
-  <p className="lesson-header">Interaction Designer, 2020</p>
-  <p>
-    I successfully initiated this project and received buy-in from stakeholders
-    for these improvements to be included into the product roadmap.
-  </p>
-</div>
-
-<div className="col-md-3 pe-md-5">
+<div className="col-md-2 pe-md-4">
   <p className="lesson-header">Team</p>
   <p>
     1 Product Manager
@@ -44,49 +38,97 @@ y: 0
   </p>
 </div>
 
+<div className="col-md-2 pe-md-4">
+  <p className="lesson-header">Timeline</p>
+  <p>Oct – Dec 2020</p>
+</div>
+
+</div>
+
+<div className="row d-flex justify-content-between">
+
+<h2>Project Overview</h2>
+
+<div className="col-md-4 pe-md-4">
+  <p className="lesson-header">The Product</p>
+  <p>
+    At Funding Societies, our customers use our invoice financing platform, Silk
+    Road to get financing against the invoices to their customers (receivables)
+    or invoices from their creditors (payables).
+  </p>
+</div>
+
+<div className="col-md-4 px-md-4">
+  <p className="lesson-header">The Problem</p>
+  <p>
+    Nearly 90% of our users in Indonesia use Silk Road on their mobile (70% of
+    all traffic is via Android). They choose to do their key, important tasks
+    entirely on their mobile device – such as applying for financing, keeping
+    track of repayments, and monitoring their loans.
+  </p>
+</div>
+
+<div className="col-md-4 ps-md-4">
+  <p className="lesson-header">The Solution</p>
+  <p>
+    I initiated this mobile UX overhaul project. I advocated for buy-in from
+    stakeholders for these improvements to be included into the product roadmap.
+    The hypothesis was that we would drive higher utilization and reduced errors
+    by optimizing the mobile experience.
+  </p>
+</div>
+
 </div>
 
 <PostLayout>
 
-## Mobile UX Overhaul
+## Business Goals
 
-The most important visual improvement was the overall mobile web reconfiguration. Nearly 70% of users log into Silk Road via Android, but Silk Road was best viewed on desktop. I worked on transforming the entire platform to be mobile-first. The principles for optimizing readability for small screens is best demonstrated through the table overviews.
+<p className="lesson-header"></p>
 
-Some considerations we made were if we should transform table into cards in some flows. I sought answers from our users to the key question: is the primary goal to compare information or the view an entry detail?
+- Invoice financing is one of our most profitable products. The collateral against an invoice is very clear and our default rates have been consistently very low.
+- Silk Road is the gateway for customers to communicate to Funding Societies to request a drawdown from their facility (an approved total loan amount that has not yet been disbursed).
+- Optimizing the Silk Road for mobile would help 90% of users in Indonesia request access to financing more easily, which increases our loan origination volume.
 
-Most users used Silk Road to create disbursement requests, which meant they wanted to see entire overviews of their account.
+<a href="/">See the impact</a>
 
 </PostLayout>
 
-<FullWidthContainer>
-
-<LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-<figcaption>
-  I developed this split view for mobile portrait and reused the tablet
-  configuration for the wider mobile landscape width.
-</figcaption>
-
-</FullWidthContainer>
-
 <div className="container-fluid margin-top-36">
+  <h2>Challenges</h2>
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Tables for Mobile Portrait</p>
-      <p>
-        I developed this split view for mobile portrait, which is the most-used
-        orientation. Accessibility was at the forefront of the of redesign. We
-        aligned all content with two keylines, which resulted in improved
-        legibility and avoided eye movement from left to the right of the screen
-        when scanning. The content was also commonly anchored by the biggest
-        identifier as the first column.
-      </p>
+      <p className="lesson-header">Mobile was an afterthought</p>
+      <ol>
+        <li>
+          I did not have a choice but to take the{" "}
+          <b>responsive design approach</b> since Silk Road web app was
+          desktop-first. I worked with developers to shrink, refactor,
+          rearrange, remove the existing elements on desktop to fit the mobile
+          screen.
+        </li>
+        <li>
+          Many pages on Silk Road showed <b>multiple tables</b>, where each
+          entry had accompanying details. The information density was very
+          tightly packed.
+        </li>
+        <li>
+          There were <b>no "before" metrics</b>. It was the first time the team
+          had a product design-led initiative as part of the sprint. Mixpanel
+          and Fullstory weren't set up to measure user experience metrics.
+        </li>
+        <li>
+          I found many shortcomings in similar web apps that tried to optimize
+          for mobile. Viewing detailed information such as multiple tables with
+          pagination or long tasks with multiple document upload with such space
+          limitations <b>never felt user-friendly</b> to me.
+        </li>
+      </ol>
+      <a href="/">See what I would do differently</a>
     </div>
     <div className="col-md-8">
       <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>
-        The two-keyline layout also made it easy to support resizable text
-        sizes.
-      </figcaption>
+      <figcaption></figcaption>
     </div>
   </div>
 </div>
