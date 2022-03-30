@@ -495,3 +495,8 @@ li.fail {
 li.warning {
   list-style-image: url("/images/site/exclamation-circle-fill.svg");
 }
+
+i {
+  font-size: 1.25rem;
+  margin-right: 0.4rem;
+}

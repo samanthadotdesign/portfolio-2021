@@ -63,8 +63,8 @@ y: 0
   <p>
     Nearly 90% of our users in Indonesia use Silk Road on their mobile (70% of
     all traffic is via Android). They choose to do their key, important tasks
-    entirely on their mobile device – such as applying for financing, keeping
-    track of repayments, and monitoring their loans.
+    entirely on their mobile device. However, Silk Road was{" "}
+    <b>not mobile-optimized</b>.
   </p>
 </div>
 
@@ -114,14 +114,14 @@ y: 0
         </li>
         <li>
           There were <b>no "before" metrics</b>. It was the first time the team
-          had a product design-led initiative as part of the sprint. Mixpanel
-          and Fullstory weren't set up to measure user experience metrics.
+          had a product design-led initiative as part of the quarter priorities.
+          Mixpanel and Fullstory weren't set up to measure user experience
+          metrics.
         </li>
         <li>
-          I found many shortcomings in similar web apps that tried to optimize
-          for mobile. Viewing detailed information such as multiple tables with
-          pagination or long tasks with multiple document upload with such space
-          limitations <b>never felt user-friendly</b> to me.
+          I found many <b>shortcomings in similar mobile web apps</b>. It wasn't
+          user-friendly to view multiple tables with pagination or complete long
+          tasks with multiple document upload with such space limitations.
         </li>
       </ol>
       <a href="/">See what I would do differently</a>
@@ -134,144 +134,264 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <h2>Reconfiguration for Clarity</h2>
+  <h2>Understand & Analyze</h2>
+  <div className="row d-flex justify-content-between">
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Customer interviews revealed confusion</p>
-      <p>
-        My aim was to make the UI totally obvious and self-explanatory, by
-        keeping individual screens pared down to the essentials, showing only
-        one focused thing at a time, and so on. Good product design eliminates
-        the need for an instruction manual! (Although we’re still guilty of
-        having those.)
+      <p className="lesson-header">
+        <i class="bi bi-send-check"></i>
+        Apply for financing
       </p>
-      <p>
-        It’s not merely a matter of having clear or basic-looking interfaces.
-        (It’s easy to make a simple UI that doesn’t really do much.) The product
-        is valuable when it has simple interfaces backed by deeply considered
-        logic that saves saves people time and anxiety dealing with the terrible
-        WhatsApp mess that they had just learned to live with.
-      </p>
+      <ol>
+        <li>Customer pain points</li>
+        <li>
+          The users found it difficult to notice misspellings inside the form
+          fields since the <b>application process is very long</b> and the user
+          gets fatigued.
+        </li>
+      </ol>
     </div>
     <div className="col-md-8">
       <LoopingVideo src="/images/work/invoice-financing/disbursement-before.mp4" />
-      <figcaption>
-        Before: The information for <em>main</em> and <em>sub</em> facilities
-        were scattered. The form flowed from top to bottom, but afterwards
-        jumped back up to above (where the user won't see it).
-      </figcaption>
-    </div>
-  </div>
-</div>
-
-<FullWidthContainer>
-
-<LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-<figcaption>
-  Prioritizing respectful interfaces that don’t overwhelm or try to nag the user
-  into certain behaviours.
-</figcaption>
-
-</FullWidthContainer>
-
-<div className="container-fluid margin-top-36">
-  <div className="col-md-6">
-    <p className="lesson-header">
-      Information architecture for submitting invoices
-    </p>
-    <p>
-      I organized information more clearly for the task. I added a view example
-      and a more prominent section (most visually heavy part of the entire
-      page).
-    </p>
-  </div>
-  <div className="row d-flex">
-    <div className="col-md-6 md: padding-right-24 sm: padding-bottom-24 ">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>
-        Before: The two-keyline layout also made it easy to support resizable
-        text sizes.
-      </figcaption>
-    </div>
-    <div className="col-md-6 md: padding-left-24 sm: px-0 ">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>
-        After: The two-keyline layout also made it easy to support resizable
-        text sizes.
-      </figcaption>
+      <figcaption>Previous onboarding flow</figcaption>
     </div>
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
-  <div className="col-md-6">
-    <p className="lesson-header">Form Design</p>
-    <p>
-      I reduce the width of the form fields so be optimized for reading, grouped
-      the sections, and also included tabbed to fill.
-    </p>
-  </div>
-  <div className="row d-flex">
-    <div className="col-md-6 md: padding-right-24 sm: padding-bottom-24 ">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>
-        Before: The two-keyline layout also made it easy to support resizable
-        text sizes.
-      </figcaption>
+  <div className="row d-flex justify-content-between">
+    <div className="col-md-4 padding-right-24 d-flex flex-column justify-content-between">
+      <div className="col">
+        <p className="lesson-header">
+          <i class="bi bi-table"></i>
+          Monitor all loans & repayments
+        </p>
+        <ol>
+          <li>Customer pain points</li>
+          <li>
+            The users found it difficult to notice misspellings inside the form
+            fields since the <b>application process is very long</b> and the
+            user gets fatigued.
+          </li>
+        </ol>
+      </div>
+      <div className="col">
+        <p className="lesson-header">
+          <i class="bi bi-subtract"></i>
+          View details of each item
+        </p>
+        <ol>
+          <li>Customer pain points</li>
+          <li>
+            The users found it difficult to notice misspellings inside the form
+            fields since the <b>application process is very long</b> and the
+            user gets fatigued.
+          </li>
+        </ol>
+      </div>
     </div>
-    <div className="col-md-6 md: padding-left-24 sm: px-0 ">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>
-        After: The two-keyline layout also made it easy to support resizable
-        text sizes.
-      </figcaption>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/invoice-financing/tables-before.mp4" />
+      <figcaption>Previous onboarding flow</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="row d-flex justify-content-between">
+<h2>Mobile Design Priorities</h2>
+
+<div className="col-md-4 pe-md-4 d-flex-column">
+  <p className="lesson-header">Apply for financing</p>
+  <p></p>
+  <div className="col-md-8">
+    <MarkdownImage
+      src="/images/work/optimizing-onboarding/before-mobile.png"
+      width="375px"
+      height="812px"
+      layout="fill"
+    />{" "}
+    <figcaption>How users would apply for financing on desktop</figcaption>
+  </div>
+</div>
+
+<div className="col-md-4 ps-md-4">
+  <p className="lesson-header">Monitor all loans & repayments</p>
+  <div className="col-md-8">
+    <MarkdownImage
+      src="/images/work/optimizing-onboarding/before-mobile.png"
+      width="375px"
+      height="812px"
+      layout="fill"
+    />{" "}
+    <figcaption>How users would apply for financing on desktop</figcaption>
+  </div>
+</div>
+
+<div className="col-md-4 ps-md-4">
+  <p className="lesson-header">View details of each item</p>
+  <p></p>
+  <div className="col-md-8">
+    <MarkdownImage
+      src="/images/work/optimizing-onboarding/before-mobile.png"
+      width="375px"
+      height="812px"
+      layout="fill"
+    />{" "}
+    <figcaption>How users would apply for financing on desktop</figcaption>
+  </div>
+</div>
+
+</div>
+
+<div className="container-fluid margin-top-36">
+  <h2>Content Clarity</h2>
+  <div className="row d-flex flex-row">
+    <div className="col-md-5 pe-md-5 pb-5">
+      <p className="lesson-header">Content Inventory</p>
+      <p>
+        <b>Proactively mitigate experimenter bias</b>
+        <ol>
+          <li>
+            Participants were randomly assigned to either only desktop or only
+            mobile.
+          </li>
+          <li>
+            I prepared a script to avoid leading questions and took turns with
+            my colleague to be interviewer and notetaker.
+          </li>
+          <li>
+            We recorded both the device activity and facial expressions. The
+            notetaker would pay attention to facial expressions and duration of
+            time to respond on the device
+          </li>
+        </ol>
+      </p>
+      <br />
+      <LoopingVideo src="/images/work/optimizing-onboarding/usability.mp4" />
+    </div>
+    <div className="col-md-6 ps-md-3 d-flex flex-column">
+      <div className="col w-75">
+        <p className="lesson-header">Prioritizing Content Hierarchy</p>
+        <p>
+          <b>Identifying biases</b>
+          <ol>
+            <li>
+              Our participants were not familiar with Figma prototypes so I
+              chose to limit the functionality. For example, instead of users
+              typing their own name in, the form field would be filled with a
+              value.
+            </li>
+            <li>
+              The interviewer briefed the participants to imagine a preset
+              scenario during a loan application, which already drew attention
+              to the field. For example, "Let's say there is a misspelling in
+              your name".
+            </li>
+            <li>
+              We recruited ten colleagues for this quick usability test. They
+              would likely be more digitally literate than our customers.
+            </li>
+          </ol>
+        </p>
+      </div>
+      <div className="col">
+        <LoopingVideo src="/images/work/optimizing-onboarding/results.mp4" />
+      </div>
     </div>
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
-  <div className="col-md-6">
-    <p className="lesson-header">Strong Information Relationships</p>
-    <p>
-      I draw a strong relationship between the two tables, give users the option
-      to pay how much they want (editable fields) and separated submenu items.
-    </p>
-  </div>
-  <div className="row d-flex">
-    <div className="col-md-6 md: padding-right-24 sm: padding-bottom-24 ">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>Before: Repayment Claims</figcaption>
+  <div className="row d-flex align-items-center">
+    <div className="col-md-3 pe-md-5">
+      <figcaption>MONITOR ALL LOANS & REPAYMENTS</figcaption>
+      <p className="lesson-header">Multiple Tables on Mobile</p>
+      <p>
+        <b>Desktop</b>
+      </p>
+      <ul>
+        <li className="success">
+          5/5 filled in the company name and registration number without
+          hesitation.
+        </li>
+        <li className="fail">1/5 did not notice the tooltip at all.</li>
+        <li className="warning">
+          "Wouldn't the company know exactly how their own company is spelled?
+          Maybe for registration number, there are different types."
+        </li>
+      </ul>
+      <p>
+        <b>Mobile</b>
+        <br />
+        <ul>
+          <li className="success">
+            4/5 noticed the tooltip and spent time to check the company name and
+            registration number were correct.
+          </li>
+          <li className="fail">1/5 did not notice the tooltip.</li>
+          <li className="warning">
+            "It is obvious what was expected to do in the first place, even
+            without the tooltip."
+          </li>
+        </ul>
+      </p>
     </div>
-    <div className="col-md-6 md: padding-left-24 sm: px-0 ">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>After: Repayment Claims</figcaption>
+    <div className="col-md-2 pe-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-inlinereminder.mp4" />
+    </div>
+    <div className="col-md-6 ps-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-4.mp4" />
     </div>
   </div>
 </div>
 
-<PostLayout>
-
-## Tables are opinionated
-
-One of the biggest pain points for users was how there was too many columns and they had a hard time navigating with the horizontal scroll.
-
-It's like an information hierarchy exercise on overload when you only have a limited number of characters per line, limited number of columns, how do you decide what goes first, how to group the information together that is meaningful?
-
-When the product team is making those decisions for our users, it is opinionated and requires in-depth research.
-
-Having a strong editorial sensibility, and knowing when to split complex concepts into simpler individual parts. This one is more of an art than a science, but we had a strong instinct for editing all the facility details until they can be easily understood in the least number of columns, to accommodate changing size of information across different browser widths.
-
-</PostLayout>
-
-<FullWidthContainer>
-
-<LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-
-</FullWidthContainer>
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex align-items-center">
+    <div className="col-md-3 pe-md-5">
+      <figcaption>APPLY FOR FINANCING</figcaption>
+      <p className="lesson-header">Immediate Need for Financing</p>
+      <p>
+        <b>Desktop</b>
+      </p>
+      <ul>
+        <li className="success">
+          5/5 filled in the company name and registration number without
+          hesitation.
+        </li>
+        <li className="fail">1/5 did not notice the tooltip at all.</li>
+        <li className="warning">
+          "Wouldn't the company know exactly how their own company is spelled?
+          Maybe for registration number, there are different types."
+        </li>
+      </ul>
+      <p>
+        <b>Mobile</b>
+        <br />
+        <ul>
+          <li className="success">
+            4/5 noticed the tooltip and spent time to check the company name and
+            registration number were correct.
+          </li>
+          <li className="fail">1/5 did not notice the tooltip.</li>
+          <li className="warning">
+            "It is obvious what was expected to do in the first place, even
+            without the tooltip."
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-2 pe-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-inlinereminder.mp4" />
+    </div>
+    <div className="col-md-6 ps-md-3">
+      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-4.mp4" />
+    </div>
+  </div>
+</div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
+      <figcaption>VIEW DETAILS OF EACH ITEM</figcaption>
       <p className="lesson-header">Giving users control for information</p>
       <p>
         At a glance, we show a lot of identifiers: facility name, date of
@@ -298,12 +418,31 @@ Having a strong editorial sensibility, and knowing when to split complex concept
         sizes.
       </figcaption>
     </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <h2>Predictable Interactions</h2>
+  <div className="col-md-44">
+    <p className="lesson-header">Scroll and touch targets</p>
+    <p></p>
+  </div>
+  <div className="row d-flex">
+    <div className="col-md-6 pe-md-3">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption>Before: Repayment Claims</figcaption>
+    </div>
+    <div className="col-md-6 ps-md-3">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption>After: Repayment Claims</figcaption>
+    </div>
   </div>
 </div>
 
 <PostLayout>
 
-## Design + Engineering
+## Validating Solutions
 
 Whatever gets designed for the web app needs to be transformed into code. Even though I’m a big advocate for Figma, our content will not appear there. It’s a very good approximation of what the web app should look like, but it will be displayed as part of a website in a web browser. Multiple web browsers actually.
 
@@ -430,6 +569,40 @@ I do my best to work with developers to implement designs that mimic real life a
 Last but not least, I’m grateful for our user-centric engineers that ask clarifying questions throughout files and flag any potential issues early instead of at the time of implementation. The entire process of going from concept to implementation is more seamless.
 
 </PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <h2>Retrospective</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Adaptive design approach</p>
+      <p>
+        My colleague and I conducted contextual inquiry interviews with 20
+        users across different roles to deeply understand the current
+        origination and underwriting process. It was especially important to{" "}
+        <b>capture nuances of the process</b> that was not evident in the
+        written output. 
+      </p>
+      <p>
+        One of the challenges that emerged was that users wanted to see all
+        information available at any given time. The existing process had{" "}
+        <b>everything available to view</b> at the same time across different
+        windows of Slack, Excel, Google Sheets, and Trello.
+      </p>
+      <p>
+        We wanted our users to feel completing each defined task was seamless,
+        that they weren’t sacrificing any of the information they were once used
+        to.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>
+        I developed this framework to document the raw interviews, describing
+        job stories at a high-level, then in detail with screenshots and quotes.
+      </figcaption>
+    </div>
+  </div>
+</div>
 
 <PostLayout>
 
