@@ -61,10 +61,9 @@ y: 0
 <div className="col-md-4 px-md-4">
   <p className="lesson-header">The Problem</p>
   <p>
-    Nearly 90% of our users in Indonesia use Silk Road on their mobile (70% of
-    all traffic is via Android). They choose to do their key, important tasks
-    entirely on their mobile device. However, Silk Road was{" "}
-    <b>not mobile-optimized</b>.
+    Nearly 90% of our users in Indonesia use Silk Road on their mobile. They
+    choose to do their key, important tasks entirely on their mobile device.
+    However, Silk Road was <b>not mobile-optimized</b>.
   </p>
 </div>
 
@@ -93,6 +92,45 @@ y: 0
 <a href="/">See the impact</a>
 
 </PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <h2>Challenges</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Mobile was an afterthought</p>
+      <ol>
+        <li>
+          I did not have a choice but to take the{" "}
+          <b>responsive design approach</b> since Silk Road web app was
+          desktop-first. I worked with developers to shrink, refactor,
+          rearrange, remove the existing elements on desktop to fit the mobile
+          screen.
+        </li>
+        <li>
+          Many pages on Silk Road showed <b>multiple tables</b>, where each
+          entry had accompanying details. The information density was very
+          tightly packed.
+        </li>
+        <li>
+          There were <b>no "before" metrics</b>. It was the first time the team
+          had a product design-led initiative as part of the quarter priorities.
+          Mixpanel and Fullstory weren't set up to measure user experience
+          metrics.
+        </li>
+        <li>
+          I found many <b>shortcomings in similar mobile web apps</b>. It wasn't
+          user-friendly to view multiple tables with pagination or complete long
+          tasks with multiple document upload with such space limitations.
+        </li>
+      </ol>
+      <a href="/">See what I would do differently</a>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption></figcaption>
+    </div>
+  </div>
+</div>
 
 <div className="container-fluid margin-top-36">
   <h2>Challenges</h2>
@@ -328,47 +366,37 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
-  <div className="row d-flex align-items-center">
-    <div className="col-md-3 pe-md-5">
+  <h2>Multiple Tables</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
       <figcaption>
         <i class="bi bi-table"></i>MONITOR ALL LOANS & REPAYMENTS
       </figcaption>
-      <p className="lesson-header">Multiple Tables on Mobile</p>
+      <p className="lesson-header">Tab bar exploration</p>
       <p>
-        <b>Desktop</b>
+        Although a 40–50px tab bar could swallow 10% of the viewport height, if
+        the alternative was hitting the back arrow icon to reach the
+        navigational entry point, the tab bar may have been the most painless
+        solution.
       </p>
-      <ul>
-        <li className="success">
-          5/5 filled in the company name and registration number without
-          hesitation.
-        </li>
-        <li className="fail">1/5 did not notice the tooltip at all.</li>
-        <li className="warning">
-          "Wouldn't the company know exactly how their own company is spelled?
-          Maybe for registration number, there are different types."
-        </li>
-      </ul>
       <p>
-        <b>Mobile</b>
-        <br />
-        <ul>
-          <li className="success">
-            4/5 noticed the tooltip and spent time to check the company name and
-            registration number were correct.
-          </li>
-          <li className="fail">1/5 did not notice the tooltip.</li>
-          <li className="warning">
-            "It is obvious what was expected to do in the first place, even
-            without the tooltip."
-          </li>
-        </ul>
+        Three was the maximum number of tables per view. On top of the local
+        search bar for each table, the additional tabs felt like they took{" "}
+        <b>too much vertical space</b> when there were only two tables.
       </p>
     </div>
-    <div className="col-md-2 pe-md-3">
-      <LoopingVideo src="/images/work/optimizing-onboarding/mobile-inlinereminder.mp4" />
+    <div className="col-md-3 pe-md-5 pb-5">
+      <LoopingVideo src="/images/work/invoice-financing/tabs1.mp4" />
+      <figcaption>
+        Top-of-page tab bar above the display heading primes the user to
+        remember the title, after it disappears. It was
+      </figcaption>
     </div>
-    <div className="col-md-6 ps-md-3">
-      <LoopingVideo src="/images/work/optimizing-onboarding/desktop-4.mp4" />
+    <div className="col-md-3 pe-md-5 pb-5">
+      <LoopingVideo src="/images/work/invoice-financing/tabs2.mp4" />
+      <figcaption>
+        Bottom-of-page tab bar was a more "native app experience"{" "}
+      </figcaption>
     </div>
   </div>
 </div>
