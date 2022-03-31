@@ -497,6 +497,12 @@ li.warning {
 }
 
 i {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin-right: 0.4rem;
+  color: #757575;
+}
+
+figcaption i {
+  font-size: 12px;
+  margin-right: 4px;
 }

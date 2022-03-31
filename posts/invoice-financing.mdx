@@ -138,21 +138,22 @@ y: 0
   <div className="row d-flex justify-content-between">
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">
-        <i class="bi bi-send-check"></i>
+        <i class="bi bi-send-fill"></i>
         Apply for financing
       </p>
-      <ol>
-        <li>Customer pain points</li>
-        <li>
-          The users found it difficult to notice misspellings inside the form
-          fields since the <b>application process is very long</b> and the user
-          gets fatigued.
-        </li>
-      </ol>
+      <p>
+        The main purpose our customers use Silk Road is to improve their cash
+        flow with short-term financing.
+      </p>
+      <p>
+        Our customers get their pre-approved facility (it helps to think of it
+        as a large credit card limit) and they need to request for disbursements
+        of funds by uploading their invoices.
+      </p>
     </div>
     <div className="col-md-8">
       <LoopingVideo src="/images/work/invoice-financing/disbursement-before.mp4" />
-      <figcaption>Previous onboarding flow</figcaption>
+      <figcaption>Before: How users would request for disbursements</figcaption>
     </div>
   </div>
 </div>
@@ -165,12 +166,27 @@ y: 0
           <i class="bi bi-table"></i>
           Monitor all loans & repayments
         </p>
+        <p>
+          Since our customers are constantly juggle multiple facilities, loans
+          or invoices, and repayments in their day-to-day operations, they want
+          to <b>compare</b> them and also see <b>overviews</b>.
+        </p>
         <ol>
-          <li>Customer pain points</li>
           <li>
-            The users found it difficult to notice misspellings inside the form
-            fields since the <b>application process is very long</b> and the
-            user gets fatigued.
+            <b>Facilities</b>
+            <br />
+            Customers can track their balance on multiple pre-approved credit
+            facilities.
+          </li>
+          <li>
+            <b>Loans</b>
+            <br /> Customers can draw down from their facility limit with their invoices
+            and track these approved, ongoing loans.
+          </li>
+          <li>
+            <b>Repayments</b>
+            <br /> Customers can track outstanding repayments for their multiple
+            loans.
           </li>
         </ol>
       </div>
@@ -179,19 +195,18 @@ y: 0
           <i class="bi bi-subtract"></i>
           View details of each item
         </p>
-        <ol>
-          <li>Customer pain points</li>
-          <li>
-            The users found it difficult to notice misspellings inside the form
-            fields since the <b>application process is very long</b> and the
-            user gets fatigued.
-          </li>
-        </ol>
+        <p>
+          When taking action on a particular facility, loan, or repayment,
+          customers expect these details at their fingertips.
+        </p>
       </div>
     </div>
     <div className="col-md-8">
       <LoopingVideo src="/images/work/invoice-financing/tables-before.mp4" />
-      <figcaption>Previous onboarding flow</figcaption>
+      <figcaption>
+        Before: The dashboard views for facilities, loans, and upcoming
+        repayments.
+      </figcaption>
     </div>
   </div>
 </div>
@@ -200,7 +215,10 @@ y: 0
 <h2>Mobile Design Priorities</h2>
 
 <div className="col-md-4 pe-md-4 d-flex-column">
-  <p className="lesson-header">Apply for financing</p>
+  <p className="lesson-header">
+    <i class="bi bi-send-fill"></i>
+    Apply for financing
+  </p>
   <p></p>
   <div className="col-md-8">
     <MarkdownImage
@@ -214,7 +232,9 @@ y: 0
 </div>
 
 <div className="col-md-4 ps-md-4">
-  <p className="lesson-header">Monitor all loans & repayments</p>
+  <p className="lesson-header">
+    <i class="bi bi-table"></i>Monitor all loans & repayments
+  </p>
   <div className="col-md-8">
     <MarkdownImage
       src="/images/work/optimizing-onboarding/before-mobile.png"
@@ -227,7 +247,9 @@ y: 0
 </div>
 
 <div className="col-md-4 ps-md-4">
-  <p className="lesson-header">View details of each item</p>
+  <p className="lesson-header">
+    <i class="bi bi-subtract"></i>View details of each item
+  </p>
   <p></p>
   <div className="col-md-8">
     <MarkdownImage
@@ -244,58 +266,63 @@ y: 0
 
 <div className="container-fluid margin-top-36">
   <h2>Content Clarity</h2>
-  <div className="row d-flex flex-row">
-    <div className="col-md-5 pe-md-5 pb-5">
+  <div className="row d-flex justify-content-between">
+    <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Content Inventory</p>
       <p>
-        <b>Proactively mitigate experimenter bias</b>
-        <ol>
-          <li>
-            Participants were randomly assigned to either only desktop or only
-            mobile.
-          </li>
-          <li>
-            I prepared a script to avoid leading questions and took turns with
-            my colleague to be interviewer and notetaker.
-          </li>
-          <li>
-            We recorded both the device activity and facial expressions. The
-            notetaker would pay attention to facial expressions and duration of
-            time to respond on the device
-          </li>
-        </ol>
+        I began by creating a shared document with all our stakeholders who
+        influence the content of the product.
       </p>
-      <br />
-      <LoopingVideo src="/images/work/optimizing-onboarding/usability.mp4" />
+      <p>
+        One additional consideration is that{" "}
+        <b>
+          mobile users sometimes require different content than desktop users
+        </b>
+        . I planned for these new situations and environments by including user scenarios.This
+        helped the team discuss how to prioritize content based on the user's goals
+        on the page.
+      </p>
     </div>
-    <div className="col-md-6 ps-md-3 d-flex flex-column">
-      <div className="col w-75">
-        <p className="lesson-header">Prioritizing Content Hierarchy</p>
-        <p>
-          <b>Identifying biases</b>
-          <ol>
-            <li>
-              Our participants were not familiar with Figma prototypes so I
-              chose to limit the functionality. For example, instead of users
-              typing their own name in, the form field would be filled with a
-              value.
-            </li>
-            <li>
-              The interviewer briefed the participants to imagine a preset
-              scenario during a loan application, which already drew attention
-              to the field. For example, "Let's say there is a misspelling in
-              your name".
-            </li>
-            <li>
-              We recruited ten colleagues for this quick usability test. They
-              would likely be more digitally literate than our customers.
-            </li>
-          </ol>
-        </p>
-      </div>
-      <div className="col">
-        <LoopingVideo src="/images/work/optimizing-onboarding/results.mp4" />
-      </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/invoice-financing/content.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid">
+  <div className="row d-flex align-items-center">
+    <div className="col-md-3 padding-right-24">
+      <p className="lesson-header">Drafting Content Hierarchy</p>
+      <p>
+        Although we expected horizontal scrolling for tables on mobile, I
+        recommended the <b>guideline</b> for the number of table columns should
+        not overflow beyond the page width for desktop.
+      </p>
+      <p>
+        I could instantly reflect changes in requirements by using a Google
+        Sheets draft.
+        <ul>
+          <li>
+            Real data helped stakeholders imagine the experience and edit or
+            rearrange the content for clarity.
+          </li>
+          <li>
+            I observed the table interactions Google Sheets on mobile for
+            inspiration.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-2 pe-md-3">
+      <MarkdownImage
+        src="/images/work/invoice-financing/sheets.png"
+        width="375px"
+        height="812px"
+        layout="fill"
+      />
+    </div>
+    <div className="col-md-6 ps-md-3">
+      <LoopingVideo src="/images/work/invoice-financing/sheets.mp4" />
     </div>
   </div>
 </div>
@@ -303,7 +330,9 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex align-items-center">
     <div className="col-md-3 pe-md-5">
-      <figcaption>MONITOR ALL LOANS & REPAYMENTS</figcaption>
+      <figcaption>
+        <i class="bi bi-table"></i>MONITOR ALL LOANS & REPAYMENTS
+      </figcaption>
       <p className="lesson-header">Multiple Tables on Mobile</p>
       <p>
         <b>Desktop</b>
@@ -347,7 +376,9 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex align-items-center">
     <div className="col-md-3 pe-md-5">
-      <figcaption>APPLY FOR FINANCING</figcaption>
+      <figcaption>
+        <i class="bi bi-send-fill"></i>APPLY FOR FINANCING
+      </figcaption>
       <p className="lesson-header">Immediate Need for Financing</p>
       <p>
         <b>Desktop</b>
@@ -391,7 +422,7 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <figcaption>VIEW DETAILS OF EACH ITEM</figcaption>
+      <figcaption><i class="bi bi-subtract"></i>VIEW DETAILS OF EACH ITEM</figcaption>
       <p className="lesson-header">Giving users control for information</p>
       <p>
         At a glance, we show a lot of identifiers: facility name, date of
