@@ -133,45 +133,6 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
-  <h2>Challenges</h2>
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Mobile was an afterthought</p>
-      <ol>
-        <li>
-          I did not have a choice but to take the{" "}
-          <b>responsive design approach</b> since Silk Road web app was
-          desktop-first. I worked with developers to shrink, refactor,
-          rearrange, remove the existing elements on desktop to fit the mobile
-          screen.
-        </li>
-        <li>
-          Many pages on Silk Road showed <b>multiple tables</b>, where each
-          entry had accompanying details. The information density was very
-          tightly packed.
-        </li>
-        <li>
-          There were <b>no "before" metrics</b>. It was the first time the team
-          had a product design-led initiative as part of the quarter priorities.
-          Mixpanel and Fullstory weren't set up to measure user experience
-          metrics.
-        </li>
-        <li>
-          I found many <b>shortcomings in similar mobile web apps</b>. It wasn't
-          user-friendly to view multiple tables with pagination or complete long
-          tasks with multiple document upload with such space limitations.
-        </li>
-      </ol>
-      <a href="/">See what I would do differently</a>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption></figcaption>
-    </div>
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
   <h2>Understand & Analyze</h2>
   <div className="row d-flex justify-content-between">
     <div className="col-md-4 padding-right-24">
@@ -341,11 +302,13 @@ y: 0
         Sheets draft.
         <ul>
           <li>
-            Real data helped stakeholders imagine the experience and edit or
-            rearrange the content for clarity.
+            Real data helped stakeholders imagine the experience and edit to achieve a <b>well-considered flow</b> from left to right.
           </li>
           <li>
-            I observed the table interactions Google Sheets on mobile for
+            These business constraints gave me a strong instinct about how to <b>limit characters per column</b> and eventually how we could accommodate the changing text length across different browser widths.
+          </li>
+          <li>
+            As a earliest point of research, I observed my <b>pain points</b> while interacting with Google Sheets with real data on mobile for
             inspiration.
           </li>
         </ul>
@@ -362,6 +325,7 @@ y: 0
     <div className="col-md-6 ps-md-3">
       <LoopingVideo src="/images/work/invoice-financing/sheets.mp4" />
     </div>
+
   </div>
 </div>
 
@@ -402,6 +366,107 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Mobile Portrait</p>
+      <p>
+        <b>Horizontal scroll</b>
+        <ul>
+          <li>
+            With the available width and not-too-small typography, the
+            configuration was <b>two columns</b> of content at most.
+          </li>
+          <li>
+            I developed this split view with the <b>sticky first column</b>. The
+            table was anchored by the biggest identifier so the users have
+            context as they scrolled to read the rest of the data, as they
+            compared different entries.
+          </li>
+          <li>
+            Accessibility was at the forefront of the of redesign. The two
+            keylines <b>improved legibility</b> and avoided eye movement from
+            left to the right of the screen when scanning.
+          </li>
+        </ul>
+      </p>
+      <p>
+        <b>Vertical scroll</b>
+        <ul>
+          <li>
+            Instead of tabs, the strongest relationship between the different
+            tables was to simply <b>vertically stack</b> them. Without needing
+            to refresh the page, this helped users the most seamlessly,
+            especially when they looked for informationi quickly in a slow
+            connection environment.
+          </li>
+          <li>
+            We offered <b>local search</b> and <b>pagination</b> for users to
+            quickly navigate and shrink the page length even with multiple
+            tables.
+          </li>
+          <li>
+            I explored different mobile pagination interactions to make sure
+            there wasn't a conflict in the <b>enlarged touch targets</b>.
+          </li>
+          <li>
+            At the same time, this led to my experiments with information
+            density. We got feedback from users about the overuse of whitespace
+            in other borrower products. The <b>sweet spot</b> was to determine
+            how much white space to leave between the elements so the display
+            doesn't appear cramped but also accommodate users' preference for a
+            more tightly-packed layout configuration.
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-3 pe-md-5 pb-5">
+      <LoopingVideo src="/images/work/invoice-financing/tabs1.mp4" />
+      <figcaption>Mobile portrait</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="col-md-44">
+    <p className="lesson-header">Mobile pagination</p>
+    <p></p>
+  </div>
+  <div className="row d-flex">
+    <div className="col-md-6 pe-md-3">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption>Before: Repayment Claims</figcaption>
+    </div>
+    <div className="col-md-6 ps-md-3">
+      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
+      <figcaption>After: Repayment Claims</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Mobile Landscape</p>
+      <p>
+        <b>Horizontal scroll</b>
+        <ul>
+          <li>
+            With the wider landscape width, I used a tablet configuration that .
+          </li>
+          <li></li>
+          <li></li>
+        </ul>
+      </p>
+    </div>
+    <div className="col-md-3 pe-md-5 pb-5">
+      <LoopingVideo src="/images/work/invoice-financing/tabs1.mp4" />
+      <figcaption>Mobile portrait</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <h2>Multi-Step Tasks</h2>
   <div className="row d-flex align-items-center">
     <div className="col-md-3 pe-md-5">
       <figcaption>
@@ -478,24 +543,6 @@ y: 0
       </figcaption>
     </div>
 
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
-  <h2>Predictable Interactions</h2>
-  <div className="col-md-44">
-    <p className="lesson-header">Scroll and touch targets</p>
-    <p></p>
-  </div>
-  <div className="row d-flex">
-    <div className="col-md-6 pe-md-3">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>Before: Repayment Claims</figcaption>
-    </div>
-    <div className="col-md-6 ps-md-3">
-      <LoopingVideo src="/images/work/designer-starter-pack/ejs_desktop_scroll.mp4" />
-      <figcaption>After: Repayment Claims</figcaption>
-    </div>
   </div>
 </div>
 
