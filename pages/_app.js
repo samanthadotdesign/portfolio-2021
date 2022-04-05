@@ -78,7 +78,7 @@ function MyApp({ Component, pageProps }) {
         />
 
         <meta property="og:description" content="Portfolio website" />
-        <meta property="og:video" content="/images/site/homepage.mp4" />
+        <meta property="og:video" content="/homepage.mp4" />
         <meta property="og:image:alt" content="Homepage" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
