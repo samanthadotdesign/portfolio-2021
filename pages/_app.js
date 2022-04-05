@@ -13,12 +13,16 @@ function MyApp({ Component, pageProps }) {
   return (
     <GlobalProvider>
       <Head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <title>Samantha Lee — Creative Development</title>
+        <meta name="Samantha Lee" content="Creative Development" />
         <meta
-          name="description"
-          content="width=device-width, initial-scale=1"
+          property="og:title"
+          content="Samantha Lee – Creative Development"
         />
-        <link rel="icon" href="/favicon.ico" />
+
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
@@ -72,6 +76,23 @@ function MyApp({ Component, pageProps }) {
           as="font"
           crossOrigin=""
         />
+
+        <meta property="og:description" content="Portfolio website" />
+        <meta property="og:video" content="/images/site/homepage.mp4" />
+        <meta property="og:image:alt" content="Homepage" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:url" content="https://www.samantha.design" />
+        <meta property="og:url" content="https://www.samantha.design" />
+        <meta
+          name="theme-color"
+          content="#000"
+          media="(prefers-color-scheme: dark)"
+        />
+        <meta property="og:locale" content="en_GB" />
+
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
       <Nav />
       <Component {...pageProps} />
