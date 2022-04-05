@@ -78,11 +78,10 @@ function MyApp({ Component, pageProps }) {
         />
 
         <meta property="og:description" content="Portfolio website" />
-        <meta property="og:video" content="/homepage.mp4" />
+        <meta property="og:image" content="/homepage.png" />
         <meta property="og:image:alt" content="Homepage" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:url" content="https://www.samantha.design" />
         <meta property="og:url" content="https://www.samantha.design" />
         <meta
           name="theme-color"
