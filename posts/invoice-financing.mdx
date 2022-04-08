@@ -137,6 +137,16 @@ y: 0
   <h2>User Goals</h2>
   <div className="col-md-4 pe-md-4">
     <p className="lesson-header">
+      <i class="bi bi-table"></i>Monitor all loans & repayments
+    </p>
+    <p>
+      Since our customers constantly juggle multiple facilities, loans or
+      invoices, and repayments in their day-to-day operations, they want to see
+      an overview of all loans outstanding and upcoming repayments.
+    </p>
+  </div>
+  <div className="col-md-4 pe-md-4">
+    <p className="lesson-header">
       <i class="bi bi-send-fill"></i>
       Apply for financing
     </p>
@@ -145,16 +155,6 @@ y: 0
       their cash flow.Our customers are initially approved for a credit facility
       based on their credit quality and request for disbursements of funds by
       uploading their invoices.
-    </p>
-  </div>
-  <div className="col-md-4 ps-md-4">
-    <p className="lesson-header">
-      <i class="bi bi-table"></i>Monitor all loans & repayments
-    </p>
-    <p>
-      Since our customers constantly juggle multiple facilities, loans or
-      invoices, and repayments in their day-to-day operations, they want to see
-      an overview of all loans outstanding and upcoming repayments.
     </p>
   </div>
   <div className="col-md-4 ps-md-4">
@@ -170,22 +170,20 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
-  <h2>Content Clarity</h2>
+  <h2>Content Priorities</h2>
+  <div className="col-md-4 padding-right">
+    <p>
+      I began by creating a shared document with internal
+      stakeholders.
+    </p>
+    <p>All loans are reviewed by two separate internal teams: sales and credit. They both contribute and review information used in the invoice financing product. 
+    </p>
+  </div>
   <div className="row d-flex justify-content-between">
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Content Inventory</p>
       <p>
-        I began by creating a shared document with all our stakeholders who
-        influence the content of the product.
-      </p>
-      <p>
-        One additional consideration is that{" "}
-        <b>
-          mobile users sometimes require different content than desktop users
-        </b>
-        . I planned for these new situations and environments by including user scenarios.This
-        helped the team discuss how to prioritize content based on the user's goals
-        on the page.
+       One additional consideration is that <b>mobile users sometimes require different content than desktop users</b>. I planned for these new situations and environments by including different user scenarios.This helped the team discuss how to prioritize content based on the user's goals on the page.
       </p>
       <ol>
         <li>
@@ -208,6 +206,7 @@ y: 0
     <div className="col-md-8">
       <LoopingVideo src="/images/work/invoice-financing/content.mp4" />
     </div>
+
   </div>
 </div>
 
@@ -216,26 +215,22 @@ y: 0
     <div className="col-md-3 padding-right-24">
       <p className="lesson-header">Drafting Content Hierarchy</p>
       <p>
-        Although we expected horizontal scrolling for tables on mobile, I
-        recommended the <b>guideline</b> for the number of table columns should
-        not overflow beyond the page width for desktop.
+        Large tables was a common feature to present information associated with multiple loans. In order to maintain usability by limiting the size of tables on desktop and mobile, we had to make decisions on which elements were most important to present.
       </p>
       <p>
-        I could instantly reflect changes in requirements by using a Google
-        Sheets draft.
-        <ul>
-          <li>
-            Real data helped stakeholders imagine the experience and edit to achieve a <b>well-considered flow</b> from left to right.
-          </li>
-          <li>
-            These business constraints gave me a strong instinct about how to <b>limit characters per column</b> and eventually how we could accommodate the changing text length across different browser widths.
-          </li>
-          <li>
-            As a earliest point of research, I observed my <b>pain points</b> while interacting with Google Sheets with real data on mobile for
-            inspiration.
-          </li>
-        </ul>
+        I created a draft in Google Sheets and could instantly reflect different changes suggested by the business teams. 
       </p>
+      <ul>
+        <li>
+          Real data helped stakeholders visualize the user experience and edit elements to achieve a <b>well-considered flow</b> from left to right.
+        </li>
+        <li>
+          Given business constraints, I created a framework on how to <b>limit the number of characters per column</b> and accommodate changing text length across different browser widths.
+        </li>
+        <li>
+          As an early point of research, I observed my <b>pain points</b> while interacting with Google Sheets with real data on mobile for inspiration.
+        </li>
+      </ul>
     </div>
     <div className="col-md-2 pe-md-3">
       <MarkdownImage
@@ -253,28 +248,23 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
-  <h2>Multiple Tables</h2>
+  <figcaption>
+    <i class="bi bi-table"></i>MONITOR ALL LOANS & REPAYMENTS
+  </figcaption>
+  <h2 className="pt-md-4">Multiple Tables</h2>
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <figcaption>
-        <i class="bi bi-table"></i>MONITOR ALL LOANS & REPAYMENTS
-      </figcaption>
       <p className="lesson-header">Mobile portrait horizontal scroll</p>
       <ul>
         <li>
-          With the available width and not-too-small typography, the
-          configuration was <b>two columns</b> of content at most.
+          Given available width and legible typography, mobile devices could
+          support <b>two columns</b> of our content at most.
         </li>
         <li>
-          I developed this split view with the <b>sticky first column</b>. The
-          table was anchored by the biggest identifier so the users have context
-          as they scrolled to read the rest of the data, as they compared
-          different entries.
+         I developed this split view with the <b>sticky first column</b>.  The table was anchored by the first column so the users have context as they compared different entries and scrolled to read the rest of the data.
         </li>
         <li>
-          Accessibility was at the forefront of the of redesign. The two
-          keylines <b>improved legibility</b> and avoided eye movement from left
-          to the right of the screen when scanning.
+          Accessibility was at the forefront of the redesign. The two keylines <b>improved legibility</b> and avoided eye movement from left to the right of the screen when scanning.
         </li>
       </ul>
     </div>
@@ -292,6 +282,7 @@ y: 0
         hover control when columns were condensed more closely.
       </figcaption>
     </div>
+
   </div>
 </div>
 
@@ -300,15 +291,10 @@ y: 0
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Tab bar exploration</p>
       <p>
-        Although a 40–50px tab bar could swallow 10% of the viewport height, if
-        the alternative was hitting the back arrow icon to reach the
-        navigational entry point, the tab bar may have been the most painless
-        solution.
+        Although a 40-50px tab bar would take up10% of the viewport height, navigating via icons on a tab bar was more intuitive for users than using a back arrow to return to  the navigational entry point.
       </p>
       <p>
-        Three was the maximum number of tables per view. On top of the local
-        search bar for each table, the additional tabs felt like they took{" "}
-        <b>too much vertical space</b> when there were only two tables.
+        Each view could support three icons on the tab bar. Given the space allocated for the  local search bar on top of each table, using additional space for a tab bar with only two icons was inefficient while having more than three icons was too dense. 
       </p>
     </div>
     <div className="col-md-3 pe-md-5 pb-5">
@@ -331,32 +317,26 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Vertical scroll</p>
+      <p className="lesson-header">Ultimately, simple vertical scroll</p>
       <ul>
         <li>
-          Instead of tabs, the strongest relationship between the different
-          tables was to simply <b>vertically stack</b> them.
+          Instead of tabs, the best way to present different tables was to simply <b>stack them vertically</b>.
         </li>
         <li>
-          Without needing to refresh the page, this helped users the most
-          seamlessly, especially looking for information quickly with{" "}
-          <b>slow connection</b>.
+          Having tables stacked vertically was the most seamless way to present information to the users without requiring a page refresh. This is especially important in Indonesia where users may have <b>slow connections</b>.
         </li>
         <li>
-          Information density was tricky. We got feedback from users about the{" "}
-          <b>overuse of whitespace</b> in other borrower products.
+          Determining the right level of information density in the tables was difficult. We got feedback from users about the <b>overuse of whitespace</b> in their other products. 
         </li>
         <li>
-          The <b>sweet spot</b> was to determine how much white space to leave
-          between the elements so the display doesn't appear cramped but also
-          accommodate users' preference for a more tightly-packed layout
-          configuration.
+          The <b>sweet spot</b> was to determine how much whitespace to leave between the elements so the display doesn't appear cramped but also accommodate users’ preference for a more tightly-packed layouts.
         </li>
       </ul>
     </div>
     <div className="col-md-3 pe-md-5 pb-5">
       <LoopingVideo src="/images/work/invoice-financing/vertical-scroll-portrait.mp4" />
     </div>
+
   </div>
 </div>
 
@@ -367,7 +347,7 @@ y: 0
       <ul>
         <li>
           With the wider landscape width, I removed the two-column split view
-          and replaced it with our <b>tablet layout</b>, which has this similar
+          and replaced it with our <b>tablet layout</b>, which has a similar
           breakpoint.
         </li>
         <li>
@@ -385,24 +365,25 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
-  <h2>Multi-Step Tasks</h2>
+  <figcaption>
+    <i class="bi bi-send-fill"></i>APPLY FOR FINANCING
+  </figcaption>
+  <h2 className="pt-md-4">Multi-Step Tasks</h2>
   <div className="row d-flex">
     <div className="col-md-4 pe-md-5">
-      <figcaption>
-        <i class="bi bi-send-fill"></i>APPLY FOR FINANCING
-      </figcaption>
-      <p className="lesson-header">
-        Confusing desktop flow was difficult to reflow content
-      </p>
       <p>
         In the desktop version, the information flow was confusing and users had
         to scroll back up to submit the request.
+      </p>  
+      <p>
+        The desktop flow was difficult to rearrange for mobile.
       </p>
     </div>
     <div className="col-md-8">
       <LoopingVideo src="/images/work/invoice-financing/disbursement-before.mp4" />
-      <figcaption>Before: How users would request for disbursements</figcaption>
+      <figcaption>Before: How users would request disbursements</figcaption>
     </div>
+
   </div>
 </div>
 
@@ -411,17 +392,17 @@ y: 0
     <div className="col-md-4 pe-md-5">
       <p className="lesson-header">Immediate need for financing</p>
       <p>
-        Small-to-medium sized enterprises expect drawdown requests to be easy
+        Small-to-medium-sized enterprises expect drawdown requests to be easy
         and fast on mobile.
       </p>
       <p>I explored ways to make this multi-step process clearer for mobile:</p>
       <ol>
         <li>
-          Choose master facility. From list of sub facilities, choose one to
-          draw down funds from.
+          Choose the master facility. From the list of sub facilities, choose
+          one to draw down funds from.
         </li>
-        <li>Fill invoice details and upload invoice.</li>
-        <li>View disbursement details and submit request.</li>
+        <li>Fill in invoice details and upload the invoice.</li>
+        <li>View disbursement details and submit the request.</li>
       </ol>
     </div>
     <div className="col-md-3 pe-md-3">
@@ -436,12 +417,13 @@ y: 0
 </div>
 
 <div className="container-fluid margin-top-36">
+  <figcaption>
+    <i class="bi bi-subtract"></i>VIEW DETAILS OF EACH ITEM
+  </figcaption>
+  <h2 className="pt-md-4">Side Panel</h2>
   <div className="row d-flex">
     <div className="col-md-4 pe-md-5">
-      <figcaption>
-        <i class="bi bi-subtract"></i>VIEW DETAILS OF EACH ITEM
-      </figcaption>
-      <p className="lesson-header">Giving users control for information</p>
+      <p className="lesson-header">Giving users control over information</p>
       <p>
         When we edited the columns to fit the desktop view, the columns were
         prioritized based on:
@@ -455,12 +437,10 @@ y: 0
         </li>
       </ul>
       <p>
-        I introduced the side panel for information we removed from the main
-        table but might be necessary in some scenarios.
+        On mobile, I introduced the side panel for information we removed from the main table but might be necessary for some scenarios.
       </p>
       <p>
-        Although the single keyline layout was vertically longer, it was easier
-        to scan since users would have to scroll vertically regardless.
+        Although the single keyline layout was vertically longer, it was easier to scan since users who normally used a vertical scroll.
       </p>
     </div>
     <div className="col-md-2 pe-md-3">
@@ -487,6 +467,7 @@ y: 0
         layout="fill"
       />
     </div>
+
   </div>
 </div>
 
@@ -497,8 +478,8 @@ y: 0
       <p className="lesson-header">Usability testing</p>
       <p>
         I prepared the <b>usability test script and prototypes</b> to help our
-        Product Manager conduct the usability tests. I didn't conduct them,
-        which were in Bahasa Indonesia.
+        Product Manager conduct the usability tests, which were conductedin
+        Bahasa Indonesia.
       </p>
       <p>
         The product manager and I debriefed after the interviews. I synthesized
@@ -519,9 +500,9 @@ y: 0
       </p>
       <p>
         I worked with our Engineers to keep the web app lightweight to help to
-        increase the mobile performance of our website. The most interesting I
-        learned were the tradeoffs of different ways to render user-specific
-        data.
+        increase the mobile performance of our website. The most interesting
+        thing I learned was the tradeoffs of different ways to render
+        user-specific data.
       </p>
     </div>
     <div className="col-md-3 pe-md-3">
@@ -541,7 +522,7 @@ y: 0
       </p>
       <p>
         I worked with fluid grids and media queries to allow the layout, image
-        scale and typographical arrangement to change holistically based on
+        scale, and typographical arrangement to change holistically based on
         viewport size and device orientation.
       </p>
     </div>
@@ -561,10 +542,6 @@ y: 0
         streamline the content so it would fit with our users' understanding.
       </p>
       <p>
-        During usabilty tests, we were overwhelmed with specific comments around
-        more pressing mobile navigation issues.
-      </p>
-      <p>
         If we could conduct another discovery study, I would suggest a deeper
         understanding of terms and groupings, which would help us serve users'
         needs through <b>better UX copy</b> and <b>more focused sections</b>.
@@ -578,19 +555,14 @@ y: 0
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Adaptive design approach</p>
       <p>
-        I approached this with <b>responsive design principles</b>, where the
-        entire product existed on desktop first and I designed to allow the web
-        app to move fluidly to fit smaller devices.
+        I approached this with <b>responsive design principles</b>, where the entire product existed on desktop first and was designed to allow the web app to fluidly fit mobile  devices.
       </p>
       <p>
         If we had more resources, I would have chosen a mobile-first approach
         within the <b>adaptive design framework</b>.
       </p>
       <p>
-        For example, when users applied for financing, we were limited by the
-        constraints of the desktop design and shipped one very long form. We
-        weren't able to implement a <b>multi-page flow</b>, which would have
-        solved this issue for the loan application experience.
+        For example, when users applied for financing, we were limited by the constraints of the desktop design and shipped one very long form. We weren't able to implement a <b>multi-page flow</b>, which would have improved the loan application experience.
       </p>
     </div>
     <div className="col-md-3 pe-md-3">
@@ -600,5 +572,6 @@ y: 0
         reduce errors, and navigate more easily between sections.
       </figcaption>
     </div>
+
   </div>
 </div>
