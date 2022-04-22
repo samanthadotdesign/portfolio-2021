@@ -78,7 +78,10 @@ function MyApp({ Component, pageProps }) {
         />
 
         <meta property="og:description" content="Portfolio website" />
-        <meta property="og:image" content="/homepage.png" />
+        <meta
+          property="og:image"
+          content="https://samantha.design/homepage.jpg"
+        />
         <meta property="og:image:alt" content="Homepage" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
