@@ -76,14 +76,15 @@ y: 0
 </div>
 
 <div className="col-md-4 ps-md-4">
-  <p className="lesson-header">The Solution</p>
+  <p className="lesson-header">The Hypothesis</p>
   <p>
-    We use a third-party identity document verification tool,
-    <a href="https://onfido.com/"> Onfido</a> to quickly verify a user’s identity
-    with just their ID and face. Our hypothesis is one of the reasons why users submit
-    incorrect information is that after they upload their ID, their ID information
-    is parsed into the application form fields. Users assume that the parsing is
-    accurate and don’t correct it if there are errors.
+    We use a third-party identity document verification tool,&nbsp;
+    <a href="https://onfido.com/">Onfido</a>
+    &nbsp;to quickly verify a user’s identity with just their ID and face. Our
+    hypothesis is one of the reasons why users submit incorrect information is
+    that after they upload their ID, their ID information is parsed into the
+    application form fields. Users assume that the parsing is accurate and don’t
+    correct it if there are errors.
   </p>
 </div>
 
@@ -239,9 +240,12 @@ y: 0
   <h2 id="testing">Testing</h2>
   <div className="row d-flex flex-row">
     <div className="col-md-5 pe-md-5 pb-5">
-      <p className="lesson-header">Testing</p>
+      <p className="lesson-header">Mitigating experimenter bias</p>
       <p>
-        <b>Proactively mitigate experimenter bias</b>
+        I designed the usability tests to minimize the false-consensus bias and
+        framing effect.
+      </p>
+      <p>
         <ol>
           <li>
             Participants were randomly assigned to either only desktop or only
@@ -263,9 +267,12 @@ y: 0
     </div>
     <div className="col-md-6 ps-md-3 d-flex flex-column">
       <div className="col w-75">
-        <p className="lesson-header">Results</p>
+        <p className="lesson-header">Identifying unresolved biases</p>
         <p>
-          <b>Identifying biases</b>
+          By recognizing the participant biases we couldn't remove, we can
+          evaluate our decisions with a more balanced perspective.
+        </p>
+        <p>
           <ol>
             <li>
               Our participants were not familiar with Figma prototypes so I
@@ -475,7 +482,7 @@ y: 0
 
 <PostLayout>
 
-## Iteration
+## Final Solution
 
 Almost all the tasks were completed successfully during usability tests but there was room for improvement to make the inline confirmation button look more obvious.
 
@@ -569,8 +576,12 @@ The users would see inline reminders first in the application flow (users fill i
 
 ## Impact in Digits
 
-_(To be continued)_
+The key metric that the design affects is the **error rate** of identification details in applications.
 
-The key metric that the design affects is the error rate of identification details in applications. Reducing the error rate will have subsequent effects on turnaround time for the sales team and on returning decisions on loan applications. I’ll continue to add more here as we measure the results.
+Reducing the error rate will have subsequent effects on **turnaround time** for the sales team and on returning decisions on loan applications.
+
+The interim projected impact is we would **reduce the error rate via web app by 10%** and speed up turnaround time for new applications by **10–30 minutes per application**.
+
+_I'll add more in the future as the final impact is still being measured._
 
 </PostLayout>
