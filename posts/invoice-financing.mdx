@@ -291,23 +291,28 @@ y: 0
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Tab bar exploration</p>
       <p>
-        Although a 40-50px tab bar would take up10% of the viewport height, navigating via icons on a tab bar was more intuitive for users than using a back arrow to return to  the navigational entry point.
+        <b>Pros</b><br/>
+        Although a 40-50px tab bar would take up 10% of the viewport height, it helped users navigate wherever they were on the page.
       </p>
       <p>
-        Each view could support three icons on the tab bar. Given the space allocated for the  local search bar on top of each table, using additional space for a tab bar with only two icons was inefficient while having more than three icons was too dense. 
+        <b>Cons</b><br/>
+        <ul>
+          <li>Fewer than three tables was inefficient use of space, especially given the space allocated for the local search bar on top of each table.</li>
+          <li>For pages with more than three tables, it would be confusing with two horizontal swipe gestures, one (scrolling to more tabs) on top of the other (scrolling horizontal tables).</li>
+        </ul>
       </p>
     </div>
     <div className="col-md-3 pe-md-5 pb-5">
       <LoopingVideo src="/images/work/invoice-financing/tabs1.mp4" />
       <figcaption>
         Top-of-page tab bar above the display heading primes the user to
-        remember the title, after it disappears. It was
+        remember the title, after it disappears.
       </figcaption>
     </div>
     <div className="col-md-3 pe-md-5 pb-5">
       <LoopingVideo src="/images/work/invoice-financing/tabs2.mp4" />
       <figcaption>
-        Bottom-of-page tab bar was a more "native app experience"{" "}
+        Bottom-of-page tab bar was a more "native app experience"
       </figcaption>
     </div>
 
@@ -359,7 +364,35 @@ y: 0
       </ul>
     </div>
     <div className="col-md-6 pe-md-5 pb-5">
-      <LoopingVideo src="/images/work/invoice-financing/horizontal-scroll-landscape.mp4" />
+      <LoopingVideo src="/images/work/invoice-financing/horizontal-landscape.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-6 pe-md-3">
+      <MarkdownImage
+        src="/images/work/invoice-financing/landscape-pixel.png"
+        width="1624px"
+        height="750px"
+        layout="fill"
+      />
+      <figcaption>
+        Rectangular display like Chrome browser on Pixel phone
+      </figcaption>
+    </div>
+    <div className="col-md-6 ps-md-3 pb-5">
+      <MarkdownImage
+        src="/images/work/invoice-financing/landscape-safari.png"
+        width="1624px"
+        height="750px"
+        layout="fill"
+      />
+      <figcaption>
+        Edge-to-edge display for iPhone needs to take into account the safe area
+        defined by WebKit API.
+      </figcaption>
     </div>
   </div>
 </div>
@@ -420,10 +453,16 @@ y: 0
   <figcaption>
     <i class="bi bi-subtract"></i>VIEW DETAILS OF EACH ITEM
   </figcaption>
-  <h2 id="side panel" className="pt-md-4">Side Panel</h2>
+  <h2 id="side panel" className="pt-md-4">
+    Side Panel
+  </h2>
   <div className="row d-flex">
     <div className="col-md-4 pe-md-5">
       <p className="lesson-header">Giving users control over information</p>
+      <p>
+        I introduced the side panel for information we removed from the main
+        table but might be necessary for some scenarios.
+      </p>
       <p>
         When we edited the columns to fit the desktop view, the columns were
         prioritized based on:
@@ -436,11 +475,16 @@ y: 0
           information used for <b>comparison</b>
         </li>
       </ul>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 pe-md-5">
       <p>
-        On mobile, I introduced the side panel for information we removed from the main table but might be necessary for some scenarios.
-      </p>
-      <p>
-        Although the single keyline layout was vertically longer, it was easier to scan since users who normally used a vertical scroll.
+        Although the single keyline layout was vertically longer, it was easier
+        to scan since users who normally used a vertical scroll.
       </p>
     </div>
     <div className="col-md-2 pe-md-3">
@@ -459,15 +503,25 @@ y: 0
         layout="fill"
       />
     </div>
-    <div className="col-md-4 ps-md-3">
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 pe-md-5">
+      <p>
+        I made use of the bigger width in landscape mode to fit two columns that
+        reduced the vertical scroll.
+      </p>
+    </div>
+    <div className="col-md-4">
       <MarkdownImage
-        src="/images/work/invoice-financing/sidepanel-landscape.png"
+        src="/images/work/invoice-financing/sidepanel-landscape-safari.png"
         width="812px"
         height="375px"
         layout="fill"
       />
     </div>
-
   </div>
 </div>
 
