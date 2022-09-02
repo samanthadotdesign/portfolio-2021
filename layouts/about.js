@@ -51,7 +51,7 @@ export default function About() {
             <div className="col-md-5 px-0">
               <h3 className="py-0">
                 I'm a Product Designer at Meta, where I work on experiences to
-                protect people, businesses, and Meta from malicious advertisers.
+                protect people and businesses from malicious advertisers.
               </h3>
             </div>
             <div className="col-md-6 px-0 d-flex flex-column align-items-end">
