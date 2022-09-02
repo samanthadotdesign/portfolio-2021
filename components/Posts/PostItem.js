@@ -22,6 +22,7 @@ const PostItemContainer = (props) => {
 
   return (
     <div
+      onTouchStart={goToLink}
       onClick={goToLink}
       style={style}
       className={`h-100 d-flex flex-column ${className}`}
