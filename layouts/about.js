@@ -50,8 +50,9 @@ export default function About() {
           <div className="d-flex row justify-content-between py-5 nav-header">
             <div className="col-md-5 px-0">
               <h3 className="py-0">
-                I'm a Product Designer at Meta, where I work on experiences to
-                protect people and businesses from malicious advertisers.
+                Previously at Meta. Currently open to new opportunities,
+                especially ambitious 0 &rarr; 1 products demanding pixel
+                perfection in any dimension.
               </h3>
             </div>
             <div className="col-md-6 px-0 d-flex flex-column align-items-end">
