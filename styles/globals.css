@@ -53,7 +53,8 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  h1 {
+  h1,
+  .alt-h1 {
     font-size: 48px !important;
   }
 }

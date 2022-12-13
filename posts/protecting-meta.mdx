@@ -1,0 +1,498 @@
+---
+title: "Protecting Meta"
+media: ""
+color: "#FAFF00"
+mask: "shape3.svg"
+ratioW: 375
+ratioH: 812
+isFeatured: true
+toc: true
+w: 2
+h: 2
+x: 0
+y: 0
+---
+
+<PostLayout>
+
+<h1>Unifying Meta’s Moderation Tool</h1>
+
+</PostLayout>
+
+<div className="row d-flex row-no-gutters justify-content-between">
+
+<div className="col-md-4 pe-md-4">
+  <p className="lesson-header">Cross-Meta Integrity</p>
+  <p>
+    Our mission is to ensure trustworthy connections, protecting people and
+    businesses by reducing harmful content like violence and scams. We use human
+    reviewing, labeling, and machine learning to moderate content.
+  </p>
+</div>
+
+<div className="col-md-4 px-md-4">
+  <p className="lesson-header">Single Review Tool (SRT)</p>
+  <p>
+    Our human reviewer platform, SRT, serves 50,000 reviewers who make decisions
+    for 2,000+ different types of jobs across both paid and organic content on
+    all Meta's platforms.
+  </p>
+</div>
+
+<div className="col-md-4 ps-md-4">
+  <p className="lesson-header">Design Lead, Sep – Nov 2022</p>
+  <p>
+    As the main Product Designer on the Review Experiences team, I coordinated
+    and collaborated with multiple cross-functional teams that hadn't previously
+    worked closely together before.
+  </p>
+</div>
+
+</div>
+
+<PostLayout>
+
+## Business Goals
+
+<p className="lesson-header">
+  Improve human reviewer performance at scale for quality and efficiency
+</p>
+
+1. **Precision** — Provide information that helps reviewers catch true-positives for violating content and improve ML model
+2. **False discovery rate** — ML model enqueues jobs for human review when there is uncertainty. Hence, reviewers train ML model to predict false-positives more accurately too.
+3. **Average handling time** — Streamline information and automate to reduce time taken for human reviewer to process jobs
+4. **Response time** — Empower policymakers to self-manage reviewers' workflows to apply policies consistently
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+<h2 id="challenges">Challenges</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+    <p className="lesson-header">
+      Largest unification initiative for SRT
+    </p>
+
+1. SRT UI is massively **complex, fragmented, and inconsistent**, making maintenance and optimization difficult.
+
+2. Even though there are similar use cases across multiple types of review, the parts of the workflow are **not interoperable**.
+
+3. Each problem area has a dedicated Policies team, but not Product Engineering support. There is **tech debt** as a result of rapidly responding to new malicious activity threats.
+
+</div>
+<div className="col-md-6">
+      <MarkdownImage 
+        src="/images/work/protecting-meta/challenges.png" 
+        width="3266px"
+        height="1945px"
+        layout="fill"
+      />
+      <figcaption>For the same use cases in an ad review component, SRT has 6 distinct variations built by different teams. 
+</figcaption>
+    </div>
+</div>
+</div>
+
+<PostLayout>
+
+## High-Level Approach
+
+</PostLayout>
+
+<PostLayout>
+
+## Module Configuration
+
+Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
+
+This accomplishes a few things:
+
+- allowed the organization to track TAT for each task, which will help the business **identify bottlenecks** and optimize the operations
+- the modular nature of the tasks allows the business to make **repeatable tasks** for other types of loans, especially making it faster for the business to create new loan offerings
+- allowed the business to systematically **analyse historical data** based on specific tasks and work towards building a self-improving smart loan origination system
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Contextual Inquiry</p>
+      <p>
+        My colleague and I conducted contextual inquiry interviews with 20
+        users across different roles to deeply understand the current
+        origination and underwriting process. It was especially important to{" "}
+        <b>capture nuances of the process</b> that was not evident in the
+        written output. 
+      </p>
+      <p>
+        One of the challenges that emerged was that users wanted to see all
+        information available at any given time. The existing process had{" "}
+        <b>everything available to view</b> at the same time across different
+        windows of Slack, Excel, Google Sheets, and Trello.
+      </p>
+      <p>
+        We wanted our users to feel completing each defined task was seamless,
+        that they weren’t sacrificing any of the information they were once used
+        to.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>
+        I developed this framework to document the raw interviews, describing
+        job stories at a high-level, then in detail with screenshots and quotes.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Configuration Exploration</p>
+      <p>
+        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
+      </p>
+      <p>
+        In the first iteration, the module was a complex blend of hierarchical structures that
+        mimicked Google Sheets. However, in practice the complexity led to
+        confusion about which information belonged to which person. 
+      </p>
+  
+      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
+        having {" "}<b>disconnected pieces that may not be useful all the
+        time</b>.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
+      <figcaption>
+        Configuration exploration: Stacking the information the users wanted to
+        to see in one task led to confusion.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-before.mp4" />
+      <figcaption>
+        Before: Three crucial relationships for each task (filter, view,
+        create/reassign) were disjointed.
+      </figcaption>
+    </div>
+    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
+      <figcaption>
+        After: Users are able filter or sort with column headers and reassign
+        single or bulk rows.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p>
+        I made an exhaustive list of configurations for our task elements to do
+        different tasks on the Command Center. We wanted to maintain consistent
+        behaviour and covered the dozens of edge cases. The final arrangement
+        establishes a logical, consistent eye-flow for users and groups task
+        elements by their relationships to each other.
+      </p>
+      <p>
+        I also worked on a modular system that could accommodate new types of
+        tasks in the future. This would allow the Command Center to evolve and
+        support the entire lifecycle of loan processing.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-3.mp4" />
+      <figcaption>
+        The result gets users into the information they need to fill faster and
+        creates a tighter correlation between the task input and the information
+        needed.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-1.mp4" />
+      <figcaption>
+        Configuration exploration: Align content with two keylines. The
+        hypothesis was we could use two-column sections to avoid vertical scroll
+        and improve legibility.
+      </figcaption>
+    </div>
+    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-2.mp4" />
+      <figcaption>
+        Configuration exploration: Separate all the view-only content in a
+        separate page. It gives the task a clear sense of “place” for users
+        inside of the massive sea of mixed content.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+<p className="lesson-header">Task Real Estate</p>
+
+Because screen real estate is at a premium in software, it was important that we defend our choice to add more whitespace to the UI.
+
+It takes effort to keep something simple and we were not chasing simplicity in the abstract. At the feature level, we had to <b>constantly negotiate to avoid crowding the screen</b> with unnecessary features, and focus on translating how the business intended to make the loan process more modular.
+
+Competitive analysis helped to contextualize our decisions and reminded everyone that just because a UI change feels drastic internally, when compared to the broader software landscape it might be completely within the norm.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-5 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/loanview-before.mp4" />
+      <figcaption>
+        Before: There simply was not enough space for the tasks users were
+        expected to do when it was stacked inside the loan view.
+      </figcaption>
+    </div>
+    <div className="col-md-7 pt-md-0 ps-md-4 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/task.mp4" />
+      <figcaption>
+        After: In the modular approach, users were able to do everything
+        directly on the loan itself, such as documenting their comments, which
+        were previously Slack threads.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+## Customizing Angular Libraries
+
+I learned to accept that edge cases for some interactions should follow tried and **tested practices from established libraries**. As the only designer on the team with a very lean team of developers, I wanted to remove potential bottlenecks in development. It was much more robust for the developers to use an existing library rather than spend time working on small elements.
+
+I collaborated closely with developers to and **I experimented to see how we can modify out-of-the-box solutions** to fit our design system, instead of designing and then handing it off the engineers. Below are a few interaction design patterns where we included my suggestions from researching and styling Angular libraries.
+
+</PostLayout>
+
+<PostLayout>
+
+<p className="lesson-header">Advanced Search</p>
+
+Our database of borrowers and their loans is our single source of truth. We used a searchbar in multiple parts of the Command Center to allow for the processing of repeat customers easily.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-5 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/autocomplete-search.mp4" />
+      <figcaption>
+        One of my suggestions was to use autocomplete, predictive search to
+        provide instant results.
+      </figcaption>
+    </div>
+    <div className="col-md-7 pt-md-0 ps-md-4 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/search-modal.mp4" />
+      <figcaption>
+        With the constraints of fetching from the database, I designed the
+        search interaction to take place inside a modal instead.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+  <p className="lesson-header">Multiselect Dropdown</p>
+  <p>
+    In this instance where users have to select multiple borrowers who are
+    associated with one file, I experimented with angular multiselect dropdown
+    libraries. For example,{" "}
+    <a href="https://github.com/CuppaLabs/angular2-multiselect-dropdown">
+      angular2-multiselect-dropdown
+    </a>{" "}
+    has rich features to handle grouping, filter, and lazy load remote data.
+  </p>
+</PostLayout>
+
+<div className="container-fluid">
+  <div>
+    <figcaption className="pb-3">
+      Drag to see the code for the prototype.
+    </figcaption>
+    <iframe
+      className="mw-100 rounded-edges"
+      height="600"
+      width="1000"
+      src="https://codesandbox.io/embed/angular-angular2-multiselect-dropdown-v985yq?autoresize=1&fontsize=12&hidenavigation=1&theme=light"
+      className="overflow-hidden"
+      title="@angular/angular2-multiselect-dropdown"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-5 padding-right-24">
+      <p className="lesson-header">Hover over table headers and rows</p>
+      <p>
+        There are some parts which are built from scratch on top of the current
+        library. In this example, our front-end engineer, Shubhro Bhownik
+        created custom header component for the hover-arrow effect. The library
+        that we are using would not work because it has server-side sorting.
+      </p>
+      <p>
+        The custom header makes backend calls. Based on whether the user has
+        clicked up or down arrows, it sends the DESC/ASC parameter to the
+        backend. When users click the arrow, it becomes highlighted as active so
+        it stays on the header.
+      </p>
+    </div>
+    <div className="col-md-7 ps-md-3 ps-sm-0 d-flex justify-content-center align-items-center">
+      <LoopingVideo src="/images/work/loan-origination-system/table-columns.mp4" />
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+## Using tables as forms
+
+I designed many tables for viewing and selecting data but I will focus where users fill data. Our users were most familiar with Excel and I had to include similar features to create an intuitive experience for our Command Center.
+
+One of the challenges was **creating a web experience that had the level of performance that users were familiar with** in Google Sheets or Microsoft Excel. We had to deprioritize features like enabling calculations inside cells to focus on precise, automated parsing of PDF statements directly into the cells, which would save users more time.
+
+</PostLayout>
+
+<div className="mw-100 override-toc d-flex justify-content-center align-items-center">
+  <div className="col-md-8">
+    <LoopingVideo src="/images/work/loan-origination-system/table-form.mp4" />
+    <figcaption>
+      For some tasks where there used to be manual data entry for financial
+      statements, we parse the values into the tables if possible.
+    </figcaption>
+  </div>
+</div>
+
+<PostLayout>
+
+## UI Facelift
+
+As Funding Societies was becoming as a financing company with robust internal tools, I felt it was the right time to **unify the product’s visual language** with that of marketing and consumer product surfaces. Having a cohesive brand image even for internal tools was important in presenting the company to external stakeholders like potential customers and investors.
+
+We included typography and colour proportions foundations from marketing and consumer products. It was a simple swap but it helped to unify our surfaces across the entire company. This was an internal tool that our Engineering team built from scratch and it deserved to <em>look</em> like the best in class product that it was.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">
+        Type choices for clear information hierarchy
+      </p>
+      <p>
+        Command Center was a wash of the default Arial: navigation, labels,
+        tables, buttons, searchbar are all set in the same typeface, and often
+        in a single weight.
+      </p>
+      <p>
+        The first change was to use Inter, which was highly legible and more
+        versatile in application. This simple change made a dramatic impact in
+        refining the presentation of information. We used different type sizes
+        and grayscale to{" "}
+        <b>add a clear layer of informational hierarchy within our UI</b> that
+        both simplified design decisions and served as a clear signal to users
+        as to the utility of different text strings in the product.
+      </p>
+      <p>
+        Because processing loans is a primarily text-based decision making,
+        changing any typeface is a herculean effort. I worked hand-in-hand with
+        our front-end developers, Stuart Hammar and Shubhro Bownik to ensure the
+        change-over for type and spacing was smooth.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <MarkdownImage
+        className="rounded-edges"
+        src="/images/work/loan-origination-system/type.png"
+        width="1667px"
+        height="955px"
+        layout="fill"
+      />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Style Guide</p>
+      <p>
+        I worked with Stuart and Shubhro to build a style guide for Command
+        Center that could be easily adopted by other developers.
+      </p>
+      <p>
+        The Pantry Design System contains the library of common components used
+        in the product and expands out to design principles for the design team
+        to follow, as well as UX guidance on usage and implementation for every
+        piece used in the product. This ranged form form elements to entire
+        screen configurations.
+      </p>
+      <p>
+        The style guide was vital for both our developers and our designers,
+        giving us a shared kit of parts to work from and ensuring consistency
+        within our designs. This{" "}
+        <b>
+          reduced complexity in product development and set a consistent pattern
+          of expected behaviors for users
+        </b>
+        . This framework was eventually adopted by additional suites in the customer-facing
+        enterprise solution line and used across multiple teams at the company today.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <MarkdownImage
+        className="rounded-edges"
+        src="/images/work/loan-origination-system/styleguide.png"
+        width="3360px"
+        height="2024px"
+        layout="fill"
+      />
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+## Impact in Digits
+
+We invested two years of work into our loan origination system rehaul, resulting in a significant improvement in our ability to automate and integrate AI into our credit underwriting. Our group CEO, Kelvin Teo, stated that we "have proven our AI-led credit capabilities in an unprecedented financial crisis".
+
+In Q4 2021, Funding Societies annualised <b>loan origination exceeded US$1
+billion</b>. The overall platform <b>default rate remained under 2% through the
+pandemic</b>.
+
+We were able to improve the <b>turnaround time for credit teams for accepting or declining loan cases by 30%</b>. By capturing the end-to-end loan processing in one single system, 100% of TAT is recorded accurately on the Command Center.
+
+<BlockQuote>
+  “The Cornell professor Tarleton Gillespie called teams like mine the
+  “custodians of the internet.”
+  <br />
+  <br />
+  <em className="text-muted">
+    — Greg Moon, managing partner at SoftBank Investment Advisers, investor at
+    Funding Societies
+  </em>
+</BlockQuote>
+
+</PostLayout>
