@@ -507,3 +507,18 @@ figcaption i {
   font-size: 12px;
   margin-right: 4px;
 }
+
+.process-circle {
+  border-radius: 50%;
+  border: solid 1px #000;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-circle p {
+  margin: 0;
+}
