@@ -22,6 +22,7 @@ y: 0
 <div className="row d-flex row-no-gutters justify-content-between">
 
 <div className="col-md-4 pe-md-4">
+  <p className="subtitle-caption">THE TEAM</p>
   <p className="lesson-header">Cross-Meta Integrity</p>
   <p>
     Our mission is to ensure trustworthy connections, protecting people and
@@ -31,6 +32,7 @@ y: 0
 </div>
 
 <div className="col-md-4 px-md-4">
+  <p className="subtitle-caption">THE PRODUCT</p>
   <p className="lesson-header">Single Review Tool (SRT)</p>
   <p>
     Our human reviewer platform, SRT, serves 50,000 reviewers who make decisions
@@ -40,11 +42,11 @@ y: 0
 </div>
 
 <div className="col-md-4 ps-md-4">
+  <p className="subtitle-caption">THE ROLE</p>
   <p className="lesson-header">Design Lead, Sep – Nov 2022</p>
   <p>
-    As the main Product Designer on the Review Experiences team, I coordinated
-    and collaborated with multiple cross-functional teams that hadn't previously
-    worked closely together before.
+    Lead vision work to unify SRT from project conception to coordinating teams
+    across Product Engineering and Operations to define the product roadmap.
   </p>
 </div>
 
@@ -97,102 +99,53 @@ y: 0
 
 ## High-Level Approach
 
-<ProcessVisual
-  headings={["Understand", "Converge", "Implement", "Maintain"]}
-></ProcessVisual>
+Without a UXR or PM capacity, I coordinated and collaborated with <b>multiple cross-functional teams</b> that hadn't previously worked closely together before.
+
+<div className="py-5">
+  <ProcessVisual
+    headings={["Understand", "Converge", "Implement", "Maintain"]}
+  ></ProcessVisual>
+</div>
+
+<BlockQuote>
+  “Samantha stood out to me due to her exceptionally detailed design methodology
+  and strategic approach. From the first few weeks at Meta, it was clear that
+  Samantha was a <b>creative problem-solver</b> and would drive a step change
+  improvement in the quality of our work. She [...] contributed to many{" "}
+  <b>impactful product ideas</b> leading to saving million dollars for the
+  company.”
+  <br />
+  <br />
+  <em className="text-muted">— Direct Product Design Manager</em>
+</BlockQuote>
 
 </PostLayout>
 
 <PostLayout>
 
-## Module Configuration
+## Understand
 
-Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
+There were two main objectives for my understanding work:
 
-This accomplishes a few things:
-
-- allowed the organization to track TAT for each task, which will help the business **identify bottlenecks** and optimize the operations
-- the modular nature of the tasks allows the business to make **repeatable tasks** for other types of loans, especially making it faster for the business to create new loan offerings
-- allowed the business to systematically **analyse historical data** based on specific tasks and work towards building a self-improving smart loan origination system
+- To identify opportunities by conducting heuristic evaluation and cognitive walkthroughs with content moderators from various markets
+- To define a robust set of heuristics and audit framework that is repeatable across multiple workflows
 
 </PostLayout>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Contextual Inquiry</p>
+      <p className="lesson-header">Audit Framework</p>
       <p>
-        My colleague and I conducted contextual inquiry interviews with 20
-        users across different roles to deeply understand the current
-        origination and underwriting process. It was especially important to{" "}
-        <b>capture nuances of the process</b> that was not evident in the
-        written output. 
-      </p>
-      <p>
-        One of the challenges that emerged was that users wanted to see all
-        information available at any given time. The existing process had{" "}
-        <b>everything available to view</b> at the same time across different
-        windows of Slack, Excel, Google Sheets, and Trello.
-      </p>
-      <p>
-        We wanted our users to feel completing each defined task was seamless,
-        that they weren’t sacrificing any of the information they were once used
-        to.
+        I helped the team define the audit framework, created multiple workshops
+        to support the initiative, and published a set of heuristics specific to
+        content moderation tooling.
       </p>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <LoopingVideo src="/images/work/protecting-meta/srt-excellence.mp4" />
       <figcaption>
-        I developed this framework to document the raw interviews, describing
-        job stories at a high-level, then in detail with screenshots and quotes.
-      </figcaption>
-    </div>
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Configuration Exploration</p>
-      <p>
-        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
-      </p>
-      <p>
-        In the first iteration, the module was a complex blend of hierarchical structures that
-        mimicked Google Sheets. However, in practice the complexity led to
-        confusion about which information belonged to which person. 
-      </p>
-  
-      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
-        having {" "}<b>disconnected pieces that may not be useful all the
-        time</b>.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
-      <figcaption>
-        Configuration exploration: Stacking the information the users wanted to
-        to see in one task led to confusion.
-      </figcaption>
-    </div>
-
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/tasklist-before.mp4" />
-      <figcaption>
-        Before: Three crucial relationships for each task (filter, view,
-        create/reassign) were disjointed.
-      </figcaption>
-    </div>
-    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
-      <figcaption>
-        After: Users are able filter or sort with column headers and reassign
-        single or bulk rows.
+        I led workshops to advocate for improvements to the Product Designers
       </figcaption>
     </div>
   </div>
@@ -201,231 +154,111 @@ This accomplishes a few things:
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Audit Insights</p>
       <p>
-        I made an exhaustive list of configurations for our task elements to do
-        different tasks on the Command Center. We wanted to maintain consistent
-        behaviour and covered the dozens of edge cases. The final arrangement
-        establishes a logical, consistent eye-flow for users and groups task
-        elements by their relationships to each other.
-      </p>
-      <p>
-        I also worked on a modular system that could accommodate new types of
-        tasks in the future. This would allow the Command Center to evolve and
-        support the entire lifecycle of loan processing.
+        I mapped out all the workflows and created self-serve documentation. All the insights were collected and broken down to be action-oriented for the cross-functional team.  
       </p>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-3.mp4" />
+      <LoopingVideo src="/images/work/protecting-meta/audit.mp4" />
       <figcaption>
-        The result gets users into the information they need to fill faster and
-        creates a tighter correlation between the task input and the information
-        needed.
+        Audit presentation
       </figcaption>
     </div>
-  </div>
-</div>
 
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-1.mp4" />
-      <figcaption>
-        Configuration exploration: Align content with two keylines. The
-        hypothesis was we could use two-column sections to avoid vertical scroll
-        and improve legibility.
-      </figcaption>
-    </div>
-    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-2.mp4" />
-      <figcaption>
-        Configuration exploration: Separate all the view-only content in a
-        separate page. It gives the task a clear sense of “place” for users
-        inside of the massive sea of mixed content.
-      </figcaption>
-    </div>
   </div>
 </div>
 
 <PostLayout>
 
-<p className="lesson-header">Task Real Estate</p>
-
-Because screen real estate is at a premium in software, it was important that we defend our choice to add more whitespace to the UI.
-
-It takes effort to keep something simple and we were not chasing simplicity in the abstract. At the feature level, we had to <b>constantly negotiate to avoid crowding the screen</b> with unnecessary features, and focus on translating how the business intended to make the loan process more modular.
-
-Competitive analysis helped to contextualize our decisions and reminded everyone that just because a UI change feels drastic internally, when compared to the broader software landscape it might be completely within the norm.
-
-</PostLayout>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-5 pb-md-0 pb-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/loanview-before.mp4" />
-      <figcaption>
-        Before: There simply was not enough space for the tasks users were
-        expected to do when it was stacked inside the loan view.
-      </figcaption>
-    </div>
-    <div className="col-md-7 pt-md-0 ps-md-4 pt-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/task.mp4" />
-      <figcaption>
-        After: In the modular approach, users were able to do everything
-        directly on the loan itself, such as documenting their comments, which
-        were previously Slack threads.
-      </figcaption>
-    </div>
-  </div>
-</div>
-
-<PostLayout>
-
-## Customizing Angular Libraries
-
-I learned to accept that edge cases for some interactions should follow tried and **tested practices from established libraries**. As the only designer on the team with a very lean team of developers, I wanted to remove potential bottlenecks in development. It was much more robust for the developers to use an existing library rather than spend time working on small elements.
-
-I collaborated closely with developers to and **I experimented to see how we can modify out-of-the-box solutions** to fit our design system, instead of designing and then handing it off the engineers. Below are a few interaction design patterns where we included my suggestions from researching and styling Angular libraries.
+<BlockQuote>
+  "She successfully advocated for design excellence for complex product domains.
+  She took <b>ownership to craft comprehensive improvements</b> to the existing
+  framework of our Integrity UX Excellence heuristics that touched multiple
+  teams and <b>mentoring other Product Designers</b> to champion high standards
+  of UX design.
+  <br />
+  <br />
+  <em className="text-muted">— Direct Product Design Manager</em>
+</BlockQuote>
 
 </PostLayout>
 
 <PostLayout>
 
-<p className="lesson-header">Advanced Search</p>
+## Converge
 
-Our database of borrowers and their loans is our single source of truth. We used a searchbar in multiple parts of the Command Center to allow for the processing of repeat customers easily.
+Since SRT was a tool that was used across multiple workflows, we had to bring designers to represent each workflow for the unifying work. By identifying gaps and similarities between different workflows, we would be able to create a unified product.
+
+I led the sprint by designing the sprint activities and facilitating to bring out the best ideas from all the participants, with one other co-lead.
+
+<BlockQuote>
+  "Samantha has built strong relationships being{" "}
+  <b>
+    extremely proactive in communicating and listening to our large number of
+    XFNs
+  </b>{" "}
+  - include people from various Ops functions and Eng teams. This has
+  contributed to building a <b>strong foundation for the team</b> to partner on
+  future projects.“
+  <br />
+  <br />
+  <em className="text-muted">— Engineer Peer</em>
+</BlockQuote>
 
 </PostLayout>
 
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-5 pb-md-0 pb-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/autocomplete-search.mp4" />
-      <figcaption>
-        One of my suggestions was to use autocomplete, predictive search to
-        provide instant results.
-      </figcaption>
-    </div>
-    <div className="col-md-7 pt-md-0 ps-md-4 pt-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/search-modal.mp4" />
-      <figcaption>
-        With the constraints of fetching from the database, I designed the
-        search interaction to take place inside a modal instead.
-      </figcaption>
-    </div>
-  </div>
-</div>
+<div className="row d-flex">
 
-<PostLayout>
-  <p className="lesson-header">Multiselect Dropdown</p>
+<div className="col-md-3 pe-md-4">
+  <p className="lesson-header">Sprint</p>
   <p>
-    In this instance where users have to select multiple borrowers who are
-    associated with one file, I experimented with angular multiselect dropdown
-    libraries. For example,{" "}
-    <a href="https://github.com/CuppaLabs/angular2-multiselect-dropdown">
-      angular2-multiselect-dropdown
-    </a>{" "}
-    has rich features to handle grouping, filter, and lazy load remote data.
+    4 days, in-person and online <br />3 time zones (US, UK, SG)
   </p>
-</PostLayout>
-
-<div className="container-fluid">
-  <div>
-    <figcaption className="pb-3">
-      Drag to see the code for the prototype.
-    </figcaption>
-    <iframe
-      className="mw-100 rounded-edges"
-      height="600"
-      width="1000"
-      src="https://codesandbox.io/embed/angular-angular2-multiselect-dropdown-v985yq?autoresize=1&fontsize=12&hidenavigation=1&theme=light"
-      className="overflow-hidden"
-      title="@angular/angular2-multiselect-dropdown"
-      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-    ></iframe>
-  </div>
 </div>
 
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-5 padding-right-24">
-      <p className="lesson-header">Hover over table headers and rows</p>
-      <p>
-        There are some parts which are built from scratch on top of the current
-        library. In this example, our front-end engineer, Shubhro Bhownik
-        created custom header component for the hover-arrow effect. The library
-        that we are using would not work because it has server-side sorting.
-      </p>
-      <p>
-        The custom header makes backend calls. Based on whether the user has
-        clicked up or down arrows, it sends the DESC/ASC parameter to the
-        backend. When users click the arrow, it becomes highlighted as active so
-        it stays on the header.
-      </p>
-    </div>
-    <div className="col-md-7 ps-md-3 ps-sm-0 d-flex justify-content-center align-items-center">
-      <LoopingVideo src="/images/work/loan-origination-system/table-columns.mp4" />
-    </div>
-  </div>
+<div className="col-md-3 pe-md-4">
+  <p className="lesson-header">Attendees</p>
+  <p>
+    11 Designers
+    <br />
+    3 Design Managers
+    <br />
+    1 UX Researcher <br />
+    8 Software Engineers <br />
+    1 Engineering Manager
+    <br />
+  </p>
 </div>
 
-<PostLayout>
+<div className="col-md-3 pe-md-4">
+  <p className="lesson-header">Outcomes</p>
+  <ul>
+    <li>Lightning shareouts from all SRT teams</li>
+    <li>Shared pain points and goals</li>
+    <li>High fidelity reimagination of SRT</li>
+    <li>Roadmap of priorities and informing leadership</li>
+  </ul>
+</div>
 
-## Using tables as forms
-
-I designed many tables for viewing and selecting data but I will focus where users fill data. Our users were most familiar with Excel and I had to include similar features to create an intuitive experience for our Command Center.
-
-One of the challenges was **creating a web experience that had the level of performance that users were familiar with** in Google Sheets or Microsoft Excel. We had to deprioritize features like enabling calculations inside cells to focus on precise, automated parsing of PDF statements directly into the cells, which would save users more time.
-
-</PostLayout>
+</div>
 
 <div className="mw-100 override-toc d-flex justify-content-center align-items-center">
   <div className="col-md-8">
-    <LoopingVideo src="/images/work/loan-origination-system/table-form.mp4" />
-    <figcaption>
-      For some tasks where there used to be manual data entry for financial
-      statements, we parse the values into the tables if possible.
-    </figcaption>
+    <LoopingVideo src="/images/work/protecting-meta/sprint.mp4" />
+    <figcaption>FigJam file</figcaption>
   </div>
 </div>
 
-<PostLayout>
-
-## UI Facelift
-
-As Funding Societies was becoming as a financing company with robust internal tools, I felt it was the right time to **unify the product’s visual language** with that of marketing and consumer product surfaces. Having a cohesive brand image even for internal tools was important in presenting the company to external stakeholders like potential customers and investors.
-
-We included typography and colour proportions foundations from marketing and consumer products. It was a simple swap but it helped to unify our surfaces across the entire company. This was an internal tool that our Engineering team built from scratch and it deserved to <em>look</em> like the best in class product that it was.
-
-</PostLayout>
-
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">
-        Type choices for clear information hierarchy
-      </p>
-      <p>
-        Command Center was a wash of the default Arial: navigation, labels,
-        tables, buttons, searchbar are all set in the same typeface, and often
-        in a single weight.
-      </p>
-      <p>
-        The first change was to use Inter, which was highly legible and more
-        versatile in application. This simple change made a dramatic impact in
-        refining the presentation of information. We used different type sizes
-        and grayscale to{" "}
-        <b>add a clear layer of informational hierarchy within our UI</b> that
-        both simplified design decisions and served as a clear signal to users
-        as to the utility of different text strings in the product.
-      </p>
-      <p>
-        Because processing loans is a primarily text-based decision making,
-        changing any typeface is a herculean effort. I worked hand-in-hand with
-        our front-end developers, Stuart Hammar and Shubhro Bownik to ensure the
-        change-over for type and spacing was smooth.
-      </p>
+    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
+      <p className="lesson-header">Pain Points</p>
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-before.mp4" />
+      <figcaption>Pain points mapping</figcaption>
     </div>
-    <div className="col-md-8">
+    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
+      <p className="lesson-header">Design Principles</p>
       <MarkdownImage
         className="rounded-edges"
         src="/images/work/loan-origination-system/type.png"
@@ -433,70 +266,95 @@ We included typography and colour proportions foundations from marketing and con
         height="955px"
         layout="fill"
       />
-    </div>
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Style Guide</p>
-      <p>
-        I worked with Stuart and Shubhro to build a style guide for Command
-        Center that could be easily adopted by other developers.
-      </p>
-      <p>
-        The Pantry Design System contains the library of common components used
-        in the product and expands out to design principles for the design team
-        to follow, as well as UX guidance on usage and implementation for every
-        piece used in the product. This ranged form form elements to entire
-        screen configurations.
-      </p>
-      <p>
-        The style guide was vital for both our developers and our designers,
-        giving us a shared kit of parts to work from and ensuring consistency
-        within our designs. This{" "}
-        <b>
-          reduced complexity in product development and set a consistent pattern
-          of expected behaviors for users
-        </b>
-        . This framework was eventually adopted by additional suites in the customer-facing
-        enterprise solution line and used across multiple teams at the company today.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <MarkdownImage
-        className="rounded-edges"
-        src="/images/work/loan-origination-system/styleguide.png"
-        width="3360px"
-        height="2024px"
-        layout="fill"
-      />
+      <figcaption>Design principles</figcaption>
     </div>
   </div>
 </div>
 
 <PostLayout>
 
-## Impact in Digits
+</PostLayout>
 
-We invested two years of work into our loan origination system rehaul, resulting in a significant improvement in our ability to automate and integrate AI into our credit underwriting. Our group CEO, Kelvin Teo, stated that we "have proven our AI-led credit capabilities in an unprecedented financial crisis".
-
-In Q4 2021, Funding Societies annualised <b>loan origination exceeded US$1
-billion</b>. The overall platform <b>default rate remained under 2% through the
-pandemic</b>.
-
-We were able to improve the <b>turnaround time for credit teams for accepting or declining loan cases by 30%</b>. By capturing the end-to-end loan processing in one single system, 100% of TAT is recorded accurately on the Command Center.
+<PostLayout>
 
 <BlockQuote>
-  “The Cornell professor Tarleton Gillespie called teams like mine the
-  “custodians of the internet.”
+  "This sprint was{" "}
+  <b>critical to the success of the Cross-Meta Integrity team</b> and required
+  coordination and collaboration with teams that hadn’t previously worked
+  closely together before.
   <br />
   <br />
-  <em className="text-muted">
-    — Greg Moon, managing partner at SoftBank Investment Advisers, investor at
-    Funding Societies
-  </em>
+  Despite the challenges posed by remote work and time zone differences, Samantha
+  was able to keep the team on track, and focused on our goals. She designed the
+  sprint activities where she <b>
+    brought out valuable insights from the entire team.
+  </b>
+  Through her leadership, we were able to achieve our objectives and{" "}
+  <b>influence the product roadmap</b> for the entire Integrity team.
+  <br />
+  <br />
+  Having seen Samantha quickly connect with and motivate teammates, I believe her
+  empathy will be a strong foundation on which she can <b>
+    engage, build and lead teams in the future.
+  </b>"
+  <br />
+  <br />
+  <em className="text-muted">— Direct Product Design Manager</em>
+</BlockQuote>
+
+</PostLayout>
+
+<PostLayout>
+
+## Unified Vision
+
+- Component Library
+- Revamp foundational UI experience
+- Roadmap for 2023
+
+</PostLayout>
+
+<div className="mw-100 override-toc d-flex justify-content-center align-items-center">
+  <div className="col-md-8">
+    <LoopingVideo src="/images/work/protecting-meta/sprint.mp4" />
+    <figcaption>Vision work</figcaption>
+  </div>
+</div>
+
+<PostLayout>
+
+## Learnings
+
+I learned how to start working on a unifying a complex product. Large products naturally have a legacy and complexity.
+
+The product served the team well but at a critical point, the container cannot fit its growth and we need to break and build a new vessel.
+
+In this 0 &rarr; 1 work to reimagine the product, I found three critical parts to align on a design vision for the product with a longer time horizon.
+
+- Doing deep research on the product and evaluating the user experience based on a set of heuristics (if there isn't a framework, build one!)
+- Building relationships with stakeholders and bringing them into the design process through clear documentation and following up on their biggest concerns
+- Presenting to multiple levels of leadership across functions
+
+</PostLayout>
+
+<PostLayout>
+
+## Reflections
+
+Unfortunately the entire Cross-Meta Integrity product engineering team in Singapore was unexpectedly laid off in Singapore.
+
+I'm proud of the work that I did at Meta in a short period. I worked quickly to understand the problem space and was hungry to contribute to the team.
+
+My counterpart in Sunnyvale is continuing the work on the **Integrity Component Library**, where the SRT vision sprint was influential. Please contact me for my reference &#9786;
+
+<BlockQuote>
+  "It's not easy to summarize how great Samantha is because she is one of the
+  most talented individuals I have met in my career. She is a passionate,
+  reliable, and considerate designer with excellent product design and
+  management skills."
+  <br />
+  <br />
+  <em className="text-muted">— Product Designer Peer</em>
 </BlockQuote>
 
 </PostLayout>

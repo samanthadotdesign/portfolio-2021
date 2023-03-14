@@ -350,6 +350,16 @@ figcaption {
   padding-top: 12px;
 }
 
+.subtitle-caption {
+  font-family: "Neue Montreal";
+  font-weight: 400;
+  font-size: 12px !important;
+  color: #757575;
+  padding: 0;
+  margin: 0 0 -24px 0;
+  text-transform: uppercase;
+}
+
 .max-height-50 {
   height: 50vw;
 }
@@ -508,17 +518,49 @@ figcaption i {
   margin-right: 4px;
 }
 
+/* PROCESS CIRCLE */
+
+.process-div {
+  display: flex;
+  flex-direction: row;
+}
+
 .process-circle {
   border-radius: 50%;
   border: solid 1px #000;
-  width: 100px;
+  min-width: 100px;
   height: 100px;
-  display: inline-block;
+  padding: auto;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 20px 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .process-div {
+    flex-direction: column;
+    max-width: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .process-circle {
+    margin: 35px 0 35px 0;
+  }
 }
 
 .process-circle p {
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .process-arrow {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
 }
