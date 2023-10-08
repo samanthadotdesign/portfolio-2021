@@ -1,0 +1,336 @@
+---
+title: "Mixed Reality Ultrasound"
+media: ""
+color: "#FAFF00"
+mask: "shape3.svg"
+ratioW: 375
+ratioH: 812
+isFeatured: false
+toc: true
+w: 2
+h: 2
+x: 0
+y: 0
+---
+
+<PostLayout>
+
+# Mixed Reality Ultrasound
+
+</PostLayout>
+
+<div className="row d-flex justify-content-between">
+
+<div className="col-md-4 pe-md-4">
+  <p className="lesson-header">Ultrasound</p>
+  <p>
+    Ultrasound imaging is frequently-used, versatile real-time imaging tool to
+    create images of inside the body.
+  </p>
+  <p>
+    The two main use cases of ultrasound imaging are for <b>diagnosis</b>, to
+    identify and monitor conditions and for <b>intervention</b>, to guide
+    medical procedures such as biopsies and drainages.
+  </p>
+</div>
+
+<div className="col-md-4 px-md-4">
+  <p className="lesson-header">Vision</p>
+  <p>
+    Clinicians can rely on <b>surgical navigation assistance</b> that provides a
+    natural sense of proximity and perspective, within actual view of working
+    environment, to guide procedures.
+  </p>
+  <BlockQuote>
+    Conventional training takes ten years. Digital twin technology could
+    significantly reduce training time. <br />
+    <br />
+    <em className="text-muted small">
+      Cardiothoracic Surgeon <br />
+      National University Heart Centre, Singapore
+    </em>
+  </BlockQuote>
+</div>
+
+<div className="col-md-4 ps-md-4">
+  <p className="lesson-header">Scope</p>
+  <ol>
+    <li>
+      <b>Visualize 2D and 3D ultrasound data relative to patient's body.</b>{" "}
+      Clinicians can perceive target area's actual physical location in
+      patient's body using anatomical hologram.
+    </li>
+    <li>
+      <b>Track of medical instruments in real-time.</b>
+      Clinicians can understand how instrument is moving inside the patient through
+      holographic instrument interacting with patient's anatomy hologram.
+    </li>
+  </ol>
+</div>
+
+</div>
+
+<PostLayout>
+
+## Pain points
+
+<p className="lesson-header">Interpret 3D using 2D images</p>
+
+1. <b>Difficult to approximate location.</b> It is difficult to sense depth within
+   a structure using 2D images. 2D ultrasound imaging doesn’t capture depth information
+   and it is prone to perspective distortion. It takes many years for clinicians
+   in real patient settings to develop the skill to translate 2D and spatially conceptualize.{" "}
+2. <b>Ergonomics</b> Ultrasound machines need to be pushed around in big trolleys
+   and wires get in the way over the patient. Clinicians often have to look down
+   to where they are scanning, and look up towards the machine to view the feed.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+<h2 id="3d-ultrasound">3D Ultrasound</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+    <p className="lesson-header">
+      Composite 3D reconstruction of 2D ultrasound video frames
+    </p>
+
+1. Scan.
+
+2. Generate 3D.
+
+3. View 3D.
+
+</div>
+
+<div className="col-md-8">
+      <MarkdownImage 
+        src="/images/work/loan-origination-system/challenges.png" 
+        width="2000px"
+        height="1000px"
+        layout="fill"
+      />
+      <figcaption>An Excel credit memo saved locally on an analyst’s computer, filled using customers' PDFs, and communicated to the team via Trello.</figcaption>
+    </div>
+</div>
+</div>
+
+<PostLayout>
+
+## Navigation
+
+Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Draggable global navigation</p>
+      <p>
+        My colleague and I conducted contextual inquiry interviews with 20
+        users across different roles to deeply understand the current
+        origination and underwriting process. It was especially important to{" "}
+        <b>capture nuances of the process</b> that was not evident in the
+        written output. 
+      </p>
+      <p>
+        One of the challenges that emerged was that users wanted to see all
+        information available at any given time. The existing process had{" "}
+        <b>everything available to view</b> at the same time across different
+        windows of Slack, Excel, Google Sheets, and Trello.
+      </p>
+      <p>
+        We wanted our users to feel completing each defined task was seamless,
+        that they weren’t sacrificing any of the information they were once used
+        to.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>
+        I developed this framework to document the raw interviews, describing
+        job stories at a high-level, then in detail with screenshots and quotes.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Draggable local navigation</p>
+      <p>
+        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
+      </p>
+      <p>
+        In the first iteration, the module was a complex blend of hierarchical structures that
+        mimicked Google Sheets. However, in practice the complexity led to
+        confusion about which information belonged to which person. 
+      </p>
+  
+      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
+        having {" "}<b>disconnected pieces that may not be useful all the
+        time</b>.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
+      <figcaption>
+        Configuration exploration: Stacking the information the users wanted to
+        to see in one task led to confusion.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-before.mp4" />
+      <figcaption>
+        Before: Three crucial relationships for each task (filter, view,
+        create/reassign) were disjointed.
+      </figcaption>
+    </div>
+    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
+      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
+      <figcaption>
+        After: Users are able filter or sort with column headers and reassign
+        single or bulk rows.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+## Instrument
+
+Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Recalibration</p>
+      <p>
+        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
+      </p>
+      <p>
+        In the first iteration, the module was a complex blend of hierarchical structures that
+        mimicked Google Sheets. However, in practice the complexity led to
+        confusion about which information belonged to which person. 
+      </p>
+  
+      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
+        having {" "}<b>disconnected pieces that may not be useful all the
+        time</b>.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
+      <figcaption>
+        Configuration exploration: Stacking the information the users wanted to
+        to see in one task led to confusion.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Instrument catalog</p>
+      <p>
+        I made an exhaustive list of configurations for our task elements to do
+        different tasks on the Command Center. We wanted to maintain consistent
+        behaviour and covered the dozens of edge cases. The final arrangement
+        establishes a logical, consistent eye-flow for users and groups task
+        elements by their relationships to each other.
+      </p>
+      <p>
+        I also worked on a modular system that could accommodate new types of
+        tasks in the future. This would allow the Command Center to evolve and
+        support the entire lifecycle of loan processing.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-3.mp4" />
+      <figcaption>
+        The result gets users into the information they need to fill faster and
+        creates a tighter correlation between the task input and the information
+        needed.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<PostLayout>
+
+## Future
+
+Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
+
+</PostLayout>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Recalibration</p>
+      <p>
+        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
+      </p>
+      <p>
+        In the first iteration, the module was a complex blend of hierarchical structures that
+        mimicked Google Sheets. However, in practice the complexity led to
+        confusion about which information belonged to which person. 
+      </p>
+  
+      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
+        having {" "}<b>disconnected pieces that may not be useful all the
+        time</b>.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
+      <figcaption>
+        Configuration exploration: Stacking the information the users wanted to
+        to see in one task led to confusion.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Instrument catalog</p>
+      <p>
+        I made an exhaustive list of configurations for our task elements to do
+        different tasks on the Command Center. We wanted to maintain consistent
+        behaviour and covered the dozens of edge cases. The final arrangement
+        establishes a logical, consistent eye-flow for users and groups task
+        elements by their relationships to each other.
+      </p>
+      <p>
+        I also worked on a modular system that could accommodate new types of
+        tasks in the future. This would allow the Command Center to evolve and
+        support the entire lifecycle of loan processing.
+      </p>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-3.mp4" />
+      <figcaption>
+        The result gets users into the information they need to fill faster and
+        creates a tighter correlation between the task input and the information
+        needed.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
