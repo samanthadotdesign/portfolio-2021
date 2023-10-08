@@ -10,7 +10,6 @@ import FullWidthContainer from "../../components/PostDetail/FullWidthContainer";
 import AccordionContainer from "../../components/PostDetail/AccordionContainer";
 import LoopingVideoMobile from "../../components/PostDetail/LoopingVideoMobile";
 import BlockQuote from "../../components/PostDetail/BlockQuote";
-import ProcessVisual from "../../components/PostDetail/ProcessVisual";
 
 // IMPORT EVERY SINGLE CUSTOM COMPONENT
 const availableComponentsForMarkdown = {
@@ -22,7 +21,6 @@ const availableComponentsForMarkdown = {
   FullWidthContainer,
   AccordionContainer,
   BlockQuote,
-  ProcessVisual,
 };
 
 // Search friendly URL
