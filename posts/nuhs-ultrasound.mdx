@@ -118,44 +118,98 @@ y: 0
 </div>
 
 <div className="col-md-8">
-     <LoopingVideo src="/images/work/nuhs/3dreconstruction.mp4" />
+     <LoopingVideo src="/images/work/nuhs/3drecon.mp4" />
       <figcaption>Demo testing ultrasound scan of Lego bricks embedded in agar model</figcaption>
     </div>
 </div>
 </div>
 
-<PostLayout>
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <h2 id="nav">Navigation</h2>
+    <div className="col-md-4 padding-right-24 padding-bottom-24">
+      <p>
+       At first, we developed the app menu that followed the{" "}
+        <a href="https://learn.microsoft.com/en-us/windows/mixed-reality/design/hand-menu">
+          Microsoft MRTK hand menu conventions
+        </a>
+        . This wasn’t an issue in other Microsoft HL2 apps such as aploQar’s VSI.</p>
+        
+        <p>However, we uncovered usability issues following the guidelines in our specific use case:
+        <br/>
+        <ol>
+          <li>HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also mistook the patient's hands instead of the clinician's, opening the menu unintentionally.</li>
+          <li>Both the clinician's hands might be occupied: ultrasound probe in one hand, medical instrument in the other.</li>
+          <li>Left-handed clinicians find it more difficult to use the menu.</li>
+        </ol>
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/nuhs/menu-default.mp4" />
+      <figcaption>
+        Standard HoloLens 2 <a href="https://learn.microsoft.com/en-us/hololens/hololens2-basic-usage#start-gesture">Start gesture</a>. Open palm facing user and tap on inner wrist <i>Start</i> icon with other hand.
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-16">
+      <LoopingVideo src="/images/work/nuhs/menu-initial.mp4" />
+      <figcaption>
+        Initial design used the same approach, where the app menu was anchored to the user's hand.
+      </figcaption>
+    </div>
 
-## Navigation
+  </div>
+</div>
 
-Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Head-locked global menu</p>
+      <p>
+        Instead of anchoring the menu to the user's left wrist, the menu was
+        changed to always appear in the same position in the user's field of
+        view.
+      </p>
+      <LoopingVideo src="/images/work/nuhs/initialspawn.mp4" />
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <p className="lesson-header">Default position</p>
+      <p>
+        By default, the collapsed menu will appear 30–34cm in front of the user.
+        Although 45cm was recommended for direct manipulation in Microsoft
+        documentation, we found that for near-patient operations like
+        ultrasound, the menu is more intuitively reachable with a shorter
+        distance. The menu is offset to the left by default, so the center view
+        is unobstructed.
+      </p>
+    </div>
+    <div className="col-md-4 padding-left-16">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>
+        I developed this framework to document the raw interviews, describing
+        job stories at a high-level, then in detail with screenshots and quotes.
+      </figcaption>
+    </div>
 
-</PostLayout>
+  </div>
+</div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Draggable global navigation</p>
       <p>
-        My colleague and I conducted contextual inquiry interviews with 20
-        users across different roles to deeply understand the current
-        origination and underwriting process. It was especially important to{" "}
-        <b>capture nuances of the process</b> that was not evident in the
-        written output. 
-      </p>
-      <p>
-        One of the challenges that emerged was that users wanted to see all
-        information available at any given time. The existing process had{" "}
-        <b>everything available to view</b> at the same time across different
-        windows of Slack, Excel, Google Sheets, and Trello.
-      </p>
-      <p>
-        We wanted our users to feel completing each defined task was seamless,
-        that they weren’t sacrificing any of the information they were once used
-        to.
+        We changed the main navigation to be head-locked: it always appears in
+        the same position in the user's field of view.
       </p>
     </div>
-    <div className="col-md-8">
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
+      <figcaption>
+        I developed this framework to document the raw interviews, describing
+        job stories at a high-level, then in detail with screenshots and quotes.
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-16">
       <LoopingVideo src="/images/work/loan-origination-system/contextual-inquiry.mp4" />
       <figcaption>
         I developed this framework to document the raw interviews, describing
