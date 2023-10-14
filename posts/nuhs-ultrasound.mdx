@@ -87,34 +87,50 @@ y: 0
 </PostLayout>
 
 <div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <MarkdownImage
+        src="/images/work/nuhs/holotwin-mock.png"
+        width="1096px"
+        height="616.5px"
+        layout="fill"
+      />
+      <figcaption>
+        In procedures, the needle will be occluded beneath the skin. The virtual
+        instrument will be rendered in occluded part of the patient, using
+        holographic guidance.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
 <h2 id="3d-ultrasound">3D Ultrasound</h2>
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
     <p className="lesson-header">
       Composite 3D reconstruction of 2D ultrasound video frames
     </p>
-
-<p>
-  <b>Define scan area.</b> When the user launches app, the cuboid appears. The
-  user drags and scales holographic cuboid to fit the target area on patient to
-  scan.
-</p>
-
-<p>
-  <b>Scan.</b> The user uses the ultrasound probe to scan the cuboid area, using
-  the video feed and guidance that shows scanned area.
-</p>
-
-<p>
-  <b>Generate 3D.</b> After scanning, the user generates 3D scan using the
-  primary CTA, anchored to the guidance.
-</p>
-
-<p>
-  <b>View 3D reconstruction.</b> The holographic true size 3D model appears
-  inside the scan area bounding box, which is directly on the patient.
-</p>
-
+    <p className="text-black-50 padding-top-16">End-to-end task flow for generating 3D ultrasound</p>
+    <ol>
+    <li>
+      <b>Define scan area.</b> When the user launches app, the cuboid appears. The
+      user drags and scales holographic cuboid to fit the target area on patient to
+      scan.
+    </li>
+    <li>
+      <b>Scan.</b> The user uses the ultrasound probe to scan the cuboid area, using
+      the video feed and guidance that shows scanned area.
+    </li>
+    <li>
+      <b>Generate 3D.</b> After scanning, the user generates 3D scan using the
+      primary CTA, anchored to the guidance.
+    </li>
+    <li>
+      <b>View 3D reconstruction.</b> The holographic true size 3D model appears
+      inside the scan area bounding box, which is directly on the patient.
+    </li>
+  </ol>
 </div>
 
 <div className="col-md-8">
@@ -145,7 +161,7 @@ y: 0
       </p>
     </div>
     <div className="col-md-4 padding-right-16 padding-bottom-24">
-      <LoopingVideo src="/images/work/nuhs/menu-default.mp4" />
+      <LoopingVideo src="/images/work/nuhs/menu-default.mp4"/>
       <figcaption>
         Standard HoloLens 2 <a href="https://learn.microsoft.com/en-us/hololens/hololens2-basic-usage#start-gesture">Start gesture</a>. Open palm facing user and tap on inner wrist <i>Start</i> icon with other hand.
       </figcaption>
@@ -162,7 +178,7 @@ y: 0
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-32">
+    <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Head-locked</p>
       <LoopingVideo src="/images/work/nuhs/initialspawn.mp4" />
       <p className="padding-top-16">
@@ -171,7 +187,7 @@ y: 0
         view. The menu rotates with the head so it feels natural as the user moves. The tilt range was defined so that the menu doesn't jerk with every small movement. 
       </p>
     </div>
-    <div className="col-md-4 padding-right-16 padding-left-16 padding-bottom-24">
+    <div className="col-md-4 padding-right-12 padding-left-12 padding-bottom-24">
       <p className="lesson-header">Default position</p>
       <LoopingVideo src="/images/work/nuhs/startscan.mp4" />
       <p className="padding-top-16">
@@ -179,12 +195,12 @@ y: 0
         The convention is 45cm for direct manipulation, but we found that a shorter distance makes the menu more intuitively reachable, especially as more operations are layered in the user's view. 
       </p>
     </div>
-    <div className="col-md-4 padding-left-32">
-      <p className="lesson-header">Draggable position</p>
+    <div className="col-md-4 padding-left-24">
+      <p className="lesson-header">Moveable position</p>
       <LoopingVideo src="/images/work/nuhs/draggable.mp4" />
       <p className="padding-top-16">
-      The menu is offset to the left by default, so the center view
-        is unobstructed. Clinicians can change where the menu is locked in their field of view to suit their unique workflows and preferences. 
+      The draggable menu is offset to the left by default, so the center view
+        is unobstructed. Clinicians can drag the menu to suit their unique workflows and preferences, and then it will be locked in their field of view. 
       </p>
     </div>
 
@@ -195,166 +211,131 @@ y: 0
   <div className="row d-flex">
     <h2 id="multimodal">Multimodal design</h2>
     <div className="col-md-4 padding-right-24">
-      <p>Strong interest in understanding the sense of touch, psychophysics and human perception.</p>
+      <p className="lesson-header">Psychophysics & human perception</p>
+      <p>
+        Conducting ultrasound on a patient requires the clinician to be
+        comfortable and aware of their context. The holographic components must
+        not distort the view or disorient the user through both sense of touch
+        and sight.
+      </p>
+      <p>
+         To create intuitive interactions of holographic elements, I
+        experimented with positioning in 3D world space at every stage of the
+        design process and worked closely with Engineering to fine-tune motion
+        design.
+      </p>
     </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/nuhs/position-quickview.mp4" />
       <figcaption>
-        Configuration exploration: Stacking the information the users wanted to
-        to see in one task led to confusion.
+        Quick view: Default scene shows true-size and zoomed-in 2D ultrasound
+        video feed
       </figcaption>
     </div>
-
+    <div className="col-md-4 padding-left-16">
+      <LoopingVideo src="/images/work/nuhs/position-3dscan.mp4" />
+      <figcaption>
+        Scanning for 3D reconstruction: Default scene shows scanning guidance
+        and zoomed-in 2D ultrasound video feed
+      </figcaption>
+    </div>
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/tasklist-before.mp4" />
-      <figcaption>
-        Before: Three crucial relationships for each task (filter, view,
-        create/reassign) were disjointed.
-      </figcaption>
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">2D in 3D world space</p>
+      <LoopingVideo src="/images/work/nuhs/initialspawn.mp4" />
+      <p className="padding-top-16">
+        What's most different about designing mixed reality experiences is 2D
+        elements need to be designed as 3D.
+      </p>
     </div>
-    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
-      <LoopingVideo src="/images/work/loan-origination-system/tasklist-after.mp4" />
-      <figcaption>
-        After: Users are able filter or sort with column headers and reassign
-        single or bulk rows.
-      </figcaption>
+    <div className="col-md-4 padding-right-12 padding-left-12 padding-bottom-24">
+      <p className="lesson-header">Vertical & transverse axes</p>
+      <LoopingVideo src="/images/work/nuhs/startscan.mp4" />
+      <p className="padding-top-16">
+        <b>Dead zones.</b> Collapsed menu appears 30–34cm in front of the user.
+        The convention is 45cm for direct manipulation, but we found that a
+        shorter distance makes the menu more intuitively reachable, especially
+        as more operations are layered in the user's view.
+      </p>
+    </div>
+    <div className="col-md-4 padding-left-24">
+      <p className="lesson-header">Longitudinal axis</p>
+      <LoopingVideo src="/images/work/nuhs/draggable.mp4" />
+      <p className="padding-top-16">
+        <b>Rotation.</b>
+        The menu is offset to the left by default, so the center view is unobstructed.
+        Clinicians can change where the menu is locked in their field of view to
+        suit their unique workflows and preferences.
+      </p>
     </div>
   </div>
 </div>
 
-<PostLayout>
-
-## Instrument
-
-Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
-
-</PostLayout>
-
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
+    <h2 id="instrument">Scalable system</h2>
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Recalibration</p>
       <p>
-        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
+        Our goal was to create the foundation for real-time object tracking and
+        visualization. We implemented a flexible system to recognize multiple
+        instruments and use cases.
       </p>
-      <p>
-        In the first iteration, the module was a complex blend of hierarchical structures that
-        mimicked Google Sheets. However, in practice the complexity led to
-        confusion about which information belonged to which person. 
+      <p className="text-black-50 padding-top-16">
+        End-to-end task flow for calibrating device
       </p>
-  
-      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
-        having {" "}<b>disconnected pieces that may not be useful all the
-        time</b>.
-      </p>
+      <ol>
+        <li>
+          <b>Start screen.</b> Holographic plane with guiding lines to place
+          device appears.
+        </li>
+        <li>
+          <b>Additional instructions.</b> Once HL2 detects marker in view,
+          prompt user with additional instructions.
+        </li>
+        <li>
+          <b>Countdown.</b> When the marker is still, the countdown timer
+          appears so confirm orientation.
+        </li>
+        <li>
+          <b>System confirmation.</b> The HL2 registers the marker's orientation
+          and user can confirm or restart calibration.
+        </li>
+      </ol>
     </div>
     <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
-      <figcaption>
-        Configuration exploration: Stacking the information the users wanted to
-        to see in one task led to confusion.
-      </figcaption>
+      <LoopingVideo src="/images/work/nuhs/calibrate-panel.mp4" />
     </div>
-
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Instrument catalog</p>
-      <p>
-        I made an exhaustive list of configurations for our task elements to do
-        different tasks on the Command Center. We wanted to maintain consistent
-        behaviour and covered the dozens of edge cases. The final arrangement
-        establishes a logical, consistent eye-flow for users and groups task
-        elements by their relationships to each other.
-      </p>
-      <p>
-        I also worked on a modular system that could accommodate new types of
-        tasks in the future. This would allow the Command Center to evolve and
-        support the entire lifecycle of loan processing.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-3.mp4" />
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <MarkdownImage
+        src="/images/work/nuhs/holotwin-mock.png"
+        width="1096px"
+        height="616.5px"
+        layout="fill"
+      />
       <figcaption>
-        The result gets users into the information they need to fill faster and
-        creates a tighter correlation between the task input and the information
-        needed.
+        In procedures, the needle will be occluded beneath the skin. The virtual
+        instrument will be rendered in occluded part of the patient, using
+        holographic guidance.
       </figcaption>
     </div>
-
   </div>
-</div>
+</div>{" "}
 
 <PostLayout>
 
 ## Future
 
-Our goal for the Command Center was to keep the user very focused and ensure they have the **right information at their fingertips** in order to complete the task. We decided to separate the loan underwriting processing into **smaller, well-defined tasks**.
+- Check out the HoloLens2 design system
+- How to prototype
 
 </PostLayout>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Recalibration</p>
-      <p>
-        Based on users’ feedback and the research output, I was able to significantly simplify the structure of the different workflow components. It sacrificed visibility on some information  {" "}<b>in exchange for clearer hierarchy</b> and eliminated the full-view multi-module presentation.
-      </p>
-      <p>
-        In the first iteration, the module was a complex blend of hierarchical structures that
-        mimicked Google Sheets. However, in practice the complexity led to
-        confusion about which information belonged to which person. 
-      </p>
-  
-      <p>Having users scroll to different parts of the screen performed worse than having users view everything in one glance, because the whole task took up too much vertical real estate. When users wanted to see everything, they end up
-        having {" "}<b>disconnected pieces that may not be useful all the
-        time</b>.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-4.mp4" />
-      <figcaption>
-        Configuration exploration: Stacking the information the users wanted to
-        to see in one task led to confusion.
-      </figcaption>
-    </div>
-
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Instrument catalog</p>
-      <p>
-        I made an exhaustive list of configurations for our task elements to do
-        different tasks on the Command Center. We wanted to maintain consistent
-        behaviour and covered the dozens of edge cases. The final arrangement
-        establishes a logical, consistent eye-flow for users and groups task
-        elements by their relationships to each other.
-      </p>
-      <p>
-        I also worked on a modular system that could accommodate new types of
-        tasks in the future. This would allow the Command Center to evolve and
-        support the entire lifecycle of loan processing.
-      </p>
-    </div>
-    <div className="col-md-8">
-      <LoopingVideo src="/images/work/loan-origination-system/configuration-exploration-3.mp4" />
-      <figcaption>
-        The result gets users into the information they need to fill faster and
-        creates a tighter correlation between the task input and the information
-        needed.
-      </figcaption>
-    </div>
-
-  </div>
-</div>
