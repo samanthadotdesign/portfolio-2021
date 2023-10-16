@@ -130,7 +130,7 @@ a {
 .btn-link {
   color: #000 !important;
   margin-left: 20px;
-  font-size: 12px;
+  font-size: 12px !important;
   cursor: pointer;
   padding: 0 !important;
   font-family: "Neue Montreal";
