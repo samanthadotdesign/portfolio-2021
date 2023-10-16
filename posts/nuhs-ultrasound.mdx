@@ -87,24 +87,6 @@ y: 0
 </PostLayout>
 
 <div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-16 padding-bottom-24">
-      <MarkdownImage
-        src="/images/work/nuhs/holotwin-mock.png"
-        width="1096px"
-        height="616.5px"
-        layout="fill"
-      />
-      <figcaption>
-        In procedures, the needle will be occluded beneath the skin. The virtual
-        instrument will be rendered in occluded part of the patient, using
-        holographic guidance.
-      </figcaption>
-    </div>
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
 <h2 id="3d-ultrasound">3D Ultrasound</h2>
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
@@ -154,9 +136,9 @@ y: 0
         <p>However, we uncovered usability issues following the guidelines in our specific use case:
         <br/>
         <ol>
-          <li>HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also mistook the patient's hands instead of the clinician's, opening the menu unintentionally.</li>
-          <li>Both the clinician's hands might be occupied: ultrasound probe in one hand, medical instrument in the other.</li>
-          <li>Left-handed clinicians find it more difficult to use the menu.</li>
+          <li>HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also <b>mistook the patient's hands</b> instead of the clinician's, opening the menu unintentionally.</li>
+          <li><b>Both the clinician's hands might be occupied:</b> ultrasound probe in one hand, medical instrument in the other.</li>
+          <li><b>Left-handed clinicians</b> find it more difficult to use the menu.</li>
         </ol>
       </p>
     </div>
@@ -184,15 +166,14 @@ y: 0
       <p className="padding-top-16">
         Instead of anchoring the menu to the user's left wrist, the menu was
         changed to always appear in the same position in the user's field of
-        view. The menu rotates with the head so it feels natural as the user moves. The tilt range was defined so that the menu doesn't jerk with every small movement. 
+        view. The menu rotates slightly with the head so it feels natural but doesn't jerk with every small move. 
       </p>
     </div>
-    <div className="col-md-4 padding-right-12 padding-left-12 padding-bottom-24">
+    <div className="col-md-4 padding-right-12 padding-left-16 padding-bottom-24">
       <p className="lesson-header">Default position</p>
       <LoopingVideo src="/images/work/nuhs/startscan.mp4" />
       <p className="padding-top-16">
-        Collapsed menu appears 30–34cm in front of the user.
-        The convention is 45cm for direct manipulation, but we found that a shorter distance makes the menu more intuitively reachable, especially as more operations are layered in the user's view. 
+        We found that a distance that is shorter than the HL2 conventions makes the menu more intuitively reachable, especially as more operations are layered in the user's view. 
       </p>
     </div>
     <div className="col-md-4 padding-left-24">
@@ -213,16 +194,18 @@ y: 0
     <div className="col-md-4 padding-right-24">
       <p className="lesson-header">Psychophysics & human perception</p>
       <p>
-        Conducting ultrasound on a patient requires the clinician to be
-        comfortable and aware of their context. The holographic components must
-        not distort the view or disorient the user through both sense of touch
-        and sight.
+        Since conducting ultrasound on a patient requires the clinician to be
+        close to the patient, the holographic frame is narrower and clutters
+        quickly.
       </p>
       <p>
-         To create intuitive interactions of holographic elements, I
-        experimented with positioning in 3D world space at every stage of the
-        design process and worked closely with Engineering to fine-tune motion
-        design.
+        <b>Precision.</b> Every scene has a precise choice of useful elements
+        and positioning relative to the user's movement and intent.
+      </p>
+      <p>
+        <b>Natural.</b> When holographic elements move with the user, they must
+        not distort the view or disorient the user through both sense of touch
+        and sight.
       </p>
     </div>
     <div className="col-md-4 padding-right-16 padding-bottom-24">
@@ -233,10 +216,15 @@ y: 0
       </figcaption>
     </div>
     <div className="col-md-4 padding-left-16">
-      <LoopingVideo src="/images/work/nuhs/position-3dscan.mp4" />
+      <MarkdownImage
+        src="/images/work/nuhs/holotwin-mock.png"
+        width="1280"
+        height="738px"
+        layout="fill"
+      />
       <figcaption>
-        Scanning for 3D reconstruction: Default scene shows scanning guidance
-        and zoomed-in 2D ultrasound video feed
+        Illustration shows without the 3D holograms, the needle will be occluded
+        once it penetrates patient's skin.
       </figcaption>
     </div>
   </div>
@@ -245,47 +233,85 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">2D in 3D world space</p>
-      <LoopingVideo src="/images/work/nuhs/initialspawn.mp4" />
-      <p className="padding-top-16">
-        What's most different about designing mixed reality experiences is 2D
-        elements need to be designed as 3D.
+      <p className="lesson-header">Think & test spatially</p>
+      <p>
+        To create intuitive interactions of holographic elements, I
+        experimented with positioning in 3D world space at every stage of the
+        design process and worked closely with Engineering to fine-tune motion
+        design.
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/nuhs/position-3dscan.mp4" />
+      <figcaption>
+        3D reconstruction: Scene shows scan 'mirror' and 2D ultrasound video feed to guide the user's scan.
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-16">
+      <MarkdownImage
+        src="/images/work/nuhs/distance.png"
+        width="1280px"
+        height="734px"
+        layout="fill"
+      />
+      <figcaption>
+        Illustration shows default position of holographic elements when user launches 3D reconstruction workstream.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <h2 id="instrument">Calibration</h2>
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Flexible & accessible system</p>
+      <p className="text-black-50">Challenges</p>
+      <ol>
+        <li>
+          There are hundreds of devices and ways that clinicians are used to
+          holding devices.
+        </li>
+        <li>
+          The device marker must face the HL2 camera throughout the entire sweep
+          to generate the 3D scan.
+        </li>
+      </ol>
+      <p className="text-black-50">Solution</p>
+      <p>
+        We implemented a plane calibration system. The HL2 registers the marker
+        ID and direction, which serves the clinician's unique way of holding the
+        instrument. During usability testing, we found this system worked well
+        as clinicians have steady hands 🎉
       </p>
     </div>
     <div className="col-md-4 padding-right-12 padding-left-12 padding-bottom-24">
-      <p className="lesson-header">Vertical & transverse axes</p>
-      <LoopingVideo src="/images/work/nuhs/startscan.mp4" />
-      <p className="padding-top-16">
-        <b>Dead zones.</b> Collapsed menu appears 30–34cm in front of the user.
-        The convention is 45cm for direct manipulation, but we found that a
-        shorter distance makes the menu more intuitively reachable, especially
-        as more operations are layered in the user's view.
-      </p>
+      <MarkdownImage
+        src="/images/work/nuhs/usprobe-calibration.png"
+        width="959px"
+        height="622px"
+        layout="fill"
+      />
+      <figcaption>Ultrasound probe calibration illustration</figcaption>
     </div>
     <div className="col-md-4 padding-left-24">
-      <p className="lesson-header">Longitudinal axis</p>
-      <LoopingVideo src="/images/work/nuhs/draggable.mp4" />
-      <p className="padding-top-16">
-        <b>Rotation.</b>
-        The menu is offset to the left by default, so the center view is unobstructed.
-        Clinicians can change where the menu is locked in their field of view to
-        suit their unique workflows and preferences.
-      </p>
+      <MarkdownImage
+        src="/images/work/nuhs/instrument-calibration.png"
+        width="1248px"
+        height="834px"
+        layout="fill"
+      />
+      <figcaption>Instrument calibration illustration</figcaption>
     </div>
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <h2 id="instrument">Scalable system</h2>
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Recalibration</p>
-      <p>
-        Our goal was to create the foundation for real-time object tracking and
-        visualization. We implemented a flexible system to recognize multiple
-        instruments and use cases.
-      </p>
-      <p className="text-black-50 padding-top-16">
+      <p className="lesson-header">Foundation for object-tracking</p>
+      <p className="text-black-50">
         End-to-end task flow for calibrating device
       </p>
       <ol>
@@ -313,29 +339,8 @@ y: 0
   </div>
 </div>
 
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <div className="col-md-4 padding-right-16 padding-bottom-24">
-      <MarkdownImage
-        src="/images/work/nuhs/holotwin-mock.png"
-        width="1096px"
-        height="616.5px"
-        layout="fill"
-      />
-      <figcaption>
-        In procedures, the needle will be occluded beneath the skin. The virtual
-        instrument will be rendered in occluded part of the patient, using
-        holographic guidance.
-      </figcaption>
-    </div>
-  </div>
-</div>{" "}
-
 <PostLayout>
 
 ## Future
-
-- Check out the HoloLens2 design system
-- How to prototype
 
 </PostLayout>
