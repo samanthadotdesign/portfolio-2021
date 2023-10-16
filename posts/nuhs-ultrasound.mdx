@@ -70,21 +70,43 @@ y: 0
 
 </div>
 
-<PostLayout>
-
-## Pain points
-
-<p className="lesson-header">Interpret 3D using 2D images</p>
-
-1. <b>Difficult to approximate location.</b> It is difficult to sense depth within
-   a structure using 2D images. 2D ultrasound imaging doesn’t capture depth information
-   and it is prone to perspective distortion. It takes many years for clinicians
-   in real patient settings to develop the skill to translate 2D and spatially conceptualize.{" "}
-2. <b>Ergonomics</b> Ultrasound machines need to be pushed around in big trolleys
-   and wires get in the way over the patient. Clinicians often have to look down
-   to where they are scanning, and look up towards the machine to view the feed.
-
-</PostLayout>
+<div className="row d-flex justify-content-between">
+  <div className="row d-flex">
+    <h2 id="pain-points">Pain points</h2>
+    <div className="col-md-3 padding-right-24 padding-bottom-24">
+      <p className="lesson-header">Strained ergonomics</p>
+      <p className="padding-top-24">
+        Ultrasound machines need to be pushed around in big trolleys and wires
+        get in the way over the patient. Clinicians must look down to where they
+        are scanning, then look up towards the machine to view the feed.
+      </p>
+    </div>
+    <div className="col-md-2 padding-right-32">
+      <MarkdownImage
+        src="/images/work/nuhs/us-machine.png"
+        width="210px"
+        height="280px"
+        layout="fill"
+      />
+    </div>
+    <div className="col-md-3 padding-left-24 padding-bottom-24">
+      <p className="lesson-header">Difficult to locate</p>
+      <p>
+        It is difficult to sense position of of elements within a structure
+        using 2D images. It takes many years for clinicians in real patient
+        settings to develop the skill to interpret 3D using 2D images.
+      </p>
+    </div>
+    <div className="col-md-3 padding-left-32">
+      <MarkdownImage
+        src="/images/work/nuhs/needle.png"
+        width="2077px"
+        height="1125px"
+        layout="fill"
+      />
+    </div>
+  </div>
+</div>
 
 <div className="container-fluid margin-top-36">
 <h2 id="3d-ultrasound">3D Ultrasound</h2>
@@ -116,9 +138,9 @@ y: 0
 </div>
 
 <div className="col-md-8">
-     <LoopingVideo src="/images/work/nuhs/3drecon.mp4" />
-      <figcaption>Demo testing ultrasound scan of Lego bricks embedded in agar model</figcaption>
-    </div>
+    <LoopingVideo src="/images/work/nuhs/3drecon.mp4" />
+    <figcaption>Demo testing ultrasound scan of Lego bricks embedded in agar model</figcaption>
+  </div>
 </div>
 </div>
 
@@ -133,12 +155,12 @@ y: 0
         </a>
         . This wasn’t an issue in other Microsoft HL2 apps such as aploQar’s VSI.</p>
         
-        <p>However, we uncovered usability issues following the guidelines in our specific use case:
-        <br/>
+        <p>However, we uncovered usability issues in our use case:
+        <br/>  <br/>
         <ol>
           <li>HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also <b>mistook the patient's hands</b> instead of the clinician's, opening the menu unintentionally.</li>
           <li><b>Both the clinician's hands might be occupied:</b> ultrasound probe in one hand, medical instrument in the other.</li>
-          <li><b>Left-handed clinicians</b> find it more difficult to use the menu.</li>
+          <li><b>Left-handed clinicians</b> find it more difficult to open the menu when the menu anchored to the left hand.</li>
         </ol>
       </p>
     </div>
@@ -192,12 +214,11 @@ y: 0
   <div className="row d-flex">
     <h2 id="multimodal">Multimodal design</h2>
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Psychophysics & human perception</p>
       <p>
-        Since conducting ultrasound on a patient requires the clinician to be
-        close to the patient, the holographic frame is narrower and clutters
-        quickly.
+        Ultrasound scan requires the clinician to be close to the patient, so
+        the holographic frame is narrower and clutters quickly.
       </p>
+      <p className="text-black-50 padding-top-16">Psychophysics principles</p>
       <p>
         <b>Precision.</b> Every scene has a precise choice of useful elements
         and positioning relative to the user's movement and intent.
@@ -342,5 +363,24 @@ y: 0
 <PostLayout>
 
 ## Future
+
+<BlockQuote>
+  All this is done in minutes and we don't have to send the patient to the
+  radiology unity. They don't have to wait a few months for an appointment. They
+  don't have to wait up to an hour at the clinic. We save on a lot of resources.
+  <br />
+  <br />
+  <em className="text-muted small">
+    — Dr. Gao, Liver Surgeon
+    <br />
+    National University Heart Centre, Singapore
+  </em>
+</BlockQuote>
+
+<p className="margin-top-36">
+  The Unity team wrapped up this project in <b>September 2023</b>. NUHS intends
+  to use this Mixed Reality app as it is versatile and connects to any
+  ultrasound device.
+</p>
 
 </PostLayout>

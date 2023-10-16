@@ -261,6 +261,7 @@ a {
     .padding-right-16
     .padding-left-16 {
     padding-right: 0px !important;
+    padding-left: 0px !important;
   }
 }
 
