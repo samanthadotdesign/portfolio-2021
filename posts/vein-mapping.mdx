@@ -1,0 +1,399 @@
+---
+title: "Holographic Veins"
+media: ""
+color: "#FAFF00"
+mask: "shape3.svg"
+ratioW: 375
+ratioH: 812
+isFeatured: false
+toc: true
+w: 2
+h: 2
+x: 0
+y: 0
+---
+
+<PostLayout>
+
+# Holographic Veins
+
+</PostLayout>
+
+<div className="row d-flex justify-content-between">
+
+<div className="col-md-4 pe-md-4">
+  <p className="lesson-header">Venepuncture & IV therapy</p>
+  <p>
+    <b>Venepuncture</b> is the process of drawing blood from a vein, to collect
+    a blood sample for various diagnostics tests.
+  </p>
+  <p>
+    <b>Intravenous (IV) therapy</b> involves inserting introducing medications,
+    fluids, or other support directly into a patient's bloodstream by inserting
+    a catheter into a vein.
+  </p>
+</div>
+
+<div className="col-md-4 px-md-4">
+  <p className="lesson-header">Vision</p>
+  <p>
+    Healthcare workers can identify hard-to-locate veins accurately and quickly,
+    on the ground, especially in stressful situations.
+  </p>
+</div>
+
+<div className="col-md-4 ps-md-4">
+  <p className="lesson-header">Scope</p>
+  <p>
+    <b>Improve vein visualization user experience.</b> NUHS already developed a
+    proof of concept that uses the infrared camera on the HoloLens2 itself to
+    detect the veins on a person’s hand. Our role was to make the vein mapping
+    HL2 app user-friendly.
+  </p>
+</div>
+
+</div>
+
+<div className="row d-flex justify-content-between">
+  <div className="row d-flex">
+    <h2 id="pain-points">Pain points</h2>
+    <div className="col-md-4 padding-right-24">
+      <div className="margin-top-60"></div>
+      <BlockQuote>
+        You have so parents watching.
+        <br />
+        <br />
+        <em className="text-muted small">
+          Consultant, Department of Paediatrics
+          <br />
+          National University Heart Centre, Singapore
+        </em>
+      </BlockQuote>
+      <div className="padding-bottom-24"></div>
+      <BlockQuote>
+        You have so parents watching.
+        <br />
+        <br />
+        <em className="text-muted small">
+          Consultant, Department of Paediatrics
+          <br />
+          National University Heart Centre, Singapore
+        </em>
+      </BlockQuote>
+    </div>
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Stressful for patients</p>
+      <MarkdownImage
+        src="/images/work/vm/childhand.jpeg"
+        width="600px"
+        height="400px"
+        layout="fill"
+      />
+      <p className="padding-top-16">
+        It is difficult to sense position of of elements within a structure
+        using 2D images. It takes many years for clinicians in real patient
+        settings to develop the skill to interpret 3D using 2D images.
+      </p>
+      <figcaption>
+        <a href="https://depositphotos.com/photo/doctor-checking-radial-pulse-young-asian-girl-who-visit-hospital-406592490.html">
+          Photo source
+        </a>
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-24 padding-bottom-24">
+      <p className="lesson-header">Stressful for clinicians</p>
+      <MarkdownImage
+        src="/images/work/vm/emergency.jpeg"
+        width="600px"
+        height="400px"
+        layout="fill"
+      />
+      <p className="padding-top-16">
+        Ultrasound machines need to be pushed around in big trolleys and wires
+        get in the way over the patient. Clinicians must look down to where they
+        are scanning, then look up towards the machine to view the feed.
+      </p>
+      <figcaption>
+        <a href="https://www.nib.com.au/the-checkup/how-much-does-it-cost-to-call-an-ambulance">
+          Photo source
+        </a>
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+<h2 id="3d-ultrasound">3D Ultrasound</h2>
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+    <p className="lesson-header">
+      Composite 3D reconstruction of 2D ultrasound video frames
+    </p>
+    <p className="text-black-50 padding-top-16">End-to-end task flow for generating 3D ultrasound</p>
+    <ol>
+    <li>
+      <b>Define scan area.</b> When the user launches app, the cuboid appears. The
+      user drags and scales holographic cuboid to fit the target area on patient to
+      scan.
+    </li>
+    <li>
+      <b>Scan.</b> The user uses the ultrasound probe to scan the cuboid area, using
+      the video feed and guidance that shows scanned area.
+    </li>
+    <li>
+      <b>Generate 3D.</b> After scanning, the user generates 3D scan using the
+      primary CTA, anchored to the guidance.
+    </li>
+    <li>
+      <b>View 3D reconstruction.</b> The holographic true size 3D model appears
+      inside the scan area bounding box, which is directly on the patient.
+    </li>
+  </ol>
+</div>
+
+<div className="col-md-8">
+    <LoopingVideo src="/images/work/nuhs/3drecon.mp4" />
+    <figcaption>Demo testing ultrasound scan of Lego bricks embedded in agar model</figcaption>
+  </div>
+</div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <h2 id="nav">Navigation</h2>
+    <div className="col-md-4 padding-right-24 padding-bottom-24">
+      <p>
+       At first, we developed the app menu that followed the{" "}
+        <a href="https://learn.microsoft.com/en-us/windows/mixed-reality/design/hand-menu">
+          Microsoft MRTK hand menu conventions
+        </a>
+        . This wasn’t an issue in other Microsoft HL2 apps such as aploQar’s VSI.</p>
+        
+        <p>However, we uncovered usability issues in our use case:
+        <br/>  <br/>
+        <ol>
+          <li>HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also <b>mistook the patient's hands</b> instead of the clinician's, opening the menu unintentionally.</li>
+          <li><b>Both the clinician's hands might be occupied:</b> ultrasound probe in one hand, medical instrument in the other.</li>
+          <li><b>Left-handed clinicians</b> find it more difficult to open the menu when the menu anchored to the left hand.</li>
+        </ol>
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/nuhs/menu-default.mp4"/>
+      <figcaption>
+        Standard HoloLens 2 <a href="https://learn.microsoft.com/en-us/hololens/hololens2-basic-usage#start-gesture">Start gesture</a>. Open palm facing user and tap on inner wrist <i>Start</i> icon with other hand.
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-16">
+      <LoopingVideo src="/images/work/nuhs/menu-initial.mp4" />
+      <figcaption>
+        Initial design used the same approach, where the app menu was anchored to the user's hand.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Head-locked</p>
+      <LoopingVideo src="/images/work/nuhs/initialspawn.mp4" />
+      <p className="padding-top-16">
+        Instead of anchoring the menu to the user's left wrist, the menu was
+        changed to always appear in the same position in the user's field of
+        view. The menu rotates slightly with the head so it feels natural but doesn't jerk with every small move. 
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-12 padding-left-16 padding-bottom-24">
+      <p className="lesson-header">Default position</p>
+      <LoopingVideo src="/images/work/nuhs/startscan.mp4" />
+      <p className="padding-top-16">
+        We found that a distance that is shorter than the HL2 conventions makes the menu more intuitively reachable, especially as more operations are layered in the user's view. 
+      </p>
+    </div>
+    <div className="col-md-4 padding-left-24">
+      <p className="lesson-header">Moveable position</p>
+      <LoopingVideo src="/images/work/nuhs/draggable.mp4" />
+      <p className="padding-top-16">
+      The draggable menu is offset to the left by default, so the center view
+        is unobstructed. Clinicians can drag the menu to suit their unique workflows and preferences, and then it will be locked in their field of view. 
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <h2 id="multimodal">Multimodal design</h2>
+    <div className="col-md-4 padding-right-24">
+      <p>
+        Ultrasound scan requires the clinician to be close to the patient, so
+        the holographic frame is narrower and clutters quickly.
+      </p>
+      <p className="text-black-50 padding-top-16">Psychophysics principles</p>
+      <p>
+        <b>Precision.</b> Every scene has a precise choice of useful elements
+        and positioning relative to the user's movement and intent.
+      </p>
+      <p>
+        <b>Natural.</b> When holographic elements move with the user, they must
+        not distort the view or disorient the user through both sense of touch
+        and sight.
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/nuhs/position-quickview.mp4" />
+      <figcaption>
+        Quick view: Default scene shows true-size and zoomed-in 2D ultrasound
+        video feed
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-16">
+      <MarkdownImage
+        src="/images/work/nuhs/holotwin-mock.png"
+        width="1280"
+        height="738px"
+        layout="fill"
+      />
+      <figcaption>
+        Illustration shows without the 3D holograms, the needle will be occluded
+        once it penetrates patient's skin.
+      </figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Think & test spatially</p>
+      <p>
+        To create intuitive interactions of holographic elements, I
+        experimented with positioning in 3D world space at every stage of the
+        design process and worked closely with Engineering to fine-tune motion
+        design.
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/nuhs/position-3dscan.mp4" />
+      <figcaption>
+        3D reconstruction: Scene shows scan 'mirror' and 2D ultrasound video feed to guide the user's scan.
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-16">
+      <MarkdownImage
+        src="/images/work/nuhs/distance.png"
+        width="1280px"
+        height="734px"
+        layout="fill"
+      />
+      <figcaption>
+        Illustration shows default position of holographic elements when user launches 3D reconstruction workstream.
+      </figcaption>
+    </div>
+
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <h2 id="instrument">Calibration</h2>
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Flexible & accessible system</p>
+      <p className="text-black-50">Challenges</p>
+      <ol>
+        <li>
+          There are hundreds of devices and ways that clinicians are used to
+          holding devices.
+        </li>
+        <li>
+          The device marker must face the HL2 camera throughout the entire sweep
+          to generate the 3D scan.
+        </li>
+      </ol>
+      <p className="text-black-50">Solution</p>
+      <p>
+        We implemented a plane calibration system. The HL2 registers the marker
+        ID and direction, which serves the clinician's unique way of holding the
+        instrument. During usability testing, we found this system worked well
+        as clinicians have steady hands 🎉
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-12 padding-left-12 padding-bottom-24">
+      <MarkdownImage
+        src="/images/work/nuhs/usprobe-calibration.png"
+        width="959px"
+        height="622px"
+        layout="fill"
+      />
+      <figcaption>Ultrasound probe calibration illustration</figcaption>
+    </div>
+    <div className="col-md-4 padding-left-24">
+      <MarkdownImage
+        src="/images/work/nuhs/instrument-calibration.png"
+        width="1248px"
+        height="834px"
+        layout="fill"
+      />
+      <figcaption>Instrument calibration illustration</figcaption>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Foundation for object-tracking</p>
+      <p className="text-black-50">
+        End-to-end task flow for calibrating device
+      </p>
+      <ol>
+        <li>
+          <b>Start screen.</b> Holographic plane with guiding lines to place
+          device appears.
+        </li>
+        <li>
+          <b>Additional instructions.</b> Once HL2 detects marker in view,
+          prompt user with additional instructions.
+        </li>
+        <li>
+          <b>Countdown.</b> When the marker is still, the countdown timer
+          appears so confirm orientation.
+        </li>
+        <li>
+          <b>System confirmation.</b> The HL2 registers the marker's orientation
+          and user can confirm or restart calibration.
+        </li>
+      </ol>
+    </div>
+    <div className="col-md-8">
+      <LoopingVideo src="/images/work/nuhs/calibrate-panel.mp4" />
+    </div>
+  </div>
+</div>
+
+<PostLayout>
+
+## Impact
+
+<BlockQuote>
+  All this is done in minutes and we don't have to send the patient to the
+  radiology unity. They don't have to wait a few months for an appointment. They
+  don't have to wait up to an hour at the clinic. We save on a lot of resources.
+  <br />
+  <br />
+  <em className="text-muted small">
+    Dr. Gao, Liver Surgeon
+    <br />
+    National University Heart Centre, Singapore
+  </em>
+</BlockQuote>
+
+<p className="margin-top-36">
+  The Unity team wrapped up this project in <b>September 2023</b>. NUHS intends
+  to beta test this Mixed Reality app for thyroid biopsy in its clinics.
+</p>
+
+</PostLayout>
