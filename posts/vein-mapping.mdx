@@ -58,102 +58,49 @@ y: 0
   <div className="row d-flex">
     <h2 id="pain-points">Pain points</h2>
     <div className="col-md-4 padding-right-24">
-      <div className="margin-top-60"></div>
+      <p className="lesson-header">Locating veins is difficult</p>
+      <p>
+        Even though the anatomy and location of the veins might be the same, the
+        depth, amount of skin and fat, caliber of the veins, tension and blood
+        flow is different. For example, the veins or blood flow direction is not visible in children.</p>
+    </div>
+    <div className="col-md-4 px-md-4">
+     <p className="lesson-header">Learning on the job</p>
+      <p>
+        Junior doctors have some training as a medical student, but the clinic setting is very different. It is difficult to get practice in because a senior doctor will step in in challenging cases, specially in an emergency.   
+      </p>
+    </div>
+    <div className="col-md-4 ps-md-4">
+      <p className="lesson-header">Under high pressure</p>
+      <p>
+        Clinicians experience performance anxiety. If the clinician isn't able to get the correct depth on the first attempt, they have to decide whether to reattempt or adjust the needle while it is already under the skin. 
+      </p>
       <BlockQuote>
-        You have so parents watching.
+        With kids, the parents are there watching you. You really only have that one or two shots at it. 
         <br />
         <br />
         <em className="text-muted small">
-          Consultant, Department of Paediatrics
+          Consultant Paediatrician
           <br />
-          National University Heart Centre, Singapore
-        </em>
-      </BlockQuote>
-      <div className="padding-bottom-24"></div>
-      <BlockQuote>
-        You have so parents watching.
-        <br />
-        <br />
-        <em className="text-muted small">
-          Consultant, Department of Paediatrics
-          <br />
-          National University Heart Centre, Singapore
+          National University Hospital, Singapore
         </em>
       </BlockQuote>
     </div>
-    <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Stressful for patients</p>
-      <MarkdownImage
-        src="/images/work/vm/childhand.jpeg"
-        width="600px"
-        height="400px"
-        layout="fill"
-      />
-      <p className="padding-top-16">
-        It is difficult to sense position of of elements within a structure
-        using 2D images. It takes many years for clinicians in real patient
-        settings to develop the skill to interpret 3D using 2D images.
-      </p>
-      <figcaption>
-        <a href="https://depositphotos.com/photo/doctor-checking-radial-pulse-young-asian-girl-who-visit-hospital-406592490.html">
-          Photo source
-        </a>
-      </figcaption>
-    </div>
-    <div className="col-md-4 padding-left-24 padding-bottom-24">
-      <p className="lesson-header">Stressful for clinicians</p>
-      <MarkdownImage
-        src="/images/work/vm/emergency.jpeg"
-        width="600px"
-        height="400px"
-        layout="fill"
-      />
-      <p className="padding-top-16">
-        Ultrasound machines need to be pushed around in big trolleys and wires
-        get in the way over the patient. Clinicians must look down to where they
-        are scanning, then look up towards the machine to view the feed.
-      </p>
-      <figcaption>
-        <a href="https://www.nib.com.au/the-checkup/how-much-does-it-cost-to-call-an-ambulance">
-          Photo source
-        </a>
-      </figcaption>
-    </div>
+
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
-<h2 id="3d-ultrasound">3D Ultrasound</h2>
+<h2 id="3d-ultrasound">Main flow</h2>
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
-    <p className="lesson-header">
-      Composite 3D reconstruction of 2D ultrasound video frames
+    <div className="col-md-4 pe-md-4">
+    <p>
+      Immediately see veins. 
     </p>
-    <p className="text-black-50 padding-top-16">End-to-end task flow for generating 3D ultrasound</p>
-    <ol>
-    <li>
-      <b>Define scan area.</b> When the user launches app, the cuboid appears. The
-      user drags and scales holographic cuboid to fit the target area on patient to
-      scan.
-    </li>
-    <li>
-      <b>Scan.</b> The user uses the ultrasound probe to scan the cuboid area, using
-      the video feed and guidance that shows scanned area.
-    </li>
-    <li>
-      <b>Generate 3D.</b> After scanning, the user generates 3D scan using the
-      primary CTA, anchored to the guidance.
-    </li>
-    <li>
-      <b>View 3D reconstruction.</b> The holographic true size 3D model appears
-      inside the scan area bounding box, which is directly on the patient.
-    </li>
-  </ol>
 </div>
 
 <div className="col-md-8">
-    <LoopingVideo src="/images/work/nuhs/3drecon.mp4" />
-    <figcaption>Demo testing ultrasound scan of Lego bricks embedded in agar model</figcaption>
+    <LoopingVideo src="/images/work/vm/vein-default.mp4" />
   </div>
 </div>
 </div>
