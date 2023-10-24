@@ -45,10 +45,13 @@ y: 0
 <div className="col-md-4 ps-md-4">
   <p className="lesson-header">Scope</p>
   <p>
-    <b>Improve vein visualization user experience.</b> NUHS already developed a
-    proof of concept that uses the infrared camera on the HoloLens2 itself to
-    detect the veins on a person’s hand. Our role was to make the vein mapping
-    HL2 app user-friendly.
+    <b>Improve vein visualization user experience.</b>
+  </p>
+  <p>
+    NUHS developed a proof of concept that uses the infrared camera on the
+    HoloLens2 itself to detect the veins on a person’s hand. Our goal was to
+    productize their <a href="http://">published research</a> to be usable in
+    their clinics.
   </p>
 </div>
 
@@ -62,21 +65,30 @@ y: 0
       <p>
         Even though the anatomy and location of the veins might be the same, the
         depth, amount of skin and fat, caliber of the veins, tension and blood
-        flow is different. For example, the veins or blood flow direction is not visible in children.</p>
+        flow is different. For example, the veins or blood flow direction is not
+        visible in children.
+      </p>
     </div>
     <div className="col-md-4 px-md-4">
-     <p className="lesson-header">Learning on the job</p>
+      <p className="lesson-header">Learning on the job</p>
       <p>
-        Junior doctors have some training as a medical student, but the clinic setting is very different. It is difficult to get practice in because a senior doctor will step in in challenging cases, specially in an emergency.   
+        Junior doctors have some training as a medical student, but the clinic
+        setting is very different. It is difficult to get practice in because a
+        senior doctor will step in in challenging cases, specially in an
+        emergency.
       </p>
     </div>
     <div className="col-md-4 ps-md-4">
       <p className="lesson-header">Under high pressure</p>
       <p>
-        Clinicians experience performance anxiety. If the clinician isn't able to get the correct depth on the first attempt, they have to decide whether to reattempt or adjust the needle while it is already under the skin. 
+        Clinicians experience performance anxiety. If the clinician isn't able
+        to get the correct depth on the first attempt, they have to decide
+        whether to reattempt or adjust the needle while it is already under the
+        skin.
       </p>
       <BlockQuote>
-        With kids, the parents are there watching you. You really only have that one or two shots at it. 
+        With kids, the parents are there watching you. You really only have that
+        one or two shots at it.
         <br />
         <br />
         <em className="text-muted small">
@@ -86,56 +98,58 @@ y: 0
         </em>
       </BlockQuote>
     </div>
-
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
-<h2 id="3d-ultrasound">Main flow</h2>
+  <h2 id="3d-ultrasound">Main flow</h2>
   <div className="row d-flex">
-    <div className="col-md-4 pe-md-4">
-    <p>
-      Immediately see veins. 
-    </p>
-</div>
-
-<div className="col-md-8">
-    <LoopingVideo src="/images/work/vm/vein-default.mp4" />
+    <div className="col-md-6 pe-md-3 pb-md-0 pb-sm-5 ">
+      <p className="lesson-header">Start scene</p>
+      <p>
+        After the app is launched, the user is prompted to define the area of
+        vein visualization by positioning the cuboid over the patient's body.
+      </p>
+      <LoopingVideo src="/images/work/vm/initial.mp4" />
+    </div>
+    <div className="col-md-6 pt-md-0 ps-md-3 pt-sm-5 ">
+      <p className="lesson-header">Immediately see veins</p>
+      <p>
+        The veins are instantly shown inside the bounding box, which is the
+        fastest possible way for this feature to be functional.
+      </p>
+      <LoopingVideo src="/images/work/vm/hide.mp4" />
+    </div>
   </div>
-</div>
 </div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <h2 id="nav">Navigation</h2>
+    <h2 id="process">Process</h2>
     <div className="col-md-4 padding-right-24 padding-bottom-24">
       <p>
-       At first, we developed the app menu that followed the{" "}
-        <a href="https://learn.microsoft.com/en-us/windows/mixed-reality/design/hand-menu">
-          Microsoft MRTK hand menu conventions
-        </a>
-        . This wasn’t an issue in other Microsoft HL2 apps such as aploQar’s VSI.</p>
-        
-        <p>However, we uncovered usability issues in our use case:
-        <br/>  <br/>
-        <ol>
-          <li>HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also <b>mistook the patient's hands</b> instead of the clinician's, opening the menu unintentionally.</li>
-          <li><b>Both the clinician's hands might be occupied:</b> ultrasound probe in one hand, medical instrument in the other.</li>
-          <li><b>Left-handed clinicians</b> find it more difficult to open the menu when the menu anchored to the left hand.</li>
-        </ol>
+        My role was to make the vein mapping HL2 app user-friendly so it could be launched in clinics.
       </p>
+      <p>I led user research with the end users. These insights challenged the existing approach and informed many decisions in the final product.</p>
+      <ol>
+        <li>
+            <b>IR sticker vs. virtual cuboid.</b> How the user defines the area of vein visualization is now adaptable to unexpected patient situations. 
+          </li>
+          <li>
+            <b>Scale & lock cuboid.</b> Usability testing helped to refine the interaction for vein visualization on the patient. 
+          </li>
+          <li><b>Show & hide veins.</b> User's needs to view the patient's skin directly was not accounted for previously.</li>
+      </ol>
     </div>
     <div className="col-md-4 padding-right-16 padding-bottom-24">
-      <LoopingVideo src="/images/work/nuhs/menu-default.mp4"/>
+      <LoopingVideo src="/images/work/vm/test-demo.mp4" />
       <figcaption>
-        Standard HoloLens 2 <a href="https://learn.microsoft.com/en-us/hololens/hololens2-basic-usage#start-gesture">Start gesture</a>. Open palm facing user and tap on inner wrist <i>Start</i> icon with other hand.
+        Me experimenting with the proof-of-concept provided by NUHS
       </figcaption>
     </div>
     <div className="col-md-4 padding-left-16">
-      <LoopingVideo src="/images/work/nuhs/menu-initial.mp4" />
-      <figcaption>
-        Initial design used the same approach, where the app menu was anchored to the user's hand.
-      </figcaption>
+      <LoopingVideo src="/images/work/vm/nuhs-demo.mp4" />
+      <figcaption>Vein visualization using the proof-of-concept</figcaption>
     </div>
 
   </div>
@@ -143,52 +157,11 @@ y: 0
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
+    <h2 id="cuboid">Virtual cuboid</h2>
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Head-locked</p>
-      <LoopingVideo src="/images/work/nuhs/initialspawn.mp4" />
-      <p className="padding-top-16">
-        Instead of anchoring the menu to the user's left wrist, the menu was
-        changed to always appear in the same position in the user's field of
-        view. The menu rotates slightly with the head so it feels natural but doesn't jerk with every small move. 
-      </p>
-    </div>
-    <div className="col-md-4 padding-right-12 padding-left-16 padding-bottom-24">
-      <p className="lesson-header">Default position</p>
-      <LoopingVideo src="/images/work/nuhs/startscan.mp4" />
-      <p className="padding-top-16">
-        We found that a distance that is shorter than the HL2 conventions makes the menu more intuitively reachable, especially as more operations are layered in the user's view. 
-      </p>
-    </div>
-    <div className="col-md-4 padding-left-24">
-      <p className="lesson-header">Moveable position</p>
-      <LoopingVideo src="/images/work/nuhs/draggable.mp4" />
-      <p className="padding-top-16">
-      The draggable menu is offset to the left by default, so the center view
-        is unobstructed. Clinicians can drag the menu to suit their unique workflows and preferences, and then it will be locked in their field of view. 
-      </p>
-    </div>
-
-  </div>
-</div>
-
-<div className="container-fluid margin-top-36">
-  <div className="row d-flex">
-    <h2 id="multimodal">Multimodal design</h2>
-    <div className="col-md-4 padding-right-24">
-      <p>
-        Ultrasound scan requires the clinician to be close to the patient, so
-        the holographic frame is narrower and clutters quickly.
-      </p>
-      <p className="text-black-50 padding-top-16">Psychophysics principles</p>
-      <p>
-        <b>Precision.</b> Every scene has a precise choice of useful elements
-        and positioning relative to the user's movement and intent.
-      </p>
-      <p>
-        <b>Natural.</b> When holographic elements move with the user, they must
-        not distort the view or disorient the user through both sense of touch
-        and sight.
-      </p>
+      <p className="subtitle-caption">Previous implementation</p>
+      <p className="lesson-header">IR sticker</p>
+      <p>Infrared reflective (IR) sticker</p>
     </div>
     <div className="col-md-4 padding-right-16 padding-bottom-24">
       <LoopingVideo src="/images/work/nuhs/position-quickview.mp4" />
@@ -215,7 +188,8 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Think & test spatially</p>
+      <p className="subtitle-caption">User research insight</p>
+      <p className="lesson-header">Unexpected patient conditions</p>
       <p>
         To create intuitive interactions of holographic elements, I
         experimented with positioning in 3D world space at every stage of the
