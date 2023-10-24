@@ -133,7 +133,7 @@ y: 0
       <p>I led user research with the end users. These insights challenged the existing approach and informed many decisions in the final product.</p>
       <ol>
         <li>
-            <b>IR sticker vs. virtual cuboid.</b> How the user defines the area of vein visualization is now adaptable to unexpected patient situations. 
+            <b>IR sticker vs. virtual cuboid.</b> Core interaction for defining the target area of vein visualization is now adaptable to unexpected patient situations. 
           </li>
           <li>
             <b>Scale & lock cuboid.</b> Usability testing helped to refine the interaction for vein visualization on the patient. 
@@ -161,25 +161,32 @@ y: 0
     <div className="col-md-4 padding-right-24">
       <p className="subtitle-caption">Previous implementation</p>
       <p className="lesson-header">IR sticker</p>
-      <p>Infrared reflective (IR) sticker</p>
+      <p>
+        The{" "}
+        <a href="https://mdpi.altmetric.com/details/140945863">
+          proof-of-concept
+        </a>{" "}
+        uses an infrared reflective (IR) sticker to mark the area for vein
+        visualization. The IR sticker reflects light, which the HoloLens
+        infrared camera detects so the HL2 can render a bounding box where the
+        IR sticker is placed.
+      </p>
+      <p>
+        If the user wanted to <b>move the bounding box area</b>, they have to
+        reposition the sticker physically or we had to design some way the user
+        can offset where the bounding box is rendered relative to the IR
+        sticker.
+      </p>
     </div>
-    <div className="col-md-4 padding-right-16 padding-bottom-24">
-      <LoopingVideo src="/images/work/nuhs/position-quickview.mp4" />
-      <figcaption>
-        Quick view: Default scene shows true-size and zoomed-in 2D ultrasound
-        video feed
-      </figcaption>
-    </div>
-    <div className="col-md-4 padding-left-16">
+    <div className="col-md-3 padding-right-16 padding-bottom-24">
       <MarkdownImage
-        src="/images/work/nuhs/holotwin-mock.png"
-        width="1280"
-        height="738px"
+        src="/images/work/vm/ir-sticker.png"
+        width="1388px"
+        height="1394px"
         layout="fill"
       />
       <figcaption>
-        Illustration shows without the 3D holograms, the needle will be occluded
-        once it penetrates patient's skin.
+        The IR sticker is in the center of the bounding box.
       </figcaption>
     </div>
   </div>
@@ -188,59 +195,49 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24">
-      <p className="subtitle-caption">User research insight</p>
+      <p className="subtitle-caption">Key insight</p>
       <p className="lesson-header">Unexpected patient conditions</p>
       <p>
-        To create intuitive interactions of holographic elements, I
-        experimented with positioning in 3D world space at every stage of the
-        design process and worked closely with Engineering to fine-tune motion
-        design.
+        During user interviews, we heard from nurses and doctors about the
+        conditions of patients that they treat.
+      </p>
+      <p>
+        We discovered that many patients come in with{" "}
+        <b>sweaty or damaged skin</b> (trauma victims). Therefore, the IR
+        sticker was not sufficient to indicate the vein visualization area.
       </p>
     </div>
     <div className="col-md-4 padding-right-16 padding-bottom-24">
-      <LoopingVideo src="/images/work/nuhs/position-3dscan.mp4" />
-      <figcaption>
-        3D reconstruction: Scene shows scan 'mirror' and 2D ultrasound video feed to guide the user's scan.
-      </figcaption>
+      <BlockQuote>
+        All I’m thinking about is APO (Acute Pulmonary Oedema) patients. They
+        come in all wet, super wet. They either have liver, kidney, or heart
+        problems. Fluid doesn’t stay inside the veins, it goes into the tissue
+        itself so they become very swollen and their body is trying to release
+        the fluids through the skin.
+        <br />
+        <br />
+        <em className="text-muted small">
+          Senior nurse
+          <br />
+          NUH Urgent Care Clinic
+        </em>
+      </BlockQuote>
     </div>
-    <div className="col-md-4 padding-left-16">
-      <MarkdownImage
-        src="/images/work/nuhs/distance.png"
-        width="1280px"
-        height="734px"
-        layout="fill"
-      />
-      <figcaption>
-        Illustration shows default position of holographic elements when user launches 3D reconstruction workstream.
-      </figcaption>
-    </div>
-
   </div>
 </div>
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <h2 id="instrument">Calibration</h2>
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Flexible & accessible system</p>
-      <p className="text-black-50">Challenges</p>
-      <ol>
-        <li>
-          There are hundreds of devices and ways that clinicians are used to
-          holding devices.
-        </li>
-        <li>
-          The device marker must face the HL2 camera throughout the entire sweep
-          to generate the 3D scan.
-        </li>
-      </ol>
-      <p className="text-black-50">Solution</p>
-      <p>
-        We implemented a plane calibration system. The HL2 registers the marker
-        ID and direction, which serves the clinician's unique way of holding the
-        instrument. During usability testing, we found this system worked well
-        as clinicians have steady hands 🎉
-      </p>
+      <p className="subtitle-caption">Impact to product</p>
+      <p className="lesson-header">Markerless approach</p>
+      <p>The key design question I explored was <b>how would clinicians define the area of interest without a physical marker?</b></p>
+      <p>The final solution: the user manipulates a virtual cuboid to show veins.</p>
+      <ul>
+        <li>The user can define and redefine the target area easily using this common hologram.</li>
+        <li>The algorithmic computational model developed by NUHS used to render the veins uses a cuboid.</li>
+        <li>Bounding box is a customizable component provided by MRTK, which speeds up development time.</li>
+      </ul>
     </div>
     <div className="col-md-4 padding-right-12 padding-left-12 padding-bottom-24">
       <MarkdownImage
@@ -260,6 +257,7 @@ y: 0
       />
       <figcaption>Instrument calibration illustration</figcaption>
     </div>
+
   </div>
 </div>
 
