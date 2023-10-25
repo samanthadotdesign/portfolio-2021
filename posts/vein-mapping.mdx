@@ -167,9 +167,14 @@ y: 0
           proof-of-concept
         </a>{" "}
         uses an infrared reflective (IR) sticker to mark the area for vein
-        visualization. The IR sticker reflects light, which the HoloLens
-        infrared camera detects so the HL2 can render a bounding box where the
-        IR sticker is placed.
+        visualization.
+      </p>
+      <p>
+        <span className="small text-black-50">See right diagram</span>
+        <br />
+        The IR sticker reflects light, which the HoloLens infrared camera
+        detects so the HL2 can render a bounding box where the IR sticker is
+        placed.
       </p>
       <p>
         If the user wanted to <b>move the bounding box area</b>, they have to
@@ -178,15 +183,15 @@ y: 0
         sticker.
       </p>
     </div>
-    <div className="col-md-3 padding-right-16 padding-bottom-24">
+    <div className="col-md-5">
       <MarkdownImage
-        src="/images/work/vm/ir-sticker.png"
-        width="1388px"
-        height="1394px"
+        src="/images/work/vm/sticker.png"
+        width="3835px"
+        height="2546px"
         layout="fill"
       />
       <figcaption>
-        The IR sticker is in the center of the bounding box.
+        The IR sticker is always in the center of the bounding box.
       </figcaption>
     </div>
   </div>
@@ -228,34 +233,67 @@ y: 0
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
-    <div className="col-md-4 padding-right-24">
+    <div className="col-md-5 px-0">
       <p className="subtitle-caption">Impact to product</p>
       <p className="lesson-header">Markerless approach</p>
-      <p>The key design question I explored was <b>how would clinicians define the area of interest without a physical marker?</b></p>
-      <p>The final solution: the user manipulates a virtual cuboid to show veins.</p>
+      <p>
+        The key design question I explored was{" "}
+        <b>
+          how would clinicians define the area of interest without a physical
+          marker?
+        </b>
+      </p>
+      <p>
+        The final solution: the user manipulates a virtual cuboid to show veins.
+      </p>
       <ul>
-        <li>The user can define and redefine the target area easily using this common hologram.</li>
-        <li>The algorithmic computational model developed by NUHS used to render the veins uses a cuboid.</li>
-        <li>Bounding box is a customizable component provided by MRTK, which speeds up development time.</li>
+        <li>
+          The user can define and redefine the target area easily using this
+          common hologram.
+        </li>
+        <li>
+          The algorithmic computational model developed by NUHS uses the cuboid
+          to render veins, while maintaining performance.
+        </li>
+        <li>
+          Bounding box is a customizable component provided by MRTK, which
+          speeds up development time.
+        </li>
       </ul>
     </div>
-    <div className="col-md-4 padding-right-12 padding-left-12 padding-bottom-24">
+  </div>
+</div>
+
+<div className="container-fluid margin-top-16">
+  <div className="row d-flex">
+    <p className="subtitle-caption">Interaction design notes to Eng</p>
+    <div className="margin-top-16"></div>
+    <div className="col-md-4 padding-right-24">
       <MarkdownImage
-        src="/images/work/nuhs/usprobe-calibration.png"
-        width="959px"
-        height="622px"
+        src="/images/work/vm/cuboid-01.png"
+        width="1243px"
+        height="830px"
         layout="fill"
       />
-      <figcaption>Ultrasound probe calibration illustration</figcaption>
+      <figcaption>After the app is launched</figcaption>
+    </div>
+    <div className="col-md-4 padding-right-12 padding-left-16 padding-bottom-24">
+      <MarkdownImage
+        src="/images/work/vm/cuboid-02.png"
+        width="1243px"
+        height="830px"
+        layout="fill"
+      />
+      <figcaption>Default position in 3D space</figcaption>
     </div>
     <div className="col-md-4 padding-left-24">
-      <MarkdownImage
-        src="/images/work/nuhs/instrument-calibration.png"
-        width="1248px"
-        height="834px"
+       <MarkdownImage
+        src="/images/work/vm/cuboid-03.png"
+        width="1243px"
+        height="830px"
         layout="fill"
       />
-      <figcaption>Instrument calibration illustration</figcaption>
+      <figcaption>First time placing cuboid on patient</figcaption>
     </div>
 
   </div>
@@ -263,33 +301,57 @@ y: 0
 
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
+    <h2 id="position">Scale & lock position</h2>
     <div className="col-md-4 padding-right-24">
-      <p className="lesson-header">Foundation for object-tracking</p>
-      <p className="text-black-50">
-        End-to-end task flow for calibrating device
+      <p className="subtitle-caption">Usability issue</p>
+      <p className="lesson-header">Patient's hands accidentally move cuboid</p>
+      <p>
+        After implementing the markerless solution using the bounding box, we
+        discovered that the vein visualization target area moved accidentally.
       </p>
-      <ol>
-        <li>
-          <b>Start screen.</b> Holographic plane with guiding lines to place
-          device appears.
-        </li>
-        <li>
-          <b>Additional instructions.</b> Once HL2 detects marker in view,
-          prompt user with additional instructions.
-        </li>
-        <li>
-          <b>Countdown.</b> When the marker is still, the countdown timer
-          appears so confirm orientation.
-        </li>
-        <li>
-          <b>System confirmation.</b> The HL2 registers the marker's orientation
-          and user can confirm or restart calibration.
-        </li>
-      </ol>
+      <p>
+        <b>
+          HL2 cannot differentiate the clinician's hands from the patient's.
+        </b>{" "}
+        When the clincian scanned veins on the patient's hand, the patient's
+        hand gestures were also detected by HL2.
+      </p>
     </div>
-    <div className="col-md-8">
+    <div className="col-md-4 padding-right-12 padding-left-16">
       <LoopingVideo src="/images/work/nuhs/calibrate-panel.mp4" />
     </div>
+    <div className="col-md-4 padding-left-24">
+      <LoopingVideo src="/images/work/nuhs/calibrate-panel.mp4" />
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <div className="col-md-4 padding-right-24 padding-bottom-24">
+      <p className="subtitle-caption">Impact to product</p>
+      <p className="lesson-header">Intentional changes</p>
+      <p>
+        <b>Free-scaling by default. </b>Unlocked interaction
+      </p>
+      <p>
+        <b>Lock cuboid. </b>
+      </p>
+      <p>
+        <b>Unlocked. </b>
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <LoopingVideo src="/images/work/vm/test-demo.mp4" />
+      <figcaption>
+        Me experimenting with the proof-of-concept provided by NUHS
+      </figcaption>
+    </div>
+    <div className="col-md-4 padding-left-16">
+      <LoopingVideo src="/images/work/vm/nuhs-demo.mp4" />
+      <figcaption>Vein visualization using the proof-of-concept</figcaption>
+    </div>
+
   </div>
 </div>
 
