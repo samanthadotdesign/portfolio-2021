@@ -302,7 +302,7 @@ y: 0
 <div className="container-fluid margin-top-36">
   <div className="row d-flex">
     <h2 id="position">Scale & lock position</h2>
-    <div className="col-md-4 padding-right-24">
+    <div className="col-md-5 padding-right-24">
       <p className="subtitle-caption">Usability issue</p>
       <p className="lesson-header">Patient's hands accidentally move cuboid</p>
       <p>
@@ -316,12 +316,90 @@ y: 0
         When the clincian scanned veins on the patient's hand, the patient's
         hand gestures were also detected by HL2.
       </p>
+      <p>
+        The key design question I explored was how can we help prevent
+        clinicians from accidentally moving the area of interest while
+        performing procedures?
+      </p>
     </div>
-    <div className="col-md-4 padding-right-12 padding-left-16">
-      <LoopingVideo src="/images/work/nuhs/calibrate-panel.mp4" />
+    <div className="col-md-5 padding-right-12 padding-left-16"></div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-16">
+  <div className="row d-flex">
+    <p className="subtitle-caption">Impact to product</p>
+    <div className="margin-top-16"></div>
+    <div className="col-md-4 padding-right-24">
+      <p className="lesson-header">Free-scaling by default</p>
+      <LoopingVideo src="/images/work/vm/scale.mp4" />
+      <p className="padding-top-16">
+        The user does not have to take additional steps to adjust and place the
+        cuboid on the patient when the app launches, to enable clinicians to see
+        the patient's veins quickly.
+      </p>
+      <p>
+        We reused the main menu interaction from a different app and introduced{" "}
+        <em>Lock / Unlock position</em> CTA.
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-12 padding-left-16 padding-bottom-24">
+      <p className="lesson-header">Unlocked cuboid</p>
+      <LoopingVideo src="/images/work/vm/vein-unlocked.mp4" />
+      <p className="padding-top-16">
+        Imagine that the fist belonged to the patient. Before the cuboid is
+        locked, the fist can rotate the cuboid.
+      </p>
+      <p>
+        The first CTA is <em>Lock position</em> so the user has easy access to
+        prevent unintentional movement.{" "}
+      </p>
     </div>
     <div className="col-md-4 padding-left-24">
-      <LoopingVideo src="/images/work/nuhs/calibrate-panel.mp4" />
+      <p className="lesson-header">Locked cuboid</p>
+      <LoopingVideo src="/images/work/vm/vein-locked.mp4" />
+      <p className="padding-top-16">
+        Once the cuboid is locked, its position will remain in absolute space,
+        which is sufficient to not disrupt procedures.
+      </p>
+      <p>
+        We didn't anchor the cuboid to the patient's hand because spatial
+        awareness slows down real-time rendering.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div className="container-fluid margin-top-36">
+  <div className="row d-flex">
+    <h2 id="">Show & hide veins</h2>
+    <p className="subtitle-caption">Key insight</p>
+    <p className="lesson-header">Identify vein with touch</p>
+    <div className="col-md-4 padding-right-24">
+      <p>
+        The previous assumption was once the veins are detected and shown in the
+        HL2, the clinician would be able to continue with the procedure.
+      </p>
+      <p>
+        However, we discovered during user interviews that{" "}
+        <b>
+          even if the vein is visible, clinicians still need to feel the vein.
+        </b>{" "}
+        The vein should feel bouncy, which indicates blood flow direction in a
+        uncalcified vein, suitable for venepuncture.
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-16 padding-bottom-24">
+      <BlockQuote>
+        If we accidentally puncture the artery, it will keep bleeding out, so
+        direction is important. <br />
+        <br />
+        <em className="text-muted small">
+          Nurse
+          <br />
+          NUH Urgent Care Clinic
+        </em>
+      </BlockQuote>
     </div>
   </div>
 </div>
@@ -330,28 +408,79 @@ y: 0
   <div className="row d-flex">
     <div className="col-md-4 padding-right-24 padding-bottom-24">
       <p className="subtitle-caption">Impact to product</p>
-      <p className="lesson-header">Intentional changes</p>
+      <p className="lesson-header">Introduced feature</p>
       <p>
-        <b>Free-scaling by default. </b>Unlocked interaction
+        <b>
+          Clinicians need to be able to turn on and off the visualisation
+          easily.
+        </b>
       </p>
       <p>
-        <b>Lock cuboid. </b>
-      </p>
-      <p>
-        <b>Unlocked. </b>
+        Holographic vein visualisation might occlude where the clinician wants
+        to see the actual skin of the patient to observe where they are pressing
+        on the patient.
       </p>
     </div>
-    <div className="col-md-4 padding-right-16 padding-bottom-24">
-      <LoopingVideo src="/images/work/vm/test-demo.mp4" />
+    <div className="col-md-7 padding-right-16 padding-bottom-24">
+      <MarkdownImage
+        src="/images/work/vm/hide-spec.png"
+        width="1812px"
+        height="735px"
+        layout="fill"
+      />
       <figcaption>
-        Me experimenting with the proof-of-concept provided by NUHS
+        Final interaction design notes to Eng to describe changes after the user
+        selects <em>Hide veins</em>
       </figcaption>
     </div>
-    <div className="col-md-4 padding-left-16">
-      <LoopingVideo src="/images/work/vm/nuhs-demo.mp4" />
-      <figcaption>Vein visualization using the proof-of-concept</figcaption>
-    </div>
+  </div>
+</div>
 
+<div className="container-fluid margin-top-16">
+  <div className="row d-flex">
+    <p className="subtitle-caption">Design explorations</p>
+    <div className="margin-top-16"></div>
+    <div className="col-md-4 padding-right-24">
+      <MarkdownImage
+        src="/images/work/vm/explore-1.png"
+        width="1033.59px"
+        height="691px"
+        layout="fill"
+      />
+      <p className="padding-top-16">
+        <span className="small text-black-50">Early prototype</span>
+        <br />
+        <em>Hide veins</em> always available, anchored to the cuboid.
+      </p>
+    </div>
+    <div className="col-md-4 padding-right-12 padding-left-16 padding-bottom-24">
+      <MarkdownImage
+        src="/images/work/vm/explore-2.png"
+        width="1033.59px"
+        height="691px"
+        layout="fill"
+      />
+      <p className="padding-top-16">
+        <span className="small text-black-50">Early considerations</span>
+        <br />
+        Initial design: For <em>Debug mode</em>, I added recording indicators,
+        which coexist with the proposed <em>Hide vein</em> CTA location.
+      </p>
+    </div>
+    <div className="col-md-4 padding-left-24">
+      <MarkdownImage
+        src="/images/work/vm/explore-3.png"
+        width="1033.59px"
+        height="691px"
+        layout="fill"
+      />
+      <p className="padding-top-16">
+        <span className="small text-black-50">Iteration</span>
+        <br />
+        After reusing the main navigation cube in the app, put{" "}
+        <em>Hide veins</em> as an option.
+      </p>
+    </div>
   </div>
 </div>
 
@@ -360,21 +489,22 @@ y: 0
 ## Impact
 
 <BlockQuote>
-  All this is done in minutes and we don't have to send the patient to the
-  radiology unity. They don't have to wait a few months for an appointment. They
-  don't have to wait up to an hour at the clinic. We save on a lot of resources.
+  We intend to use HoloVein in our clinics, emergency departments, ambulances to
+  help healthcare workers on the ground identify veins so we don’t have to poke
+  them too many times
   <br />
   <br />
   <em className="text-muted small">
     Dr. Gao, Liver Surgeon
     <br />
-    National University Heart Centre, Singapore
+    National University Hospital, Singapore
   </em>
 </BlockQuote>
 
 <p className="margin-top-36">
   The Unity team wrapped up this project in <b>September 2023</b>. NUHS intends
-  to beta test this Mixed Reality app for thyroid biopsy in its clinics.
+  to beta test this Mixed Reality app for venepuncture throughout their
+  healthcare facilities.
 </p>
 
 </PostLayout>
