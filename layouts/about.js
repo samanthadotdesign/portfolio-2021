@@ -55,7 +55,7 @@ export default function About() {
               </h3>
             </div>
             <div className="col-md-6 px-0 d-flex flex-column align-items-end">
-              <Link href="https://drive.google.com/file/d/1wpKCwZ5M2epIOsqhRKC3Q18DPUHto2SJ/view?usp=sharing">
+              <Link href="https://drive.google.com/file/d/1Ho1shRVfLXZW-1eBxuOjK6kcw-XQNkQx/view?usp=sharing">
                 <a className="btn-link">RESUMÉ</a>
               </Link>
               <Link href="https://www.github.com/samanthadotdesign/">
