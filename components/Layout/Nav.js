@@ -1,14 +1,17 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import { GlobalContext, ACTIONS } from "../../store";
 import Link from "next/link";
 import useResizeObserver from "use-resize-observer";
 import Mode from "../Posts/Mode";
 import { useRouter } from "next/router";
+
 export default function Nav() {
   const navRef = useRef(null);
   const { windowDispatch } = useContext(GlobalContext);
-
   const router = useRouter();
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
   // Getting the height of the nav
   useResizeObserver({
@@ -19,14 +22,26 @@ export default function Nav() {
   });
 
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     windowDispatch({
       type: ACTIONS.SET_WINDOW_SIZE,
       payload: {
-        width: window.innerWidth,
+        width: windowWidth,
         height: window.innerHeight,
       },
     });
-  }, []);
+  }, [windowWidth]);
 
   return (
     <div ref={navRef} className="w-100 m-0 fixed-top">
