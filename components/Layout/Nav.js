@@ -50,7 +50,7 @@ export default function Nav() {
           <a className="nav-logo">SAMANTHA LEE</a>
         </Link>
         <div className="d-flex m-0">
-          {router.pathname == "/" && <Mode />}
+          {windowWidth > 600 && router.pathname == "/" && <Mode />}
           <Link href="/">
             <a className="nav-link">WORK</a>
           </Link>
