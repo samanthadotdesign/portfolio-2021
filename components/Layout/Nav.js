@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Nav() {
   const navRef = useRef(null);
-  const { windowDispatch } = useContext(GlobalContext);
+  const { windowDispatch, layoutDispatch } = useContext(GlobalContext);
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -25,9 +25,7 @@ export default function Nav() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -42,6 +40,12 @@ export default function Nav() {
       },
     });
   }, [windowWidth]);
+
+  useEffect(() => {
+    if (windowWidth < 600) {
+      layoutDispatch({ type: ACTIONS.NEAT_MODE });
+    }
+  }, []);
 
   return (
     <div ref={navRef} className="w-100 m-0 fixed-top">
