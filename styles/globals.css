@@ -173,19 +173,6 @@ a {
   pointer-events: none;
 }
 
-.drag-cursor {
-  margin: 0;
-  position: relative;
-  cursor: url("../public/images/site/drag-cursor-1.svg"), auto;
-}
-
-.enter-cursor {
-  margin: 0;
-  position: relative;
-  /* cursor: pointer; */
-  cursor: url("../public/images/site/enter.svg"), auto;
-}
-
 .title-marquee-div {
   min-height: 75px;
 }
@@ -546,60 +533,14 @@ figcaption i {
   margin-right: 4px;
 }
 
-/* PROCESS CIRCLE */
-
-.process-div {
-  display: flex;
-  flex-direction: row;
-}
-
-.process-circle {
-  border-radius: 50%;
-  border: solid 1px #000;
-  min-width: 100px;
-  height: 100px;
-  padding: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 20px 0 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .process-div {
-    flex-direction: column;
-    max-width: 100px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .process-circle {
-    margin: 35px 0 35px 0;
-  }
-}
-
-.process-circle p {
-  margin: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .process-arrow {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-}
-
 /* NEAT MODE VIEW */
 
 .neat-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
   margin-top: 60px;
+  max-width: 2000px;
 }
 
 @media screen and (max-width: 768px) {
@@ -624,5 +565,12 @@ figcaption i {
 }
 
 .hovered-card {
-  font-weight: bold;
+  /* color: #e676ff; */
+  cursor: pointer;
+}
+
+.hovered-text {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(45deg, #ff51eb, #0d41e1);
 }
