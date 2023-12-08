@@ -1,12 +1,12 @@
-import PostGrid from "../components/Posts/PostGrid";
+import ChaosContainer from "../components/Posts/ChaosContainer";
+import NeatContainer from "../components/Posts/NeatContainer";
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../store";
 
 export default function Homepage(props) {
   const { windowStoreState, layoutStoreState } = useContext(GlobalContext);
   const { nav } = windowStoreState;
-  const { cursorText } = layoutStoreState;
-
+  const { cursorText, isMessy } = layoutStoreState;
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -66,7 +66,11 @@ export default function Homepage(props) {
             <div className="container-fluid">
               <div className="row">
                 <div className="px-0">
-                  <PostGrid posts={props.posts} />
+                  {isMessy ? (
+                    <ChaosContainer posts={props.posts} />
+                  ) : (
+                    <NeatContainer posts={props.posts} />
+                  )}
                 </div>
               </div>
             </div>
