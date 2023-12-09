@@ -81,8 +81,7 @@ p,
 .article-body li,
 li,
 .cursor,
-.block-quote,
-.accordion-text {
+.block-quote {
   font-family: "Neue Montreal" !important;
   font-weight: 400;
   font-size: 16px;
@@ -540,7 +539,7 @@ figcaption i {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
   margin-top: 60px;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   max-width: 2000px;
 }
 
@@ -550,7 +549,7 @@ figcaption i {
     grid-template-columns: 1fr;
     gap: 24px;
     margin-top: 24px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
 }
 

@@ -7,7 +7,6 @@ import MarkdownImage from "../../components/PostDetail/MarkdownImage";
 import LoopingVideo from "../../components/PostDetail/LoopingVideo";
 import PostLayout from "../../components/PostDetail/PostLayout";
 import FullWidthContainer from "../../components/PostDetail/FullWidthContainer";
-import AccordionContainer from "../../components/PostDetail/AccordionContainer";
 import LoopingVideoMobile from "../../components/PostDetail/LoopingVideoMobile";
 import BlockQuote from "../../components/PostDetail/BlockQuote";
 
@@ -19,7 +18,6 @@ const availableComponentsForMarkdown = {
   MarkdownImage,
   PostLayout,
   FullWidthContainer,
-  AccordionContainer,
   BlockQuote,
 };
 

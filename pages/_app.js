@@ -1,8 +1,6 @@
 import { GlobalProvider } from "../store";
 import Head from "next/head";
 import "../styles/globals.css";
-import "/node_modules/react-grid-layout/css/styles.css";
-import "/node_modules/react-resizable/css/styles.css";
 import "../styles/variables.scss";
 import Nav from "../components/Layout/Nav";
 import Footer from "../components/Layout/Footer";
