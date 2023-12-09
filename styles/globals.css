@@ -545,15 +545,19 @@ figcaption i {
   height: 32px;
 }
 
-.neat-view-img {
+.neat-view-media {
   width: 100%;
   height: 240px;
-  background-color: #000;
+  border-radius: 0.32em;
   margin-bottom: 12px;
+  object-fit: cover;
 }
 
-.hovered-card {
-  /* color: #e676ff; */
+.neat-view-container {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.neat-view-container:hover {
   cursor: pointer;
 }
 

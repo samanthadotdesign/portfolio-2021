@@ -21,8 +21,7 @@ export default function NeatPost(props) {
 
   return (
     <div
-      className={`d-flex flex-column justify-content-center
-      ${isHovered && "hovered-card"}`}
+      className="neat-view-container d-flex flex-column justify-content-center"
       onTouchStart={goToLink}
       onClick={goToLink}
       onMouseEnter={handleMouseEnter}
@@ -35,6 +34,10 @@ export default function NeatPost(props) {
           autoPlay={isHovered}
           muted
           loop
+          // style={{
+          //   transform: "scale(1.05)",
+          //   boxShadow: "0 30px 30px 10px rgba(0,0,0,.2)",
+          // }}
         />
       ) : (
         <img src={coverImagePath} className="neat-view-media" />
