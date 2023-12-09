@@ -1,38 +1,29 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { GlobalContext, ACTIONS } from "../../store";
-import Image from "next/image";
 import { Rnd } from "react-rnd";
 import LoopingVideo from "../PostDetail/LoopingVideo";
 
-// Resize media inside PostItemContainer
-const PostItemContainer = (props) => {
-  const { goToLink, mediaPath, title, postItemRef, className, style } = props;
+const ChaosBubble = (props) => {
+  const { goToLink, mediaPath, isHover, postItemRef } = props;
 
   return (
-    <div
-      onTouchStart={goToLink}
-      onClick={goToLink}
-      style={style}
-      className={`h-100 d-flex flex-column ${className}`}
-    >
-      <div ref={postItemRef} className="d-flex h-100 position-relative">
-        {mediaPath.split(".")[1] == "mp4" ? (
-          <LoopingVideo
-            src={mediaPath}
-            title={title}
-            className="position-absolute object-fit-cover w-100 h-100 userSelectNone"
-          />
-        ) : (
-          <Image
-            src={mediaPath}
-            layout="fill"
-            objectFit="cover"
-            className="userSelectNone"
-          />
-        )}
+    <>
+      <div
+        onTouchStart={goToLink}
+        onClick={goToLink}
+        className="h-100 d-flex flex-column"
+      >
+        <div ref={postItemRef} className="d-flex h-100 position-relative">
+          {isHover && (
+            <LoopingVideo
+              src={mediaPath}
+              className="position-absolute object-fit-cover w-100 h-100 userSelectNone"
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -53,8 +44,6 @@ export default function ChaosPost(props) {
   const breakpointsArr = Object.values(breakpoints).reverse();
   // colsArr = [2,4,...]
   const colsArr = Object.values(cols).reverse();
-
-  //const [ isHover, setIsHover ] = useState(false);
   // Column for the size of the browser to pixels
   function translateColsToPixels(windowPixels, noColumns) {
     /* 
@@ -158,10 +147,9 @@ export default function ChaosPost(props) {
           WebkitMaskImage: `url("/images/site/${mask}")`,
         }}
       >
-        <PostItemContainer
+        <ChaosBubble
           goToLink={goToLink}
           mediaPath={mediaPath}
-          title={title}
           isHover={isHover}
           postItemRef={postItemRef}
         />
