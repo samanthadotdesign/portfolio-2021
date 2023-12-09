@@ -22,8 +22,11 @@ export default function Homepage(props) {
 
   return (
     <>
-      <div className="homepage">
-        <div className="noise">
+      <div
+        className="homepage"
+        style={{ overflow: isMessy ? "hidden" : "scroll" }}
+      >
+        <div className={`${isMessy ? "noise-messy" : "noise-neat"}`}>
           <div
             className="cursor position-fixed rounded-circle d-flex justify-content-center align-items-center text-center"
             style={{
