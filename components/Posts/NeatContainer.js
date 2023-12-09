@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import NeatPost from "./NeatPost";
 
 export default function NeatContainer(props) {
@@ -6,7 +6,7 @@ export default function NeatContainer(props) {
 
   return (
     <>
-      <div className="neat-grid w-100">
+      <div className="neat-grid">
         {posts.map((post, index) => (
           <NeatPost key={post.slug} post={post} />
         ))}
