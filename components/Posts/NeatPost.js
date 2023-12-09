@@ -1,14 +1,14 @@
 import React, { useRef, useState, useMemo } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import LoopingVideo from "../PostDetail/LoopingVideo";
 
 export default function NeatPost(props) {
   const { post } = props;
   const { slug, frontMatter, mdxSource } = post;
   const [isHovered, setHovered] = useState(false);
-  const { title, media, mask, color } = frontMatter;
+  const { title, media, mask, color, coverImage } = frontMatter;
   const postItemRef = useRef(null);
+  const coverImagePath = `/images/work/${slug}/${coverImage}`;
   const mediaPath = `/images/work/${slug}/${media}`;
   const linkPath = `/work/${slug}`;
   const router = useRouter();
@@ -28,7 +28,17 @@ export default function NeatPost(props) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="neat-view-img"></div>
+      {isHovered ? (
+        <video
+          src={mediaPath}
+          className="neat-view-media"
+          autoPlay={isHovered}
+          muted
+          loop
+        />
+      ) : (
+        <img src={coverImagePath} className="neat-view-media" />
+      )}
       <div className="d-flex flex-row pb-2">
         <div
           style={{
@@ -37,7 +47,6 @@ export default function NeatPost(props) {
             WebkitMaskImage: `url("/images/site/${mask}")`,
           }}
           className="masked neat-view-icon"
-          mediapath={mediaPath}
         ></div>
         <p className={`m-0 align-self-center ${isHovered && "hovered-text"}`}>
           {title}
