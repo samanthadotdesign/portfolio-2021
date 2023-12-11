@@ -57,7 +57,7 @@ const windowReducer = (state, action) => {
 
 // Set to messy layout by default
 const initialLayoutState = {
-  isMessy: true,
+  isMessy: false,
   cursorText: "",
 };
 
