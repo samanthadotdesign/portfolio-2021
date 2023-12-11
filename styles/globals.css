@@ -172,14 +172,6 @@ a {
   pointer-events: none;
 }
 
-.title-marquee-div {
-  min-height: 75px;
-}
-
-.title-marquee-div:hover {
-  color: red;
-}
-
 .object-fit-fill {
   object-fit: fill;
 }
@@ -547,18 +539,34 @@ figcaption i {
 
 .neat-view-media {
   width: 100%;
-  height: 240px;
-  border-radius: 0.32em;
-  margin-bottom: 12px;
+  height: 252px;
   object-fit: cover;
 }
 
 .neat-view-container {
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background: rgb(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  position: relative;
 }
 
 .neat-view-container:hover {
   cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 30px 30px 10px rgba(0, 0, 0, 0.2);
+}
+
+.neat-view-title {
+  width: 100%;
+  margin-top: -68px;
+  padding: 24px 8px 12px 8px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  box-sizing: border-box;
 }
 
 .hovered-text {

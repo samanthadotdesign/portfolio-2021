@@ -1,6 +1,5 @@
 import React, { useRef, useState, useMemo } from "react";
 import { useRouter } from "next/router";
-import LoopingVideo from "../PostDetail/LoopingVideo";
 
 export default function NeatPost(props) {
   const { post } = props;
@@ -15,7 +14,6 @@ export default function NeatPost(props) {
   const goToLink = () => {
     router.push(linkPath);
   };
-
   const handleMouseEnter = useMemo(() => () => setHovered(true), []);
   const handleMouseLeave = useMemo(() => () => setHovered(false), []);
 
@@ -27,22 +25,18 @@ export default function NeatPost(props) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {isHovered ? (
+      {/* {isHovered ? (
         <video
           src={mediaPath}
           className="neat-view-media"
           autoPlay={isHovered}
           muted
           loop
-          // style={{
-          //   transform: "scale(1.05)",
-          //   boxShadow: "0 30px 30px 10px rgba(0,0,0,.2)",
-          // }}
         />
-      ) : (
-        <img src={coverImagePath} className="neat-view-media" />
-      )}
-      <div className="d-flex flex-row pb-2">
+      ) : ( */}
+      <img src={coverImagePath} className="neat-view-media" />
+      {/* )} */}
+      <div className="neat-view-title d-flex flex-row">
         <div
           style={{
             backgroundColor: `${color}`,
