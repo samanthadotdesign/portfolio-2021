@@ -1,9 +1,14 @@
+import dynamic from "next/dynamic";
+
 import React, { useContext, useRef, useEffect, useState } from "react";
 import { GlobalContext, ACTIONS } from "../../store";
 import Link from "next/link";
 import useResizeObserver from "use-resize-observer";
-import Mode from "../Posts/Mode";
 import { useRouter } from "next/router";
+
+const Mode = dynamic(() => import("../Posts/Mode"), {
+  ssr: false,
+});
 
 export default function Nav() {
   const navRef = useRef(null);
@@ -54,7 +59,7 @@ export default function Nav() {
           <a className="nav-logo">SAMANTHA LEE</a>
         </Link>
         <div className="d-flex m-0">
-          {windowWidth > 600 && router.pathname == "/" && <Mode />}
+          {windowWidth > 600 && router.pathname == "/" ? <Mode /> : null}
           <Link href="/">
             <a className="nav-link">WORK</a>
           </Link>

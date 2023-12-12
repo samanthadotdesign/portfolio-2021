@@ -1,5 +1,10 @@
+import dynamic from "next/dynamic";
+
 import React, { useState } from "react";
-import ChaosPost from "./ChaosPost";
+
+const ChaosPost = dynamic(() => import("./ChaosPost"), {
+  ssr: false,
+});
 
 export default function ChaosContainer(props) {
   const { posts } = props;

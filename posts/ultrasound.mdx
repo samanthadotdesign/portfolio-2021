@@ -57,9 +57,9 @@ y: 0
   <p className="lesson-header">Scope</p>
   <ol>
     <li>
-      <b>Visualize 2D and 3D ultrasound data relative to patient's body.</b>{" "}
-      Clinicians can perceive target area's actual physical location in
-      patient's body using anatomical hologram.
+      <b>Visualize 2D and 3D ultrasound data relative to patient's body.</b>
+      Clinicians can perceive target area's actual physical location in patient's
+      body using anatomical hologram.
     </li>
     <li>
       <b>Track of medical instruments in real-time.</b>
@@ -150,20 +150,28 @@ y: 0
     <h2 id="nav">Navigation</h2>
     <div className="col-md-4 padding-right-24 padding-bottom-24">
       <p>
-       At first, we developed the app menu that followed the{" "}
+       At first, we developed the app menu that followed the 
         <a href="https://learn.microsoft.com/en-us/windows/mixed-reality/design/hand-menu">
           Microsoft MRTK hand menu conventions
         </a>
-        . This wasn’t an issue in other Microsoft HL2 apps such as aploQar’s VSI.</p>
-        
-        <p>However, we uncovered usability issues in our use case:
-        <br/>  <br/>
-        <ol>
-          <li>HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also <b>mistook the patient's hands</b> instead of the clinician's, opening the menu unintentionally.</li>
-          <li><b>Both the clinician's hands might be occupied:</b> ultrasound probe in one hand, medical instrument in the other.</li>
-          <li><b>Left-handed clinicians</b> find it more difficult to open the menu when the menu anchored to the left hand.</li>
-        </ol>
+        . This wasn’t an issue in other Microsoft HL2 apps such as aploQar’s VSI.
       </p>
+        
+      <p>
+        However, we uncovered usability issues in our use case:
+      </p>
+      <br/><br/>
+      <ol>
+        <li>
+        HL2 recognizes and interprets hands to use the hand menu. During usability testing, HL2 also <b>mistook the patient's hands</b> instead of the clinician's, opening the menu unintentionally.
+        </li>
+        <li>
+        <b>Both the clinician's hands might be occupied:</b> ultrasound probe in one hand, medical instrument in the other.
+        </li>
+        <li>
+        <b>Left-handed clinicians</b> find it more difficult to open the menu when the menu anchored to the left hand.
+        </li>
+      </ol>
     </div>
     <div className="col-md-4 padding-right-16 padding-bottom-24">
       <LoopingVideo src="/images/work/ultrasound/menu-default.mp4"/>

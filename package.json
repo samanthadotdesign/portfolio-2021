@@ -15,7 +15,7 @@
     "bootstrap-icons": "^1.8.1",
     "gray-matter": "^4.0.3",
     "next": "^12.2",
-    "next-mdx-remote": "^3.0.4",
+    "next-mdx-remote": "^4",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^7.0.1",

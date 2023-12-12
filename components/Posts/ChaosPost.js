@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { GlobalContext, ACTIONS } from "../../store";
@@ -89,7 +91,7 @@ export default function ChaosPost(props) {
       x: getRandomPositionWithinConstraints(widthPixels, "x"),
       y: getRandomPositionWithinConstraints(heightPixels, "y"),
     });
-  }, []);
+  }, [window]);
 
   const mediaPath = `/images/work/${slug}/${media}`;
   const linkPath = `/work/${slug}`;
@@ -126,34 +128,36 @@ export default function ChaosPost(props) {
 
   return (
     <>
-      <Rnd
-        ref={rndRef}
-        position={position}
-        onDrag={() => {
-          onDrag();
-          handleDragStart();
-        }}
-        onDragStop={handleDragStop}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        minWidth="100px"
-        minHeight="200px"
-        size={{ width: size.width, height: size.height }}
-        className="d-flex flex-column masked"
-        style={{
-          zIndex,
-          backgroundColor: `${color}`,
-          maskImage: `url("/images/site/${mask}")`,
-          WebkitMaskImage: `url("/images/site/${mask}")`,
-        }}
-      >
-        <ChaosBubble
-          goToLink={goToLink}
-          mediaPath={mediaPath}
-          isHover={isHover}
-          postItemRef={postItemRef}
-        />
-      </Rnd>
+      {window.width && window.height ? (
+        <Rnd
+          ref={rndRef}
+          position={position}
+          onDrag={() => {
+            onDrag();
+            handleDragStart();
+          }}
+          onDragStop={handleDragStop}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          minWidth="100px"
+          minHeight="200px"
+          size={{ width: size.width, height: size.height }}
+          className="d-flex flex-column masked"
+          style={{
+            zIndex,
+            backgroundColor: `${color}`,
+            maskImage: `url("/images/site/${mask}")`,
+            WebkitMaskImage: `url("/images/site/${mask}")`,
+          }}
+        >
+          <ChaosBubble
+            goToLink={goToLink}
+            mediaPath={mediaPath}
+            isHover={isHover}
+            postItemRef={postItemRef}
+          />
+        </Rnd>
+      ) : null}
     </>
   );
 }
