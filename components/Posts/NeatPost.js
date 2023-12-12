@@ -1,5 +1,5 @@
 import React, { useRef, useState, useMemo } from "react";
-import { useRouter } from "next/router";
+import NextLink from "next/link";
 
 export default function NeatPost(props) {
   const { post } = props;
@@ -10,18 +10,13 @@ export default function NeatPost(props) {
   const coverImagePath = `/images/work/${slug}/${coverImage}`;
   const mediaPath = `/images/work/${slug}/${media}`;
   const linkPath = `/work/${slug}`;
-  const router = useRouter();
-  const goToLink = () => {
-    router.push(linkPath);
-  };
   const handleMouseEnter = useMemo(() => () => setHovered(true), []);
   const handleMouseLeave = useMemo(() => () => setHovered(false), []);
 
   return (
-    <div
+    <NextLink
+      href={linkPath}
       className="neat-view-container d-flex flex-column justify-content-center"
-      onTouchStart={goToLink}
-      onClick={goToLink}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -49,6 +44,6 @@ export default function NeatPost(props) {
           {title}
         </p>
       </div>
-    </div>
+    </NextLink>
   );
 }

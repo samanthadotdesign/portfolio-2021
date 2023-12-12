@@ -1,30 +1,39 @@
 "use client";
 
 import React, { useContext, useState, useEffect, useRef } from "react";
+import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { GlobalContext, ACTIONS } from "../../store";
 import { Rnd } from "react-rnd";
 import LoopingVideo from "../PostDetail/LoopingVideo";
 
 const ChaosBubble = (props) => {
-  const { goToLink, mediaPath, isHover, postItemRef } = props;
+  const { linkPath, mediaPath, isDragging, isHover, postItemRef } = props;
+
+  function handleClick(event) {
+    if (isDragging) {
+      event.preventDefault();
+    }
+  }
 
   return (
     <>
-      <div
-        onTouchStart={goToLink}
-        onClick={goToLink}
-        className="h-100 d-flex flex-column"
-      >
-        <div ref={postItemRef} className="d-flex h-100 position-relative">
-          {isHover && (
-            <LoopingVideo
-              src={mediaPath}
-              className="position-absolute object-fit-cover w-100 h-100 userSelectNone"
-            />
-          )}
-        </div>
-      </div>
+      <NextLink href={linkPath} passHref>
+        <a
+          className="h-100 d-flex flex-column"
+          draggable={false}
+          onClick={handleClick}
+        >
+          <div ref={postItemRef} className="d-flex h-100 position-relative">
+            {isHover && mediaPath && (
+              <LoopingVideo
+                src={mediaPath}
+                className="position-absolute object-fit-cover w-100 h-100 userSelectNone"
+              />
+            )}
+          </div>
+        </a>
+      </NextLink>
     </>
   );
 };
@@ -93,7 +102,7 @@ export default function ChaosPost(props) {
     });
   }, [window]);
 
-  const mediaPath = `/images/work/${slug}/${media}`;
+  const mediaPath = media ? `/images/work/${slug}/${media}` : false;
   const linkPath = `/work/${slug}`;
 
   const handleDragStart = () => {
@@ -151,8 +160,9 @@ export default function ChaosPost(props) {
           }}
         >
           <ChaosBubble
-            goToLink={goToLink}
+            linkPath={linkPath}
             mediaPath={mediaPath}
+            isDragging={isDragging}
             isHover={isHover}
             postItemRef={postItemRef}
           />

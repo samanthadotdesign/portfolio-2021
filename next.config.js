@@ -1,8 +1,11 @@
-module.exports = {
-	reactStrictMode: false,
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: false,
+});
 
-	eslint: {
-		ignoreDuringBuilds: true,
-	}
-};
+module.exports = withBundleAnalyzer({
+  reactStrictMode: false,
 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+});

@@ -32,6 +32,7 @@
     "use-resize-observer": "^8.0.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.0.4",
     "@next/eslint-plugin-next": "^11.1.2",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
