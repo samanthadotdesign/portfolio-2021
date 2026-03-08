@@ -15,7 +15,7 @@ export default function Nav() {
   const { windowDispatch, layoutDispatch } = useContext(GlobalContext);
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
+    typeof window !== "undefined" ? window.innerWidth : 0,
   );
 
   // Getting the height of the nav
@@ -54,19 +54,10 @@ export default function Nav() {
 
   return (
     <div ref={navRef} className="w-100 m-0 fixed-top">
-      <div className="nav-header d-flex justify-content-between">
-        <Link href="/">
-          <a className="nav-logo">SAMANTHA LEE</a>
+      <div className="nav-header d-flex align-items-center justify-content-center">
+        <Link href="/" className="nav-logo d-flex align-items-center">
+          SAMANTHA LEE
         </Link>
-        <div className="d-flex m-0">
-          {windowWidth > 600 && router.pathname == "/" ? <Mode /> : null}
-          <Link href="/">
-            <a className="nav-link">WORK</a>
-          </Link>
-          <Link href="/about">
-            <a className="nav-link">ABOUT</a>
-          </Link>
-        </div>
       </div>
     </div>
   );

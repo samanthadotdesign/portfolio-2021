@@ -18,21 +18,21 @@ const ChaosBubble = (props) => {
 
   return (
     <>
-      <NextLink href={linkPath} passHref>
-        <a
-          className="h-100 d-flex flex-column"
-          draggable={false}
-          onClick={handleClick}
-        >
-          <div ref={postItemRef} className="d-flex h-100 position-relative">
-            {isHover && mediaPath && (
-              <LoopingVideo
-                src={mediaPath}
-                className="position-absolute object-fit-cover w-100 h-100 userSelectNone"
-              />
-            )}
-          </div>
-        </a>
+      <NextLink
+        href={linkPath}
+        className="h-100 d-flex flex-column"
+        draggable={false}
+        onClick={handleClick}>
+
+        <div ref={postItemRef} className="d-flex h-100 position-relative">
+          {isHover && mediaPath && (
+            <LoopingVideo
+              src={mediaPath}
+              className="position-absolute object-fit-cover w-100 h-100 userSelectNone"
+            />
+          )}
+        </div>
+
       </NextLink>
     </>
   );

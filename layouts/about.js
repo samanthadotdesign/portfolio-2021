@@ -55,17 +55,21 @@ export default function About() {
               </h3>
             </div>
             <div className="col-md-6 px-0 d-flex flex-column align-items-end">
-              <Link href="https://drive.google.com/file/d/1Ho1shRVfLXZW-1eBxuOjK6kcw-XQNkQx/view?usp=sharing">
-                <a className="btn-link">RESUMÉ</a>
+              <Link
+                href="https://drive.google.com/file/d/1Ho1shRVfLXZW-1eBxuOjK6kcw-XQNkQx/view?usp=sharing"
+                className="btn-link">
+                RESUMÉ
               </Link>
-              <Link href="https://www.github.com/samanthadotdesign/">
-                <a className="btn-link">GITHUB</a>
+              <Link href="https://www.github.com/samanthadotdesign/" className="btn-link">
+                GITHUB
               </Link>
-              <Link href="https://www.linkedin.com/in/samanthadotdesign/">
-                <a className="btn-link">LINKEDIN</a>
+              <Link
+                href="https://www.linkedin.com/in/samanthadotdesign/"
+                className="btn-link">
+                LINKEDIN
               </Link>
-              <Link href="mailto:hi@samantha.design">
-                <a className="btn-link">EMAIL</a>
+              <Link href="mailto:hi@samantha.design" className="btn-link">
+                EMAIL
               </Link>
             </div>
           </div>
